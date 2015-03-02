@@ -1,0 +1,13 @@
+{
+  "fileSize": "11M",
+  "desc": "JFinal 升级至 2.1，添加后台检索文章功能，优化编辑文章代码，加入主题预览，修复黑名单无法正确的拦截所有请求的问题",
+  "changeLogs": [
+    "JFinal 升级至 2.1",
+    "添加后台检索文章功能",
+    "优化编辑文章代码",
+    "加入主题预览",
+    "修复黑名单无法正确的拦截所有请求的问题"
+  ],
+  "releaseDate": "2016-01-16",
+  "downloadUrl": "http://dl.zrlog.com/archives/zrlog-1.4.4.war"
+}

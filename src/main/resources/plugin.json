@@ -1,0 +1,80 @@
+[
+  {
+    "id": 2,
+    "name": "七牛云存储",
+    "downloadUrl": "http://dl.zrlog.com/plugin/qiniu.jar",
+    "image": "http://dl.zrlog.com/plugin/preview/qiniu.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "qiniu.jar",
+    "author": "xiaochun",
+    "createdDate": "2016-01-04 13:00:00",
+    "lastUpdateDate": "2016-01-04 13:00:00",
+    "desc": "七牛云存储为企业提供图片云存储、音频云存储、视频云存储等"
+  },
+  {
+    "id": 3,
+    "name": "备份数据库",
+    "downloadUrl": "http://dl.zrlog.com/plugin/backup-sql-file.jar",
+    "image": "http://dl.zrlog.com/plugin/preview/backup-sql-file.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "backup-sql-file.jar",
+    "author": "xiaochun",
+    "createdDate": "2016-01-04 13:00:00",
+    "lastUpdateDate": "2016-01-04 13:00:00",
+    "desc": "备份数据库"
+  },
+  {
+    "id": 4,
+    "name": "邮件服务",
+    "downloadUrl": "http://dl.zrlog.com/plugin/mail.jar",
+    "image": "http://dl.zrlog.com/plugin/preview/mail-service.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "mail.jar",
+    "author": "xiaochun",
+    "createdDate": "2016-01-04 13:00:00",
+    "lastUpdateDate": "2016-01-04 13:00:00",
+    "desc": "邮件服务"
+  },
+  {
+    "id": 5,
+    "name": "畅言评论框",
+    "downloadUrl": "http://dl.zrlog.com/plugin/changyan.jar",
+    "image": "http://dl.zrlog.com/plugin/preview/changyan.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "changyan.jar",
+    "author": "xiaochun",
+    "createdDate": "2016-01-04 13:00:00",
+    "lastUpdateDate": "2016-01-04 13:00:00",
+    "desc": "框畅言是一个简单而强大的社会化评论及聚合平台"
+  },
+  {
+    "id": 6,
+    "name": "腾讯云存储",
+    "downloadUrl": "http://dl.zrlog.com/plugin/cos.jar",
+    "image": "http://dl.zrlog.com/plugin/preview/cos.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "cos.jar",
+    "author": "xiaochun",
+    "createdDate": "2016-01-04 13:00:00",
+    "lastUpdateDate": "2016-01-04 13:00:00",
+    "desc": "腾讯云存储"
+  },
+  {
+    "id": 7,
+    "name": "博客迁移",
+    "downloadUrl": "http://dl.zrlog.com/plugin/importer.jar",
+    "image": "http://dl.zrlog.com/plugin/preview/importer.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "importer.jar",
+    "author": "xiaochun",
+    "createdDate": "2016-01-04 13:00:00",
+    "lastUpdateDate": "2016-01-04 13:00:00",
+    "desc": "轻松的将其他博客的数据迁移到 ZrLog"
+  }
+]

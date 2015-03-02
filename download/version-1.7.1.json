@@ -1,0 +1,9 @@
+{
+  "fileSize": "6.8M",
+  "desc": "修复变更管理员密码错误",
+  "releaseDate": "2017-08-05",
+  "changeLogs": [
+    "修复变更管理员密码错误"
+  ],
+  "downloadUrl": "http://dl.zrlog.com/release/zrlog-1.7.1-baaecb9-release.war"
+}

@@ -1,0 +1,10 @@
+{
+  "fileSize": "9.8M",
+  "desc": "登录状态下，管理后台文件读取和写入的安全漏洞",
+  "releaseDate": "2019-04-27",
+  "changeLogs": [
+    "登录状态下，管理后台文件读取和写入的安全漏洞"
+  ],
+  "downloadUrl": "http://dl.zrlog.com/release/zrlog-2.1.7-768d7a6-release.war",
+  "changeLogIsMd": true
+}

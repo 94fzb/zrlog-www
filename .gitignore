@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+*.iml
+.idea
+.settings
+sim.pid
+logs
+1.log
+target
+log
+
+www-zrlog.tar.gz
+com.zrlog.jar
+db/*
+*.html
+static/code
+static/download
+**/qiniu.properties

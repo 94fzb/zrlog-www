@@ -1,0 +1,13 @@
+{
+  "fileSize": "6.9M",
+  "desc": "文章编辑添加插入封面图片,文章编辑器添加黑色皮肤,JFinal升级到3.3",
+  "releaseDate": "2017-12-12",
+  "changeLogs": [
+    "文章编辑添加插入封面图片",
+    "文章编辑器添加黑色皮肤，晚上写文章也不再那么费力",
+    "文章编辑工具支持附件上传",
+    "JFinal升级到3.3",
+    "修复管理文章列表中部分字段无法排序"
+  ],
+  "downloadUrl": "http://dl.zrlog.com/release/zrlog-1.8.0-d1f36bc-release.war"
+}

@@ -1,0 +1,17 @@
+{
+  "fileSize": "6.8M",
+  "desc": "文章，分类别名支持中文,在网站设置里添加对会话过期时间的控制",
+  "releaseDate": "2017-05-31",
+  "changeLogs": [
+    " 文章，分类别名支持中文",
+    " 更新管理界面添加手动检测按钮",
+    " 增强了主题开发（引入dev.jsp可以快速浏览存放在request域的数据，便于模板页面读取的渲染）",
+    " https的支持，需要在nginx.conf文件的http块里面添加 `proxy_set_header X-Forwarded-Protocol $scheme;`",
+    " 在网站设置里添加对会话过期时间的控制",
+    " 改进了插件功能，使用vue.js客户端渲染替换原有使用freemarker服务端渲染",
+    " 备份插件支持window系统",
+    " 增加新的畅言评论框",
+    " 开源协议由GPLv2变更到Apache"
+  ],
+  "downloadUrl": "http://dl.zrlog.com/release/zrlog-1.7.0-7375213-release.war"
+}

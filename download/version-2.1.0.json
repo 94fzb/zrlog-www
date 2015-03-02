@@ -1,0 +1,14 @@
+{
+  "fileSize": "9.9M",
+  "desc": "添加Docker，让更程序更加方便的启动",
+  "releaseDate": "2019-01-01",
+  "changeLogs": [
+    "markdown 编辑器支持从剪贴板上传图片",
+    "文章中支持添加 `emoji` 了",
+    "添加Docker，让程序更加方便的启动",
+    "数据库连接池切换为 `HikariCP`",
+    "其他细节内容调整"
+  ],
+  "downloadUrl": "http://dl.zrlog.com/release/zrlog-2.1.0-3617b2e-release.war",
+  "changeLogIsMd": true
+}
