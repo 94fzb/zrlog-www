@@ -15,3 +15,4 @@ db/*
 static/code
 static/download
 **/qiniu.properties
+!static/404.html
