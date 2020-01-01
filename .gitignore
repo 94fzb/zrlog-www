@@ -15,4 +15,4 @@ db/*
 static/code
 static/download
 **/qiniu.properties
-!static/404.html
+!static/errno-404
