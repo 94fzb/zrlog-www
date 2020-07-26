@@ -9,6 +9,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <runFolderName>/var/lib/zrlogwww</runFolderName>
+        <packageName>zrlogwww</packageName>
     </properties>
 
     <build>
@@ -88,6 +90,81 @@
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
                         </configuration>
+                    </plugin>
+                    <plugin>
+                        <artifactId>jdeb</artifactId>
+                        <groupId>org.vafer</groupId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jdeb</goal>
+                                </goals>
+                                <configuration>
+                                    <snapshotExpand>true</snapshotExpand>
+                                    <snapshotEnv>USER</snapshotEnv>
+                                    <controlDir>${basedir}/src/deb/control</controlDir>
+                                    <dataSet>
+                                        <data>
+                                            <src>${basedir}/src/deb/start.sh</src>
+                                            <type>file</type>
+                                            <mapper>
+                                                <type>perm</type>
+                                                <prefix>${runFolderName}</prefix>
+                                                <user>zrlogwww</user>
+                                                <group>zrlogwww</group>
+                                                <filemode>777</filemode>
+                                            </mapper>
+                                        </data>
+                                        <data>
+                                            <src>${basedir}/src/deb/init.d</src>
+                                            <type>directory</type>
+                                            <mapper>
+                                                <type>perm</type>
+                                                <prefix>/etc/init.d</prefix>
+                                                <user>zrlogwww</user>
+                                                <group>zrlogwww</group>
+                                                <filemode>777</filemode>
+                                            </mapper>
+                                        </data>
+                                        <data>
+                                            <src>${basedir}/download</src>
+                                            <type>directory</type>
+                                            <mapper>
+                                                <type>perm</type>
+                                                <prefix>${runFolderName}/download</prefix>
+                                                <user>zrlogwww</user>
+                                                <group>zrlogwww</group>
+                                                <filemode>777</filemode>
+                                            </mapper>
+                                        </data>
+                                        <data>
+                                            <src>${basedir}/static</src>
+                                            <type>directory</type>
+                                            <mapper>
+                                                <type>perm</type>
+                                                <prefix>${runFolderName}/static</prefix>
+                                                <user>zrlogwww</user>
+                                                <group>zrlogwww</group>
+                                                <filemode>777</filemode>
+                                            </mapper>
+                                        </data>
+                                        <data>
+                                            <src>${basedir}/com.zrlog.jar</src>
+                                            <type>file</type>
+                                            <mapper>
+                                                <type>perm</type>
+                                                <prefix>${runFolderName}</prefix>
+                                                <user>zrlogwww</user>
+                                                <group>zrlogwww</group>
+                                                <filemode>777</filemode>
+                                            </mapper>
+                                        </data>
+                                    </dataSet>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>

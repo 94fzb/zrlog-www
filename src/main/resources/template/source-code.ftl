@@ -99,10 +99,16 @@
                         </div>
                         <div class="col-md-2"></div>
                     </div>
-                    <div class="row" style="padding-top: 40px">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="padding-top: 20px">
+            <div class="card">
+                <h5 class="card-header">捐赠列表</h5>
+                <div class="card-body">
+                    <div class="row">
                         <div class="col-md-12">
-                            <h5>捐赠列表</h5>
-
+                            <div class="row">
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                 <tr>
@@ -124,6 +130,7 @@
                     </#list>
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                     </div>
                 </div>

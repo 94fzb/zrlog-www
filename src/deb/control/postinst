@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+# 开始启动
+/etc/init.d/zrlogwww start
+# 开机启动
+update-rc.d zrlogwww defaults

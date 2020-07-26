@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+cd /var/lib/zrlogwww
+
 if [ -f "sim.pid" ]; then
 nohup kill -9 $(cat sim.pid) &
 fi
