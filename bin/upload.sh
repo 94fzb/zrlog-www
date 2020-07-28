@@ -27,7 +27,7 @@ expect eof"
 
 expect -c "
 set timeout -1
-spawn ssh -p 6000 $userName@$host \n cd $runPath \n dpkg -i $debName \n
+spawn ssh -p 6000 $userName@$host \n service zrlogwww stop \n cd $runPath \n dpkg -i $debName \n
 expect {
     \"*assword\" {send \"$password\r\";}
     \"yes/no\" {send \"yes\r\"; exp_continue;}
