@@ -83,7 +83,7 @@
                                 <div class="col-md-5">
                                     <div class="card text-center">
                                         <h5 class="card-header">微信</h5>
-                                        <img class="card-img-top" width="273px" height="273px"
+                                        <img class="card-img-top" width="273px"
                                              src="${url}/assets/img/donation/wechat.png"/>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                                 <div class="col-md-5">
                                     <div class="card text-center">
                                         <h5 class="card-header">支付宝</h5>
-                                        <img class="card-img-top" width="273px" height="273px"
+                                        <img class="card-img-top" width="273px"
                                              src="${url}/assets/img/donation/alipay.png"/>
                                     </div>
                                 </div>
