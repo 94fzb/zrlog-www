@@ -7,7 +7,7 @@ replace=""
 find static/changelog -name "*.md" -type f -exec bash -c 'markdown "$0" > "${0/.md/$replace}.html"' {} \;
 
 path=${0}
-#sh bin/sync.sh ${1} static
+sh bin/sync.sh ${1} static
 
 runPath=/tmp
 debName=zrlog-www.deb
