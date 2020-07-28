@@ -9,11 +9,11 @@ prop() {
 }
 
 rm -rf $HOME/.qshell/
-${pwd2}/bin/qshell account $(prop 'accessKey') $(prop 'secretKey')
+${pwd2}/bin/qshell-linux-x64 account $(prop 'accessKey') $(prop 'secretKey')
 
 #upload
 cd ${syncFolder}
 tmpFile=/tmp/$(pwgen 5 1).json
 echo '{"src_dir":".","bucket":"'$(prop 'bucket')'","overwrite":true}' > ${tmpFile}
-${pwd2}/bin/qshell qupload ${tmpFile}
+${pwd2}/bin/qshell-linux-x64 qupload ${tmpFile}
 
