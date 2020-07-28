@@ -47,7 +47,7 @@
                     </h5>
                     <div class="card-body">
                         <div class="row">
-                            <table class="table table-striped table-bordered table-hover">
+                            <table class="table table-striped table-bordered table-hover table-responsive-xl">
                                 <thead>
                                 <tr>
                                     <th>版本</th>

@@ -109,7 +109,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
-                            <table class="table table-striped table-bordered table-hover">
+                            <table class="table table-striped table-bordered table-hover table-responsive-xl">
                                 <thead>
                                 <tr>
                                     <th>金额</th>
