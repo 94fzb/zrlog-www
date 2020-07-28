@@ -1,6 +1,6 @@
 #!/bin/bash
 
-./mvnw clean compile assembly:single -Pgenerator-static
+./mvnw -U clean compile assembly:single -Pgenerator-static
 java -jar target/generator-html.jar
 sh bin/package-deb.sh
 replace=""
