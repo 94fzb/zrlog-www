@@ -15,5 +15,6 @@ db/*
 static/code
 static/download
 **/qiniu.properties
-!static/errno-404
+**/cos.properties
+!static/errno-404.html
 *.deb
