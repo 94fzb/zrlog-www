@@ -2,7 +2,7 @@
   {
     "id": 3,
     "name": "精简主题",
-    "downloadUrl": "http://dl.zrlog.com/attachment/template/template-simple.zip",
+    "downloadUrl": "https://dl.zrlog.com/attachment/template/template-simple.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-simple.jpg",
     "version": "",
     "downloadCnt": 0,
@@ -15,7 +15,7 @@
   {
     "id": 4,
     "name": "hexo-next",
-    "downloadUrl": "http://dl.zrlog.com/attachment/template/template-hexo-theme-next.zip",
+    "downloadUrl": "https://dl.zrlog.com/attachment/template/template-hexo-theme-next.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-hexo-theme-next.jpg",
     "version": "",
     "downloadCnt": 0,
@@ -28,7 +28,7 @@
   {
     "id": 5,
     "name": "ZrLog博客主题",
-    "downloadUrl": "http://dl.zrlog.com/attachment/template/template-www.zip",
+    "downloadUrl": "https://dl.zrlog.com/attachment/template/template-www.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-www.jpg",
     "version": "",
     "downloadCnt": 0,

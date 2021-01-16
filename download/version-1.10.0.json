@@ -9,6 +9,6 @@
     " 压缩整个系统响应的 html 页面",
     " 更加简洁的写文章界面"
   ],
-  "downloadUrl": "http://dl.zrlog.com/release/zrlog-1.10.0-99df9f7-release.war",
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-1.10.0-99df9f7-release.war",
   "changeLogIsMd": true
 }
