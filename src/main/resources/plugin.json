@@ -2,7 +2,7 @@
   {
     "id": 2,
     "name": "七牛云存储",
-    "downloadUrl": "http://dl.zrlog.com/plugin/qiniu.jar",
+    "downloadUrl": "https://dl.zrlog.com/plugin/qiniu.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/qiniu.png",
     "version": "",
     "downloadCnt": 0,
@@ -15,7 +15,7 @@
   {
     "id": 3,
     "name": "备份数据库",
-    "downloadUrl": "http://dl.zrlog.com/plugin/backup-sql-file.jar",
+    "downloadUrl": "https://dl.zrlog.com/plugin/backup-sql-file.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/backup-sql-file.png",
     "version": "",
     "downloadCnt": 0,
@@ -28,7 +28,7 @@
   {
     "id": 4,
     "name": "邮件服务",
-    "downloadUrl": "http://dl.zrlog.com/plugin/mail.jar",
+    "downloadUrl": "https://dl.zrlog.com/plugin/mail.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/mail-service.png",
     "version": "",
     "downloadCnt": 0,
@@ -41,7 +41,7 @@
   {
     "id": 5,
     "name": "畅言评论框",
-    "downloadUrl": "http://dl.zrlog.com/plugin/changyan.jar",
+    "downloadUrl": "https://dl.zrlog.com/plugin/changyan.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/changyan.png",
     "version": "",
     "downloadCnt": 0,
@@ -54,7 +54,7 @@
   {
     "id": 6,
     "name": "腾讯云存储",
-    "downloadUrl": "http://dl.zrlog.com/plugin/cos.jar",
+    "downloadUrl": "https://dl.zrlog.com/plugin/cos.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/cos.png",
     "version": "",
     "downloadCnt": 0,
@@ -67,7 +67,7 @@
   {
     "id": 7,
     "name": "博客迁移",
-    "downloadUrl": "http://dl.zrlog.com/plugin/importer.jar",
+    "downloadUrl": "https://dl.zrlog.com/plugin/importer.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/importer.png",
     "version": "",
     "downloadCnt": 0,
