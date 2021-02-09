@@ -9,6 +9,6 @@
     " 添加新的富文本编辑器 `summernote`，与 markdown 编辑器并存",
     " 模块切换为 `freemarker`"
   ],
-  "downloadUrl": "http://dl.zrlog.com/release/zrlog-2.0.0-4602099-release.war",
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.0.0-4602099-release.war",
   "changeLogIsMd": true
 }

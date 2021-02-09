@@ -11,5 +11,5 @@
     "移除大量并未使用到的静态文件 （war包体积缩小到7M左右）",
     "修复 v1.4.4 搜索乱码"
   ],
-  "downloadUrl": "http://dl.zrlog.com/archives/zrlog-1.5.0.war"
+  "downloadUrl": "https://dl.zrlog.com/archives/zrlog-1.5.0.war"
 }

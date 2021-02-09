@@ -6,6 +6,6 @@
     " fixed [#IHYWF:网站标题存在单引号时后台报错，类似xxx's yyy](https://gitee.com/94fzb/zrlog/issues/IHYWF)",
     " fixed [#IHZSH:分类缓存问题](https://gitee.com/94fzb/zrlog/issues/IHZSH)"
   ],
-  "downloadUrl": "http://dl.zrlog.com/release/zrlog-1.9.1-cd87f93-release.war",
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-1.9.1-cd87f93-release.war",
   "changeLogIsMd": true
 }

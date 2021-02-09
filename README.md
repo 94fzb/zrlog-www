@@ -5,6 +5,13 @@
 - except
 - markdown （将 markdown 转为 html）
 
-## 上传到 zrlog 主页到七牛 cdn
+## 上传到 zrlog 腾讯云 cdn
 
 `sh bin/upload.sh bin/qiniu.properties`
+
+### macOS 上传到腾讯云 cdn
+
+```
+brew install python
+pip3 install coscmd
+```
