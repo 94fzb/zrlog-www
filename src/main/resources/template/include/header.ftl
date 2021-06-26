@@ -50,10 +50,10 @@
                 <li class="nav-item <#if request.uri == '/download'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download">下载</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/doc/'>active</#if> "><a class="nav-link"
-                                                                                  href="http://blog.zrlog.com/post/sort/doc.html">文档</a>
+                                                                                  href="http://blog.zrlog.com/sort/doc.html">文档</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/about'>active</#if> "><a class="nav-link"
-                                                                                   href="https://blog.zrlog.com/post/about.html">关于</a>
+                                                                                   href="https://blog.zrlog.com/about.html">关于</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/code'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/code">源码</a>
                 </li>
