@@ -16,11 +16,11 @@
                 <div class="card text-center">
                     <img class="card-img-top" style="height:200px;width:100%;overflow:hidden;"
                          src="${plugin.image}?imageView2/2/w/650"
-                         alt="${plugin.name }"></p>
+                         alt="${plugin.name }">
                     <div class="card-body">
                         <h5 class="card-title">${plugin.name }</h5>
                         <hr/>
-                        <a href="${url}/plugin/detail?id=${plugin.id}" class="btn btn-primary">详情 &amp;
+                        <a href="${url}/plugin/detail?id=${plugin.id}&from=${request.attr.from!''}" class="btn btn-primary">详情 &amp;
                             ${download}</a>
                     </div>
                 </div>

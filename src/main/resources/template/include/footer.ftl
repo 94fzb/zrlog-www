@@ -2,7 +2,7 @@
     <div class="container">
         <hr>
         <div class="row">
-        <#if !session.attrMap.from??>
+        <#if !request.attr.from??>
             <div class="col-lg-12 footer-below">
                 <#include "footer-links.ftl">
             </div>

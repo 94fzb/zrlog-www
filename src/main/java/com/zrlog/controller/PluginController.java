@@ -2,26 +2,13 @@ package com.zrlog.controller;
 
 import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.api.HttpResponse;
-import com.hibegin.http.server.web.Controller;
 import com.zrlog.dao.PluginDAO;
 import com.zrlog.entry.Plugin;
-import com.zrlog.util.ParseTools;
 
-import java.util.Map;
-
-public class PluginController extends Controller {
+public class PluginController extends StoreBaseController {
 
     public PluginController(HttpRequest request, HttpResponse response) {
         super(request, response);
-        request.getAttr().put("url", ParseTools.getScheme(request) + "://" + request.getHeader("Host"));
-        if (getRequest().getParaToStr("from") != null) {
-            getRequest().getSession().setAttr("from", getRequest().getParaToStr("from"));
-        }
-        if (request.getSession().getAttr("from") != null) {
-            request.getAttr().put("download", "安装");
-        } else {
-            request.getAttr().put("download", "下载");
-        }
     }
 
     public void index() {
@@ -34,9 +21,10 @@ public class PluginController extends Controller {
         if (id > 0) {
             Plugin plugin = new PluginDAO().findById((long) id);
             if (plugin != null) {
-                if (getRequest().getSession().getAttr("from") != null) {
-                    plugin.setDownloadUrl(request.getSession().getAttr("from") + "/download?id="
-                            + id + "&host=" + request.getAttr().get("url") + "&pluginName=" + plugin.getFileName());
+                String from = TemplateController.getFromByRequest(request);
+                if (from != null) {
+                    plugin.setDownloadUrl(from + "/download?id=" + id + "&host=" + request.getAttr().get("url") +
+                            "&pluginName=" + plugin.getFileName());
                 }
                 getRequest().getAttr().put("plugin", plugin);
                 getResponse().renderFreeMarker("/plugin/detail");

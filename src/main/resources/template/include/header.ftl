@@ -22,7 +22,7 @@
         }
     </style>
 <body>
-<#if !session.attrMap.from??>
+<#if !request.attr.from??>
 <a href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
     <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999" src="/assets/img/fork-me-on-github.png"
          alt="Fork me on GitHub"></a>
