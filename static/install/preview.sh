@@ -17,7 +17,7 @@ echo 'Tomcat download'
 else
   wget http://dl.zrlog.com/server/tomcat/apache-tomcat-7.0.86.tar.gz
 fi
-tar -xvf apache-tomcat-7.0.86.tar.gz
+tar -xf apache-tomcat-7.0.86.tar.gz
 cd apache-tomcat-7.0.86
 rm -rf webapps/ROOT
 tag=http://dl.zrlog.com/preview/zrlog.war?$(date +%s)
