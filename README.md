@@ -9,7 +9,9 @@
 
 ## 上传到七牛 cdn
 
-`sh bin/upload.sh bin/qiniu.properties`
+```
+sh bin/upload.sh bin/qiniu.properties
+```
 
 ## macOS 上传到腾讯云 cdn
 
