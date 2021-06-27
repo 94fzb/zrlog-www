@@ -13,7 +13,8 @@ checkJava() {
 checkJava
 tag=http://dl.zrlog.com/release/zrlog.war?$(date +%s)
 
-if [ -f "apache-tomcat-7.0.86.tar.gz" ]; then
+if [ -f "apache-tomcat-7.0.86.tar.gz" ]
+then
 echo 'Tomcat download'
 else
   wget http://dl.zrlog.com/server/tomcat/apache-tomcat-7.0.86.tar.gz
