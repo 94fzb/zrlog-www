@@ -12,7 +12,11 @@ checkJava() {
 }
 checkJava
 
-wget http://dl.zrlog.com/server/tomcat/apache-tomcat-7.0.86.tar.gz
+if [ -f "apache-tomcat-7.0.86.tar.gz" ]; then
+echo 'Tomcat download'
+elif
+  wget http://dl.zrlog.com/server/tomcat/apache-tomcat-7.0.86.tar.gz
+fi
 tar -xvf apache-tomcat-7.0.86.tar.gz
 cd apache-tomcat-7.0.86
 rm -rf webapps/ROOT
