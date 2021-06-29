@@ -1,5 +1,6 @@
 package com.zrlog.controller;
 
+import com.hibegin.common.util.StringUtils;
 import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.api.HttpResponse;
 import com.zrlog.dao.TemplateDAO;
@@ -17,7 +18,7 @@ public class TemplateController extends StoreBaseController {
             Template template = new TemplateDAO().findById((long) id);
             if (template != null) {
                 String from = getFromByRequest(request);
-                if (from != null) {
+                if (StringUtils.isNotEmpty(from)) {
                     template.setDownloadUrl(from + "/download?id=" + id + "&host=" + request.getAttr().get("url") +
                             "&templateName=" + template.getFileName());
                 }
