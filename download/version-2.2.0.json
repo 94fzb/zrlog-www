@@ -3,9 +3,9 @@
   "desc": "管理界面加入暗黑模式，数据库备份插件支持备份到云存储",
   "releaseDate": "2021-06-27",
   "changeLogs": [
-    "- 全新的安装向导和管理页面实现（`bootstrap` -> `antd`）UI 更加简洁统一",
-    "- 管理界面加入暗黑模式",
-    "- 数据库备份插件支持备份到云存储，支持 arm 处理器的备份（树莓派）"
+    "全新的安装向导和管理页面实现（`bootstrap` -> `antd`）UI 更加简洁统一",
+    "管理界面加入暗黑模式",
+    "数据库备份插件支持备份到云存储，支持 arm 处理器的备份（树莓派）"
   ],
   "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.2.0-5e8a51f-release.war",
   "changeLogIsMd": true
