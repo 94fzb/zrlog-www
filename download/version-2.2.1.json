@@ -1,0 +1,11 @@
+{
+  "fileSize": "10.7M",
+  "desc": "优化文章对保存逻辑的校验",
+  "releaseDate": "2021-09-03",
+  "changeLogs": [
+    "优化文章对保存逻辑的校验",
+    "修复 2.2.0 不支持子目录访问问题"
+  ],
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.2.1-efbe9f9-release.war",
+  "changeLogIsMd": true
+}
