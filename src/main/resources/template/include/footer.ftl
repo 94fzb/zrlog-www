@@ -8,7 +8,7 @@
             </div>
         </#if>
             <div class="col-lg-12 footer-below">
-                <p class="copyright">Copyright &copy; 2021 ZrLog 博客程序
+                <p class="copyright">Copyright &copy; 2022 ZrLog 博客程序
                 </p>
             </div>
             <div class="col-lg-12 footer-below">
