@@ -179,6 +179,10 @@ header.marquee .btn-cta:hover {
     position: relative
 }
 
+.container {
+    max-width: 1140px;
+}
+
 @media (min-width: 768px) {
     .sb-page-header {
         padding-top: 60px;
