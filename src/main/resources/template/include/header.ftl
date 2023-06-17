@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="${url }/favicon.ico"/>
     <link href="${url }/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="${url }/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+    <link href="${url }/assets/css/bootstrap-theme-v2.css" rel="stylesheet" type="text/css"/>
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
     <script src="${url}/assets/js/bootstrap.min.js"></script>
     <script src="${url}/assets/js/auto-theme.js"></script>
