@@ -1,4 +1,7 @@
 <style>
+    #star-info {
+        height: 70px;
+    }
     .none-li {
         padding-left: 0;
     }
@@ -17,7 +20,7 @@
 </style>
 
 
-<ul class="none-li">
+<ul class="none-li" id="star-info">
     <li>
         <script src="${url}/assets/js/buttons.js"></script>
         <!-- Place this tag where you want the button to render. -->
