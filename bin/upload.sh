@@ -1,24 +1,25 @@
 #!/bin/bash
-
+sudo apt update
+sudo apt install expect markdown -y
 ./mvnw -U clean compile assembly:single -Pgenerator-static
 java -jar target/generator-html.jar
 sh bin/package-deb.sh
 replace=""
 find static/changelog -name "*.md" -type f -exec bash -c 'markdown "$0" > "${0/.md/$replace}.html"' {} \;
 
-path=${0}
-sh bin/sync.sh ${1} static
+sh bin/sync.sh ${1} ${2} ${3} $(pwd)/static/
+password=${4}
 
 runPath=/tmp
 debName=zrlog-www.deb
 
 #host info，插件主题服务，还以有状态server方式运行，便于扩展
-host=cd.zrlog.com
+host=store.zrlog.com
 userName=root
 
 expect -c "
 set timeout -1
-spawn scp -P 6000 $debName $userName@$host:$runPath/$debName
+spawn scp -P 7022 $debName $userName@$host:$runPath/$debName
 expect {
     \"*assword\" {send \"$password\r\";}
     \"yes/no\" {send \"yes\r\"; exp_continue;}
@@ -27,7 +28,7 @@ expect eof"
 
 expect -c "
 set timeout -1
-spawn ssh -p 6000 $userName@$host \n dpkg -i $runPath/$debName \n
+spawn ssh -p 7022 $userName@$host \n dpkg -i $runPath/$debName \n
 expect {
     \"*assword\" {send \"$password\r\";}
     \"yes/no\" {send \"yes\r\"; exp_continue;}

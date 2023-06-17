@@ -12,6 +12,7 @@
     <link href="${url }/assets/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
     <script src="${url}/assets/js/bootstrap.min.js"></script>
+    <script src="${url}/assets/js/auto-theme.js"></script>
     <style>
         .bg-light {
             font-size: 18px;
@@ -20,13 +21,25 @@
         .nav-item {
             padding-right: 20px;
         }
+
+        .active {
+            font-weight: 500;
+        }
+        .navbar {
+            background-color:var(--bs-body-bg);
+        }
+        .sticky-top {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            -webkit-background-clip: padding-box; /* for Safari */
+            background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+        }
     </style>
 <body>
 <#if !request.attr.from??>
 <a href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
     <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999" src="/assets/img/fork-me-on-github.png"
          alt="Fork me on GitHub"></a>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

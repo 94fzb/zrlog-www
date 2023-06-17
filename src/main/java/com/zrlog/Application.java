@@ -12,6 +12,6 @@ public class Application {
         if (PathUtil.getRootPath().endsWith("/target")) {
             PathUtil.setRootPath(new File(PathUtil.getRootPath()).getParent());
         }
-        new WebServerBuilder.Builder().config(new ZrlogServerConfig()).build().startWithThread();
+        new WebServerBuilder.Builder().config(new ZrlogServerConfig(6091)).build().startWithThread();
     }
 }

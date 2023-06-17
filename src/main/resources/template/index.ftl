@@ -3,7 +3,7 @@
     <div class="container">
     <span class="brand-name">ZRLOG</span>
     <h2>可能是最好用的开源 Java 博客程序</h2>
-    <a style="margin-left: 20px; width: 150px" href="http://demo.zrlog.com?ref=index" target="_blank"
+    <a style="margin-left: 20px; width: 180px" href="http://demo.zrlog.com?ref=index" target="_blank"
        class="btn btn-default btn-cta">
         <svg t="1483704033964" class="icon" style="" viewBox="0 0 1518 1024" version="1.1"
              xmlns="http://www.w3.org/2000/svg" p-id="1428"
@@ -15,7 +15,7 @@
                   p-id="1429" class="" fill="#e6e6e6"></path>
         </svg>
         马上体验 </a>
-    <a style="margin-left: 20px;width: 150px" href="${last.downloadUrl}" class="btn btn-default btn-cta">
+    <a style="margin-left: 20px;width: 180px" href="${last.downloadUrl}" class="btn btn-default btn-cta">
         <svg t="1519487162038" class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
              xmlns="http://www.w3.org/2000/svg" p-id="1928" width="18"
              height="18">
@@ -30,7 +30,7 @@
                   p-id="1931" fill="#e6e6e6"></path>
         </svg>
         下载（war） </a>
-<a style="margin-left: 20px;width: 150px" href="https://gitee.com/94fzb/zrlog-docker" class="btn btn-default btn-cta">
+<a style="margin-left: 20px;width: 180px" href="https://gitee.com/94fzb/zrlog-docker" class="btn btn-default btn-cta">
     Docker 模式</a>
     </div>
 <br/>

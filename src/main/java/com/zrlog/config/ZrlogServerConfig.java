@@ -9,7 +9,16 @@ import com.hibegin.http.server.web.MethodInterceptor;
 import com.zrlog.controller.*;
 import com.zrlog.interceptor.ChangeLogInterceptor;
 
+import java.util.Objects;
+
 public class ZrlogServerConfig extends AbstractServerConfig {
+
+    private int port;
+
+    public ZrlogServerConfig(int port){
+        this.port = port;
+    }
+
     @Override
     public ServerConfig getServerConfig() {
         ServerConfig serverConfig = new ServerConfig();
@@ -21,7 +30,7 @@ public class ZrlogServerConfig extends AbstractServerConfig {
         serverConfig.getRouter().addMapper("/doc", DocController.class);
         serverConfig.getRouter().addMapper("/html", PageController.class);
         serverConfig.setDisableCookie(false);
-        serverConfig.setPort(6091);
+        serverConfig.setPort(port);
         try {
             FreeMarkerUtil.initClassTemplate("/template");
         } catch (Exception e) {

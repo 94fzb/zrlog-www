@@ -9,6 +9,10 @@ h6,
     font-weight: 400
 }
 
+a {
+    text-decoration: unset;
+}
+
 p.lead {
     font-weight: 400
 }
@@ -17,6 +21,10 @@ hr.small {
     max-width: 100px;
     margin: 50px auto;
     border-color: rgba(0, 0, 0, .2)
+}
+
+hr {
+    opacity: .1;
 }
 
 .text-yellow {
@@ -39,7 +47,6 @@ p.dm-promo-deal {
 header.marquee {
     padding: 50px 0;
     text-align: center;
-    color: #fff;
     background-color: #b84d45;
     background-image: url(/assets/img/bg.png)
 }

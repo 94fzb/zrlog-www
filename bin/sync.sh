@@ -1,23 +1,9 @@
-bin=${0}
-path=${bin%/*}
-configFile=${1}
-syncFolder=${2}
-pwd2=$(pwd)
-
-prop() {
-    grep "${1}" ${pwd2}/${configFile}|cut -d'=' -f2
-}
-
-#rm -rf $HOME/.qshell/
-#${pwd2}/bin/qshell-linux-x64 account $(prop 'accessKey') $(prop 'secretKey')
-
+pip3 install coscmd
+syncFolder=${4}
 #upload
 cd ${syncFolder}
-#tmpFile=/tmp/$(pwgen 5 1).json
-#echo '{"src_dir":".","bucket":"'$(prop 'bucket')'","overwrite":true}' > ${tmpFile}
-#${pwd2}/bin/qshell-linux-x64 qupload ${tmpFile}
-coscmd config -a $(prop 'accessKey') -s $(prop 'secretKey') -b $(prop 'bucket') -r ap-chengdu
-coscmd upload -r . /
-coscmd upload -r code -H "{'Content-Type':'text/html'}" /
-coscmd upload -r download -H "{'Content-Type':'text/html'}" /
+coscmd config -a ${1} -s ${2} -b ${3} -e cos.accelerate.myqcloud.com
+coscmd upload -r ${syncFolder} /
+coscmd upload -r ${syncFolder}/code -H "{'Content-Type':'text/html'}" /
+coscmd upload -r ${syncFolder}/download -H "{'Content-Type':'text/html'}" /
 
