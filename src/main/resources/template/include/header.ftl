@@ -13,27 +13,6 @@
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
     <script src="${url}/assets/js/bootstrap.min.js"></script>
     <script src="${url}/assets/js/auto-theme.js"></script>
-    <style>
-        .bg-light {
-            font-size: 18px;
-        }
-
-        .nav-item {
-            padding-right: 20px;
-        }
-
-        .active {
-            font-weight: 500;
-        }
-        .navbar {
-            background-color:var(--bs-body-bg);
-        }
-        .sticky-top {
-            border-bottom: 1px solid rgba(255, 255, 255, .1);
-            -webkit-background-clip: padding-box; /* for Safari */
-            background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
-        }
-    </style>
 <body>
 <#if !request.attr.from??>
 <a href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
