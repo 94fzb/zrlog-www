@@ -1,5 +1,44 @@
 <#assign subTitle="源码下载">
 <#include "include/header.ftl"/>
+
+<style>
+    .pro_name a {
+        color: #4183c4;
+    }
+
+    .osc_git_title {
+        background-color: #fff;
+    }
+
+    .osc_git_box {
+        background-color: #fff;
+        width: 100%
+    }
+
+    .osc_git_box {
+        border-color: #E3E9ED;
+    }
+
+    .osc_git_info {
+        color: #666;
+    }
+
+    .osc_git_main a {
+        color: #9B9B9B;
+    }
+
+    .ui.segment.osc_git_box {
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .github-widget-repo {
+        padding: 0;
+    }
+    img.card-img-top {
+        border-radius: 0;
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -11,37 +50,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <script src='https://gitee.com/94fzb/zrlog/widget_preview'></script>
-                                <style>
-                                    .pro_name a {
-                                        color: #4183c4;
-                                    }
 
-                                    .osc_git_title {
-                                        background-color: #fff;
-                                    }
-
-                                    .osc_git_box {
-                                        background-color: #fff;
-                                        width: 100%
-                                    }
-
-                                    .osc_git_box {
-                                        border-color: #E3E9ED;
-                                    }
-
-                                    .osc_git_info {
-                                        color: #666;
-                                    }
-
-                                    .osc_git_main a {
-                                        color: #9B9B9B;
-                                    }
-
-                                    .ui.segment.osc_git_box {
-                                        border-radius: 4px;
-                                        width: 100%;
-                                    }
-                                </style>
                             </div>
                         </div>
                     </div>

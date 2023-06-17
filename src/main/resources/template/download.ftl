@@ -5,7 +5,7 @@
         <div class="col-md-4">
             <img class="img-responsive" style="border-radius: 4px;" src="${url}/assets/img/zrlog.jpg"/>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" style="padding-top: 8px">
             <h3>ZrLog V${last.version} </h3>
 
             <p class="">
