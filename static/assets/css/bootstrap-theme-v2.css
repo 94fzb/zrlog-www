@@ -79,11 +79,14 @@ header.marquee img.logo {
 }
 
 header.marquee .btn-cta {
-    margin: 10px 0;
+    margin: 5px 0;
     padding: 10px 15px;
     border: 1px solid #fff;
     background-color: transparent;
     color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 400;
     font-size: 14px
 }
