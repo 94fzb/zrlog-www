@@ -1,4 +1,3 @@
-pip3 install coscmd
 syncFolder=${4}
 #upload
 cd ${syncFolder}
