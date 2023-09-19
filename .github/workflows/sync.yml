@@ -1,8 +1,6 @@
 name: ZrLog www release to cdn
-on:
-  push:
-    branches:
-      - master
+on: [ push, pull_request ]
+
 jobs:
   build:
     name: ZrLog package ${{ matrix.os }} ${{ matrix.architecture }}
