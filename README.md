@@ -6,6 +6,6 @@
 
 - except
 - markdown （将 markdown 转为 html）
-- coscmd
+- ossutil
 - github action runner
  
