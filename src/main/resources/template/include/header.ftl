@@ -39,15 +39,14 @@
                 <li class="nav-item <#if request.uri == '/plugin/'>active</#if> "><a class="nav-link"
                                                                                      href="https://store.zrlog.com/plugin/">插件</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/download'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download">下载</a>
+                <li class="nav-item <#if request.uri == '/download.html'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download.html">下载</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/doc/'>active</#if> "><a class="nav-link"
-                                                                                  href="http://blog.zrlog.com/sort/doc.html">文档</a>
+                <li class="nav-item"><a class="nav-link" href="http://blog.zrlog.com/sort/doc.html">文档</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/about'>active</#if> "><a class="nav-link"
+                <li class="nav-item <#if request.uri == '/about.html'>active</#if> "><a class="nav-link"
                                                                                    href="https://blog.zrlog.com/about.html">关于</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/code'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/code">源码</a>
+                <li class="nav-item <#if request.uri == '/code.html'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/code.html">源码</a>
                 </li>
             </ul>
         </div>

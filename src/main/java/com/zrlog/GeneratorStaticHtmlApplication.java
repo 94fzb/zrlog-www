@@ -32,14 +32,14 @@ public class GeneratorStaticHtmlApplication {
         MockHttpRequest indexMock = new MockHttpRequest("/download");
         indexMock.getAttr().put("url", "https://www.zrlog.com");
         IndexController.fillVersionInfo("download", indexMock);
-        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("download", indexMock), new File(PathUtil.getStaticPath() + "/download"));
+        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("download", indexMock), new File(PathUtil.getStaticPath() + "/download.html"));
     }
 
     private static void sourceCodeHtml() throws Exception {
         MockHttpRequest indexMock = new MockHttpRequest("/code");
         indexMock.getAttr().put("url", "https://www.zrlog.com");
         indexMock.getAttr().put("donations", new DonationDAO().findAll());
-        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("source-code", indexMock), new File(PathUtil.getStaticPath() + "/code"));
+        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("source-code", indexMock), new File(PathUtil.getStaticPath() + "/code.html"));
     }
 
     private static void changeLogHtml() throws Exception {
