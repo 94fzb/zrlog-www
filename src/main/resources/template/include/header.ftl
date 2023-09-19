@@ -41,7 +41,7 @@
                 </li>
                 <li class="nav-item <#if request.uri == '/download'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download.html">下载</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="http://blog.zrlog.com/sort/doc.html">文档</a>
+                <li class="nav-item"><a class="nav-link" href="https://blog.zrlog.com/sort/doc.html">文档</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/about'>active</#if> "><a class="nav-link"
                                                                                    href="https://blog.zrlog.com/about.html">关于</a>
