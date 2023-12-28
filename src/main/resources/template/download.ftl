@@ -37,7 +37,7 @@
         <div class="col-md-12" style="padding-top: 40px">
             <div class="table-responsive">
                 <h5 style="color:red">初次部署 ZrLog，或者对 JavaWeb 不太熟悉的，可以参考这篇文章进行安装 <a
-                        href="https://blog.zrlog.com/post/how-to-install-zrlog">https://blog.zrlog.com/post/how-to-install-zrlog</a>
+                        href="https://blog.zrlog.com/how-to-install-zrlog">https://blog.zrlog.com/how-to-install-zrlog</a>
                 </h5>
                 <div class="card">
                     <h5 class="card-header">

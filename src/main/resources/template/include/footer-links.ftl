@@ -1,7 +1,7 @@
 <p>
 
-    <a href="https://blog.zrlog.com/post/faq-collect" target="_blank">FAQ</a>
-    | <a href="https://blog.zrlog.com/post/for-developer" target="_blank">开发必看</a>
+    <a href="https://blog.zrlog.com/faq-collect" target="_blank">FAQ</a>
+    | <a href="https://blog.zrlog.com/for-developer" target="_blank">开发必看</a>
     | <a href="https://xiaochun.zrlog.com" target="_blank">博客</a>
     | <a href="https://gitee.com/94fzb" target="_blank">码云</a>
     | <a href="https://github.com/94fzb" target="_blank">GitHub</a>
