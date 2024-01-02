@@ -4,7 +4,7 @@
         <span class="brand-name">ZRLOG</span>
         <h2>可能是最好用的开源 Java 博客程序</h2>
         <div style="padding-top: 15px">
-            <a style="margin-left: 10px;margin-right: 10px; width: 180px" href="http://demo.zrlog.com?ref=index"
+            <a style="margin-left: 10px;margin-right: 10px; width: 180px" href="https://demo.zrlog.com?ref=index"
                target="_blank"
                class="btn btn-default btn-cta">
                 <svg t="1483704033964" class="icon" style="" viewBox="0 0 1518 1024" version="1.1"
@@ -32,7 +32,7 @@
                     <path d="M945.230769 748.307692l0 157.538462c0 21.700923-17.644308 39.384615-39.384615 39.384615L118.153846 945.230769c-21.740308 0-39.384615-17.683692-39.384615-39.384615l0-157.538462L0 748.307692l0 157.538462c0 65.220923 52.932923 118.153846 118.153846 118.153846l787.692308 0c65.220923 0 118.153846-52.932923 118.153846-118.153846l0-157.538462L945.230769 748.307692z"
                           p-id="1931" fill="#e6e6e6"></path>
                 </svg>
-                <span style="padding-left: 4px">下载（war）</span> </a>
+                <span style="padding-left: 4px">下载（zip）</span> </a>
             <a style="margin-left: 10px;margin-right: 10px;width: 180px" href="https://gitee.com/94fzb/zrlog-docker"
                class="btn btn-default btn-cta">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

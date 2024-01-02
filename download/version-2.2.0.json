@@ -7,6 +7,6 @@
     "管理界面加入暗黑模式",
     "数据库备份插件支持备份到云存储，支持 arm 处理器的备份（树莓派）"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.2.0-5e8a51f-release.war",
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.2.0-5e8a51f-release.zip",
   "changeLogIsMd": true
 }

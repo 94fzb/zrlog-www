@@ -9,6 +9,6 @@
     "数据库连接池切换为 `HikariCP`",
     "其他细节内容调整"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.1.0-3617b2e-release.war",
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.1.0-3617b2e-release.zip",
   "changeLogIsMd": true
 }
