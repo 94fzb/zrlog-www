@@ -78,7 +78,7 @@ public class IndexController extends Controller {
                 }
                 releaseInfo.setChangeLogs(changeLogs);
             }
-            releaseInfo.setDownloadUrl(releaseInfo.getDownloadUrl() + "?v=" + releaseInfo.getVersion() + " &ref=" + ref);
+            releaseInfo.setDownloadUrl(releaseInfo.getDownloadUrl() + "?ref=" + ref);
         }
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         downloadInfoList.sort((ReleaseInfo m1, ReleaseInfo m2) -> {
