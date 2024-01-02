@@ -14,5 +14,5 @@
     "添加mysql数据版本信息在管理后台主页",
     "重构管理相关代码，实现了接口数据与模板数据渲染的控制器代码分离"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-1.6.0-8e9d205-release.zip"
+  "downloadUrl": "#"
 }
