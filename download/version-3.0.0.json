@@ -1,0 +1,15 @@
+{
+  "fileSize": "8M",
+  "desc": "全新技术架构，一个仅使用 64m 内存就可以正常运行的博客系统",
+  "releaseDate": "2024-02-02",
+  "changeLogs": [
+    "全新的后端技术方案（SimpleWebServer + Apache DbUtils），带来了更小的包体积",
+    "将 Java 运行版本的最低版本调整为 Java 21，以支持 Java 的 Loom 特性，带来了更小的内存使用",
+    "升级管理后台，安装引导页面，插件管理 antd 的版本，页面更接近现在审美（相比之前的小圆角）",
+    "默认加入了 gzip，页面加载会更快，更节省服务器带宽",
+    "新增了阿里云的 oss 上传插件",
+    "..."
+  ],
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-3.0.0-ed7b8e4-release.zip",
+  "changeLogIsMd": true
+}
