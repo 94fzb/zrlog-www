@@ -180,7 +180,7 @@
         <dependency>
             <groupId>com.hibegin</groupId>
             <artifactId>simplewebserver</artifactId>
-            <version>0.3.65</version>
+            <version>0.3.76</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>

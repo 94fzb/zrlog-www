@@ -29,7 +29,7 @@ public class ZrlogServerConfig extends AbstractServerConfig {
         serverConfig.getRouter().addMapper("/plugin", PluginController.class);
         serverConfig.getRouter().addMapper("/doc", DocController.class);
         serverConfig.getRouter().addMapper("/html", PageController.class);
-        serverConfig.setDisableCookie(false);
+        serverConfig.setDisableSession(true);
         serverConfig.setPort(port);
         try {
             FreeMarkerUtil.initClassTemplate("/template");
