@@ -3,11 +3,11 @@
         <hr>
         <div class="row">
         <#if !request.attr.from??>
-            <div class="col-lg-12 footer-below">
+            <div class="col-lg-12 footer-below" id="footerLink">
                 <#include "footer-links.ftl">
             </div>
         </#if>
-            <div class="col-lg-12 footer-below">
+            <div class="col-lg-12 footer-below" id="copyInfo">
                 <span class="copyright">&copy; 2024 ZrLog博客程序
                
                 </span>

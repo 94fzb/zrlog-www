@@ -6,6 +6,8 @@ import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.api.HttpResponse;
 import com.hibegin.http.server.api.Interceptor;
 import com.hibegin.http.server.util.PathUtil;
+import com.zrlog.controller.PluginController;
+import com.zrlog.controller.TemplateController;
 import com.zrlog.util.ParseTools;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
@@ -19,7 +21,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ChangeLogInterceptor implements Interceptor {
+public class RestPathInterceptor implements Interceptor {
 
     @Override
     public boolean doInterceptor(HttpRequest httpRequest, HttpResponse httpResponse) throws FileNotFoundException {
@@ -28,6 +30,7 @@ public class ChangeLogInterceptor implements Interceptor {
             httpRequest.getAttr().put("url", ParseTools.getScheme(httpRequest) + "://" + httpRequest.getHeader("Host"));
             httpRequest.getAttr().put("htmlStr", renderMd(getMdStr(httpRequest)));
             httpResponse.renderFreeMarker("/changelog");
+            return false;
         } else if (uri.equalsIgnoreCase("/changelog/index.md")) {
             httpResponse.renderText("## 变更记录\n<br/>\n\n" + getMdStr(httpRequest));
         } else {
@@ -50,6 +53,13 @@ public class ChangeLogInterceptor implements Interceptor {
                         }
                     }
                 }
+            } else if (uri.startsWith("/template/") && uri.endsWith(".html")) {
+                new TemplateController(httpRequest, httpResponse).detailById(Integer.parseInt(uri.replaceAll("/template/", "").replaceAll(".html", "")));
+                return false;
+            } else if (uri.startsWith("/plugin/") && uri.endsWith(".html")) {
+                new PluginController(httpRequest, httpResponse).detailById(Integer.parseInt(uri.replaceAll("/plugin/", "").replaceAll(".html", "")));
+
+                return false;
             }
         }
         return true;

@@ -8,6 +8,9 @@ import com.zrlog.util.ParseTools;
 
 public class PageController extends Controller {
 
+    public PageController() {
+    }
+
     public PageController(HttpRequest request, HttpResponse response) {
         super(request, response);
         request.getAttr().put("url", ParseTools.getScheme(request) + "://" + request.getHeader("Host"));

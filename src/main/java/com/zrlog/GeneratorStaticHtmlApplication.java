@@ -1,53 +1,28 @@
 package com.zrlog;
 
-import com.hibegin.common.util.IOUtil;
-import com.hibegin.http.server.util.FreeMarkerUtil;
+import com.hibegin.http.server.SimpleWebServer;
 import com.hibegin.http.server.util.PathUtil;
-import com.zrlog.controller.IndexController;
-import com.zrlog.dao.DonationDAO;
-import com.zrlog.interceptor.ChangeLogInterceptor;
-import com.zrlog.mock.MockHttpRequest;
-
-import java.io.File;
+import com.zrlog.dao.PluginDAO;
+import com.zrlog.dao.TemplateDAO;
+import com.zrlog.mock.GeneratorHtml;
 
 public class GeneratorStaticHtmlApplication {
 
-    public static void main(String[] args) throws Exception {
-        FreeMarkerUtil.initClassTemplate("/template");
-        PathUtil.setRootPath(System.getProperty("user.dir"));
-        indexHtml();
-        downloadHtml();
-        sourceCodeHtml();
-        changeLogHtml();
+    public static void main(String[] args) {
+        SimpleWebServer server = Application.server();
+        new GeneratorHtml("/changelog", PathUtil.getStaticPath() + "/changelog/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        new GeneratorHtml("/download", PathUtil.getStaticPath() + "/download.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        new GeneratorHtml("/plugin", PathUtil.getStaticPath() + "/plugin/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        new PluginDAO().findAll().forEach(e -> {
+            new GeneratorHtml("/plugin/" + e.getId() + ".html", PathUtil.getStaticPath() + "/plugin/" + e.getId() + ".html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        });
+        new GeneratorHtml("/template", PathUtil.getStaticPath() + "/template/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        new TemplateDAO().findAll().forEach(e -> {
+            new GeneratorHtml("/template/" + e.getId() + ".html", PathUtil.getStaticPath() + "/template/" + e.getId() + ".html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        });
+        new GeneratorHtml("/code", PathUtil.getStaticPath() + "/code.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        new GeneratorHtml("/", PathUtil.getStaticPath() + "/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        System.exit(0);
     }
 
-    private static void indexHtml() throws Exception {
-        MockHttpRequest indexMock = new MockHttpRequest("/");
-        indexMock.getAttr().put("url", "https://www.zrlog.com");
-        IndexController.fillVersionInfo("index", indexMock);
-        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("index", indexMock), new File(PathUtil.getStaticPath() + "/index.html"));
-    }
-
-    private static void downloadHtml() throws Exception {
-        MockHttpRequest indexMock = new MockHttpRequest("/download");
-        indexMock.getAttr().put("url", "https://www.zrlog.com");
-        IndexController.fillVersionInfo("download", indexMock);
-        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("download", indexMock), new File(PathUtil.getStaticPath() + "/download.html"));
-    }
-
-    private static void sourceCodeHtml() throws Exception {
-        MockHttpRequest indexMock = new MockHttpRequest("/code");
-        indexMock.getAttr().put("url", "https://www.zrlog.com");
-        indexMock.getAttr().put("donations", new DonationDAO().findAll());
-        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("source-code", indexMock), new File(PathUtil.getStaticPath() + "/code.html"));
-    }
-
-    private static void changeLogHtml() throws Exception {
-        MockHttpRequest indexMock = new MockHttpRequest("/changelog");
-        indexMock.getAttr().put("url", "https://www.zrlog.com");
-        IndexController.fillVersionInfo("index", indexMock);
-        indexMock.getAttr().put("htmlStr", ChangeLogInterceptor.renderMd(ChangeLogInterceptor.getMdStr(indexMock)));
-
-        IOUtil.writeStrToFile(FreeMarkerUtil.renderToFM("changelog", indexMock), new File(PathUtil.getStaticPath() + "/changelog/index.html"));
-    }
 }

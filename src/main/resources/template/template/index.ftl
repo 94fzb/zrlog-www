@@ -19,7 +19,7 @@
                     <div class="card-body">
                         <h5 class="card-title">${template.name }</h5>
                         <hr/>
-                        <a href="${url}/template/detail?id=${template.id}&from=${request.attr.from!''}" class="btn btn-primary">预览
+                        <a href="${url}/template/${template.id}.html" class="storeDetailLink btn btn-primary">预览
                             &amp;
                             ${download}</a>
                     </div>

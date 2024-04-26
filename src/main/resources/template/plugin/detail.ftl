@@ -19,7 +19,7 @@
             </a>
             <hr class="big">
             <ul class="list-inline preview-links" style="padding-top: 20px">
-                <li><a href="${plugin.downloadUrl}" class="btn btn-primary">${download}</a></li>
+                <li><a href="${plugin.downloadUrl}" class="storeInstallLink btn btn-primary">${download}</a></li>
             </ul>
         </div>
         <div class="col-lg-5 col-md-6 preview-page-content">

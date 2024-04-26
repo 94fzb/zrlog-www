@@ -8,7 +8,7 @@ import com.hibegin.http.server.util.PathUtil;
 import com.hibegin.http.server.web.Controller;
 import com.zrlog.dao.DonationDAO;
 import com.zrlog.entry.ReleaseInfo;
-import com.zrlog.interceptor.ChangeLogInterceptor;
+import com.zrlog.interceptor.RestPathInterceptor;
 import com.zrlog.util.ParseTools;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
@@ -23,6 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IndexController extends Controller {
+
+    public IndexController() {
+    }
 
     public IndexController(HttpRequest request, HttpResponse response) {
         super(request, response);
@@ -92,7 +95,7 @@ public class IndexController extends Controller {
         request.getAttr().put("last", downloadInfoList.get(0));
         downloadInfoList.remove(0);
         request.getAttr().put("downloads", downloadInfoList);
-        request.getAttr().put("features", ChangeLogInterceptor.renderMd(IOUtil.getStringInputStream(new FileInputStream(PathUtil.getStaticPath() + "features.md"))));
+        request.getAttr().put("features", RestPathInterceptor.renderMd(IOUtil.getStringInputStream(new FileInputStream(PathUtil.getStaticPath() + "features.md"))));
 
     }
 }

@@ -8,12 +8,20 @@ import com.zrlog.entry.Template;
 
 public class TemplateController extends StoreBaseController {
 
+    public TemplateController() {
+    }
+
     public TemplateController(HttpRequest request, HttpResponse response) {
         super(request, response);
     }
 
     public void detail() {
         int id = getRequest().getParaToInt("id");
+        detailById(id);
+    }
+
+    @Override
+    public void detailById(int id) {
         if (id > 0) {
             Template template = new TemplateDAO().findById((long) id);
             if (template != null) {

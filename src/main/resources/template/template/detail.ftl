@@ -18,7 +18,7 @@
             </a>
             <hr class="big">
             <ul class="list-inline preview-links" style="padding-top: 20px">
-                <li><a href="${template.downloadUrl}" target="_top" class="btn btn-primary">${download}</a></li>
+                <li><a href="${template.downloadUrl}" target="_top" class="storeInstallLink btn btn-primary">${download}</a></li>
             </ul>
         </div>
         <div class="col-lg-5 col-md-6 preview-page-content">

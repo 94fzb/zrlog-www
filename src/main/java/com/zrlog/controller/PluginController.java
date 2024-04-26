@@ -8,6 +8,9 @@ import com.zrlog.entry.Plugin;
 
 public class PluginController extends StoreBaseController {
 
+    public PluginController() {
+    }
+
     public PluginController(HttpRequest request, HttpResponse response) {
         super(request, response);
     }
@@ -19,6 +22,19 @@ public class PluginController extends StoreBaseController {
 
     public void detail() {
         int id = getRequest().getParaToInt("id");
+        detailById(id);
+    }
+
+    public void download() {
+        int id = getRequest().getParaToInt("id");
+        if (id > 0) {
+            Plugin plugin = new PluginDAO().findById((long) id);
+            getResponse().redirect(plugin.getDownloadUrl() + "?_" + System.currentTimeMillis());
+        }
+    }
+
+    @Override
+    public void detailById(int id) {
         if (id > 0) {
             Plugin plugin = new PluginDAO().findById((long) id);
             if (plugin != null) {
@@ -34,14 +50,6 @@ public class PluginController extends StoreBaseController {
             }
         } else {
             getResponse().renderCode(404);
-        }
-    }
-
-    public void download() {
-        int id = getRequest().getParaToInt("id");
-        if (id > 0) {
-            Plugin plugin = new PluginDAO().findById((long) id);
-            getResponse().redirect(plugin.getDownloadUrl() + "?_" + System.currentTimeMillis());
         }
     }
 }

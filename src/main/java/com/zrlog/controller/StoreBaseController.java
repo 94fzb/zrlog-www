@@ -6,11 +6,16 @@ import com.hibegin.http.server.api.HttpResponse;
 import com.hibegin.http.server.web.Controller;
 import com.zrlog.util.ParseTools;
 
-public class StoreBaseController extends Controller {
+public abstract class StoreBaseController extends Controller {
+
+    public StoreBaseController() {
+    }
 
     public static String getFromByRequest(HttpRequest request) {
         return request.getParaToStr("from");
     }
+
+    public abstract void detailById(int id);
 
     public StoreBaseController(HttpRequest request, HttpResponse response) {
         super(request, response);

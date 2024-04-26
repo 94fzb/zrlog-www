@@ -1,8 +1,8 @@
 ### 特性
 
 1. 提供日志，分类，标签，评论的管理
-2. 支持插件模式 [如何编写一个插件](https://blog.zrlog.com/zrlog-plugin-dev)
-3. 高度可定制的主题功能 [如何制作一套主题](https://blog.zrlog.com/make-theme-for-zrlog)
+2. 支持插件模式 [如何编写一个插件](https://blog.zrlog.com/zrlog-plugin-dev.html)
+3. 高度可定制的主题功能 [如何制作一套主题](https://blog.zrlog.com/make-theme-for-zrlog.html)
 4. 支持第三方评论插件
 5. 提供 `editormd` 主流的富文本编辑器，基本上满足了管理员的编辑需求
 6. 页面静态化，缓存公共数据，访问速度更快

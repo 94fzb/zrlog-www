@@ -7,22 +7,23 @@ import com.hibegin.http.server.config.ServerConfig;
 import com.hibegin.http.server.util.FreeMarkerUtil;
 import com.hibegin.http.server.web.MethodInterceptor;
 import com.zrlog.controller.*;
-import com.zrlog.interceptor.ChangeLogInterceptor;
+import com.zrlog.interceptor.RestPathInterceptor;
 
 import java.util.Objects;
 
 public class ZrlogServerConfig extends AbstractServerConfig {
 
-    private int port;
+    private final int port;
+    private RequestConfig requestConfig;
 
-    public ZrlogServerConfig(int port){
+    public ZrlogServerConfig(int port) {
         this.port = port;
     }
 
     @Override
     public ServerConfig getServerConfig() {
         ServerConfig serverConfig = new ServerConfig();
-        serverConfig.addInterceptor(ChangeLogInterceptor.class);
+        serverConfig.addInterceptor(RestPathInterceptor.class);
         serverConfig.addInterceptor(MethodInterceptor.class);
         serverConfig.getRouter().addMapper("", IndexController.class);
         serverConfig.getRouter().addMapper("/template", TemplateController.class);
@@ -41,11 +42,15 @@ public class ZrlogServerConfig extends AbstractServerConfig {
 
     @Override
     public RequestConfig getRequestConfig() {
-        return null;
+        if (Objects.nonNull(requestConfig)) {
+            return requestConfig;
+        }
+        this.requestConfig = new RequestConfig();
+        return this.requestConfig;
     }
 
     @Override
     public ResponseConfig getResponseConfig() {
-        return null;
+        return new ResponseConfig();
     }
 }

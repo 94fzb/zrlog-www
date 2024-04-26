@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h5 class="card-title">${plugin.name }</h5>
                         <hr/>
-                        <a href="${url}/plugin/detail?id=${plugin.id}&from=${request.attr.from!''}" class="btn btn-primary">详情 &amp;
+                        <a href="${url}/plugin/${plugin.id}.html" class="storeDetailLink btn btn-primary">详情 &amp;
                             ${download}</a>
                     </div>
                 </div>

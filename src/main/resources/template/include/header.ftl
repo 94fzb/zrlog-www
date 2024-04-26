@@ -13,12 +13,13 @@
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
     <script src="${url}/assets/js/bootstrap.min.js"></script>
     <script src="${url}/assets/js/auto-theme.js"></script>
+    <script src="${url}/assets/js/store.js"></script>
 <body>
 <#if !request.attr.from??>
-<a href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
+<a id="github" href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
     <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999" src="/assets/img/fork-me-on-github.png"
          alt="Fork me on GitHub"></a>
-<nav class="navbar navbar-expand-lg sticky-top">
+<nav class="navbar navbar-expand-lg sticky-top" id="header">
     <div class="container">
         <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -34,10 +35,10 @@
                                          href="https://blog.zrlog.com/">博客</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/template/'>active</#if> "><a class="nav-link"
-                                                                                       href="https://store.zrlog.com/template/">主题</a>
+                                                                                       href="https://www.zrlog.com/template/">主题</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/plugin/'>active</#if> "><a class="nav-link"
-                                                                                     href="https://store.zrlog.com/plugin/">插件</a>
+                                                                                     href="https://www.zrlog.com/plugin/">插件</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/download'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download.html">下载</a>
                 </li>
