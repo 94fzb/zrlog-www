@@ -27,7 +27,7 @@ $(function () {
     $("#github").attr("display","none!important");
     $.each($(".storeDetailLink"), function (i, e) {
         const href = $(e).attr("href");
-        $(e).attr("href", href + "?from=" + qMap['from'] + "&=upgrade-v3" + qMap['upgrade-v3'])
+        $(e).attr("href", href + "?from=" + qMap['from'] + "&upgrade-v3=" + qMap['upgrade-v3'])
     })
     $.each($(".storeInstallLink"), function (i, e) {
         const href = $(e).attr("href");
