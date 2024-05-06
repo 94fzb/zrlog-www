@@ -36,8 +36,8 @@
         </script>
         <div class="col-md-12" style="padding-top: 40px">
             <div class="table-responsive">
-                <h5 style="color:red">初次部署 ZrLog，或者对 JavaWeb 不太熟悉的，可以参考这篇文章进行安装 <a
-                        href="https://blog.zrlog.com/how-to-install-zrlog">https://blog.zrlog.com/how-to-install-zrlog</a>
+                <h5 style="color:red">初次部署 ZrLog，或者对 Java 不太熟悉的，可以参考这篇文章进行安装 <a
+                        href="https://blog.zrlog.com/run-zrlog-in-docker.html">https://blog.zrlog.com/run-zrlog-in-docker.html</a>
                 </h5>
                 <div class="card">
                     <h5 class="card-header">
@@ -54,10 +54,8 @@
                                     <th>大小</th>
                                     <th>变更记录</th>
                                     <th>发布时间</th>
-                                    <!--<th>下载</th>-->
                                 </tr>
                                 </thead>
-
                                 <tbody>
                     <#list downloads as downloadUrl>
                     <tr>
@@ -65,9 +63,6 @@
                         <td>${downloadUrl.fileSize}</td>
                         <td>${downloadUrl.desc}</td>
                         <td data-toggle="${downloadUrl.desc!''}">${downloadUrl.releaseDate}</td>
-                        <!--<td><a href="${downloadUrl.downloadUrl}">
-                            <button class="btn btn-xs btn btn-info"><i class="fa fa-downloadUrl"></i>下载</button>
-                        </a></td>-->
                     </tr>
                     </#list>
                                 </tbody>

@@ -11,8 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-7 col-md-6 preview-page-window">
-            <a target="_blank" title="View Live Preview"
-               class="thumbnail">
+            <a target="_blank" title="${template.name}" class="thumbnail">
                 <img src="${template.image}?v=2"
                      class="img-responsive" alt="${template.name}">
             </a>
