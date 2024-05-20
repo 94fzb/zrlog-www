@@ -24,7 +24,7 @@ $(function () {
     $("#header").hide();
     $("#copyInfo").hide();
     $("#footerLink").hide();
-    $("#github").attr("display","none!important");
+    $("#github").css("display", "none!important");
     $.each($(".storeDetailLink"), function (i, e) {
         const href = $(e).attr("href");
         $(e).attr("href", href + "?from=" + qMap['from'] + "&upgrade-v3=" + qMap['upgrade-v3'])

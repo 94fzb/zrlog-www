@@ -13,7 +13,7 @@
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
     <script src="${url}/assets/js/bootstrap.min.js"></script>
     <script src="${url}/assets/js/auto-theme.js"></script>
-    <script src="${url}/assets/js/store.js"></script>
+    <script src="${url}/assets/js/store.js?v=1"></script>
 <body>
 <#if !request.attr.from??>
 <a id="github" href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
@@ -34,10 +34,10 @@
                 <li class="nav-item "><a class="nav-link"
                                          href="https://blog.zrlog.com/">博客</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/template/'>active</#if> "><a class="nav-link"
+                <li class="nav-item <#if request.uri == '/template/index.html'>active</#if> "><a class="nav-link"
                                                                                        href="https://www.zrlog.com/template/">主题</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/plugin/'>active</#if> "><a class="nav-link"
+                <li class="nav-item <#if request.uri == '/plugin/index.html'>active</#if> "><a class="nav-link"
                                                                                      href="https://www.zrlog.com/plugin/">插件</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/download'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download.html">下载</a>
