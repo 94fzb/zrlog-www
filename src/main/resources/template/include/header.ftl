@@ -34,10 +34,10 @@
                 <li class="nav-item "><a class="nav-link"
                                          href="https://blog.zrlog.com/">博客</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/template/index.html'>active</#if> "><a class="nav-link"
+                <li class="nav-item <#if request.uri == '/template/'>active</#if> "><a class="nav-link"
                                                                                        href="https://www.zrlog.com/template/">主题</a>
                 </li>
-                <li class="nav-item <#if request.uri == '/plugin/index.html'>active</#if> "><a class="nav-link"
+                <li class="nav-item <#if request.uri == '/plugin/'>active</#if> "><a class="nav-link"
                                                                                      href="https://www.zrlog.com/plugin/">插件</a>
                 </li>
                 <li class="nav-item <#if request.uri == '/download'>active</#if>"><a class="nav-link" href="https://www.zrlog.com/download.html">下载</a>
