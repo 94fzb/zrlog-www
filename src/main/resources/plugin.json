@@ -78,16 +78,29 @@
     "desc": "轻松的将其他博客的数据迁移到 ZrLog"
   },
   {
-  "id": 8,
-  "name": "阿里云存储",
-  "downloadUrl": "https://dl.zrlog.com/plugin/oss.jar",
-  "image": "https://www.zrlog.com/attached/plugin/preview/oss.png",
-  "version": "",
-  "downloadCnt": 0,
-  "fileName": "oss.jar",
-  "author": "xiaochun",
-  "createdDate": "2023-12-16 13:00:00",
-  "lastUpdateDate": "2023-12-16 13:00:00",
-  "desc": "阿里云存储为企业提供图片云存储、音频云存储、视频云存储等"
-}
+    "id": 8,
+    "name": "阿里云存储",
+    "downloadUrl": "https://dl.zrlog.com/plugin/oss.jar",
+    "image": "https://www.zrlog.com/attached/plugin/preview/oss.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "oss.jar",
+    "author": "xiaochun",
+    "createdDate": "2023-12-16 13:00:00",
+    "lastUpdateDate": "2023-12-16 13:00:00",
+    "desc": "阿里云存储为企业提供图片云存储、音频云存储、视频云存储等"
+  },
+  {
+    "id": 9,
+    "name": "rss订阅源",
+    "downloadUrl": "https://dl.zrlog.com/plugin/rss.jar",
+    "image": "https://www.zrlog.com/attached/plugin/preview/rss.png",
+    "version": "",
+    "downloadCnt": 0,
+    "fileName": "rss.jar",
+    "author": "xiaochun",
+    "createdDate": "2024-06-09 21:00:00",
+    "lastUpdateDate": "2024-06-09 21:00:00",
+    "desc": "阿里云存储为企业提供图片云存储、音频云存储、视频云存储等"
+  }
 ]
