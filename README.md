@@ -4,8 +4,6 @@
 
 ## 发布依赖
 
-- except
 - markdown （将 markdown 转为 html）
 - ossutil
 - GitHub action runner
-- 
