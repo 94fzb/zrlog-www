@@ -14,7 +14,7 @@
         <#list plugins as plugin>
             <div class="col-lg-4 col-sm-6" style="padding-top: 10px">
                 <div class="card text-center">
-                    <img class="card-img-top" style="height:200px;width:100%;overflow:hidden;"
+                    <img class="card-img-top" style="height:200px;width:100%;overflow:hidden;object-fit: cover"
                          src="${plugin.image}?imageView2/2/w/650"
                          alt="${plugin.name }">
                     <div class="card-body">

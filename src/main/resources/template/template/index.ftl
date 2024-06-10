@@ -13,7 +13,7 @@
     <div class="row previews">
         <#list templates as template>
             <div class="col-lg-4 col-sm-6" style="padding-top: 10px">
-                <div class="card text-center" style="min-height: 400px">
+                <div class="card text-center" style="min-height: 400px;object-fit: cover">
                     <img class="card-img-top" style="width:100%" src="${template.image}?imageView2/2/w/650&v=2"
                          alt="${template.name }">
                     <div class="card-body">
