@@ -13,7 +13,7 @@
         <div class="col-lg-7 col-md-6 preview-page-window">
             <a target="_blank" title="${template.name}" class="thumbnail">
                 <img src="${template.image}?v=2"
-                     class="img-responsive" alt="${template.name}">
+                     class="img-responsive" alt="${template.name}" style="border-radius: 4px">
             </a>
             <hr class="big">
             <ul class="list-inline preview-links" style="padding-top: 20px">

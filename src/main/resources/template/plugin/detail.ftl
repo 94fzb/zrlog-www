@@ -15,7 +15,7 @@
             <a target="_blank" title="${plugin.name}"
                class="thumbnail">
                 <img src="${plugin.image}"
-                     class="img-responsive" alt="${plugin.name}">
+                     class="img-responsive" alt="${plugin.name}" style="border-radius: 4px">
             </a>
             <hr class="big">
             <ul class="list-inline preview-links" style="padding-top: 20px">
