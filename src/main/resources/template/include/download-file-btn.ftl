@@ -23,5 +23,5 @@
     <li>
         <hr class="dropdown-divider">
     </li>
-    <li><a class="dropdown-item" href="${last.downloadUrl}">平台通用 (需 Java >= 21)</a></li>
+    <li><a class="dropdown-item" href="${last.downloadUrl}">平台通用 (需 Java 版本 >= 21)</a></li>
 </ul>

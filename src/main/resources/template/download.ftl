@@ -1,44 +1,66 @@
 <#assign subTitle="安装包下载">
 <#include "include/header.ftl"/>
-    <style>
-        .btn-cta {
-            padding: 15px 20px;
-            font-size: 18px;
+<style>
+    .btn-cta {
+        padding: 0;
+        height: 57px;
+        font-size: 18px;
+    }
+
+    p {
+        margin-bottom: 8px;
+    }
+
+    #version-header {
+        align-items: center;
+        gap: 8px;
+    }
+
+    @media (max-width: 600px) {
+        #version-header {
+            flex-flow: column;
+            padding-bottom: 20px;
+            align-items: flex-start;
         }
-    </style>
+    }
+</style>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
             <img class="img-responsive" style="border-radius: 4px;" src="${url}/assets/img/zrlog.jpg"/>
         </div>
         <div class="col-md-8" style="padding-top: 8px">
-            <h3>ZrLog V${last.version} </h3>
+            <div id="version-header" style="display: flex;justify-content: space-between">
+                <div>
+                    <h3 style="margin-bottom: 0;line-height: 40px">ZrLog V${last.version} </h3>
 
-            <p class="">
-                发布时间 ： ${last.releaseDate}
-            </p>
-
-            <p class="">
+                    <span style="line-height: 40px">
+                        发布时间：${last.releaseDate}
+                    </span>
+                </div>
+                <#include "include/download-file-btn.ftl">
+            </div>
+            <p>
                 变更记录：
             </p>
             <ul>
-            <#list last.changeLogs as changeLog>
-                <li>${changeLog}</li>
-            </#list>
+                <#list last.changeLogs as changeLog>
+                    <li>${changeLog}</li>
+                </#list>
                 <li>...</li>
             </ul>
-            <#include "include/download-file-btn.ftl">
 
         </div>
-        <div class="col-md-12" style="padding-top: 40px">
+        <div class="col-md-12" style="padding-top: 10px">
             <div class="table-responsive">
                 <h5 style="color:red">初次部署 ZrLog，或者对 Java 不太熟悉的，可以参考这篇文章进行安装 <a
-                        href="https://blog.zrlog.com/run-zrlog-in-docker.html">https://blog.zrlog.com/run-zrlog-in-docker.html</a>
+                            href="https://blog.zrlog.com/run-zrlog-in-docker.html">https://blog.zrlog.com/run-zrlog-in-docker.html</a>
                 </h5>
                 <div class="card">
                     <h5 class="card-header">
                         历史版本
-                        <small style="padding-left: 10px"><a href="${url}/changelog/index.html?ref=downloadUrl">完整的变更日志</a>
+                        <small style="padding-left: 10px"><a
+                                    href="${url}/changelog/index.html?ref=downloadUrl">完整的变更日志</a>
                         </small>
                     </h5>
                     <div class="card-body">
@@ -53,14 +75,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                    <#list downloads as downloadUrl>
-                    <tr>
-                        <td>V${downloadUrl.version}</td>
-                        <td>${downloadUrl.fileSize}</td>
-                        <td>${downloadUrl.desc}</td>
-                        <td data-toggle="${downloadUrl.desc!''}">${downloadUrl.releaseDate}</td>
-                    </tr>
-                    </#list>
+                                <#list downloads as downloadUrl>
+                                    <tr>
+                                        <td>V${downloadUrl.version}</td>
+                                        <td>${downloadUrl.fileSize}</td>
+                                        <td>${downloadUrl.desc}</td>
+                                        <td data-toggle="${downloadUrl.desc!''}">${downloadUrl.releaseDate}</td>
+                                    </tr>
+                                </#list>
                                 </tbody>
                             </table>
                         </div>
