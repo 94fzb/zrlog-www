@@ -23,6 +23,8 @@ public class ZrlogServerConfig extends AbstractServerConfig {
     @Override
     public ServerConfig getServerConfig() {
         ServerConfig serverConfig = new ServerConfig();
+        serverConfig.setApplicationName("zrlog-www");
+        serverConfig.setDisablePrintWebServerInfo(true);
         serverConfig.addInterceptor(RestPathInterceptor.class);
         serverConfig.addInterceptor(MethodInterceptor.class);
         serverConfig.getRouter().addMapper("", IndexController.class);

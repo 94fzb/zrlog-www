@@ -26,10 +26,10 @@
 </style>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" style="padding-bottom: 16px">
             <img class="img-responsive" style="border-radius: 4px;" src="${url}/assets/img/zrlog.jpg"/>
         </div>
-        <div class="col-md-8" style="padding-top: 8px">
+        <div class="col-md-8">
             <div id="version-header" style="display: flex;justify-content: space-between">
                 <div>
                     <h3 style="margin-bottom: 0;line-height: 40px">ZrLog V${last.version} </h3>
