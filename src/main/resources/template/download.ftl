@@ -1,5 +1,11 @@
 <#assign subTitle="安装包下载">
 <#include "include/header.ftl"/>
+    <style>
+        .btn-cta {
+            padding: 15px 20px;
+            font-size: 18px;
+        }
+    </style>
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -21,19 +27,9 @@
             </#list>
                 <li>...</li>
             </ul>
-
-
-            <a href="${last.downloadUrl}">
-                <button class="btn btn-primary btn-lg"><i class="fa fa-downloadUrl"></i>下载（${last.fileSize}）
-                </button>
-            </a>
+            <#include "include/download-file-btn.ftl">
 
         </div>
-        <script>
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
         <div class="col-md-12" style="padding-top: 40px">
             <div class="table-responsive">
                 <h5 style="color:red">初次部署 ZrLog，或者对 Java 不太熟悉的，可以参考这篇文章进行安装 <a

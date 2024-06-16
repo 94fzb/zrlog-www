@@ -8,6 +8,6 @@
     "默认加入了 gzip，页面加载会更快，更节省服务器带宽",
     "新增了阿里云的 oss 上传插件"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-3.0.1-1d849a9-release.zip",
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-3.0.2-13e1d72-release.zip",
   "changeLogIsMd": true
 }

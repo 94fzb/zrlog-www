@@ -11,9 +11,18 @@
     <link href="${url }/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link href="${url }/assets/css/bootstrap-theme-v2.css" rel="stylesheet" type="text/css"/>
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
-    <script src="${url}/assets/js/bootstrap.min.js"></script>
+    <script src="${url}/assets/js/bootstrap.bundle.min.js"></script>
     <script src="${url}/assets/js/auto-theme.js"></script>
     <script src="${url}/assets/js/store.js?v=1"></script>
+    <script>
+        /*document.addEventListener('DOMContentLoaded', function () {
+            const collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
+            const collapseList = collapseElementList.map(function (collapseEl) {
+                return new bootstrap.Collapse(collapseEl)
+            });
+        })*/
+    </script>
+
 <body>
 <#if !request.attr.from??>
 <a id="github" href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
@@ -22,12 +31,11 @@
 <nav class="navbar navbar-expand-lg sticky-top" id="header">
     <div class="container">
         <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item <#if request.uri == '/'>active</#if>"><a class="nav-link"
                                                                              href="https://www.zrlog.com/">主页</a>
                 </li>

@@ -81,7 +81,12 @@ public class IndexController extends Controller {
                 }
                 releaseInfo.setChangeLogs(changeLogs);
             }
-            releaseInfo.setDownloadUrl(releaseInfo.getDownloadUrl() + "?ref=" + ref);
+            String baseUrl = releaseInfo.getDownloadUrl();
+            releaseInfo.setDownloadUrl(baseUrl + "?ref=" + ref);
+            releaseInfo.setLinuxDownloadUrl(baseUrl.replaceAll(".zip","-Linux-x86_64.zip") + "?ref=" + ref);
+            releaseInfo.setWindowsDownloadUrl(baseUrl.replaceAll(".zip","-Windows-x86_64.zip") + "?ref=" + ref);
+            releaseInfo.setMacDownloadUrl(baseUrl.replaceAll(".zip","-Darwin-x86_64.zip") + "?ref=" + ref);
+            releaseInfo.setMacArmDownloadUrl(baseUrl.replaceAll(".zip","-Darwin-arm64.zip") + "?ref=" + ref);
         }
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         downloadInfoList.sort((ReleaseInfo m1, ReleaseInfo m2) -> {
