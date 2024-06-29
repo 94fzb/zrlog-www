@@ -14,21 +14,12 @@
     <script src="${url}/assets/js/bootstrap.bundle.min.js"></script>
     <script src="${url}/assets/js/auto-theme.js"></script>
     <script src="${url}/assets/js/store.js?v=1"></script>
-    <script>
-        /*document.addEventListener('DOMContentLoaded', function () {
-            const collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
-            const collapseList = collapseElementList.map(function (collapseEl) {
-                return new bootstrap.Collapse(collapseEl)
-            });
-        })*/
-    </script>
-
 <body>
 <#if !request.attr.from??>
 <a id="github" href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
     <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999" src="/assets/img/fork-me-on-github.png"
          alt="Fork me on GitHub"></a>
-<nav class="navbar navbar-expand-lg sticky-top" id="header">
+<nav class="navbar navbar-expand-lg sticky-top navbar-custom" id="header">
     <div class="container">
         <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
