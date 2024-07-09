@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>变更记录 - ZrLog 博客程序</title>
+    <meta name="description" content="ZrLog 使用 Java 构建的个人博客程序 - 可能是最好用的开源Java博客系统"/>
+    <meta name="keywords" content="ZrLog,博客,java开源博客,博客程序,记录日志,博客系统,建站系统,blog,java建站系统,简洁博客"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.zrlog.com/favicon.ico"/>
+    <link href="https://www.zrlog.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://www.zrlog.com/assets/css/bootstrap-theme-v2.css" rel="stylesheet" type="text/css"/>
+    <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="https://www.zrlog.com/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
+    <script src="https://www.zrlog.com/assets/js/store.js?v=1"></script>
+<body>
+<a id="github" href="https://github.com/94fzb/zrlog" class="d-none d-lg-block">
+    <img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999" src="/assets/img/fork-me-on-github.png"
+         alt="Fork me on GitHub"></a>
+<nav class="navbar navbar-expand-lg sticky-top navbar-custom" id="header">
+    <div class="container">
+        <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item "><a class="nav-link"
+                                                                             href="https://www.zrlog.com/">主页</a>
+                </li>
+                <li class="nav-item "><a class="nav-link"
+                                         href="https://blog.zrlog.com/">博客</a>
+                </li>
+                <li class="nav-item  "><a class="nav-link"
+                                                                                       href="https://www.zrlog.com/template/">主题</a>
+                </li>
+                <li class="nav-item  "><a class="nav-link"
+                                                                                     href="https://www.zrlog.com/plugin/">插件</a>
+                </li>
+                <li class="nav-item "><a class="nav-link" href="https://www.zrlog.com/download.html">下载</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="https://blog.zrlog.com/sort/doc.html">文档</a>
+                </li>
+                <li class="nav-item  "><a class="nav-link"
+                                                                                   href="https://blog.zrlog.com/about.html">关于</a>
+                </li>
+                <li class="nav-item "><a class="nav-link" href="https://www.zrlog.com/code.html">源码</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br/><div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h5 class="card-header">
+                    变更记录
+                </h5>
+                <div class="card-body">
+                <h3>3.0.0 (2024-02-02)</h3>
+<blockquote>
+<p>小米加步枪（SimpleWebServer）就能搞定的活，用不上航空母舰（Spring Boot）</p>
+</blockquote>
+<h3>新特性</h3>
+<ul>
+<li>全新的后端技术方案（SimpleWebServer + Apache DbUtils），带来了更小的包体积</li>
+<li>将 Java 运行版本的最低版本调整为 Java 21，以支持 Java 的 Loom 特性，带来了更小的内存使用</li>
+<li>升级管理后台，安装引导页面，插件管理 antd 的版本，页面更接近现在审美（相比之前的小圆角）</li>
+<li>默认加入了 gzip，页面加载会更快，更节省服务器带宽</li>
+<li>新增了阿里云的 oss 上传插件</li>
+<li>可定制管理后台的主颜色，看腻了默认（拂晓蓝）的，可以调整一个自己更喜欢的颜色</li>
+<li>默认主题的 <code>bootstrap</code> 升级到了支持暗黑模式的版本</li>
+</ul>
+<h3>优化</h3>
+<ul>
+<li>优化了对于静态化缓存的存储逻辑</li>
+<li>针对管理后台的 cra 到包生成静态资源文件进行了浏览器为期一年的缓存，使得页面打开更快</li>
+<li>调整写文章界面的保存草稿逻辑，保存变更更加的及时和稳定</li>
+<li>优化写文章界面的样式，更加简介美观</li>
+<li>使用 css-in-js 替换 less，在相对弱网环境下，页面展示更加稳定，加载更快</li>
+<li>React Class Component，调整为了更加简洁明了的 Function Component，同时改为了约束更加严苛的 typescript</li>
+<li>优化管理后台文章的检索逻辑，支持文章别名检索</li>
+<li>基于 css-in-js 的方案，暗黑模式更简洁，更彻底</li>
+<li>编辑器的 fontawesome，调整了 svg，同时按需导入，不再是为了中午吃顿米饭，就要买一粮仓的大米</li>
+<li>移除 craco 打包，改为 cra 打包</li>
+<li>升级 MySQL/HikariCP/Gson 等库</li>
+<li>移除 Log4j/Apache HttpClient/htmlcleaner/jdom/cos 等库</li>
+<li>调整了备份数据库插件的生成的文件名</li>
+<li>修复已知问题</li>
+</ul>
+<h3>其他</h3>
+<ul>
+<li>移除了对子目录的支持</li>
+<li>移除 /post/ 的重复二级路由</li>
+<li>使用 Github actions 进行打包（以前是自建 jenkins 打包），打包变的稳定</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/c1d3c9a">c1d3c9a</a></p>
+<hr />
+<h3>2.2.1 (2021-09-03)</h3>
+<h4>优化</h4>
+<ul>
+<li>优化 <code>editormd</code> 护眼模式工具条样式</li>
+<li>优化文章对保存逻辑的校验</li>
+<li>升级 antd 到 `4.16.13</li>
+<li>优化一处字体加载</li>
+<li>优化管理文章页面在小尺寸设备上的展示</li>
+<li>升级常用的 jar 依赖包</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>修复 2.2.0 不支持子目录访问问题</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/efbe9f9">efbe9f9</a></p>
+<hr />
+<h3>2.2.0 (2021-07-05)</h3>
+<h4>新特</h4>
+<ul>
+<li>全新的安装向导和管理页面实现（<code>bootstrap</code> -&gt; <code>antd</code>）UI 更加简洁统一</li>
+<li>管理界面加入暗黑模式</li>
+<li>数据库备份插件支持备份到云存储，支持 arm 处理器的备份（树莓派）</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>优化 <code>editormd</code> 的加载逻辑和样式</li>
+<li>更加简洁的文章撰写界面</li>
+<li>简化插件管理页面</li>
+<li>统一管理后台字体类型（font-family）</li>
+<li>优化存在时的新版本更新的通知样式</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>修复部分情况下的页面静态化的问题</li>
+<li>文章阅读数统计错误</li>
+<li><code>editormd</code> 异步加载的导致的样式错乱问题</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/5e8a51f">5e8a51f</a></p>
+<hr />
+<h3>2.1.1 (2019-04-27)</h3>
+<h4>修复</h4>
+<ul>
+<li>管理后台文件读取和写入的安全漏洞 <a href="https://github.com/94fzb/zrlog/issues/49">#49</a></li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/bc6d43f">bc6d43f</a></p>
+<hr />
+<h3>2.1.0 (2019-01-01)</h3>
+<p><strong>2018年过去，这个版本不只是改了程序底部的 Copyright Year</strong></p>
+<h4>新特</h4>
+<ul>
+<li>markdown 编辑器支持从剪贴板上传图片</li>
+<li>文章中支持添加 <code>emoji</code> 了</li>
+<li>支持使用Docker启动，让程序更加方便的启动</li>
+<li>支持快速从 hexo 博客迁移的 ZrLog <a href="https://gitee.com/94fzb/zrlog/issues/IL0U7">issue</a></li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>使用 <code>//</code> 的方式加载静态资源文件，所以配置 https 更加便捷  <a href="https://gitee.com/94fzb/zrlog/issues/IMDM1">issue</a></li>
+<li>数据库连接池切换为 <code>HikariCP</code></li>
+<li>升级了插件服务内置的 <a href="https://gitee.com/94fzb/simplewebserver">SimpleWebServer</a> 到 <code>0.2.34</code>，使得插件服务对内存占用更小</li>
+<li>优化了内置的3款主题</li>
+<li>进一步的压缩响应的 html 文件</li>
+<li>调整缓存逻辑</li>
+<li>其他细节内容调整</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>管理后台一处 Sql Inject <a href="https://github.com/94fzb/zrlog/issues/37">issue</a></li>
+</ul>
+<p>emoji</p>
+<pre><code>--若原本数据库不是 utf8mb4 需要额外执行下
+ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+</code></pre>
+<p>再次特别感谢 <a href="https://github.com/e-lionel">e-lionel</a> &amp; <code>Girl friend</code>，为 ZrLog 无偿设计的精美的 logo</p>
+<p><img src="https://xiaochun-blog.zrlog.com/attached/image/20190102/20190102000103_48.png" alt="" /></p>
+<p>Logo 寓意：外层的圆表示表示一生的时光，象征着人生从 0 -&gt; 0 （Zero） 的过程，中间的画笔像是在记录（Record）这一生的事情，
+而颜色由浅入深来警示自我，珍惜时光，记住（Remember）那些自己不愿意被遗忘的人或事</p>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/3617b2e">3617b2e</a></p>
+<hr />
+<h3>2.0.8 (2018-12-04)</h3>
+<p><strong>更多细节内容优化</strong></p>
+<h3>修复</h3>
+<ul>
+<li>修复无法正常关闭文章封面</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/8ab9029">8ab9029</a></p>
+<hr />
+<h3>2.0.0 (2018-06-27)</h3>
+<h4>新特</h4>
+<ul>
+<li>支持 mysql8</li>
+<li>升级系统要求的 java 版本到 <code>java8</code>， 若低于 java8，需要先升级后，才能正常使用</li>
+<li>管理后台 <code>bootstrap</code> 版本升级至 <code>bootstrap4</code></li>
+<li>添加新的富文本编辑器 <code>summernote</code>，与 markdown 编辑器并存</li>
+<li>模块切换为 <code>freemarker</code></li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>优化文章浏览量的统计</li>
+<li>优化图片上传的后缀检查逻辑</li>
+<li>优化管理页面中各种数据在移动设备上面的体验</li>
+<li>调整安装完成后默认生成文章的文案</li>
+<li>调整部分圆角的问题</li>
+<li>默认主题部分细节优化</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>修改 <code>editormd</code> 流程图保存问题</li>
+<li>插件部分情况下无法正常访问</li>
+<li>其他已知 bug 修复</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/4602099">4602099</a></p>
+<hr />
+<h3>1.10.0 (2018-05-07)</h3>
+<h4>新特</h4>
+<ul>
+<li>添加对文章目录结构的提取</li>
+<li>备份数据库插件支持直接导出 sql 文件，方便迁移程序</li>
+<li>编辑器支持快速复制预览区域的 html 文本</li>
+<li>压缩整个系统响应的 html 页面</li>
+<li>更加简洁的写文章界面</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>优化缓存的管理机制</li>
+<li>升级编辑器的 markdown 解析库</li>
+<li>优化 eclipse 启动</li>
+<li>升级內嵌 tomcat 的版本以支持 java9，插件服务支持java9</li>
+<li>优化管理界面的加载速度，调整基础字号增加为 14px，适配移动端</li>
+<li>优化检查新版本的逻辑</li>
+<li>优化 https scheme 的获取逻辑</li>
+<li>其他多处细节优化</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>修复编辑器中的 <code>&amp;nbsp;</code> 保存后被强制转化为空格</li>
+<li>修复极端情况下的 markdown 渲染错误</li>
+<li>管理界面编辑主题保存后无法切换文件</li>
+<li>其他已知 bug 修复</li>
+</ul>
+<p><strong>感谢 <a href="https://github.com/e-lionel">e-lionel</a> 反馈了大量bug，以及功能性建议</strong></p>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/99df9f7">99df9f7</a></p>
+<hr />
+<h3>1.9.1 (2018-02-27)</h3>
+<h4>修复</h4>
+<ul>
+<li>fixed <a href="https://gitee.com/94fzb/zrlog/issues/IHYWF">#IHYWF:网站标题存在单引号时后台报错，类似xxx's yyy</a></li>
+<li>fixed <a href="https://gitee.com/94fzb/zrlog/issues/IHZSH">#IHZSH:分类缓存问题</a></li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/cd87f93">cd87f93</a></p>
+<hr />
+<h3>1.9.0 (2018-02-25)</h3>
+<h4>新特</h4>
+<ul>
+<li>加入一套新的主题（涉水轻舟-2018）</li>
+<li>支持视频上传，页面使用<code>videojs</code>播放视频文件</li>
+<li>更加简洁的管理后台登录页</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>安装向导过程填写数据库信息时，错误提示更加完善</li>
+<li>文章配图自动填充时，支持外站链接</li>
+<li>优化大量的代码，重构maven的结构，代码间的依赖更加清晰</li>
+<li>超过数10余项的页面细节优化</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>1.8 更新后需要重启<code>webserver</code>后才能保存文章</li>
+<li>其它已知bug修复</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/3fba1ef">3fba1ef</a></p>
+<hr />
+<h3>1.8.0 (2017-12-12)</h3>
+<h4>新特</h4>
+<ul>
+<li>文章编辑添加插入封面图片</li>
+<li>文章编辑器添加黑色皮肤，晚上写文章也不再那么费力</li>
+<li>文章编辑工具支持上传附件</li>
+<li>删除主题</li>
+<li>备份的数据库文件仅保留最近20条记录</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>优化文章编辑页面，看上去不再那么的空旷</li>
+<li>页面禁用Session</li>
+<li>优化添加评论</li>
+<li>优化畅言插件发邮件样式</li>
+<li>对登录中密码进行加密（请求阶段）</li>
+<li>优化文章的检索，搜索 div 这类关键字也不怕</li>
+<li>优化其它多处页面样式，调整多处布局</li>
+<li>优化更新程序的界面和体验</li>
+<li>JFinal 升级到3.3</li>
+<li>管理后台，校验部分表单必填字段</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>修复了1.7无法变更管理员密码的bug</li>
+<li>修复管理文章列表中部分字段无法排序</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/d1f36bc">d1f36bc</a></p>
+<hr />
+<h3>1.7.1 (2017-08-05)</h3>
+<h4>修复</h4>
+<ul>
+<li>修复变更管理员密码错误</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/baaecb9">baaecb9</a></p>
+<hr />
+<h3>1.7.0 (2017-05-31)</h3>
+<h4>新特</h4>
+<ul>
+<li>文章，分类别名支持中文</li>
+<li>更新管理界面添加手动检测按钮</li>
+<li>增强了主题开发（引入dev.jsp可以快速浏览存放在request域的数据，便于模板页面读取的渲染）</li>
+<li>https的支持，需要在nginx.conf文件的http块里面添加 <code>proxy_set_header X-Forwarded-Protocol $scheme;</code></li>
+<li>在网站设置里添加对会话过期时间的控制</li>
+<li>改进了插件功能，使用vue.js客户端渲染替换原有使用freemarker服务端渲染</li>
+<li>备份插件支持window系统</li>
+<li>增加新的畅言评论框（原多说已宣布关闭，实在令人惋惜）</li>
+<li>开源协议由GPLv2变更到Apache</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>升级JFinal到3.1，将Java版本提升至1.7</li>
+<li>优化对后台管理页面的静态资源缓存</li>
+<li>优化插件服务的内存占用</li>
+<li>下载插件核心服务时关闭缓存</li>
+<li>优化程序更新流程，更新的检查机制</li>
+<li>管理主面板添加系统编码信息</li>
+<li>默认主题添加标题设置，避免域名过长的情况下，样式被破坏的问题</li>
+<li>优化主题管理界面</li>
+<li>废弃session的方式控制权限，变更为Cookie验证</li>
+<li>优化/api/*的错误请求，改为响应json数据</li>
+<li>优化编辑文章的方式，由原来的弹窗标题改为跳转到撰写文章界面进行编辑</li>
+<li>安装界面添加安装需要的注意事项</li>
+<li>启动插件使用java的完整路径进行启动，避免部分云平台没有将java添加到PATH中，无法正常启动的问题</li>
+<li>删除一些没有使用资源文件，默认主题的使用通用的头像图片</li>
+<li>优化文章编辑页的文章分类的选择框的样式，优化一些其它的样式</li>
+<li>完善一些页面的i18n，后台管理界面添加主题预览状态的提示</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>导航条数据无法更新</li>
+<li>默认主题无法上传图片</li>
+<li>关闭更新功能后，无法正常启动的bug（感谢 <a href="https://www.weekdragon.cn/">@说好不上学</a> 发现的bug）</li>
+<li>修复上一篇，下一篇的请求地址错误</li>
+<li>修复主题无法上传的问题</li>
+<li>修复IE浏览器，管理员登陆成功后无法正常的跳转</li>
+<li>修复website表value的长度不够的问题</li>
+<li>修复mysql5.7以上版本，需要配置<code>sql_mode</code>（group by语法无法正常执行）的问题</li>
+<li>修复Window系统下，升级过程中无法正常解压生成新的war文件</li>
+<li>修复标签添加后，无法通过标签进行定位文章</li>
+<li>修复主题预览状态，预览文章页面主题的资源文件路径错误的问题</li>
+<li>修复IE下使用 localhost 进行访问，无法进行进行登陆（IE限制Cookie的domain字段，不能设置为localhost）</li>
+<li>修复插件的运行路径无法跟随程序路径变化而变化的问题（Windows的文件完整路径到Linux下面文件却成了文件名）</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/7375213">7375213</a></p>
+<hr />
+<h3>1.6.0 (2016-12-13)</h3>
+<h4>新特</h4>
+<ul>
+<li>自动更新功能</li>
+<li>博客搜索结果高亮检索的关键字</li>
+<li>七牛插件支持全站静态资源托管</li>
+<li>添加本地主题上传</li>
+<li>主题数据可以存放到数据库（及主题可以配置）</li>
+<li>全新的后台管理界面</li>
+<li>管理博客时支持按时间，浏览量等信息进行排序</li>
+<li>提供多语言</li>
+<li>添加mysql数据版本信息在管理后台主页</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>重构管理相关代码，实现了接口数据与模板数据渲染的控制器代码分离</li>
+<li>简化分页数据的遍历，优化模板数据，更加轻松的编写主题</li>
+<li>独立后台页面的javascript部分</li>
+<li>优化安装引导界面</li>
+<li>部分图标的优化</li>
+<li>优化默认主题的一些样式</li>
+<li>移除<code>Ehcache</code>，改用内存的方式存放全局数据（war体积减小到6M）</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>部分平台插件默认编码问题</li>
+<li>程序停止后，对应的插件服务无法停止的问题</li>
+<li>修复静态化开启后部分平台乱码问题</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/8f40c5d">8f40c5d</a></p>
+<hr />
+<h3>1.5 (2016-04-12)</h3>
+<h4>新特</h4>
+<ul>
+<li>构建全新的插件模式</li>
+<li>多说，七牛，备份数据库，邮件服务改为插件方式实现（需要进行下载才可以使用）</li>
+<li>记录管理界面的侧边栏状态，可设置默认管理界面的主题</li>
+<li>移除大量并未使用到的静态文件 （war包体积缩小到7M左右）</li>
+<li>可在zrlog主题中心下载主题，插件</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>使用Maven管理jar文件,JFinal 升级到 2.2</li>
+<li>优化主题管理页面</li>
+<li>管理员登录忽略大小写</li>
+<li>优化文章管理页面的弹出框，弃用Zdialog，使用eModal</li>
+<li>log4j 日志文件分天存储，方便查找</li>
+<li>开启静态化后，只是储存 /post/* 的文章页</li>
+<li>其他css问题</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>修复 v1.4.4 搜索乱码</li>
+<li>修复 editor.md 与 bootstrap 的样式问题 (升级 editor.md 到v1.5)</li>
+<li>修复 editor.md z-index 问题</li>
+<li>修复在编辑过程中尚未触发存草稿导致就尝试预览 <code>NullPointerException</code></li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/7d98d91">7d98d91</a></p>
+<hr />
+<h3>1.4.4 (2016-1-16)</h3>
+<ul>
+<li>JFinal 升级至 2.1</li>
+<li>添加后台检索文章功能</li>
+<li>优化编辑文章代码</li>
+<li>加入主题预览</li>
+<li>修复黑名单无法正确的拦截所有请求的问题</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/059c404">059c404</a></p>
+<hr />
+<h3>1.4.3 (2015-12-20)</h3>
+<ul>
+<li>优化对接多说相关代码（Map -&gt; Bean）</li>
+<li>更改 ehcache 默认配置（ehcache内存申请过多，内存较小的主机被杀JVM进程）</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/af375e7">af375e7</a></p>
+<hr />
+<h3>1.4.2 (2015-09-20)</h3>
+<ul>
+<li>加入新的评论邮件通知选项</li>
+<li>多说绑定页面，不用手动输入</li>
+<li>IP 黑名单</li>
+<li>文件 html,css,js 支持在线编辑</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/0aedadc">0aedadc</a></p>
+<hr />
+<h3>1.4.1(2015-07-05)</h3>
+<ul>
+<li>移出 <code>kindeditor</code> 相关文件</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/91975d4">91975d4</a></p>
+<hr />
+<h3>1.4.0 (2015-06-05)</h3>
+<ul>
+<li>优化后台部分逻辑</li>
+<li>加入邮件服务</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/91975d4">91975d4</a></p>
+<hr />
+<h3>1.3.0 (2015-03-29)</h3>
+<h4>新特</h4>
+<ul>
+<li>可以在线安装插件/主题</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>已知问题修复</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/ebe086d">ebe086d</a></p>
+<hr />
+<h3>1.2.0 (2015-02-13)</h3>
+<h4>新特</h4>
+<ul>
+<li>实现插件第一个版本</li>
+<li>管理后台使用 <code>ace</code></li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>已知问题修复</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/de54ca6">de54ca6</a></p>
+<hr />
+<h3>1.1.0 (2014-08-03)</h3>
+<h4>新特</h4>
+<ul>
+<li>加入安装引导</li>
+<li>使用 <a href="http://sheshui.me">涉水轻舟</a> 的博客页面作为默认主题</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>已知问题修复</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/de54ca6">de54ca6</a></p>
+<hr />
+<h3>1.0.0 (2014-05-29)</h3>
+<blockquote>
+<p>完成的数库表结构的设计，程序使用JFinal框架进行开发</p>
+</blockquote>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/2bcb336">2bcb336</a></p>
+<hr />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <hr>
+        <div class="row">
+                    <div class="col-lg-12 footer-below" id="footerLink">
+<p>
+
+    <a href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
+    | <a href="https://blog.zrlog.com/for-developer.html">开发必看</a>
+    | <a href="https://xiaochun.zrlog.com" target="_blank">博客</a>
+    | <a href="https://gitee.com/94fzb" target="_blank">码云</a>
+    | <a href="https://github.com/94fzb" target="_blank">GitHub</a>
+    | <a href="https://promotion.aliyun.com/ntms/act/qwbk.html?spm=a219t.7664554.1998457203.10.4adf35d9fKpeOj" target="_blank">阿里云</a>
+    | <a href="https://qiniu.com" target="_blank">七牛云</a>
+</p>
+
+<style>
+    table {
+        width: 100%
+    }
+
+    section .content th {
+        text-align: left;
+    }
+</style>
+            </div>
+            <div class="col-lg-12 footer-below" id="copyInfo">
+                <span class="copyright">&copy; 2024 ZrLog博客程序
+               
+                </span>
+                <a href="https://beian.miit.gov.cn/" style="margin-left:8px">蜀ICP备16023991号-1
+                </a>
+            </div>
+            <div class="col-lg-12 footer-below" style="margin-top:8px">
+                <a href="https://www.zrlog.com">www.zrlog.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div style="display:none">
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?e4de0fafca39063b06c67e34dc028186";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</div></body>
+</html>

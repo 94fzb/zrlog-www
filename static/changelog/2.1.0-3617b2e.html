@@ -1,0 +1,44 @@
+<h3>2.1.0 (2019-01-01)</h3>
+
+<p><strong>2018年过去，这个版本不只是改了程序底部的 Copyright Year</strong></p>
+
+<h4>新特</h4>
+
+<ul>
+<li>markdown 编辑器支持从剪贴板上传图片</li>
+<li>文章中支持添加 <code>emoji</code> 了    </li>
+<li>支持使用Docker启动，让程序更加方便的启动</li>
+<li>支持快速从 hexo 博客迁移的 ZrLog <a href="https://gitee.com/94fzb/zrlog/issues/IL0U7">issue</a></li>
+</ul>
+
+<h4>优化</h4>
+
+<ul>
+<li>使用 <code>//</code> 的方式加载静态资源文件，所以配置 https 更加便捷  <a href="https://gitee.com/94fzb/zrlog/issues/IMDM1">issue</a></li>
+<li>数据库连接池切换为 <code>HikariCP</code></li>
+<li>升级了插件服务内置的 <a href="https://gitee.com/94fzb/simplewebserver">SimpleWebServer</a> 到 <code>0.2.34</code>，使得插件服务对内存占用更小</li>
+<li>优化了内置的3款主题</li>
+<li>进一步的压缩响应的 html 文件</li>
+<li>调整缓存逻辑</li>
+<li>其他细节内容调整</li>
+</ul>
+
+<h4>修复</h4>
+
+<ul>
+<li>管理后台一处 Sql Inject <a href="https://github.com/94fzb/zrlog/issues/37">issue</a></li>
+</ul>
+
+<p>emoji</p>
+
+<p><code>
+--若原本数据库不是 utf8mb4 需要额外执行下
+ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+</code></p>
+
+<p>再次特别感谢 <a href="https://github.com/e-lionel">e-lionel</a> &amp; <code>Girl friend</code>，为 ZrLog 无偿设计的精美的 logo</p>
+
+<p><img src="https://xiaochun-blog.zrlog.com/attached/image/20190102/20190102000103_48.png" alt="" title="" /></p>
+
+<p>Logo 寓意：外层的圆表示表示一生的时光，象征着人生从 0 -> 0 （Zero） 的过程，中间的画笔像是在记录（Record）这一生的事情，
+而颜色由浅入深来警示自我，珍惜时光，记住（Remember）那些自己不愿意被遗忘的人或事</p>

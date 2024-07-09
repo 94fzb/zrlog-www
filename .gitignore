@@ -11,7 +11,6 @@ log
 www-zrlog.tar.gz
 com.zrlog.jar
 db/*
-*.html
 static/code
 static/download
 **/qiniu.properties
