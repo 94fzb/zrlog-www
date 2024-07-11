@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install expect markdown -y
+sudo apt install markdown -y
 ./mvnw -U clean compile assembly:single -Pgenerator-static
 java -jar target/generator-html.jar
 replace=""
