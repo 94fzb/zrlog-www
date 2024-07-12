@@ -102,5 +102,31 @@
     "createdDate": "2024-06-09 21:00:00",
     "lastUpdateDate": "2024-06-09 21:00:00",
     "desc": "简单且实用的RSS源生成插件"
+  },
+  {
+    "id": 10,
+    "name": "文章排版助手",
+    "downloadUrl": "https://dl.zrlog.com/plugin/article-arranger.jar",
+    "image": "https://www.zrlog.com/attached/plugin/preview/article-arranger.png",
+    "version": "0.0.1",
+    "downloadCnt": 0,
+    "fileName": "article-arranger.jar",
+    "author": "xiaochun",
+    "createdDate": "2024-06-09 21:00:00",
+    "lastUpdateDate": "2024-06-09 21:00:00",
+    "desc": "更加友好的文章排版"
+  },
+  {
+    "id": 11,
+    "name": "静态化增强",
+    "downloadUrl": "https://dl.zrlog.com/plugin/static-plus.jar",
+    "image": "https://www.zrlog.com/attached/plugin/preview/static-plus.png",
+    "version": "0.0.1",
+    "downloadCnt": 0,
+    "fileName": "static-plus.jar",
+    "author": "xiaochun",
+    "createdDate": "2024-07-11 21:00:00",
+    "lastUpdateDate": "2024-07-11 21:00:00",
+    "desc": ""
   }
 ]
