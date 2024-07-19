@@ -1,0 +1,13 @@
+{
+  "fileSize": "8M",
+  "desc": "从 ZrLog 3.1 起支持本地部署，并配合 CDN 或 GitHub Pages 服务实现动静结合，轻松实现无服务上云（低成本上云，仅需要域名费用），让你的网站更加轻盈、快速。",
+  "releaseDate": "2024-07-19",
+  "changeLogs": [
+    "服务端直接插入页面所需数据，大幅提升管理后台页面首次加载速度",
+    "管理后台页面缓存机制，页面切换更流畅，告别等待",
+    "将 Java 代码编译成原生可执行文件，启动速度大幅提升，运行效率更高",
+    "PWA 支持: 将博客写作添加到桌面或 Dock 栏，随时随地开启写作之旅"
+  ],
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release.zip",
+  "changeLogIsMd": true
+}

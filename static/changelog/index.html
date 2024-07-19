@@ -59,7 +59,74 @@
                     变更记录
                 </h5>
                 <div class="card-body">
-                <h3>3.0.0 (2024-02-02)</h3>
+                <h3>3.1.0 (2024-07-19)</h3>
+<p><b style="color:red">从 ZrLog 3.1 起支持本地部署，并配合 CDN 或 GitHub Pages 服务实现动静结合，轻松实现无服务上云（低成本上云，仅需要域名费用），让你的网站更加轻盈、快速。</b></p>
+<h4>性能提升，速度飞跃</h4>
+<ul>
+<li><strong>首次加载渲染优化</strong>: 服务端直接插入页面所需数据，大幅提升管理后台页面首次加载速度</li>
+<li><strong>页面缓存机制</strong>: 管理后台页面缓存机制，页面切换更流畅，告别等待</li>
+<li><strong>Simple Web Server 升级</strong>:  降低内存占用量，提升系统效率</li>
+<li><strong>GraalVM Native 打包</strong>: 将 Java 代码编译成原生可执行文件，启动速度大幅提升，运行效率更高，占用更少的内存资源，带来流畅的写作体验</li>
+</ul>
+<p><strong>支持主流平台</strong>:  ZrLog 3.1  提供了 Windows、Linux 和 macOS (x86_64 和 Apple 芯片) 的直接可执行包，方便用户在各种设备上轻松使用 ZrLog</p>
+<h4>功能增强：更便捷更强大</h4>
+<p><strong>写作体验更佳</strong></p>
+<ul>
+<li><strong>PWA 支持</strong>: 将博客写作添加到桌面或 Dock 栏，随时随地开启写作之旅。 就算没有网络，也可以随时随地创作，灵感来了就写，再也不怕错过！</li>
+</ul>
+<p><strong>管理更便捷</strong></p>
+<ul>
+<li><strong>zip 包在线更新升级</strong>:  告别下载，在线更新更方便快捷，随时拥有最新功能</li>
+<li><strong>优化管理后台用户输入参数校验</strong>:  提升安全性，避免错误输入</li>
+<li><strong>优化网站设置内容</strong>:  更便捷的博客管理体验，轻松掌控博客的各个方面</li>
+<li><strong>优化管理后台侧边栏选中样式</strong>:  操作更清晰明了，更轻松地找到所需功能</li>
+<li><strong>优化登录页面排版</strong>:  界面更美观，体验更友好，拥有更愉悦的写作环境</li>
+<li><strong>优化常用插件配置首次加载</strong>:  配置更快速，使用更便捷，更快地使用各种功能</li>
+<li><strong>优化管理后台无网络情况下的提示方式</strong>:  提升用户体验，在任何网络环境下都能轻松使用</li>
+<li><strong>PWA 模式下，记录上次打开的页面</strong>:  方便继续创作，提高效率，随时回到上次写作的位置</li>
+</ul>
+<p><strong>性能更优越</strong></p>
+<ul>
+<li><strong>整站静态化</strong>:  彻底释放闲置 VPS，配合阿里云 CDN 或 Nginx 分流，提升网站速度，更快速地分享记录</li>
+<li><strong>优化 Github Action 缓存机制</strong>:  提升构建速度，缩短 CI/CD 流程，让博客始终保持最新状态</li>
+</ul>
+<p><strong>插件更强大</strong></p>
+<ul>
+<li><strong>插件中心优化</strong>:  采用 CDN 无服务化，访问更快更稳定，轻松找到需要的插件</li>
+<li><strong>修复插件异步写入流卡住问题</strong>:  提升插件稳定性，确保记录安全保存</li>
+<li><strong>修复新版本插件下载完后跳转问题</strong>:  更便捷的插件安装体验，轻松使用新功能</li>
+<li><strong>优化数据库备份插件备份逻辑</strong>:  提升备份效率，更放心地保存记录</li>
+<li><strong>优化畅言插件配置</strong>:  更易于配置，使用更便捷，更轻松地与读者互动</li>
+<li><strong>优化插件页面渲染加载等待</strong>:  提升插件整体稳定性，确保流畅的使用体验</li>
+<li><strong>新增 rss 插件</strong>:  方便 RSS 订阅博客内容，让更多人看到记录</li>
+<li><strong>优化文章标签选取</strong>:  标签选择更便捷，管理更方便，更轻松地整理记录</li>
+<li><strong>备份数据库插件的备份文件加密处理</strong>:  提升备份安全性，更放心地保存记录</li>
+<li><strong>升级备份数据库插件的 <code>mysqldump</code> 版本</strong>:  支持更新的数据库版本，提升兼容性</li>
+<li><strong>静态化后生成的静态站点支持同步更新到 git 仓库</strong>:  配合 pages 服务，轻松实现低成本的博客部署</li>
+<li><strong>添加文章分类重排插件</strong>:  便于浏览，更直观地管理文章</li>
+</ul>
+<p><strong>安全更可靠</strong></p>
+<ul>
+<li><strong>数据库备份优化</strong>:  针对备份内容未变更情况，不再进行重复备份和上传，节省资源，更放心地保存记录</li>
+<li><strong>修复自动摘要重复截取问题</strong>:  确保摘要准确，方便读者快速了解记录</li>
+<li><strong>修复 3.0 版本的标签敏感字符问题</strong>:  提升标签的兼容性</li>
+<li><strong>支持配置 robots.txt 文件</strong>:  更有效地控制搜索引擎爬虫访问，保护隐私</li>
+</ul>
+<h4>其他优化</h4>
+<ul>
+<li><strong>可移除上传的文章预览头图</strong>:  更灵活的图片管理，更自由地选择展示方式</li>
+<li><strong>管理后台显示程序对磁盘的使用量</strong>:  方便查看系统资源占用情况，更了解系统状况</li>
+<li><strong>修复 3.0 版本的管理后台 在 Safari 上 Cookie 无法持久化的问题</strong>:  提升浏览器兼容性，在不同浏览器上都能流畅使用</li>
+<li><strong>优化管理界面的错误页面</strong>:  提升用户体验，更方便地解决问题</li>
+<li><strong>自动下载 docker 升级后丢失的主题</strong>:  Docker 模式更好用</li>
+<li><strong>支持配置 favicon 图标和 pwa 应用的图标</strong>:  个性化定制博客，让记录更有个性</li>
+<li><strong>优化关于文章的 api 响应输出</strong>:  更便捷的接口调用，方便将记录与其他平台连接</li>
+<li><strong>移除默认主题的 jquery 依赖</strong>:  减轻页面负担，提升加载速度，更快速地访问博客</li>
+<li><strong>优化默认主题在暗黑模式下的表格样式</strong>:  视觉体验更舒适，更轻松地阅读记录</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/25cf751">25cf751</a></p>
+<hr />
+<h3>3.0.0 (2024-02-02)</h3>
 <blockquote>
 <p>小米加步枪（SimpleWebServer）就能搞定的活，用不上航空母舰（Spring Boot）</p>
 </blockquote>
@@ -331,7 +398,7 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
 <li>优化主题管理界面</li>
 <li>废弃 session 的方式控制权限，变更为 Cookie 验证</li>
 <li>优化/api/*的错误请求，改为响应 json 数据</li>
-<li>优化编辑文章的方式，由原来的弹窗标题改为跳转到撰写文章界面进行编辑</li>
+<li>优化编辑文章的方式，由原来弹窗标题改为跳转到撰写文章界面进行编辑</li>
 <li>安装界面添加安装需要的注意事项</li>
 <li>启动插件使用 java 的完整路径进行启动，避免部分云平台没有将 java 添加到 PATH 中，无法正常启动的问题</li>
 <li>删除一些没有使用资源文件，默认主题的使用通用的头像图片</li>
@@ -404,7 +471,7 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
 <li>优化文章管理页面的弹出框，弃用 Zdialog，使用 eModal</li>
 <li>log4j 日志文件分天存储，方便查找</li>
 <li>开启静态化后，只是储存 /post/* 的文章页</li>
-<li>其他css问题</li>
+<li>其他 css 问题</li>
 </ul>
 <h4>修复</h4>
 <ul>

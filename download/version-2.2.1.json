@@ -6,6 +6,6 @@
     "优化文章对保存逻辑的校验",
     "修复 2.2.0 不支持子目录访问问题"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.2.1-efbe9f9-release.zip",
+  "downloadUrl": "#",
   "changeLogIsMd": true
 }

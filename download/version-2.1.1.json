@@ -5,6 +5,6 @@
   "changeLogs": [
     "登录状态下，管理后台文件读取和写入的安全漏洞"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-2.1.11-99a5759-release.zip",
+  "downloadUrl": "#",
   "changeLogIsMd": true
 }
