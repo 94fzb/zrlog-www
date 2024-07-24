@@ -8,6 +8,7 @@ function check_command {
         echo "$command_name is not installed."
         echo "Please install it using the following command:"
         echo "$install_instructions"
+        exit 1  # 终止脚本执行并返回错误状态
     else
         echo "$command_name is installed."
     fi
