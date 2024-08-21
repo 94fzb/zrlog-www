@@ -1,0 +1,13 @@
+{
+  "fileSize": "8M",
+  "desc": "简化编辑页面，文章的封面，标签等信息，改为使用弹出框进行设置",
+  "releaseDate": "2024-08-19",
+  "changeLogs": [
+    "优化全屏编辑，全屏编辑状态下，显示更加完整",
+    "对于文章页文章过多的情况，可配置每页显示的数量，便于管理",
+    "优化登录成功的跳转（改为客户端路由，载入更快）",
+    "升级 antd 的版本到 `5.20.1`"
+  ],
+  "downloadUrl": "https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release.zip",
+  "changeLogIsMd": true
+}

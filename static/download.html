@@ -83,10 +83,10 @@
         <div class="col-md-8">
             <div id="version-header" style="display: flex;justify-content: space-between">
                 <div>
-                    <h3 style="margin-bottom: 0;line-height: 40px">ZrLog V3.1.0 </h3>
+                    <h3 style="margin-bottom: 0;line-height: 40px">ZrLog V3.1.1 </h3>
 
                     <span style="line-height: 40px">
-                        发布时间：2024-07-19
+                        发布时间：2024-08-19
                     </span>
                 </div>
 <button style="width: 180px" type="button" class="btn btn-default btn-cta btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" href="#download">
@@ -107,26 +107,26 @@
 </button>
 
 <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release-Linux-x86_64.zip?ref=download">Linux x86_64（无需 Java 环境）</a></li>
-    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release-Windows-x86_64.zip?ref=download">Windows x86_64（无需 Java 环境）</a></li>
-    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release-Darwin-x86_64.zip?ref=download">macOS Intel（无需 Java 环境）</a></li>
-    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release-Darwin-arm64.zip?ref=download">macOS Apple Silicon（无需 Java 环境）</a></li>
+    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release-Linux-x86_64.zip?ref=download">Linux x86_64（无需 Java 环境）</a></li>
+    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release-Windows-x86_64.zip?ref=download">Windows x86_64（无需 Java 环境）</a></li>
+    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release-Darwin-x86_64.zip?ref=download">macOS Intel（无需 Java 环境）</a></li>
+    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release-Darwin-arm64.zip?ref=download">macOS Apple Silicon（无需 Java 环境）</a></li>
     <li>
         <hr class="dropdown-divider">
     </li>
-    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release.zip?ref=download">平台通用 (需 Java 版本 >= 21)</a></li>
+    <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release.zip?ref=download">平台通用 (需 Java 版本 >= 21)</a></li>
 </ul>            </div>
             <p>
                 变更记录：
             </p>
             <ul>
-                    <li><p>服务端直接插入页面所需数据，大幅提升管理后台页面首次加载速度</p>
+                    <li><p>优化全屏编辑，全屏编辑状态下，显示更加完整</p>
 </li>
-                    <li><p>管理后台页面缓存机制，页面切换更流畅，告别等待</p>
+                    <li><p>对于文章页文章过多的情况，可配置每页显示的数量，便于管理</p>
 </li>
-                    <li><p>将 Java 代码编译成原生可执行文件，启动速度大幅提升，运行效率更高</p>
+                    <li><p>优化登录成功的跳转（该用客户端路由，载入更快）</p>
 </li>
-                    <li><p>PWA 支持: 将博客写作添加到桌面或 Dock 栏，随时随地开启写作之旅</p>
+                    <li><p>升级 antd 的版本到 <code>5.20.1</code></p>
 </li>
                 <li>...</li>
             </ul>
@@ -156,6 +156,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <td>V3.1.0</td>
+                                        <td>8M</td>
+                                        <td>从 ZrLog 3.1 起支持本地部署，并配合 CDN 或 GitHub Pag...</td>
+                                        <td data-toggle="从 ZrLog 3.1 起支持本地部署，并配合 CDN 或 GitHub Pag...">2024-07-19</td>
+                                    </tr>
                                     <tr>
                                         <td>V3.0.0</td>
                                         <td>8M</td>
