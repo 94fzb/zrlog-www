@@ -56,13 +56,14 @@
         <span class="brand-name">ZRLOG</span>
         <h2>可能是最好用的开源 Java 博客程序</h2>
         <style>
-            #index-btn-group {
+            .index-btn-group {
                 display: flex
             }
 
             @media (max-width: 600px) {
-                #index-btn-group {
-                    display: block;
+                .index-btn-group {
+                    display: block!important;
+                    justify-content: center!important;
                 }
             }
 
@@ -72,7 +73,7 @@
                 }
             }
         </style>
-        <div style="padding-top: 16px;gap: 24px;justify-content: center" id="index-btn-group">
+        <div style="padding-top: 16px;gap: 24px;justify-content: center" class="index-btn-group">
             <a style="width: 180px" href="https://demo.zrlog.com?ref=index"
                target="_blank"
                class="btn btn-default btn-cta">
@@ -126,10 +127,14 @@
             平台通用 (需 Java 版本 >= 21)</a></li>
 </ul>        </div>
     </div>
+</header>
+<div class="container" style="padding-bottom: 48px">
+    <div class="row home-intro text-center">
+        <div class="col-lg-12">
+            <h2 class="tagline" style="justify-content:center;font-weight: 700;gap: 24px;display: flex"><span class="text-primary">免费</span><span class="text-warning">开源</span><span class="text-danger">易用</span></h2>
 <style>
     #star-info {
         padding-top: 20px;
-        height: 50px;
     }
 
     .gitee a img {
@@ -139,23 +144,18 @@
 </style>
 
 
-<div style="display: flex;align-items: center;justify-content: center;gap: 24px" id="star-info">
-    <div style="display:flex;">
+<div style="display: flex;align-items: center;justify-content: center;gap: 24px" id="star-info" class="index-btn-group">
+    <div style="display:flex;min-width: 124px;justify-content:center">
         <script src="https://www.zrlog.com/assets/js/buttons.js"></script>
         <!-- Place this tag where you want the button to render. -->
         <a class="github-button" href="https://github.com/94fzb/zrlog" data-size="large" data-show-count="true"
            aria-label="Star 94fzb/zrlog on GitHub">Star</a>
     </div>
-    <div class="gitee" style="display:flex;">
+    <div class="gitee" style="display:flex;justify-content: center">
         <script src='//gitee.com/94fzb/zrlog/star_widget_preview'></script>
     </div>
 </div>
-</header>
-<div class="container" style="padding-bottom: 48px">
-    <div class="row home-intro text-center">
-        <div class="col-lg-12">
-            <h2 class="tagline" style="line-height: 100px;justify-content:center;font-weight: 700;gap: 24px;display: flex"><span class="text-primary">免费</span><span class="text-warning">开源</span><span class="text-danger">易用</span></h2>
-            <p style="font-size: 20px;margin-bottom: 8px">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
+            <p style="font-size: 20px;margin-bottom: 8px;margin-top: 20px">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
             <p style="font-size: 20px">Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上</p>
             <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
                  style="display: flex;justify-content: center;margin-top: 16px;border-radius: 16px" data-bs-ride="carousel">

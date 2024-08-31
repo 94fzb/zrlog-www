@@ -4,13 +4,14 @@
         <span class="brand-name">ZRLOG</span>
         <h2>可能是最好用的开源 Java 博客程序</h2>
         <style>
-            #index-btn-group {
+            .index-btn-group {
                 display: flex
             }
 
             @media (max-width: 600px) {
-                #index-btn-group {
-                    display: block;
+                .index-btn-group {
+                    display: block!important;
+                    justify-content: center!important;
                 }
             }
 
@@ -20,7 +21,7 @@
                 }
             }
         </style>
-        <div style="padding-top: 16px;gap: 24px;justify-content: center" id="index-btn-group">
+        <div style="padding-top: 16px;gap: 24px;justify-content: center" class="index-btn-group">
             <a style="width: 180px" href="https://demo.zrlog.com?ref=index"
                target="_blank"
                class="btn btn-default btn-cta">
@@ -32,13 +33,13 @@
             <#include "include/download-file-btn.ftl">
         </div>
     </div>
-    <#include "include/star.ftl">
 </header>
 <div class="container" style="padding-bottom: 48px">
     <div class="row home-intro text-center">
         <div class="col-lg-12">
-            <h2 class="tagline" style="line-height: 100px;justify-content:center;font-weight: 700;gap: 24px;display: flex"><span class="text-primary">免费</span><span class="text-warning">开源</span><span class="text-danger">易用</span></h2>
-            <p style="font-size: 20px;margin-bottom: 8px">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
+            <h2 class="tagline" style="justify-content:center;font-weight: 700;gap: 24px;display: flex"><span class="text-primary">免费</span><span class="text-warning">开源</span><span class="text-danger">易用</span></h2>
+            <#include "include/star.ftl">
+            <p style="font-size: 20px;margin-bottom: 8px;margin-top: 20px">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
             <p style="font-size: 20px">Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上</p>
             <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
                  style="display: flex;justify-content: center;margin-top: 16px;border-radius: 16px" data-bs-ride="carousel">
