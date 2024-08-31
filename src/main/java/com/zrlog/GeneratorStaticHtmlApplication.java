@@ -9,7 +9,7 @@ import com.zrlog.mock.GeneratorHtml;
 public class GeneratorStaticHtmlApplication {
 
     public static void main(String[] args) {
-        SimpleWebServer server = Application.server();
+        SimpleWebServer server = Application.server(0);
         new GeneratorHtml("/changelog", PathUtil.getStaticPath() + "/changelog/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
         new GeneratorHtml("/download", PathUtil.getStaticPath() + "/download.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
         new GeneratorHtml("/plugin/", PathUtil.getStaticPath() + "/plugin/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();

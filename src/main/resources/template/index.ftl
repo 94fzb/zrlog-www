@@ -13,6 +13,12 @@
                     display: block;
                 }
             }
+
+            @media (prefers-color-scheme: light) {
+                #carouselExampleControlsNoTouching {
+                    background: #343a40;
+                }
+            }
         </style>
         <div style="padding-top: 16px;gap: 16px;justify-content: center" id="index-btn-group">
             <a style="width: 180px" href="https://demo.zrlog.com?ref=index"
@@ -55,8 +61,14 @@
             <p class="lead">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
             <p class="lead">Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上</p>
             <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
-                 style="display: flex;justify-content: center;margin-top: 16px" data-bs-ride="carousel">
-                <div class="carousel-inner" style="max-width: 80%">
+                 style="display: flex;justify-content: center;margin-top: 16px;border-radius: 16px" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner" style="max-width: 80%;padding-bottom: 24px">
                     <div class="carousel-item active">
                         <img src="/assets/screenprint/post-detail.png" class="d-block w-100" alt="">
                     </div>

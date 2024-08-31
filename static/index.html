@@ -52,7 +52,7 @@
     </div>
 </nav>
 <header class="marquee" style="background-color: #343a40;">
-    <div class="container">
+    <div class="container" style="margin-bottom: 16px">
         <span class="brand-name">ZRLOG</span>
         <h2>可能是最好用的开源 Java 博客程序</h2>
         <style>
@@ -63,6 +63,12 @@
             @media (max-width: 600px) {
                 #index-btn-group {
                     display: block;
+                }
+            }
+
+            @media (prefers-color-scheme: light) {
+                #carouselExampleControlsNoTouching {
+                    background: #343a40;
                 }
             }
         </style>
@@ -108,7 +114,7 @@
     <li><a class="dropdown-item" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release.zip?ref=index">平台通用 (需 Java 版本 >= 21)</a></li>
 </ul>            <a style="width: 180px" href="https://gitee.com/94fzb/zrlog-docker"
                class="btn btn-default btn-cta">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                      width="24px" height="24px" viewBox="0,0,256,256">
                     <g fill="#e6e6e6" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -123,48 +129,73 @@
             </a>
         </div>
     </div>
-    <br/>
 <style>
     #star-info {
-        height: 70px;
-    }
-    .none-li {
-        padding-left: 0;
-    }
-
-    .none-li li {
-        list-style: none;
-    }
-
-    .gitee {
-        padding-top: 10px;
+        padding-top: 20px;
+        height: 50px;
     }
 
     .gitee a img {
-        height: 26px;
+        height: 30px;
+        margin-bottom: 4px;
     }
 </style>
 
 
-<ul class="none-li" id="star-info">
-    <li>
+<div style="display: flex;align-items: center;justify-content: center;gap: 24px" id="star-info">
+    <div style="display:flex;">
         <script src="https://www.zrlog.com/assets/js/buttons.js"></script>
         <!-- Place this tag where you want the button to render. -->
         <a class="github-button" href="https://github.com/94fzb/zrlog" data-size="large" data-show-count="true"
            aria-label="Star 94fzb/zrlog on GitHub">Star</a>
-    </li>
-    <li class="gitee">
+    </div>
+    <div class="gitee" style="display:flex;">
         <script src='//gitee.com/94fzb/zrlog/star_widget_preview'></script>
-    </li>
-</ul>
+    </div>
+</div>
 </header>
-<div class="container">
+<div class="container" style="padding-bottom: 48px">
     <div class="row home-intro text-center">
         <div class="col-lg-12">
             <h2 class="tagline">免费，开源，易用</h2>
             <p class="lead">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
             <p class="lead">Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上</p>
-            <hr class="small">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+                 style="display: flex;justify-content: center;margin-top: 16px;border-radius: 16px" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner" style="max-width: 80%;padding-bottom: 24px">
+                    <div class="carousel-item active">
+                        <img src="/assets/screenprint/post-detail.png" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/screenprint/article-edit-dark.png" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/screenprint/article-edit-light-pwa-full-screen.png" class="d-block w-100"
+                             alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/screenprint/article-edit-light-pwa-full-screen-setting.png"
+                             class="d-block w-100"
+                             alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
