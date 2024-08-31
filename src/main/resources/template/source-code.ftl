@@ -74,8 +74,9 @@
                 <h5 class="card-header">支持</h5>
                 <div class="card-body">
                     <div class="card-text">如果你刚好有 Github 或者 Gitee 的账号，可以通过下面的按钮赞一下 <b>ZrLog</b></div>
-                    <br/>
+                    <div style="display: flex;justify-content: start">
                     <#include "include/star.ftl">
+                    </div>
                 </div>
             </div>
         </div>

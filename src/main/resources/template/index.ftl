@@ -1,6 +1,6 @@
 <#include "include/header.ftl"/>
 <header class="marquee" style="background-color: #343a40;">
-    <div class="container">
+    <div class="container" style="margin-bottom: 16px">
         <span class="brand-name">ZRLOG</span>
         <h2>可能是最好用的开源 Java 博客程序</h2>
         <style>
@@ -31,7 +31,7 @@
             <#include "include/download-file-btn.ftl">
             <a style="width: 180px" href="https://gitee.com/94fzb/zrlog-docker"
                class="btn btn-default btn-cta">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
                      width="24px" height="24px" viewBox="0,0,256,256">
                     <g fill="#e6e6e6" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
@@ -46,16 +46,44 @@
             </a>
         </div>
     </div>
-    <br/>
     <#include "include/star.ftl">
 </header>
-<div class="container">
+<div class="container" style="padding-bottom: 48px">
     <div class="row home-intro text-center">
         <div class="col-lg-12">
             <h2 class="tagline">免费，开源，易用</h2>
             <p class="lead">ZrLog 是使用 Java 开发的博客程序，具有简约，易用，组件化，内存占用低等特点</p>
             <p class="lead">Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上</p>
-            <hr class="small">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false"
+                 style="display: flex;justify-content: center;margin-top: 16px" data-bs-ride="carousel">
+                <div class="carousel-inner" style="max-width: 80%">
+                    <div class="carousel-item active">
+                        <img src="/assets/screenprint/post-detail.png" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/screenprint/article-edit-dark.png" class="d-block w-100" alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/screenprint/article-edit-light-pwa-full-screen.png" class="d-block w-100"
+                             alt="">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/assets/screenprint/article-edit-light-pwa-full-screen-setting.png"
+                             class="d-block w-100"
+                             alt="">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
