@@ -28,7 +28,11 @@ hr {
 }
 
 .text-yellow {
-    color: #f1c40f
+    color: #ff9100
+}
+
+.text-green {
+    color: #0ff14f
 }
 
 p.dm-promo-lead {
@@ -56,6 +60,10 @@ header.marquee .brand-name {
     font-size: 50px;
     line-height: 1;
     padding: 20px;
+    font-weight: 700;
+    background: linear-gradient(90deg, rgb(140,181,75), rgb(220,53,69)); /* 黄色到红色的渐变 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header.marquee h1 {
@@ -120,8 +128,8 @@ header.marquee .btn-cta:hover {
 }
 
 .home-intro h2.tagline {
-    font-size: 35px;
-    margin-top: 50px;
+    font-size: 45px;
+    margin-top: 30px;
 }
 
 .home-intro p.lead {
@@ -137,8 +145,14 @@ header.marquee .btn-cta:hover {
     .home-intro p.lead {
         max-width: 75%
     }
-}
 
+}
+@media (max-width: 768px) {
+    .home-intro h2.tagline {
+        font-size: 35px;
+        margin-top: 30px;
+    }
+}
 .btn-outline {
     padding: 10px 15px;
     border: 1px solid #b84d45;
@@ -594,5 +608,11 @@ footer .footer-below {
 
     .navbar-custom .nav-link {
         color: #ffffff; /* 白色字体 */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .icon {
+        fill: #adb5bd;
     }
 }
