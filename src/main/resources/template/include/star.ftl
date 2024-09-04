@@ -18,6 +18,6 @@
            aria-label="Star 94fzb/zrlog on GitHub">Star</a>
     </div>
     <div class="gitee" style="display:flex;justify-content: center">
-        <script src='//gitee.com/94fzb/zrlog/star_widget_preview'></script>
+        <a href='https://gitee.com/94fzb/zrlog/stargazers' title="Star 94fzb/zrlog on Gitee"><img src='https://gitee.com/94fzb/zrlog/badge/star.svg?theme=dark' alt='star'/></a>
     </div>
 </div>
