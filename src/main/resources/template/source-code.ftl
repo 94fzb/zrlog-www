@@ -2,6 +2,9 @@
 <#include "include/header.ftl"/>
 
 <style>
+    #osc-gitee-widget-tag {
+        padding: 0;
+    }
     .pro_name a {
         color: #4183c4;
     }
