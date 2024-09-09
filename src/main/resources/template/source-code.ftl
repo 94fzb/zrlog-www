@@ -49,6 +49,7 @@
                         <h5 class="card-header">Gitee</h5>
                         <div class="card-body">
                             <div class="row">
+                                <div id="osc-gitee-widget-tag"></div>
                                 <script src='https://gitee.com/94fzb/zrlog/widget_preview' async defer></script>
                             </div>
                         </div>
