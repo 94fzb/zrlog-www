@@ -32,7 +32,7 @@
         <div class="col-md-8">
             <div id="version-header" style="display: flex;justify-content: space-between">
                 <div>
-                    <h3 style="margin-bottom: 0;line-height: 40px">ZrLog V${last.version} </h3>
+                    <h3 style="margin-bottom: 0;line-height: 40px">ZrLog v${last.version} </h3>
 
                     <span style="line-height: 40px">
                         发布时间：${last.releaseDate}
@@ -73,7 +73,7 @@
                                 <tbody>
                                 <#list downloads as downloadUrl>
                                     <tr>
-                                        <td>V${downloadUrl.version}</td>
+                                        <td>v${downloadUrl.version}</td>
                                         <td>${downloadUrl.fileSize}</td>
                                         <td>${downloadUrl.desc}</td>
                                         <td data-toggle="${downloadUrl.desc!''}">${downloadUrl.releaseDate}</td>
