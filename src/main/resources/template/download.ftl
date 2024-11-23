@@ -43,13 +43,9 @@
             <p>
                 变更记录：
             </p>
-            <ul>
-                <#list last.changeLogs as changeLog>
-                    <li>${changeLog}</li>
-                </#list>
-                <li>...</li>
-            </ul>
-
+            <#list last.changeLogs as changeLog>
+                ${changeLog}
+            </#list>
         </div>
         <div class="col-md-12" style="padding-top: 10px">
             <div class="table-responsive">
