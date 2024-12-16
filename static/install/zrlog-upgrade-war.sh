@@ -23,6 +23,6 @@ tar -xf apache-tomcat-7.0.86.tar.gz
 # shellcheck disable=SC2164
 cd apache-tomcat-7.0.86
 rm -rf webapps/ROOT
-wget https://dl.zrlog.com/release/zrlog-1.8.0-d1f36bc-release.war -O webapps/ROOT.war
+wget https://dl.zrlog.com/release/zrlog-1.7.1-baaecb9-release.war -O webapps/ROOT.war
 sh bin/catalina.sh run
 
