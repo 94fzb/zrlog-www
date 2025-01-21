@@ -60,21 +60,11 @@
                             aria-label="Slide 4"></button>
                 </div>
                 <div class="carousel-inner" style="max-width: 80%;padding-bottom: 24px">
-                    <div class="carousel-item active">
-                        <img src="/assets/screenprint/post-detail.png" class="d-block w-100" alt="">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/screenprint/article-edit-dark.png" class="d-block w-100" alt="">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/screenprint/article-edit-light-pwa-full-screen.png" class="d-block w-100"
-                             alt="">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/assets/screenprint/article-edit-light-pwa-full-screen-setting.png"
-                             class="d-block w-100"
-                             alt="">
-                    </div>
+                    <#list indexImgList as img>
+                        <div class="carousel-item<#if img?index == 0> active</#if>">
+                            <img src="${img}" class="d-block w-100" alt="carousel-${img?index + 1}">
+                        </div>
+                    </#list>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching"
                         data-bs-slide="prev">
