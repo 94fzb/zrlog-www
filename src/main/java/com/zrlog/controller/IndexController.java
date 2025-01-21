@@ -104,10 +104,9 @@ public class IndexController extends Controller {
         request.getAttr().put("downloads", downloadInfoList);
         request.getAttr().put("features", RestPathInterceptor.renderMd(IOUtil.getStringInputStream(new FileInputStream(PathUtil.getStaticPath() + "features.md"))));
         String url = ParseTools.getScheme(request) + "://" + request.getHeader("Host");
-        request.getAttr().put("url", url);
-        List<String> image = Arrays.asList("/assets/screenprint/post-detail.png", "/assets/screenprint/article-edit-dark.png",
-                "/assets/screenprint/article-edit-light-pwa-full-screen.png", "/assets/screenprint/article-edit-light-pwa-full-screen-setting.png");
-        request.getAttr().put("indexImgList", image.stream().map(e -> url + e + "?v=2").collect(Collectors.toList()));
+        List<String> image = Arrays.asList("post-detail.png", "article-edit-dark.png",
+                "article-edit-light-pwa-full-screen.png", "article-edit-light-pwa-full-screen-setting.png");
+        request.getAttr().put("indexImgList", image.stream().map(e -> url + "/assets/screenprint/" + e + "?v=2").collect(Collectors.toList()));
 
     }
 }
