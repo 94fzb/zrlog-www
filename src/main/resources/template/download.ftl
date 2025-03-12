@@ -76,7 +76,7 @@
                                         <td>v${downloadUrl.version}</td>
                                         <td>${downloadUrl.fileSize}</td>
                                         <td>${downloadUrl.desc}</td>
-                                        <td data-toggle="${downloadUrl.desc!''}">${downloadUrl.releaseDate}</td>
+                                        <td>${downloadUrl.releaseDate}</td>
                                     </tr>
                                 </#list>
                                 </tbody>
