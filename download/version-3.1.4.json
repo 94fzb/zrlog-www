@@ -1,9 +1,9 @@
 {
   "fileSize": "8M",
-  "desc": "文章撰写的异步保存更加稳定，文章管理界面支持按分类进行筛选",
-  "releaseDate": "2024-03-12",
+  "desc": "管理页面，移动设备可以折叠侧边栏，管理页面，移动设备可以收起侧边栏",
+  "releaseDate": "2025-03-12",
   "changeLogs": [
-    "- 管理页面，移动设备可以折叠侧边栏\n-管理页面，移动设备可以收起侧边栏"
+    "- 管理页面，移动设备可以折叠侧边栏\n- 管理页面，移动设备可以收起侧边栏\n- 文章管理支持 `浏览量` `评论量` 的排序"
   ],
   "downloadUrl": "https://gitee.com/94fzb/zrlog/releases/download/v3.1.4/zrlog-3.1.4-7af1bfb-release.zip",
   "changeLogIsMd": true
