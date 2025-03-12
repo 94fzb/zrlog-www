@@ -1,9 +1,9 @@
 {
   "fileSize": "8M",
-  "desc": "管理页面，移动设备可以折叠侧边栏，管理页面，移动设备可以收起侧边栏",
+  "desc": "管理页面，移动设备可以收起侧边栏，PWA 应用添加 appId",
   "releaseDate": "2025-03-12",
   "changeLogs": [
-    "- 管理页面，移动设备可以折叠侧边栏\n- 管理页面，移动设备可以收起侧边栏\n- 文章管理支持 `浏览量` `评论量` 的排序"
+    "- 管理页面，移动设备可以收起侧边栏\n- 文章管理支持 `浏览量` `评论量` 的排序\n- PWA 应用添加 appId"
   ],
   "downloadUrl": "https://gitee.com/94fzb/zrlog/releases/download/v3.1.4/zrlog-3.1.4-7af1bfb-release.zip",
   "changeLogIsMd": true
