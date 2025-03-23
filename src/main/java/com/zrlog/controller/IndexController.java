@@ -85,7 +85,12 @@ public class IndexController extends Controller {
             }
             String baseUrl = releaseInfo.getDownloadUrl();
             releaseInfo.setDownloadUrl(baseUrl + "?ref=" + ref);
-            releaseInfo.setLinuxDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-x86_64.zip") + "?ref=" + ref);
+            releaseInfo.setLinuxDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64.zip") + "?ref=" + ref);
+            releaseInfo.setLinuxDebDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64.deb") + "?ref=" + ref);
+            //
+            releaseInfo.setLinuxArm64DownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64.zip") + "?ref=" + ref);
+            releaseInfo.setLinuxDebArm64DownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64.deb") + "?ref=" + ref);
+            //
             releaseInfo.setWindowsDownloadUrl(baseUrl.replaceAll(".zip", "-Windows-x86_64.zip") + "?ref=" + ref);
             releaseInfo.setMacDownloadUrl(baseUrl.replaceAll(".zip", "-Darwin-x86_64.zip") + "?ref=" + ref);
             releaseInfo.setMacArmDownloadUrl(baseUrl.replaceAll(".zip", "-Darwin-arm64.zip") + "?ref=" + ref);
