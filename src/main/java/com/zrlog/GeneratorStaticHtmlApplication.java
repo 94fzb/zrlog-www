@@ -6,6 +6,9 @@ import com.zrlog.dao.PluginDAO;
 import com.zrlog.dao.TemplateDAO;
 import com.zrlog.mock.GeneratorHtml;
 
+import java.io.File;
+import java.util.Objects;
+
 public class GeneratorStaticHtmlApplication {
 
     public static void main(String[] args) {
@@ -22,6 +25,16 @@ public class GeneratorStaticHtmlApplication {
         });
         new GeneratorHtml("/code", PathUtil.getStaticPath() + "/code.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
         new GeneratorHtml("/", PathUtil.getStaticPath() + "/index.html", server.getApplicationContext(), Application.zrlogServerConfig).run();
+        File[] changelogFiles = PathUtil.getStaticFile("/changelog/").listFiles();
+        if (Objects.nonNull(changelogFiles)) {
+            for (File changelogFile : changelogFiles) {
+                if (!changelogFile.getName().endsWith(".md")) {
+                    continue;
+                }
+                String fileName = changelogFile.getName().replace(".md", ".html");
+                new GeneratorHtml("/changelog/" + fileName, PathUtil.getStaticFile("/changelog/" + fileName).toString(), server.getApplicationContext(), Application.zrlogServerConfig).run();
+            }
+        }
         System.exit(0);
     }
 
