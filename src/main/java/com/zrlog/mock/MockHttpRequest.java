@@ -1,6 +1,7 @@
 package com.zrlog.mock;
 
 import com.hibegin.http.HttpMethod;
+import com.hibegin.http.HttpVersion;
 import com.hibegin.http.server.ApplicationContext;
 import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.config.RequestConfig;
@@ -165,7 +166,7 @@ public class MockHttpRequest implements HttpRequest {
     }
 
     @Override
-    public String getHttpVersion() {
+    public HttpVersion getHttpVersion() {
         return null;
     }
 }
