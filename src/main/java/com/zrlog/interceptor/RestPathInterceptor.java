@@ -16,10 +16,7 @@ import org.commonmark.renderer.html.HtmlRenderer;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RestPathInterceptor implements Interceptor {
 
@@ -82,21 +79,23 @@ public class RestPathInterceptor implements Interceptor {
                 }
             }
         }
-        StringBuilder mdSb = new StringBuilder();
         List<Map.Entry<String, File>> stream = new ArrayList<>(fileMap.entrySet());
         stream.sort((o1, o2) -> new VersionComparator().compare(o2.getKey(), o1.getKey()));
+        StringJoiner sj = new StringJoiner("\n\n---\n\n");
         stream.forEach(e -> {
             try {
+                StringBuilder mdSb = new StringBuilder();
                 mdSb.append(IOUtil.getStringInputStream(new FileInputStream(e.getValue()))).append("\n\n");
                 String buildId = e.getValue().getName().substring(e.getValue().getName().lastIndexOf("-") + 1, e.getValue().getName().lastIndexOf("."));
                 mdSb.append("commit: ").append("[").append(buildId).append("]")
                         .append("(https://github.com/94fzb/zrlog/commit/")
-                        .append(buildId).append(")").append("\n\n---\n\n");
+                        .append(buildId).append(")");
+                sj.add(mdSb.toString());
             } catch (FileNotFoundException e1) {
                 //e1.printStackTrace();
             }
         });
-        return mdSb.toString();
+        return sj.toString();
     }
 
     public static String renderMd(String md) {
