@@ -40,7 +40,7 @@
 
         <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-gray-400 mb-4 md:mb-0">
-                © 2025 ZRLOG博客程序 <a href="/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
+                © 2025 ZRLOG博客程序 <a href="https://beian.miit.gov.cn/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
             </div>
             <div class="flex space-x-4">
                 <#include "footer-links.ftl">
