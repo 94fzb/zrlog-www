@@ -162,7 +162,7 @@
 
         @media (prefers-color-scheme: dark) {
             .icon {
-                fill: #adb5bd;
+                fill: #111827;
             }
 
             .github-star a {
@@ -207,6 +207,7 @@
         .text-center {
             text-align: center;
         }
+
         .card-img-top {
             text-align: center;
         }
@@ -219,7 +220,7 @@
             color: #2492ff;
         }
 
-        .storeInstallLink,.storeDetailLink {
+        .storeInstallLink, .storeDetailLink {
             color: #2492ff;
             display: inline-flex;
             height: 56px;

@@ -10,19 +10,13 @@
             <a href="https://demo.zrlog.com?ref=index" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">
                 <i class="ri-play-circle-line mr-2"></i>在线体验
             </a>
-            <div class="relative group">
-                <button class="bg-white hover:bg-gray-100 text-gray-800 py-3 px-8 !rounded-button whitespace-nowrap transition-colors flex items-center">
-                    <i class="ri-download-line mr-2"></i>立即下载
-                    <i class="ri-arrow-down-s-line ml-2"></i>
-                </button>
-                <div class="absolute left-0 mt-2 w-full hidden group-hover:block z-10">
-                    <div class="bg-white shadow-lg !rounded-md py-2">
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">最新版本 v2.2.5</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">历史版本</a>
-                        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">源码下载</a>
-                    </div>
-                </div>
-            </div>
+
+            <a style="display: flex;align-items: center;justify-content: center;" type="button"
+                    class="bg-white hover:bg-gray-100 text-gray-800 py-3 px-8 !rounded-button whitespace-nowrap transition-colors flex items-center" href="/download">
+                <i class="ri-download-line mr-2"></i>
+                <span style="font-weight: 500">立即下载</span>
+                <i class="ri-arrow-down-s-line ml-2"></i>
+            </a>
         </div>
     </div>
 </section>
