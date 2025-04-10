@@ -28,33 +28,29 @@
                 <div class="card">
                     <h5 class="card-header">捐赠列表</h5>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <table class="table table-striped table-bordered table-hover table-responsive-xl"
-                                           style="width:100%">
-                                        <thead>
-                                        <tr>
-                                            <th>金额</th>
-                                            <th>捐赠者</th>
-                                            <th>捐赠时间</th>
-                                            <th>留言</th>
-                                        </tr>
-                                        </thead>
+                        <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb;padding-left: 10px">
+                            <table class="auto-table"
+                                   style="width:100%;min-width: 680px">
+                                <thead>
+                                <tr >
+                                    <th style="height: 56px;text-align: start">金额</th>
+                                    <th style="height: 56px;text-align: start">捐赠者</th>
+                                    <th style="height: 56px;text-align: start">捐赠时间</th>
+                                    <th style="height: 56px;text-align: start">留言</th>
+                                </tr>
+                                </thead>
 
-                                        <tbody>
-                                        <#list donations as donation>
-                                            <tr>
-                                                <td>￥${donation.money}</td>
-                                                <td><a href="${donation.link}" target="_blank">${donation.name}</a></td>
-                                                <td>${donation.createdDate}</td>
-                                                <td>${donation.comment}</td>
-                                            </tr>
-                                        </#list>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                <tbody>
+                                <#list donations as donation>
+                                    <tr style="height: 36px">
+                                        <td>￥${donation.money}</td>
+                                        <td style="white-space: nowrap"><a href="${donation.link}" target="_blank">${donation.name}</a></td>
+                                        <td style="white-space: nowrap">${donation.createdDate}</td>
+                                        <td>${donation.comment}</td>
+                                    </tr>
+                                </#list>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

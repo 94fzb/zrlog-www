@@ -82,23 +82,24 @@
                         </small>
                     </h5>
                     <div class="card-body">
-                        <div class="row">
-                            <table class="table-auto" style="width:100%">
+                        <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb;padding-left: 10px">
+                            <table class="auto-table"
+                                   style="width:100%;min-width: 580px">
                                 <thead>
                                 <tr>
-                                    <th>版本</th>
-                                    <th>大小</th>
-                                    <th>变更记录</th>
-                                    <th>发布时间</th>
+                                    <th style="height: 56px;text-align: start">版本</th>
+                                    <th style="height: 56px;text-align: start">大小</th>
+                                    <th style="height: 56px;text-align: start">变更记录</th>
+                                    <th style="height: 56px;text-align: start">发布时间</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <#list downloads as downloadUrl>
-                                    <tr>
+                                    <tr style="height: 36px">
                                         <td>v${downloadUrl.version}</td>
                                         <td>${downloadUrl.fileSize}</td>
                                         <td>${downloadUrl.desc}</td>
-                                        <td>${downloadUrl.releaseDate}</td>
+                                        <td style="white-space: nowrap">${downloadUrl.releaseDate}</td>
                                     </tr>
                                 </#list>
                                 </tbody>
