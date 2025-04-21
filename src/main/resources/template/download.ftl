@@ -47,7 +47,7 @@
                     <div style="padding-left: 12px">
                         <img class="img-responsive"
                              style="border-radius: 4px;object-fit: cover;max-width: 320px;max-height: 240px"
-                             src="${url}/assets/img/zrlog.jpg"/>
+                             src="${url}/assets/img/zrlog.jpg?v=1"/>
                         <span style="line-height: 40px">
                         发布时间：${last.releaseDate}
                         </span>
