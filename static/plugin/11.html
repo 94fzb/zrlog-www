@@ -186,6 +186,7 @@
 
         .nav-active {
             font-weight: 700;
+            color: #f97316;
         }
 
         .card {
