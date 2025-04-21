@@ -23,6 +23,7 @@ $(function () {
     }
     $("#header").hide();
     $("#copyInfo").hide();
+    $("#footer").hide();
     $("#footerLink").hide();
     $("#github").css("display", "none!important");
     $.each($(".storeDetailLink"), function (i, e) {

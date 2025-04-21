@@ -31,7 +31,7 @@
             }
         }</script>
     <script src="${url}/assets/js/auto-theme.js"></script>
-    <script src="${url}/assets/js/store.js?v=1"></script>
+    <script src="${url}/assets/js/store.js?v=2"></script>
     <style>
         :where([class^="ri-"])::before {
             content: "\f3c2";
@@ -253,7 +253,7 @@
 <body>
 <#if !request.attr.from??>
 <!-- 导航栏 -->
-<nav class="bg-gray-900 text-white py-4">
+<nav class="bg-gray-900 text-white py-4" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div class="flex items-center">
             <a href="#" class="text-xl font-bold mr-10">ZRLOG</a>
