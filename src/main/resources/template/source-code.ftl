@@ -63,17 +63,16 @@
                     <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
                 </div>
             </div>
-            <p style="padding-bottom: 1rem">如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持
-                ZrLog
-                的发展</p>
-            <div class="card">
-                <h5 class="card-header">支持</h5>
-                <div class="card-body">
-                    <div class="card-text">如果你刚好有 Github 或者 Gitee 的账号，可以通过下面的按钮赞一下
-                        <b>ZrLog</b></div>
-                    <div style="display: flex;justify-content: start">
-                        <#include "include/star.ftl">
-                    </div>
+        </div>
+        <p style="padding-bottom: 1rem">如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持 ZrLog 的发展</p>
+        <div class="card">
+            <h5 class="card-header">支持</h5>
+            <div class="card-body">
+                <div class="card-text">如果你刚好有 Github 或者 Gitee 的账号，可以通过下面的按钮赞一下
+                    <b>ZrLog</b>
+                </div>
+                <div style="display: flex;justify-content: start">
+                    <#include "include/star.ftl">
                 </div>
             </div>
         </div>
