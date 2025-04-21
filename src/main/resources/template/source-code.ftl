@@ -47,7 +47,7 @@
 </style>
 <section class="py-16 bg-gray-50" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
-        <p style="padding-bottom: 1rem">秉承开源共享的精神，将源码托管在 Gitee/GitHub 上，欢迎各种 fork，star</p>
+        <p style="padding-bottom: 1rem; padding-top: 1rem">秉承开源共享的精神，将源码托管在 Gitee/GitHub 上，欢迎各种 fork，star</p>
         <div style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
             <div class="card" style="max-width: 738px;">
                 <h5 class="card-header">Gitee</h5>
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <p style="padding-bottom: 1rem">如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持 ZrLog 的发展</p>
+        <p style="padding-bottom: 1rem; padding-top: 1rem">如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持 ZrLog 的发展</p>
         <div class="card">
             <h5 class="card-header">支持</h5>
             <div class="card-body">
