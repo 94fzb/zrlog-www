@@ -1,4 +1,4 @@
-<footer class="bg-gray-900 text-white py-12">
+<footer class="bg-gray-900 text-white py-12" id="footer">
     <div class="container mx-auto px-4 md:px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center" id="footer">
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div class="text-gray-400 mb-4 md:mb-0">
                 © 2025 ZrLog 博客程序 <a href="https://beian.miit.gov.cn/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
             </div>
