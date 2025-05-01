@@ -185,7 +185,7 @@
         }
 
         .nav-active {
-            font-weight: 700;
+            font-weight: 500;
             color: #f97316;
         }
 
