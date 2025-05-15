@@ -521,6 +521,49 @@
         </div>
     </div>
 </section>
+<script>
+    // 轮播图功能
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".carousel-slide");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+        }
+        slides[slideIndex].classList.add("active");
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        if (slideIndex >= slides.length) {
+            slideIndex = 0;
+        }
+        if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+        }
+        showSlides();
+    }
+
+    function currentSlide(n) {
+        slideIndex = n;
+        showSlides();
+    }
+
+    // 自动轮播
+    setInterval(() => {
+        changeSlide(1);
+    }, 5000);
+
+    // 主题切换
+    const themeSwitch = document.querySelector(".theme-switch input");
+    themeSwitch.addEventListener("change", function () {
+        if (this.checked) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    });
+</script>
 <footer class="bg-gray-900 text-white py-12" id="footer">
     <div class="container mx-auto px-4 md:px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -579,50 +622,6 @@
 </div>        </div>
     </div>
 </footer>
-
-<script>
-    // 轮播图功能
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".carousel-slide");
-
-    function showSlides() {
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-        }
-        slides[slideIndex].classList.add("active");
-    }
-
-    function changeSlide(n) {
-        slideIndex += n;
-        if (slideIndex >= slides.length) {
-            slideIndex = 0;
-        }
-        if (slideIndex < 0) {
-            slideIndex = slides.length - 1;
-        }
-        showSlides();
-    }
-
-    function currentSlide(n) {
-        slideIndex = n;
-        showSlides();
-    }
-
-    // 自动轮播
-    setInterval(() => {
-        changeSlide(1);
-    }, 5000);
-
-    // 主题切换
-    const themeSwitch = document.querySelector(".theme-switch input");
-    themeSwitch.addEventListener("change", function () {
-        if (this.checked) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    });
-</script>
 <div style="display:none">
     <script>
         var _hmt = _hmt || [];
