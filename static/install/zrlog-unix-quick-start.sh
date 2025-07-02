@@ -25,8 +25,16 @@ sudo yum install zip  # For CentOS/RHEL
 sudo pacman -S zip    # For Arch Linux"
 
 installType=${1}
+# arch
+arch=$(uname -m)
+case "$arch" in
+  x86_64) echo "amd64" ;;
+  aarch64) echo "arm64" ;;
+  i386|i686) echo "386" ;;
+  *) echo "$arch" ;;
+esac
 # 下载最新版本的安装包
-downloadUrl=https://dl.zrlog.com/${installType}/zrlog-$(uname -s)-$(uname -m).zip?$(date +%s)
+downloadUrl=https://dl.zrlog.com/${installType}/zrlog-$(uname -s)-${arch}.zip?$(date +%s)
 wget -q --show-progress ${downloadUrl} -O zrlog.zip
 unzip -o zrlog.zip
 rm zrlog.zip
