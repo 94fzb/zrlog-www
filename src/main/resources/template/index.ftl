@@ -137,7 +137,7 @@
                     <i class="ri-markdown-line text-yellow-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">Markdown 编辑器</h3>
-                <p class="text-gray-600">提供 editormd 主题的富文本编辑器，基于上传支持管理的编辑器插件。</p>
+                <p class="text-gray-600">提供 markdown 主题的富文本编辑器，基于上传支持管理的编辑器插件。</p>
             </div>
 
             <!-- 特性卡片 6 -->
