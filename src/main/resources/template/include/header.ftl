@@ -257,7 +257,7 @@
 <nav class="bg-gray-900 text-white py-4" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div class="flex items-center">
-            <a href="#" class="text-xl font-bold mr-10">ZRLOG</a>
+            <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
             <div class="hidden md:flex space-x-6">
                 <a href="/"
                    class="hover:text-primary transition-colors <#if request.uri == '/'>nav-active</#if>">主页</a>
