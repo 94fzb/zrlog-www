@@ -5,9 +5,3 @@
 ## 发布依赖
 
 - GitHub action runner
-
-## shell
-
-```
-wget https://www.zrlog.com/install/zrlog-upgrade-jakarta-war.sh
-```

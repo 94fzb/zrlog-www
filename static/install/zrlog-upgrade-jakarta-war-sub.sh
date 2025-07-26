@@ -23,7 +23,7 @@ else
 fi
 tar -xf apache-tomcat-${tomcatVersion}.tar.gz
 cd apache-tomcat-${tomcatVersion}
-rm -rf webapps/blog
-wget https://dl.zrlog.com/preview/zrlog-jakarta.war -O webapps/blog.war
+rm -rf webapps/war-sub
+wget https://dl.zrlog.com/preview/zrlog-jakarta.war -O webapps/war-sub.war
 sh bin/catalina.sh run
 
