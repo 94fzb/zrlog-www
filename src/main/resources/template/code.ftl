@@ -27,6 +27,10 @@
         color: #666;
     }
 
+    .osc_git_box .osc_git_title {
+        border-radius: 0!important;
+    }
+
     .osc_git_main a {
         color: #9B9B9B;
     }
@@ -54,6 +58,9 @@
     .github-box-content {
         background: white !important;
     }
+    .osc_git_box .osc_git_title h3 {
+        color: #9B9B9B !important;
+    }
 </style>
 <section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
@@ -67,7 +74,7 @@
             </div>
             <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%">
                 <h5 class="card-header">GitHub</h5>
-                <div class="card-body" style="padding:0">
+                <div class="card-body" style="padding:0;min-height: 128px">
                     <div class="github-widget-repo" data-repo="94fzb/zrlog"></div>
                     <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
                 </div>
