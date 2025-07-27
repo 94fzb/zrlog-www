@@ -44,10 +44,20 @@
         border-radius: 0;
     }
 
+    .github-box {
+        border: none !important;
+    }
+
+    .github-box-title {
+        background: white !important;
+    }
+    .github-box-content {
+        background: white !important;
+    }
 </style>
 <section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
-        <div class="dark:bg-gray-900" style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
+        <div style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
             <div class="card bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden">
                 <h5 class="card-header">Gitee</h5>
                 <div class="card-body dark:bg-gray-900">
