@@ -44,7 +44,7 @@
                                 <#list donations as donation>
                                     <tr style="height: 36px">
                                         <td class="px-2 py-4" >￥${donation.money}</td>
-                                        <td class="px-2 py-4"  style="white-space: nowrap"><a href="${donation.link}" target="_blank">${donation.name}</a></td>
+                                        <td class="px-2 py-4 text-primary"  style="white-space: nowrap"><a href="${donation.link}" target="_blank">${donation.name}</a></td>
                                         <td class="px-2 py-4"  style="white-space: nowrap">${donation.createdDate}</td>
                                         <td class="px-2 py-4" >${donation.comment}</td>
                                     </tr>

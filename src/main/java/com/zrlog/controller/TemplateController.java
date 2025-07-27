@@ -30,7 +30,7 @@ public class TemplateController extends StoreBaseController {
                     template.setDownloadUrl(from + "/download?id=" + id + "&host=" + request.getAttr().get("url") +
                             "&templateName=" + template.getFileName());
                 }
-                template.setSourceUrl("https://gitee.com/94fzb/zrlog-templates/tree/master/" + template.getFileName().replace(".zip", ""));
+                template.setSourceUrl("https://github.com/zrlog-extensions/zrlog-templates/tree/master/" + template.getFileName().replace(".zip", ""));
                 getRequest().getAttr().put("template", template);
                 getResponse().renderFreeMarker("/template/detail");
             } else {

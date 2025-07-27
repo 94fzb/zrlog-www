@@ -29,7 +29,7 @@
 
                     <h4 class="py-4">源码</h4>
                     <ul>
-                        <li><a class="text-primary" href="${template.sourceUrl}">Gitee</a></li>
+                        <li><a class="text-primary" href="${template.sourceUrl}">GitHub</a></li>
                     </ul>
                 </div>
             </div>

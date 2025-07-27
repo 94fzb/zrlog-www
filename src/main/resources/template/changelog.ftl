@@ -62,6 +62,10 @@
         .card-body ul li {
             list-style: inside;
         }
+
+        .card-body a {
+            color: #1677ff;
+        }
     </style>
     <div class="container mx-auto px-4 md:px-6">
         <div class="card bg-white dark:bg-gray-900">
