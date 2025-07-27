@@ -31,7 +31,11 @@
                     </div>
 
                     <div>
-                        <h4 style="font-size: 26px;padding-left: 4px;font-weight: 500">下载</h4>
+                        <div class="p-3 bg-primary border border-primary-200 rounded-lg">
+                            <p class="text-white text-md flex items-start mb-0">
+                                <span>选择运行环境（模式）</span>
+                            </p>
+                        </div>
                         <#include "download-file-btn.ftl">
                     </div>
                 </div>
