@@ -14,7 +14,7 @@
     <script>tailwind.config = {
             theme: {
                 extend: {
-                    colors: {primary: '#f97316', secondary: '#3b82f6'},
+                    colors: {primary: '#1677ff', secondary: '#f97316'},
                     borderRadius: {
                         'none': '0px',
                         'sm': '4px',
@@ -29,7 +29,8 @@
                     }
                 }
             }
-        }</script>
+        }
+    </script>
     <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
     <script src="https://www.zrlog.com/assets/js/store.js?v=2"></script>
     <style>
@@ -93,7 +94,7 @@
         }
 
         input:checked + .slider {
-            background-color: #f97316;
+            background-color: #1677ff;
         }
 
         input:checked + .slider:before {
@@ -186,7 +187,7 @@
 
         .nav-active {
             font-weight: 500;
-            color: #f97316;
+            color: #1677ff;
         }
 
         .card {
@@ -214,15 +215,15 @@
         }
 
         .card-body a {
-            color: #2492ff;
+            color: #1677ff;
         }
 
         .link {
-            color: #2492ff;
+            color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
-            color: #2492ff;
+            color: #1677ff;
             display: inline-flex;
             height: 56px;
             min-width: 96px;
@@ -232,7 +233,7 @@
             padding-left: 12px;
             border-radius: 4px;
             margin-top: 12px;
-            border: 1px solid #2492ff;
+            border: 1px solid #1677ff;
         }
 
         .auto-cards {
@@ -343,18 +344,27 @@
         </div>
     </div>
 </section>
+<!-- 返回顶部按钮 -->
+<button
+        id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+>
+    <i class="ri-arrow-up-line text-xl"></i>
+</button>
 <footer class="bg-gray-900 text-white py-12" id="footer">
     <div class="container mx-auto px-4 md:px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
                 <h3 class="text-lg font-semibold mb-4">关于 ZRLOG</h3>
-                <p class="text-gray-400">ZRLOG 是一款使用 Java 开发的开源博客系统，专注于为用户提供简单、高效的博客写作体验。</p>
+                <p class="text-gray-400">ZRLOG 是一款使用 Java
+                    开发的开源博客系统，专注于为用户提供简单、高效的博客写作体验。</p>
             </div>
             <div>
                 <h3 class="text-lg font-semibold mb-4">快速链接</h3>
                 <ul class="space-y-2">
                     <li><a href="/" class="text-gray-400 hover:text-white transition-colors">主页</a></li>
-                    <li><a href="https://blog.zrlog.com" class="text-gray-400 hover:text-white transition-colors">博客</a></li>
+                    <li><a href="https://blog.zrlog.com"
+                           class="text-gray-400 hover:text-white transition-colors">博客</a></li>
                     <li><a href="/template" class="text-gray-400 hover:text-white transition-colors">主题</a></li>
                     <li><a href="/plugin" class="text-gray-400 hover:text-white transition-colors">插件</a></li>
                 </ul>
@@ -362,9 +372,12 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">资源</h3>
                 <ul class="space-y-2">
-                    <li><a href="https://blog.zrlog.com/sort/doc" class="text-gray-400 hover:text-white transition-colors">文档</a></li>
-                    <li><a href="https://blog.zrlog.com/faq-collect.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-                    <li><a href="https://blog.zrlog.com/for-developer.html" class="text-gray-400 hover:text-white transition-colors">开发者</a></li>
+                    <li><a href="https://blog.zrlog.com/sort/doc"
+                           class="text-gray-400 hover:text-white transition-colors">文档</a></li>
+                    <li><a href="https://blog.zrlog.com/faq-collect.html"
+                           class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    <li><a href="https://blog.zrlog.com/for-developer.html"
+                           class="text-gray-400 hover:text-white transition-colors">开发者</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
                 </ul>
             </div>
@@ -377,7 +390,8 @@
                     </li>
                     <li class="flex items-center">
                         <i class="ri-github-fill mr-2"></i>
-                        <a href="https://github.com/94fzb/zrlog" target="_blank" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                        <a href="https://github.com/94fzb/zrlog" target="_blank"
+                           class="text-gray-400 hover:text-white transition-colors">GitHub</a>
                     </li>
                 </ul>
             </div>
@@ -401,6 +415,25 @@
 </div>        </div>
     </div>
 </footer>
+<script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+            backToTopButton.classList.remove("opacity-100", "visible");
+            backToTopButton.classList.add("opacity-0", "invisible");
+        }
+    });
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+</script>
 <div style="display:none">
     <script>
         var _hmt = _hmt || [];
