@@ -64,7 +64,7 @@
         }
 
         .card-body a {
-            color: #1677ff;
+            color: var(--color-primary);
         }
     </style>
     <div class="container mx-auto px-4 md:px-6">

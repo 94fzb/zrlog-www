@@ -113,6 +113,37 @@
             localStorage.theme = "light";
         }
     });
+
+    const btn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById('overlay');
+
+    function closeSidebar() {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        setTimeout(() => {
+            sidebar.classList.add('hidden');
+        }, 300); // 等待动画结束再隐藏
+    }
+
+    overlay.addEventListener('click', closeSidebar);
+
+    btn.addEventListener("click", () => {
+        // 先取消隐藏
+        sidebar.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        // 然后触发滑出
+        setTimeout(() => {
+            sidebar.classList.remove('-translate-x-full');
+        }, 10);
+    });
+
+    // ESC 键也可关闭（可选）
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeSidebar();
+        }
+    });
 </script>
 <#include "statistcis.ftl">
 </body>

@@ -43,6 +43,10 @@
             font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
         }
 
+        :root {
+            --color-primary: #1677ff;
+        }
+
         .hero-gradient {
             background: linear-gradient(to bottom, rgba(31, 41, 55, 0.95), rgba(31, 41, 55, 0.8));
         }
@@ -95,7 +99,7 @@
         }
 
         input:checked + .slider {
-            background-color: #1677ff;
+            background-color: var(--color-primary);
         }
 
         input:checked + .slider:before {
@@ -116,7 +120,7 @@
         }
 
         .github-star a:hover {
-            background: rgb(13, 110, 253);
+            background: var(--color-primary);
             color: #fff;
         }
 
@@ -164,7 +168,7 @@
 
         @media (prefers-color-scheme: dark) {
             .icon {
-                fill: #1677ff;
+                fill: var(--color-primary);
             }
 
             .github-star a {
@@ -188,7 +192,7 @@
 
         .nav-active {
             font-weight: 500;
-            color: #1677ff;
+            color: var(--color-primary);
         }
 
         .card {
@@ -213,10 +217,6 @@
 
         .card-img-top {
             text-align: center;
-        }
-
-        .link {
-            color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
@@ -254,22 +254,51 @@
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div class="flex items-center">
             <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="/"
-                   class="hover:text-primary transition-colors nav-active">主页</a>
-                <a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a>
-                <a href="/template"
-                   class="hover:text-primary transition-colors ">主题</a>
-                <a href="/plugin"
-                   class="hover:text-primary transition-colors ">插件</a>
-                <a href="/download"
-                   class="hover:text-primary transition-colors ">下载</a>
-                <a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a>
-                <a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a>
-                <a href="/code"
-                   class="hover:text-primary transition-colors ">源码</a>
-            </div>
+            <ul class="hidden md:flex space-x-6">
+<li><a href="/"
+       class="hover:text-primary transition-colors nav-active">主页</a>
+</li>
+<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="/template"
+       class="hover:text-primary transition-colors ">主题</a>
+</li>
+<li><a href="/plugin"
+       class="hover:text-primary transition-colors ">插件</a>
+</li>
+<li><a href="/download"
+       class="hover:text-primary transition-colors ">下载</a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
+<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="/code"
+       class="hover:text-primary transition-colors ">源码</a>
+</li>            </ul>
         </div>
+        <div id="overlay"
+             class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+        <aside id="sidebar" class="fixed text-white top-0 bg-primary left-0 w-56 h-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6
+           -translate-x-full transition-transform duration-300 z-40 hidden"
+               style="background: rgb(17 24 39);">
+            <ul class="space-y-6" style="font-size: 18px;text-align: center;">
+<li><a href="/"
+       class="hover:text-primary transition-colors nav-active">主页</a>
+</li>
+<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="/template"
+       class="hover:text-primary transition-colors ">主题</a>
+</li>
+<li><a href="/plugin"
+       class="hover:text-primary transition-colors ">插件</a>
+</li>
+<li><a href="/download"
+       class="hover:text-primary transition-colors ">下载</a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
+<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="/code"
+       class="hover:text-primary transition-colors ">源码</a>
+</li>            </ul>
+        </aside>
         <div class="flex items-center space-x-4">
             <a href="https://github.com/94fzb/zrlog" target="_blank"
                class="flex items-center justify-center w-8 h-8">
@@ -279,7 +308,7 @@
                 <input type="checkbox">
                 <span class="slider"></span>
             </label>
-            <button class="md:hidden flex items-center justify-center w-8 h-8">
+            <button class="md:hidden flex items-center justify-center w-8 h-8" id="toggleSidebar">
                 <i class="ri-menu-line ri-lg"></i>
             </button>
         </div>
@@ -674,6 +703,37 @@
         } else {
             document.documentElement.classList.remove('dark'); // ✅ 关闭暗黑模式
             localStorage.theme = "light";
+        }
+    });
+
+    const btn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById('overlay');
+
+    function closeSidebar() {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        setTimeout(() => {
+            sidebar.classList.add('hidden');
+        }, 300); // 等待动画结束再隐藏
+    }
+
+    overlay.addEventListener('click', closeSidebar);
+
+    btn.addEventListener("click", () => {
+        // 先取消隐藏
+        sidebar.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        // 然后触发滑出
+        setTimeout(() => {
+            sidebar.classList.remove('-translate-x-full');
+        }, 10);
+    });
+
+    // ESC 键也可关闭（可选）
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeSidebar();
         }
     });
 </script>
