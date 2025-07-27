@@ -1,4 +1,4 @@
-<section class="bg-gray-50" style="padding-bottom: 48px">
+<section class="bg-gray-50" style="padding-bottom: 48px" id="donate">
     <div class="container mx-auto px-4 md:px-6">
         <div class="col-md-12" style="padding-top: 20px">
             <div class="card">
@@ -28,25 +28,25 @@
                 <div class="card">
                     <h5 class="card-header">捐赠列表</h5>
                     <div class="card-body">
-                        <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb;padding-left: 10px">
-                            <table class="auto-table"
+                        <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb;">
+                            <table class="auto-table divide-y divide-gray-200"
                                    style="width:100%;min-width: 680px">
                                 <thead>
                                 <tr >
-                                    <th style="height: 56px;text-align: start">金额</th>
-                                    <th style="height: 56px;text-align: start">捐赠者</th>
-                                    <th style="height: 56px;text-align: start">捐赠时间</th>
-                                    <th style="height: 56px;text-align: start">留言</th>
+                                    <th  scope="col" class="px-2" style="height: 56px;text-align: start">金额</th>
+                                    <th  scope="col" class="px-2" style="height: 56px;text-align: start">捐赠者</th>
+                                    <th  scope="col" class="px-2" style="height: 56px;text-align: start">捐赠时间</th>
+                                    <th  scope="col" class="px-2" style="height: 56px;text-align: start">留言</th>
                                 </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody class="bg-white divide-y divide-gray-200">
                                 <#list donations as donation>
                                     <tr style="height: 36px">
-                                        <td>￥${donation.money}</td>
-                                        <td style="white-space: nowrap"><a href="${donation.link}" target="_blank">${donation.name}</a></td>
-                                        <td style="white-space: nowrap">${donation.createdDate}</td>
-                                        <td>${donation.comment}</td>
+                                        <td class="px-2 py-4" >￥${donation.money}</td>
+                                        <td class="px-2 py-4"  style="white-space: nowrap"><a href="${donation.link}" target="_blank">${donation.name}</a></td>
+                                        <td class="px-2 py-4"  style="white-space: nowrap">${donation.createdDate}</td>
+                                        <td class="px-2 py-4" >${donation.comment}</td>
                                     </tr>
                                 </#list>
                                 </tbody>

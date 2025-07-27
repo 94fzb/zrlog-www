@@ -14,7 +14,7 @@
     <script>tailwind.config = {
             theme: {
                 extend: {
-                    colors: {primary: '#f97316', secondary: '#3b82f6'},
+                    colors: {primary: '#1677ff', secondary: '#f97316'},
                     borderRadius: {
                         'none': '0px',
                         'sm': '4px',
@@ -29,7 +29,8 @@
                     }
                 }
             }
-        }</script>
+        }
+    </script>
     <script src="${url}/assets/js/auto-theme.js"></script>
     <script src="${url}/assets/js/store.js?v=2"></script>
     <style>
@@ -93,7 +94,7 @@
         }
 
         input:checked + .slider {
-            background-color: #f97316;
+            background-color: #1677ff;
         }
 
         input:checked + .slider:before {
@@ -186,7 +187,7 @@
 
         .nav-active {
             font-weight: 500;
-            color: #f97316;
+            color: #1677ff;
         }
 
         .card {
@@ -214,15 +215,15 @@
         }
 
         .card-body a {
-            color: #2492ff;
+            color: #1677ff;
         }
 
         .link {
-            color: #2492ff;
+            color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
-            color: #2492ff;
+            color: #1677ff;
             display: inline-flex;
             height: 56px;
             min-width: 96px;
@@ -232,7 +233,7 @@
             padding-left: 12px;
             border-radius: 4px;
             margin-top: 12px;
-            border: 1px solid #2492ff;
+            border: 1px solid #1677ff;
         }
 
         .auto-cards {

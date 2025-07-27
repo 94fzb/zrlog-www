@@ -1,6 +1,6 @@
 <#assign subTitle="源码下载">
 <#include "include/header.ftl"/>
-
+<#include "_code/header.ftl"/>
 <style>
     #osc-gitee-widget-tag {
         padding: 0;
@@ -47,9 +47,8 @@
 </style>
 <section class="py-16 bg-gray-50" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
-        <p style="padding-bottom: 1rem; padding-top: 1rem">秉承开源共享的精神，将源码托管在 Gitee/GitHub 上，欢迎各种 fork，star</p>
         <div style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
-            <div class="card" style="max-width: 738px;">
+            <div class="card" style="max-width: 738px;overflow: hidden">
                 <h5 class="card-header">Gitee</h5>
                 <div class="card-body">
                     <div id="osc-gitee-widget-tag"></div>

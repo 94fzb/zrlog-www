@@ -8,6 +8,6 @@
     "优化登录成功的跳转（改为客户端路由，载入更快）",
     "升级 antd 的版本到 `5.20.1`"
   ],
-  "downloadUrl": "#",
+  "commitId": "4f3c4da",
   "changeLogIsMd": true
 }
