@@ -1,17 +1,18 @@
 <section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6" id="version">
         <div id="version-header">
-            <div class="card dark:bg-gray-900" style="width: 100%">
+            <div class="card bg-white shadow-md dark:bg-gray-900" style="width: 100%">
                 <div class="card-header" style="display: flex;justify-content: space-between;align-items: center;">
                     <h3 style="margin-bottom: 0;line-height: 40px">ZrLog v${last.version} </h3>
                 </div>
                 <h5 style="color:red;padding-top: 8px;padding-bottom: 8px;font-size: 18px;padding-left: 12px">初次部署
                     ZrLog，或者对 Java
                     不太熟悉的，可以参考这篇文章进行安装 <a
+                            style="color:#1677ff"
                             href="https://blog.zrlog.com/run-zrlog-in-docker.html">https://blog.zrlog.com/run-zrlog-in-docker.html</a>
                 </h5>
                 <div class="card-body" style="display: flex;flex-flow: wrap;gap:24px">
-                    <div style="max-width: 420px">
+                    <div style="max-width: 420px;overflow: hidden">
                         <img class="img-responsive"
                              style="border-radius: 4px;object-fit: cover;max-width: 320px;max-height: 240px"
                              src="${url}/assets/img/zrlog.jpg?v=1" alt=""/>

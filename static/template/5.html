@@ -12,7 +12,7 @@
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
     <script src="https://www.zrlog.com/assets/js/tailwindcss-3.4.6.js"></script>
     <script>tailwind.config = {
-            darkMode: 'media', // ✅ 启用暗黑模式（class 模式）
+            darkMode: 'class', // ✅ 启用暗黑模式（class 模式）
             theme: {
                 extend: {
                     colors: {primary: '#1677ff', secondary: '#f97316'},
@@ -31,15 +31,6 @@
                 }
             }
         }
-        // 主题切换
-        const themeSwitch = document.querySelector(".theme-switch input");
-        themeSwitch.addEventListener("change", function () {
-            if (this.checked) {
-                document.documentElement.classList.toggle('dark');
-            } else {
-                document.documentElement.classList.toggle("dark");
-            }
-        });
     </script>
     <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
     <script src="https://www.zrlog.com/assets/js/store.js?v=2"></script>
@@ -173,7 +164,7 @@
 
         @media (prefers-color-scheme: dark) {
             .icon {
-                fill: #4d74c5;
+                fill: #1677ff;
             }
 
             .github-star a {
@@ -262,7 +253,7 @@
         }
 
     </style>
-<body class="dark:bg-black dark:text-white">
+<body class="dark:bg-black dark:text-gray-200">
 <!-- 导航栏 -->
 <nav class="bg-gray-900 text-white py-4" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -299,7 +290,7 @@
         </div>
     </div>
 </nav>
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
         <nav aria-label="breadcrumb">
             <nav aria-label="breadcrumb">
@@ -319,7 +310,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="card" style="width: 100%">
+            <div class="card bg-white dark:bg-gray-900" style="width: 100%">
                 <div class="card-header">描述</div>
                 <div class="card-body">
                     <p></p>
@@ -421,6 +412,42 @@
             top: 0,
             behavior: "smooth",
         });
+    });
+
+
+
+    // 主题切换
+    const themeSwitch = document.querySelector(".theme-switch input");
+
+    // 页面加载时，根据 localStorage 设置初始主题
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+        themeSwitch.checked = true;
+    }
+
+    const userPreference = localStorage.getItem("theme");
+
+    function applyTheme() {
+        if (userPreference === "dark" || (!userPreference && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+            themeSwitch.checked = true;
+        } else {
+            document.documentElement.classList.remove("dark");
+            themeSwitch.checked = false;
+        }
+    }
+
+    // 初始化：加载页面时设置主题
+    applyTheme();
+
+    themeSwitch.addEventListener("change", function () {
+        if (this.checked) {
+            document.documentElement.classList.add('dark'); // ✅ 开启暗黑模式
+            localStorage.theme = "dark";
+        } else {
+            document.documentElement.classList.remove('dark'); // ✅ 关闭暗黑模式
+            localStorage.theme = "light";
+        }
     });
 </script>
 <div style="display:none">

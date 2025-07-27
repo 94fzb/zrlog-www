@@ -1,6 +1,6 @@
 <#assign subTitle="主题中心">
 <#include "../include/header.ftl"/>
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
         <nav aria-label="breadcrumb">
             主题中心 > 所有
@@ -9,7 +9,7 @@
              class="py-4">
             <#list templates as template>
                 <div class="col-lg-4 col-sm-6" style="padding-top: 10px">
-                    <div class="card text-center" style="object-fit: cover">
+                    <div class="card bg-white text-center dark:bg-gray-900" style="object-fit: cover">
                         <div class="card-body">
                             <img class="img-responsive"
                                  style="height:200px;min-width:320px;max-width: 320px;overflow:hidden;object-fit: cover"

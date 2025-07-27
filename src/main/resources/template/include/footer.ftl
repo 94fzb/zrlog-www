@@ -77,6 +77,42 @@
             behavior: "smooth",
         });
     });
+
+
+
+    // 主题切换
+    const themeSwitch = document.querySelector(".theme-switch input");
+
+    // 页面加载时，根据 localStorage 设置初始主题
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+        themeSwitch.checked = true;
+    }
+
+    const userPreference = localStorage.getItem("theme");
+
+    function applyTheme() {
+        if (userPreference === "dark" || (!userPreference && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+            themeSwitch.checked = true;
+        } else {
+            document.documentElement.classList.remove("dark");
+            themeSwitch.checked = false;
+        }
+    }
+
+    // 初始化：加载页面时设置主题
+    applyTheme();
+
+    themeSwitch.addEventListener("change", function () {
+        if (this.checked) {
+            document.documentElement.classList.add('dark'); // ✅ 开启暗黑模式
+            localStorage.theme = "dark";
+        } else {
+            document.documentElement.classList.remove('dark'); // ✅ 关闭暗黑模式
+            localStorage.theme = "light";
+        }
+    });
 </script>
 <#include "statistcis.ftl">
 </body>

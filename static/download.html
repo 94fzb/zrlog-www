@@ -12,7 +12,7 @@
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
     <script src="https://www.zrlog.com/assets/js/tailwindcss-3.4.6.js"></script>
     <script>tailwind.config = {
-            darkMode: 'media', // ✅ 启用暗黑模式（class 模式）
+            darkMode: 'class', // ✅ 启用暗黑模式（class 模式）
             theme: {
                 extend: {
                     colors: {primary: '#1677ff', secondary: '#f97316'},
@@ -31,15 +31,6 @@
                 }
             }
         }
-        // 主题切换
-        const themeSwitch = document.querySelector(".theme-switch input");
-        themeSwitch.addEventListener("change", function () {
-            if (this.checked) {
-                document.documentElement.classList.toggle('dark');
-            } else {
-                document.documentElement.classList.toggle("dark");
-            }
-        });
     </script>
     <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
     <script src="https://www.zrlog.com/assets/js/store.js?v=2"></script>
@@ -173,7 +164,7 @@
 
         @media (prefers-color-scheme: dark) {
             .icon {
-                fill: #4d74c5;
+                fill: #1677ff;
             }
 
             .github-star a {
@@ -262,7 +253,7 @@
         }
 
     </style>
-<body class="dark:bg-black dark:text-white">
+<body class="dark:bg-black dark:text-gray-200">
 <!-- 导航栏 -->
 <nav class="bg-gray-900 text-white py-4" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -319,10 +310,6 @@
         max-width: 320px
     }
 
-    #version a {
-        color: #2492ff;
-    }
-
     .card-body ul li {
         list-style: decimal;
     }
@@ -363,17 +350,18 @@
 </section><section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6" id="version">
         <div id="version-header">
-            <div class="card dark:bg-gray-900" style="width: 100%">
+            <div class="card bg-white shadow-md dark:bg-gray-900" style="width: 100%">
                 <div class="card-header" style="display: flex;justify-content: space-between;align-items: center;">
                     <h3 style="margin-bottom: 0;line-height: 40px">ZrLog v3.1.6 </h3>
                 </div>
                 <h5 style="color:red;padding-top: 8px;padding-bottom: 8px;font-size: 18px;padding-left: 12px">初次部署
                     ZrLog，或者对 Java
                     不太熟悉的，可以参考这篇文章进行安装 <a
+                            style="color:#1677ff"
                             href="https://blog.zrlog.com/run-zrlog-in-docker.html">https://blog.zrlog.com/run-zrlog-in-docker.html</a>
                 </h5>
                 <div class="card-body" style="display: flex;flex-flow: wrap;gap:24px">
-                    <div style="max-width: 420px">
+                    <div style="max-width: 420px;overflow: hidden">
                         <img class="img-responsive"
                              style="border-radius: 4px;object-fit: cover;max-width: 320px;max-height: 240px"
                              src="https://www.zrlog.com/assets/img/zrlog.jpg?v=1" alt=""/>
@@ -662,68 +650,80 @@
     <div class="container mx-auto px-4 md:px-6" id="version">
         <div class="dark:bg-gray-900">
             <div class="table-responsive">
-                <div class="card dark:bg-gray-900">
+                <div class="card bg-white dark:bg-gray-900">
                     <h5 class="card-header">
                         历史版本
                     </h5>
-                    <div class="card-body">
-                        <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb">
-                            <table class="auto-table divide-y divide-gray-200" style="width:100%;min-width: 780px">
-                                <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
-                                <tr>
-                                    <th scope="col" class="px-2" style="height: 56px;text-align: start">版本</th>
-                                    <th scope="col" class="px-2" style="height: 56px;text-align: start">发布时间</th>
-                                    <th scope="col" class="px-2" style="height: 56px;text-align: start;white-space: nowrap">大小</th>
-                                    <th scope="col" class="px-2" style="height: 56px;text-align: start">主要变更</th>
-                                    <th scope="col" class="px-2" style="height: 56px;text-align: start">操作</th>
+                    <div class="card-body"  style="overflow:auto;">
+                        <table class="auto-table divide-y divide-gray-200" style="width:100%;min-width: 780px;">
+                            <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
+                            <tr>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">版本</th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">发布时间</th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start;white-space: nowrap">
+                                    大小
+                                </th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">主要变更</th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-400">
+                                                            <tr style="height: 36px">
+                                    <td style="white-space: nowrap" class="px-2 py-4">v3.1.5</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">2025-03-24</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">8M</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">优化 PWA 全屏逻辑，添加 Linux arm64环境包，添加 deb 包快捷安装</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary"
+                                                                                         href="https://dl.zrlog.com/release/zrlog-3.1.5-f541f86-release.zip?ref=download">下载</a>
+                                    </td>
                                 </tr>
-                                </thead>
-                                <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-400">
-                                                                    <tr style="height: 36px">
-                                        <td style="white-space: nowrap" class="px-2 py-4">v3.1.5</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">2025-03-24</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">8M</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">优化 PWA 全屏逻辑，添加 Linux arm64环境包，添加 deb 包快捷安装</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary" href="https://dl.zrlog.com/release/zrlog-3.1.5-f541f86-release.zip?ref=download">下载</a></td>
-                                    </tr>
-                                    <tr style="height: 36px">
-                                        <td style="white-space: nowrap" class="px-2 py-4">v3.1.4</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">2025-03-12</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">8M</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">管理页面，移动设备可以收起侧边栏，PWA 应用添加 appId</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary" href="https://dl.zrlog.com/release/zrlog-3.1.4-7af1bfb-release.zip?ref=download">下载</a></td>
-                                    </tr>
-                                    <tr style="height: 36px">
-                                        <td style="white-space: nowrap" class="px-2 py-4">v3.1.3</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">2024-11-23</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">8M</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">文章撰写的异步保存更加稳定，文章管理界面支持按分类进行筛选</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary" href="https://dl.zrlog.com/release/zrlog-3.1.3-d5ebb85-release.zip?ref=download">下载</a></td>
-                                    </tr>
-                                    <tr style="height: 36px">
-                                        <td style="white-space: nowrap" class="px-2 py-4">v3.1.2</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">2024-11-09</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">8M</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">编辑器在移动设备上，默认不显示预览区域</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary" href="https://dl.zrlog.com/release/zrlog-3.1.2-2847767-release.zip?ref=download">下载</a></td>
-                                    </tr>
-                                    <tr style="height: 36px">
-                                        <td style="white-space: nowrap" class="px-2 py-4">v3.1.1</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">2024-08-19</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">8M</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">简化编辑页面，文章的封面，标签等信息，改为使用弹出框进行设置</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary" href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release.zip?ref=download">下载</a></td>
-                                    </tr>
-                                    <tr style="height: 36px">
-                                        <td style="white-space: nowrap" class="px-2 py-4">v3.1.0</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">2024-07-19</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">8M</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4">从 ZrLog 3.1 起支持本地部署，并配合 CDN 或 GitHub Pages 服务实现动静结合，轻松实现无服务上...</td>
-                                        <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary" href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release.zip?ref=download">下载</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                <tr style="height: 36px">
+                                    <td style="white-space: nowrap" class="px-2 py-4">v3.1.4</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">2025-03-12</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">8M</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">管理页面，移动设备可以收起侧边栏，PWA 应用添加 appId</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary"
+                                                                                         href="https://dl.zrlog.com/release/zrlog-3.1.4-7af1bfb-release.zip?ref=download">下载</a>
+                                    </td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td style="white-space: nowrap" class="px-2 py-4">v3.1.3</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">2024-11-23</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">8M</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">文章撰写的异步保存更加稳定，文章管理界面支持按分类进行筛选</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary"
+                                                                                         href="https://dl.zrlog.com/release/zrlog-3.1.3-d5ebb85-release.zip?ref=download">下载</a>
+                                    </td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td style="white-space: nowrap" class="px-2 py-4">v3.1.2</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">2024-11-09</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">8M</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">编辑器在移动设备上，默认不显示预览区域</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary"
+                                                                                         href="https://dl.zrlog.com/release/zrlog-3.1.2-2847767-release.zip?ref=download">下载</a>
+                                    </td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td style="white-space: nowrap" class="px-2 py-4">v3.1.1</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">2024-08-19</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">8M</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">简化编辑页面，文章的封面，标签等信息，改为使用弹出框进行设置</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary"
+                                                                                         href="https://dl.zrlog.com/release/zrlog-3.1.1-4f3c4da-release.zip?ref=download">下载</a>
+                                    </td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td style="white-space: nowrap" class="px-2 py-4">v3.1.0</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">2024-07-19</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">8M</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4">从 ZrLog 3.1 起支持本地部署，并配合 CDN 或 GitHub Pages 服务实现动静结合，轻松实现无服务上...</td>
+                                    <td style="white-space: nowrap" class="px-2 py-4"><a class="text-primary"
+                                                                                         href="https://dl.zrlog.com/release/zrlog-3.1.0-25cf751-release.zip?ref=download">下载</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <div class="mt-4 text-center mb-4">
                             <a
                                     href="https://www.zrlog.com/changelog/index.html?ref=downloadUrl"
@@ -826,6 +826,42 @@
             top: 0,
             behavior: "smooth",
         });
+    });
+
+
+
+    // 主题切换
+    const themeSwitch = document.querySelector(".theme-switch input");
+
+    // 页面加载时，根据 localStorage 设置初始主题
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+        themeSwitch.checked = true;
+    }
+
+    const userPreference = localStorage.getItem("theme");
+
+    function applyTheme() {
+        if (userPreference === "dark" || (!userPreference && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+            themeSwitch.checked = true;
+        } else {
+            document.documentElement.classList.remove("dark");
+            themeSwitch.checked = false;
+        }
+    }
+
+    // 初始化：加载页面时设置主题
+    applyTheme();
+
+    themeSwitch.addEventListener("change", function () {
+        if (this.checked) {
+            document.documentElement.classList.add('dark'); // ✅ 开启暗黑模式
+            localStorage.theme = "dark";
+        } else {
+            document.documentElement.classList.remove('dark'); // ✅ 关闭暗黑模式
+            localStorage.theme = "light";
+        }
     });
 </script>
 <div style="display:none">

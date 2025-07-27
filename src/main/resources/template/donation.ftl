@@ -1,20 +1,20 @@
 <section class="bg-gray-50 dark:bg-black" style="padding-bottom: 48px" id="donate">
     <div class="container mx-auto px-4 md:px-6">
         <div class="col-md-12 dark:bg-gray-900" style="padding-top: 20px">
-            <div class="card">
+            <div class="card bg-white dark:bg-gray-900">
                 <h5 class="card-header">请作者喝杯咖啡
                     <small>（可在备注里注名昵称）</small>
                 </h5>
                 <div class="card-body donation-card">
                     <div style="display: flex;flex-flow: wrap;justify-content: space-evenly;gap: 12px">
-                        <div class="card text-center">
+                        <div class="card bg-white dark:bg-gray-900 text-center">
                             <h5 class="card-header">微信</h5>
                             <div class="card-body" style="display:flex">
                                 <img class="card-img-top" width="273px"
                                      src="${url}/assets/img/donation/wechat.png"/>
                             </div>
                         </div>
-                        <div class="card text-center">
+                        <div class="card bg-white dark:bg-gray-900 text-center">
                             <h5 class="card-header">支付宝</h5>
                             <div class="card-body" style="display:flex">
                                 <img class="card-img-top" width="273px"
@@ -25,13 +25,13 @@
                 </div>
             </div>
             <div class="col-md-12" style="padding-top: 20px">
-                <div class="card dark:bg-gray-900">
+                <div class="card bg-white dark:bg-gray-900">
                     <h5 class="card-header">捐赠列表</h5>
                     <div class="card-body">
-                        <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb;">
-                            <table class="auto-table divide-y divide-gray-200 dark:bg-gray-900"
+                        <div style="border-radius: 4px;overflow: auto;">
+                            <table class="auto-table divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900"
                                    style="width:100%;min-width: 680px">
-                                <thead>
+                                <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
                                 <tr >
                                     <th  scope="col" class="px-2" style="height: 56px;text-align: start">金额</th>
                                     <th  scope="col" class="px-2" style="height: 56px;text-align: start">捐赠者</th>
@@ -40,7 +40,7 @@
                                 </tr>
                                 </thead>
 
-                                <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-900">
+                                <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
                                 <#list donations as donation>
                                     <tr style="height: 36px">
                                         <td class="px-2 py-4" >￥${donation.money}</td>

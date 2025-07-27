@@ -20,10 +20,6 @@
         max-width: 320px
     }
 
-    #version a {
-        color: #2492ff;
-    }
-
     .card-body ul li {
         list-style: decimal;
     }

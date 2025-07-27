@@ -1,6 +1,6 @@
 <#assign subTitle="${template.name} - 主题中心">
 <#include "../include/header.ftl"/>
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
         <nav aria-label="breadcrumb">
             <nav aria-label="breadcrumb">
@@ -20,7 +20,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="card" style="width: 100%">
+            <div class="card bg-white dark:bg-gray-900" style="width: 100%">
                 <div class="card-header">描述</div>
                 <div class="card-body">
                     <p>${template.desc}</p>

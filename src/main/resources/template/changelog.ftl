@@ -64,11 +64,11 @@
         }
     </style>
     <div class="container mx-auto px-4 md:px-6">
-        <div class="card  dark:bg-gray-900">
+        <div class="card bg-white dark:bg-gray-900">
             <h4 class="card-header">
                 变更记录
             </h4>
-            <div class="card-body" style="padding: 16px;">
+            <div class="card-body" style="padding: 16px;overflow: hidden;white-space: wrap;word-break: break-all;">
                 ${htmlStr}
             </div>
         </div>

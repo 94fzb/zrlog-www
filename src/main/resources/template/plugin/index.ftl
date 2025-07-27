@@ -1,6 +1,6 @@
 <#assign subTitle="插件中心">
 <#include "../include/header.ftl"/>
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
         <nav aria-label="breadcrumb">
             插件中心 > 所有
@@ -8,7 +8,7 @@
         <div style="display:flex;flex-flow: wrap;gap:16px;justify-content: left;align-items:start"
              class="py-4">
             <#list plugins as plugin>
-                <div class="card text-center">
+                <div class="card bg-white text-center dark:bg-gray-900">
                     <div class="card-body">
                         <img class="img-responsive"
                              style="height:200px;min-width:320px;max-width: 320px;overflow:hidden;object-fit: cover"
