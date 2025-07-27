@@ -1,6 +1,6 @@
 <#include "include/header.ftl"/>
 <!-- 英雄区 -->
-<section class="hero-gradient py-20 relative overflow-hidden">
+<section class="hero-gradient py-20 relative overflow-hidden dark:bg-black">
     <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
     <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
     <div class="container mx-auto px-4 md:px-6 text-center">
@@ -21,7 +21,7 @@
     </div>
 </section>
 <!-- 核心特性 -->
-<section class="py-16 bg-white">
+<section class="py-16 bg-white dark:bg-black">
     <div class="container mx-auto px-4 md:px-6 text-center">
         <div class="flex justify-center gap-8 mb-10">
             <div class="text-blue-500 text-4xl font-bold">免费</div>
@@ -31,7 +31,7 @@
 
         <#include "include/star.ftl">
 
-        <p class="text-gray-700 max-w-4xl mx-auto leading-relaxed text-xl" style="line-height: 2">
+        <p class="text-gray-700 max-w-4xl mx-auto leading-relaxed text-xl dark:text-gray-400" style="line-height: 2">
             ZrLog 是使用 Java 开发的博客程序，具有简约的、易用的、组件化的、内存占用低等特点。
             <br/>
             Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上。
@@ -40,7 +40,7 @@
 </section>
 
 <!-- 产品预览 -->
-<section class="py-12 bg-gray-50">
+<section class="py-12 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4">
         <div class="carousel-container max-w-5xl mx-auto relative">
             <#list indexImgList as img>
@@ -90,90 +90,90 @@
 </section>
 
 <!-- 功能特性 -->
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
         <h2 class="text-3xl font-bold text-center mb-12">强大功能特性</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- 特性卡片 1 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-blue-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-edit-box-line text-blue-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">博客日志管理</h3>
-                <p class="text-gray-600">提供分类、标签、评论的管理功能，让您的博客内容井然有序。</p>
+                <p class="text-gray-600 dark:text-gray-200">提供分类、标签、评论的管理功能，让您的博客内容井然有序。</p>
             </div>
 
             <!-- 特性卡片 2 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-green-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-palette-line text-green-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">主题支持</h3>
-                <p class="text-gray-600">支持模板解析，如同搭积木一样构建您的个性化博客主题。</p>
+                <p class="text-gray-600 dark:text-gray-200">支持模板解析，如同搭积木一样构建您的个性化博客主题。</p>
             </div>
 
             <!-- 特性卡片 3 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-purple-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-plug-line text-purple-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">插件系统</h3>
-                <p class="text-gray-600">高度可定制的主题功能，如何制作一套主题详见文档。</p>
+                <p class="text-gray-600 dark:text-gray-200">高度可定制的主题功能，如何制作一套主题详见文档。</p>
             </div>
 
             <!-- 特性卡片 4 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-red-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-message-3-line text-red-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">第三方评论支持</h3>
-                <p class="text-gray-600">集成多种第三方评论系统，让您的博客互动性更强。</p>
+                <p class="text-gray-600 dark:text-gray-200">集成多种第三方评论系统，让您的博客互动性更强。</p>
             </div>
 
             <!-- 特性卡片 5 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-yellow-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-markdown-line text-yellow-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">Markdown 编辑器</h3>
-                <p class="text-gray-600">提供 markdown 主题的富文本编辑器，基于上传支持管理的编辑器插件。</p>
+                <p class="text-gray-600 dark:text-gray-200">提供 markdown 主题的富文本编辑器，基于上传支持管理的编辑器插件。</p>
             </div>
 
             <!-- 特性卡片 6 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-indigo-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-speed-line text-indigo-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">页面静态化</h3>
-                <p class="text-gray-600">页面静态化，缓存公共数据，可同设置更新。提升访问速度和性能。</p>
+                <p class="text-gray-600 dark:text-gray-200">页面静态化，缓存公共数据，可同设置更新。提升访问速度和性能。</p>
             </div>
 
             <!-- 特性卡片 7 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-pink-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-cloud-line text-pink-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">多种云存储支持</h3>
-                <p class="text-gray-600">支持第三方云存储（默认七牛），让您的博客资源管理更灵活。</p>
+                <p class="text-gray-600 dark:text-gray-200">支持第三方云存储（默认七牛），让您的博客资源管理更灵活。</p>
             </div>
 
             <!-- 特性卡片 8 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-orange-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-global-line text-orange-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">多语言支持</h3>
-                <p class="text-gray-600">支持数据库备份定时备份，让您的博客数据更安全。</p>
+                <p class="text-gray-600 dark:text-gray-200">支持数据库备份定时备份，让您的博客数据更安全。</p>
             </div>
 
             <!-- 特性卡片 9 -->
-            <div class="bg-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
+            <div class="bg-white dark:bg-gray-900 dark:text-white p-6 !rounded-lg shadow-md hover:shadow-lg transition-all duration-300 feature-card">
                 <div class="w-12 h-12 bg-teal-100 !rounded-lg flex items-center justify-center mb-4">
                     <i class="ri-device-line text-teal-600 ri-xl"></i>
                 </div>
                 <h3 class="text-xl font-semibold mb-3">响应式设计</h3>
-                <p class="text-gray-600">在线更新升级，让您的博客系统始终保持最新状态。</p>
+                <p class="text-gray-600 dark:text-gray-200">在线更新升级，让您的博客系统始终保持最新状态。</p>
             </div>
         </div>
 
@@ -217,15 +217,5 @@
     setInterval(() => {
         changeSlide(1);
     }, 5000);
-
-    // 主题切换
-    const themeSwitch = document.querySelector(".theme-switch input");
-    themeSwitch.addEventListener("change", function () {
-        if (this.checked) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    });
 </script>
 <#include "include/footer.ftl"/>

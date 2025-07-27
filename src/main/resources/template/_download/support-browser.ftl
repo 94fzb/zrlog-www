@@ -1,7 +1,7 @@
 <!-- 浏览器兼容性 -->
-<section class="py-4 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="mt-12 max-w-5xl mx-auto bg-white rounded-lg shadow-md p-6">
+<section class="py-4 bg-gray-50 dark:bg-black">
+    <div class="container mx-auto px-4 dark:bg-black">
+        <div class="mt-12 max-w-5xl mx-auto bg-white  dark:bg-gray-900 rounded-lg shadow-md p-6">
             <h3 class="text-xl font-bold mb-4">浏览器兼容性</h3>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                 <div class="text-center">

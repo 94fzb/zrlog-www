@@ -12,6 +12,7 @@
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
     <script src="https://www.zrlog.com/assets/js/tailwindcss-3.4.6.js"></script>
     <script>tailwind.config = {
+            darkMode: 'media', // ✅ 启用暗黑模式（class 模式）
             theme: {
                 extend: {
                     colors: {primary: '#1677ff', secondary: '#f97316'},
@@ -30,6 +31,15 @@
                 }
             }
         }
+        // 主题切换
+        const themeSwitch = document.querySelector(".theme-switch input");
+        themeSwitch.addEventListener("change", function () {
+            if (this.checked) {
+                document.documentElement.classList.toggle('dark');
+            } else {
+                document.documentElement.classList.toggle("dark");
+            }
+        });
     </script>
     <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
     <script src="https://www.zrlog.com/assets/js/store.js?v=2"></script>
@@ -163,7 +173,7 @@
 
         @media (prefers-color-scheme: dark) {
             .icon {
-                fill: #111827;
+                fill: #4d74c5;
             }
 
             .github-star a {
@@ -252,7 +262,7 @@
         }
 
     </style>
-<body>
+<body class="dark:bg-black dark:text-white">
 <!-- 导航栏 -->
 <nav class="bg-gray-900 text-white py-4" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -290,7 +300,9 @@
     </div>
 </nav>
 <!-- 页面标题区 -->
-<section class="py-10 bg-white">
+<section class="relative hero-gradient text-white py-20 overflow-hidden">
+    <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
     <div class="container mx-auto px-4">
         <div
                 class="flex flex-col md:flex-row justify-between items-center mb-6"
@@ -302,16 +314,16 @@
                 </p>
             </div>
         </div>
-        <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="bg-gray-50 p-6 rounded-lg dark:bg-black">
             <div class="flex items-center">
                 <div
                         class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4"
                 >
                     <i class="ri-history-line text-primary text-2xl"></i>
                 </div>
-                <div>
-                    <h2 class="text-xl font-semibold">项目简介</h2>
-                    <p class="text-gray-600">
+                <div class="">
+                    <h2 class="text-xl font-semibold dark:text-gray-200">项目简介</h2>
+                    <p class="text-gray-600 dark:text-gray-600">
                         ZrLog 是一个使用 Java 开发的博客/CMS
                         程序，具有简约、易用、组件化、内存占用低等特点，自 2015
                         年以来，已经服务了上万个网站。
@@ -322,7 +334,7 @@
     </div>
 </section>
 
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <style>
         .card-body h3:before, .card-body h4:before {
             content: "#";
@@ -351,7 +363,7 @@
         }
     </style>
     <div class="container mx-auto px-4 md:px-6">
-        <div class="card">
+        <div class="card  dark:bg-gray-900">
             <h4 class="card-header">
                 变更记录
             </h4>

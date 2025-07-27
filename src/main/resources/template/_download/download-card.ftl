@@ -1,7 +1,7 @@
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6" id="version">
         <div id="version-header">
-            <div class="card" style="width: 100%">
+            <div class="card dark:bg-gray-900" style="width: 100%">
                 <div class="card-header" style="display: flex;justify-content: space-between;align-items: center;">
                     <h3 style="margin-bottom: 0;line-height: 40px">ZrLog v${last.version} </h3>
                 </div>

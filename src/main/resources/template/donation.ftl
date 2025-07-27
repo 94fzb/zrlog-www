@@ -1,6 +1,6 @@
-<section class="bg-gray-50" style="padding-bottom: 48px" id="donate">
+<section class="bg-gray-50 dark:bg-black" style="padding-bottom: 48px" id="donate">
     <div class="container mx-auto px-4 md:px-6">
-        <div class="col-md-12" style="padding-top: 20px">
+        <div class="col-md-12 dark:bg-gray-900" style="padding-top: 20px">
             <div class="card">
                 <h5 class="card-header">请作者喝杯咖啡
                     <small>（可在备注里注名昵称）</small>
@@ -25,11 +25,11 @@
                 </div>
             </div>
             <div class="col-md-12" style="padding-top: 20px">
-                <div class="card">
+                <div class="card dark:bg-gray-900">
                     <h5 class="card-header">捐赠列表</h5>
                     <div class="card-body">
                         <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb;">
-                            <table class="auto-table divide-y divide-gray-200"
+                            <table class="auto-table divide-y divide-gray-200 dark:bg-gray-900"
                                    style="width:100%;min-width: 680px">
                                 <thead>
                                 <tr >
@@ -40,7 +40,7 @@
                                 </tr>
                                 </thead>
 
-                                <tbody class="bg-white divide-y divide-gray-200">
+                                <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-900">
                                 <#list donations as donation>
                                     <tr style="height: 36px">
                                         <td class="px-2 py-4" >￥${donation.money}</td>

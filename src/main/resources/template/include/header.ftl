@@ -12,6 +12,7 @@
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
     <script src="${url}/assets/js/tailwindcss-3.4.6.js"></script>
     <script>tailwind.config = {
+            darkMode: 'media', // ✅ 启用暗黑模式（class 模式）
             theme: {
                 extend: {
                     colors: {primary: '#1677ff', secondary: '#f97316'},
@@ -30,6 +31,15 @@
                 }
             }
         }
+        // 主题切换
+        const themeSwitch = document.querySelector(".theme-switch input");
+        themeSwitch.addEventListener("change", function () {
+            if (this.checked) {
+                document.documentElement.classList.toggle('dark');
+            } else {
+                document.documentElement.classList.toggle("dark");
+            }
+        });
     </script>
     <script src="${url}/assets/js/auto-theme.js"></script>
     <script src="${url}/assets/js/store.js?v=2"></script>
@@ -163,7 +173,7 @@
 
         @media (prefers-color-scheme: dark) {
             .icon {
-                fill: #111827;
+                fill: #4d74c5;
             }
 
             .github-star a {
@@ -252,7 +262,7 @@
         }
 
     </style>
-<body>
+<body class="dark:bg-black dark:text-white">
 <#if !request.attr.from??>
 <!-- 导航栏 -->
 <nav class="bg-gray-900 text-white py-4" id="header">

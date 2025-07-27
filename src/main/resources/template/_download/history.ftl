@@ -1,15 +1,15 @@
-<section class="py-16 bg-gray-50">
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6" id="version">
-        <div style="padding-top: 10px">
+        <div class="dark:bg-gray-900">
             <div class="table-responsive">
-                <div class="card">
+                <div class="card dark:bg-gray-900">
                     <h5 class="card-header">
                         历史版本
                     </h5>
                     <div class="card-body">
                         <div style="border-radius: 4px;overflow: auto;border:1px solid #e5e7eb">
                             <table class="auto-table divide-y divide-gray-200" style="width:100%;min-width: 780px">
-                                <thead class="bg-gray-50">
+                                <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
                                 <tr>
                                     <th scope="col" class="px-2" style="height: 56px;text-align: start">版本</th>
                                     <th scope="col" class="px-2" style="height: 56px;text-align: start">发布时间</th>
@@ -18,7 +18,7 @@
                                     <th scope="col" class="px-2" style="height: 56px;text-align: start">操作</th>
                                 </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
+                                <tbody class="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-400">
                                 <#list downloads as download>
                                     <tr style="height: 36px">
                                         <td style="white-space: nowrap" class="px-2 py-4">v${download.version}</td>
