@@ -58,16 +58,16 @@
 <section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
         <div style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
-            <div class="card bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden">
+            <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%">
                 <h5 class="card-header">Gitee</h5>
-                <div class="card-body dark:bg-gray-900">
+                <div class="card-body dark:bg-gray-900" style="padding:0">
                     <div id="osc-gitee-widget-tag"></div>
                     <script src='https://gitee.com/94fzb/zrlog/widget_preview' async defer></script>
                 </div>
             </div>
-            <div class="card bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden">
+            <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%">
                 <h5 class="card-header">GitHub</h5>
-                <div class="card-body">
+                <div class="card-body" style="padding:0">
                     <div class="github-widget-repo" data-repo="94fzb/zrlog"></div>
                     <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
                 </div>

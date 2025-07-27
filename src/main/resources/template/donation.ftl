@@ -27,9 +27,9 @@
             <div class="col-md-12" style="padding-top: 20px">
                 <div class="card bg-white dark:bg-gray-900">
                     <h5 class="card-header">捐赠列表</h5>
-                    <div class="card-body">
-                        <div style="border-radius: 4px;overflow: auto;">
-                            <table class="auto-table divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900"
+                    <div class="card-body" style="padding:0;overflow: hidden">
+                        <div style="overflow: auto;">
+                            <table class="auto-table divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 mb-1"
                                    style="width:100%;min-width: 680px">
                                 <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
                                 <tr >

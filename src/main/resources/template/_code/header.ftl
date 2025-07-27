@@ -5,7 +5,7 @@
     <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">ZrLog 源码</h1>
-            <p class="text-xl mb-8">ZrLog 是一个开源的 Java 博客系统，欢迎开发者参与贡献，共同打造更好的博客平台。</p>
+            <p class="text-xl mb-8">ZrLog 是一个开源的 Java 博客系统，欢迎开发者参与贡献，共同打造更好的博客系统。</p>
 
         </div>
 
