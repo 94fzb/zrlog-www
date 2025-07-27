@@ -270,7 +270,7 @@
                    class="hover:text-primary transition-colors <#if request.uri == '/plugin'>nav-active</#if>">插件</a>
                 <a href="/download"
                    class="hover:text-primary transition-colors <#if request.uri == '/download'>nav-active</#if>">下载</a>
-                <a href="https://blog.zrlog.com/doc" class="hover:text-primary transition-colors">文档</a>
+                <a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a>
                 <a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a>
                 <a href="/code"
                    class="hover:text-primary transition-colors <#if request.uri == '/code'>nav-active</#if>">源码</a>

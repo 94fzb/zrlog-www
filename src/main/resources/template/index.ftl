@@ -4,7 +4,7 @@
     <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
     <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
     <div class="container mx-auto px-4 md:px-6 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold text-primary mb-4">ZRLOG</h1>
+        <h1 class="text-5xl md:text-6xl font-bold text-secondary mb-4">ZRLOG</h1>
         <p class="text-xl md:text-2xl text-white mb-10">专业的 Java 开源博客系统</p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="https://demo.zrlog.com?ref=index" class="bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">
