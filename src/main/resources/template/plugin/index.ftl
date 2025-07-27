@@ -11,12 +11,12 @@
                 <div class="card bg-white text-center dark:bg-gray-900">
                     <div class="card-body">
                         <img class="img-responsive"
-                             style="height:200px;min-width:320px;max-width: 320px;overflow:hidden;object-fit: cover"
+                             style="height:200px;min-width:300px;max-width: 300px;overflow:hidden;object-fit: cover"
                              src="${plugin.image}?imageView2/2/w/650"
                              alt="${plugin.name }">
                         <h5 class="card-header">${plugin.name }</h5>
                         <hr/>
-                        <a href="${url}/plugin/${plugin.id}.html" class="storeDetailLink">详情 &amp;
+                        <a href="${url}/plugin/${plugin.id}.html" class="storeDetailLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">详情 &amp;
                             ${download}</a>
                     </div>
                 </div>

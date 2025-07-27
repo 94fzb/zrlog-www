@@ -9,14 +9,16 @@
         </nav>
         <div style="display: flex;" class="auto-cards py-4">
             <div>
-                <a target="_blank" title="${template.name}" class="thumbnail">
-                    <img src="${template.image}?v=2"
-                         class="img-responsive"  alt="${template.name}" style="border-radius: 4px;max-width: 480px">
-                </a>
-                <hr class="big">
+                <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
+                    <a target="_blank" title="${template.name}"
+                       class="thumbnail">
+                        <img src="${template.image}"
+                             class="img-responsive" alt="${template.name}" style="max-height: 540px;max-width: 540px;width: 100%">
+                    </a>
+                </div>
                 <ul class="list-inline preview-links" style="padding-top: 20px">
                     <li><a href="${template.downloadUrl}" target="_top"
-                           class="storeInstallLink btn btn-primary"><i class="ri-download-line mr-2"></i>${download}</a>
+                           class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"><i class="ri-download-line mr-2"></i>${download}</a>
                     </li>
                 </ul>
             </div>
@@ -25,9 +27,9 @@
                 <div class="card-body">
                     <p>${template.desc}</p>
 
-                    <h4>源码</h4>
+                    <h4 class="py-4">源码</h4>
                     <ul>
-                        <li><a href="${template.sourceUrl}">Gitee</a></li>
+                        <li><a class="text-primary" href="${template.sourceUrl}">Gitee</a></li>
                     </ul>
                 </div>
             </div>

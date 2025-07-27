@@ -215,16 +215,11 @@
             text-align: center;
         }
 
-        .card-body a {
-            color: #1677ff;
-        }
-
         .link {
             color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
-            color: #1677ff;
             display: inline-flex;
             height: 56px;
             min-width: 96px;
@@ -234,7 +229,7 @@
             padding-left: 12px;
             border-radius: 4px;
             margin-top: 12px;
-            border: 1px solid #1677ff;
+            color: white;
         }
 
         .auto-cards {
@@ -300,12 +295,12 @@
                 </nav>
             </nav>
         </nav>
-        <div style="display: flex;" class="auto-cards py-4">
-            <div class="card bg-white dark:bg-gray-900">
+        <div style="display: flex;" class="auto-cards py-4" >
+            <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
                 <a target="_blank" title="邮件服务"
                    class="thumbnail">
                     <img src="https://www.zrlog.com/attached/plugin/preview/mail-service.png"
-                         class="img-responsive" alt="邮件服务" style="border-radius: 4px;max-width: 480px;">
+                         class="img-responsive" alt="邮件服务" style="max-height: 360px;max-width: 540px;width: 100%">
                 </a>
             </div>
             <div class="card bg-white dark:bg-gray-900" style="width: 100%">
@@ -313,7 +308,7 @@
                 <div class="card-body">邮件服务</div>
             </div>
         </div>
-            <a href="https://dl.zrlog.com/plugin/mail.jar" class="storeInstallLink"  style="margin-top: 20px">
+            <a href="https://dl.zrlog.com/plugin/mail.jar" class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"  style="margin-top: 20px">
                     <i class="ri-download-line mr-2"></i> 下载</a>
     </div>
 </section>

@@ -215,16 +215,11 @@
             text-align: center;
         }
 
-        .card-body a {
-            color: #1677ff;
-        }
-
         .link {
             color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
-            color: #1677ff;
             display: inline-flex;
             height: 56px;
             min-width: 96px;
@@ -234,7 +229,7 @@
             padding-left: 12px;
             border-radius: 4px;
             margin-top: 12px;
-            border: 1px solid #1677ff;
+            color: white;
         }
 
         .auto-cards {

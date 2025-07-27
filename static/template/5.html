@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title>ZrLog博客主题 - 主题中心 - ZrLog 博客程序</title>
+    <title>ZrLog 博客主题 - 主题中心 - ZrLog 博客程序</title>
     <meta name="description" content="ZrLog 使用 Java 构建的个人博客程序 - 可能是最好用的开源Java博客系统"/>
     <meta name="keywords"
           content="ZrLog,博客,java开源博客,博客程序,记录日志,博客系统,建站系统,blog,java建站系统,简洁博客"/>
@@ -215,16 +215,11 @@
             text-align: center;
         }
 
-        .card-body a {
-            color: #1677ff;
-        }
-
         .link {
             color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
-            color: #1677ff;
             display: inline-flex;
             height: 56px;
             min-width: 96px;
@@ -234,7 +229,7 @@
             padding-left: 12px;
             border-radius: 4px;
             margin-top: 12px;
-            border: 1px solid #1677ff;
+            color: white;
         }
 
         .auto-cards {
@@ -294,30 +289,32 @@
     <div class="container mx-auto px-4 md:px-6">
         <nav aria-label="breadcrumb">
             <nav aria-label="breadcrumb">
-                <a href="/template" class="link">主题中心</a> > ZrLog博客主题
+                <a href="/template" class="link">主题中心</a> > ZrLog 博客主题
             </nav>
         </nav>
         <div style="display: flex;" class="auto-cards py-4">
             <div>
-                <a target="_blank" title="ZrLog博客主题" class="thumbnail">
-                    <img src="https://www.zrlog.com/attached/template/preview/template-sheshui.jpg?v=2"
-                         class="img-responsive"  alt="ZrLog博客主题" style="border-radius: 4px;max-width: 480px">
-                </a>
-                <hr class="big">
+                <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
+                    <a target="_blank" title="ZrLog 博客主题"
+                       class="thumbnail">
+                        <img src="https://www.zrlog.com/attached/template/preview/template-sheshui.jpg"
+                             class="img-responsive" alt="ZrLog 博客主题" style="max-height: 540px;max-width: 540px;width: 100%">
+                    </a>
+                </div>
                 <ul class="list-inline preview-links" style="padding-top: 20px">
                     <li><a href="https://dl.zrlog.com/attachment/template/template-sheshui.zip" target="_top"
-                           class="storeInstallLink btn btn-primary"><i class="ri-download-line mr-2"></i>下载</a>
+                           class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"><i class="ri-download-line mr-2"></i>下载</a>
                     </li>
                 </ul>
             </div>
             <div class="card bg-white dark:bg-gray-900" style="width: 100%">
                 <div class="card-header">描述</div>
                 <div class="card-body">
-                    <p></p>
+                    <p>涉水轻舟博客</p>
 
-                    <h4>源码</h4>
+                    <h4 class="py-4">源码</h4>
                     <ul>
-                        <li><a href="https://gitee.com/94fzb/zrlog-templates/tree/master/template-sheshui">Gitee</a></li>
+                        <li><a class="text-primary" href="https://gitee.com/94fzb/zrlog-templates/tree/master/template-sheshui">Gitee</a></li>
                     </ul>
                 </div>
             </div>

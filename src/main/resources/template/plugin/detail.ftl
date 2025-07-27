@@ -10,12 +10,12 @@
                 </nav>
             </nav>
         </nav>
-        <div style="display: flex;" class="auto-cards py-4">
-            <div class="card bg-white dark:bg-gray-900">
+        <div style="display: flex;" class="auto-cards py-4" >
+            <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
                 <a target="_blank" title="${plugin.name}"
                    class="thumbnail">
                     <img src="${plugin.image}"
-                         class="img-responsive" alt="${plugin.name}" style="border-radius: 4px;max-width: 480px;">
+                         class="img-responsive" alt="${plugin.name}" style="max-height: 360px;max-width: 540px;width: 100%">
                 </a>
             </div>
             <div class="card bg-white dark:bg-gray-900" style="width: 100%">
@@ -23,7 +23,7 @@
                 <div class="card-body">${plugin.desc}</div>
             </div>
         </div>
-            <a href="${plugin.downloadUrl}" class="storeInstallLink"  style="margin-top: 20px">
+            <a href="${plugin.downloadUrl}" class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"  style="margin-top: 20px">
                     <i class="ri-download-line mr-2"></i> ${download}</a>
     </div>
 </section>

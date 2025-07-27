@@ -215,16 +215,11 @@
             text-align: center;
         }
 
-        .card-body a {
-            color: #1677ff;
-        }
-
         .link {
             color: #1677ff;
         }
 
         .storeInstallLink, .storeDetailLink {
-            color: #1677ff;
             display: inline-flex;
             height: 56px;
             min-width: 96px;
@@ -234,7 +229,7 @@
             padding-left: 12px;
             border-radius: 4px;
             margin-top: 12px;
-            border: 1px solid #1677ff;
+            color: white;
         }
 
         .auto-cards {
@@ -300,20 +295,20 @@
                 </nav>
             </nav>
         </nav>
-        <div style="display: flex;" class="auto-cards py-4">
-            <div class="card bg-white dark:bg-gray-900">
+        <div style="display: flex;" class="auto-cards py-4" >
+            <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
                 <a target="_blank" title="畅言评论框"
                    class="thumbnail">
                     <img src="https://www.zrlog.com/attached/plugin/preview/changyan.png"
-                         class="img-responsive" alt="畅言评论框" style="border-radius: 4px;max-width: 480px;">
+                         class="img-responsive" alt="畅言评论框" style="max-height: 360px;max-width: 540px;width: 100%">
                 </a>
             </div>
             <div class="card bg-white dark:bg-gray-900" style="width: 100%">
                 <div class="card-header">描述</div>
-                <div class="card-body">框畅言是一个简单而强大的社会化评论及聚合平台</div>
+                <div class="card-body">畅言是一个简单而强大的社会化评论及聚合平台</div>
             </div>
         </div>
-            <a href="https://dl.zrlog.com/plugin/changyan.jar" class="storeInstallLink"  style="margin-top: 20px">
+            <a href="https://dl.zrlog.com/plugin/changyan.jar" class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"  style="margin-top: 20px">
                     <i class="ri-download-line mr-2"></i> 下载</a>
     </div>
 </section>

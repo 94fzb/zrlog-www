@@ -17,7 +17,7 @@
                                  alt="${template.name }">
                             <h5 class="card-header">${template.name }</h5>
                             <hr/>
-                            <a href="${url}/template/${template.id}.html" class="storeDetailLink btn btn-primary">预览
+                            <a href="${url}/template/${template.id}.html" class="storeDetailLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">预览
                                 &amp;
                                 ${download}</a>
                         </div>
