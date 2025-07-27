@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="bg-gray-50 p-6 rounded-lg">
-            <div class="flex items-center mb-4">
+            <div class="flex items-center">
                 <div
                         class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4"
                 >
