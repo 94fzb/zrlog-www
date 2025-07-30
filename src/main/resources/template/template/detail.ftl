@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4 md:px-6">
         <nav aria-label="breadcrumb">
             <nav aria-label="breadcrumb">
-                <a href="/template" class="link">主题中心</a> > ${template.name}
+                <a href="/template" class="text-primary">主题中心</a> > ${template.name}
             </nav>
         </nav>
         <div style="display: flex;" class="auto-cards py-4">

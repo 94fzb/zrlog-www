@@ -6,7 +6,7 @@
         <nav aria-label="breadcrumb">
             <nav aria-label="breadcrumb">
                 <nav aria-label="breadcrumb">
-                    <a href="/plugin" class="link">插件中心</a> > ${plugin.name}
+                    <a href="/plugin" class="text-primary">插件中心</a> > ${plugin.name}
                 </nav>
             </nav>
         </nav>
