@@ -8,19 +8,18 @@
         <div style="display:flex;flex-flow: wrap;gap:16px;justify-content: left;align-items:start"
              class="py-4">
             <#list templates as template>
-                <div class="col-lg-4 col-sm-6" style="padding-top: 10px">
-                    <div class="card bg-white text-center dark:bg-gray-900" style="object-fit: cover">
-                        <div class="card-body">
-                            <img class="img-responsive"
-                                 style="height:200px;min-width:320px;max-width: 320px;overflow:hidden;object-fit: cover"
-                                 src="${template.image}?imageView2/2/w/650&v=2"
-                                 alt="${template.name }">
-                            <h5 class="card-header">${template.name }</h5>
-                            <hr/>
-                            <a href="${url}/template/${template.id}.html" class="storeDetailLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">预览
-                                &amp;
-                                ${download}</a>
-                        </div>
+                <div class="card bg-white text-center dark:bg-gray-900" style="object-fit: cover">
+                    <div class="card-body">
+                        <img class="img-responsive"
+                             style="height:200px;min-width:320px;max-width: 320px;overflow:hidden;object-fit: cover"
+                             src="${template.image}?imageView2/2/w/650&v=2"
+                             alt="${template.name }">
+                        <h5 class="card-header">${template.name }</h5>
+                        <hr/>
+                        <a href="${url}/template/${template.id}.html"
+                           class="storeDetailLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">预览
+                            &amp;
+                            ${download}</a>
                     </div>
                 </div>
             </#list>
