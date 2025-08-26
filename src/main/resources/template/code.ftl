@@ -69,6 +69,9 @@
     .github-box .github-box-download {
         border-radius: 0!important;
     }
+    .osc_git_footer {
+        display: none;
+    }
 </style>
 <section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
