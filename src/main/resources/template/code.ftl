@@ -29,6 +29,8 @@
 
     .osc_git_box .osc_git_title {
         border-radius: 0!important;
+        height: 38px;
+        line-height: 38px;
     }
 
     .osc_git_main a {
@@ -72,6 +74,13 @@
     .osc_git_footer {
         display: none;
     }
+    .github-box-download {
+        display: none;
+    }
+    .pro_name {
+        padding: 8px 1px 1px 1px;
+    }
+
 </style>
 <section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
     <div class="container mx-auto px-4 md:px-6">
