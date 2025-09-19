@@ -11,6 +11,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <runFolderName>/var/lib/zrlogwww</runFolderName>
         <packageName>zrlogwww</packageName>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
 
     <build>
@@ -180,7 +183,7 @@
         <dependency>
             <groupId>com.hibegin</groupId>
             <artifactId>simplewebserver</artifactId>
-            <version>0.3.125</version>
+            <version>4.0.83</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>

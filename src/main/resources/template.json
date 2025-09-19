@@ -10,7 +10,7 @@
     "author": "xiaochun",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": ""
+    "desc": "精简主题，复古风格"
   },
   {
     "id": 4,
@@ -23,11 +23,11 @@
     "author": "xiaochun",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": ""
+    "desc": "hexo-next"
   },
   {
     "id": 5,
-    "name": "ZrLog博客主题",
+    "name": "ZrLog 博客主题",
     "downloadUrl": "https://dl.zrlog.com/attachment/template/template-sheshui.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-sheshui.jpg",
     "version": "",
@@ -36,6 +36,6 @@
     "author": "xiaochun",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": ""
+    "desc": "涉水轻舟博客"
   }
 ]

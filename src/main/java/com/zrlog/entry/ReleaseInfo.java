@@ -18,6 +18,10 @@ public class ReleaseInfo {
     private boolean changeLogIsMd;
     private String desc;
     private String version;
+    private String warDownloadUrl;
+    private String linuxAmd64FaaSDownloadUrl;
+    private String linuxArm64FaaSDownloadUrl;
+    private String commitId;
 
     public String getFileSize() {
         return fileSize;
@@ -129,5 +133,37 @@ public class ReleaseInfo {
 
     public void setLinuxArm64DownloadUrl(String linuxArm64DownloadUrl) {
         this.linuxArm64DownloadUrl = linuxArm64DownloadUrl;
+    }
+
+    public String getWarDownloadUrl() {
+        return warDownloadUrl;
+    }
+
+    public void setWarDownloadUrl(String warDownloadUrl) {
+        this.warDownloadUrl = warDownloadUrl;
+    }
+
+    public String getLinuxAmd64FaaSDownloadUrl() {
+        return linuxAmd64FaaSDownloadUrl;
+    }
+
+    public void setLinuxAmd64FaaSDownloadUrl(String linuxAmd64FaaSDownloadUrl) {
+        this.linuxAmd64FaaSDownloadUrl = linuxAmd64FaaSDownloadUrl;
+    }
+
+    public String getLinuxArm64FaaSDownloadUrl() {
+        return linuxArm64FaaSDownloadUrl;
+    }
+
+    public void setLinuxArm64FaaSDownloadUrl(String linuxArm64FaaSDownloadUrl) {
+        this.linuxArm64FaaSDownloadUrl = linuxArm64FaaSDownloadUrl;
+    }
+
+    public String getCommitId() {
+        return commitId;
+    }
+
+    public void setCommitId(String commitId) {
+        this.commitId = commitId;
     }
 }

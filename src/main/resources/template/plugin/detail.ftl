@@ -1,31 +1,30 @@
 <#assign subTitle="${plugin.name} - 插件中心">
 <#include "../include/header.ftl"/>
 
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/plugin/">插件中心</a></li>
-            <li class="breadcrumb-item active">${plugin.name}</li>
-        </ol>
-    </nav>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-7 col-md-6 preview-page-window">
-            <a target="_blank" title="${plugin.name}"
-               class="thumbnail">
-                <img src="${plugin.image}"
-                     class="img-responsive" alt="${plugin.name}" style="border-radius: 4px">
-            </a>
-            <hr class="big">
-            <ul class="list-inline preview-links" style="padding-top: 20px">
-                <li><a href="${plugin.downloadUrl}" class="storeInstallLink btn btn-primary">${download}</a></li>
-            </ul>
+<section class="py-16 bg-gray-50 dark:bg-black">
+    <div class="container mx-auto px-4 md:px-6">
+        <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb">
+                    <a href="/plugin" class="text-primary">插件中心</a> > ${plugin.name}
+                </nav>
+            </nav>
+        </nav>
+        <div style="display: flex;" class="auto-cards py-4" >
+            <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
+                <a target="_blank" title="${plugin.name}"
+                   class="thumbnail">
+                    <img src="${plugin.image}"
+                         class="img-responsive" alt="${plugin.name}" style="max-height: 360px;max-width: 540px;width: 100%">
+                </a>
+            </div>
+            <div class="card bg-white dark:bg-gray-900" style="width: 100%">
+                <div class="card-header">描述</div>
+                <div class="card-body">${plugin.desc}</div>
+            </div>
         </div>
-        <div class="col-lg-5 col-md-6 preview-page-content">
-            <h4>描述</h4>
-            <p>${plugin.desc}</p>
-        </div>
+            <a href="${plugin.downloadUrl}" class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"  style="margin-top: 20px">
+                    <i class="ri-download-line mr-2"></i> ${download}</a>
     </div>
-</div>
+</section>
 <#include "../include/footer.ftl"/>

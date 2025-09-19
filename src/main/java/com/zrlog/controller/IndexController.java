@@ -46,7 +46,7 @@ public class IndexController extends Controller {
 
     public void code() {
         getRequest().getAttr().put("donations", new DonationDAO().findAll());
-        getResponse().renderFreeMarker("/source-code");
+        getResponse().renderFreeMarker("/code");
     }
 
 
@@ -68,8 +68,8 @@ public class IndexController extends Controller {
             String[] arr = fileName.substring(0, fileName.lastIndexOf(".")).split("-");
             releaseInfo.setVersion(arr[1]);
             String desc = releaseInfo.getDesc();
-            if (desc.length() > 40) {
-                desc = desc.substring(0, 40) + "...";
+            if (desc.length() > 60) {
+                desc = desc.substring(0, 60) + "...";
                 releaseInfo.setDesc(desc);
             }
             downloadInfoList.add(releaseInfo);
@@ -83,9 +83,13 @@ public class IndexController extends Controller {
                 }
                 releaseInfo.setChangeLogs(changeLogs);
             }
-            String baseUrl = releaseInfo.getDownloadUrl();
+            //zrlog-3.1.6-6ffdb2b-release.zip
+            String baseUrl = "https://dl.zrlog.com/release/zrlog-" + releaseInfo.getVersion() + "-" + releaseInfo.getCommitId() + "-release.zip";
             releaseInfo.setDownloadUrl(baseUrl + "?ref=" + ref);
+            releaseInfo.setWarDownloadUrl(baseUrl.replaceAll(".zip", ".war") + "?ref=" + ref);
             releaseInfo.setLinuxDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64.zip") + "?ref=" + ref);
+            releaseInfo.setLinuxAmd64FaaSDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64-faas.zip") + "?ref=" + ref);
+            releaseInfo.setLinuxArm64FaaSDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64-faas.zip") + "?ref=" + ref);
             releaseInfo.setLinuxDebDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64.deb") + "?ref=" + ref);
             //
             releaseInfo.setLinuxArm64DownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64.zip") + "?ref=" + ref);
@@ -106,8 +110,7 @@ public class IndexController extends Controller {
         });
         request.getAttr().put("last", downloadInfoList.get(0));
         downloadInfoList.remove(0);
-        request.getAttr().put("downloads", downloadInfoList);
-        request.getAttr().put("features", RestPathInterceptor.renderMd(IOUtil.getStringInputStream(new FileInputStream(PathUtil.getStaticPath() + "features.md"))));
+        request.getAttr().put("downloads", downloadInfoList.stream().limit(10).collect(Collectors.toList()));
         String url = ParseTools.getScheme(request) + "://" + request.getHeader("Host");
         List<String> image = Arrays.asList("post-detail.png", "article-edit-dark.png",
                 "article-edit-light-pwa-full-screen.png", "article-edit-light-pwa-full-screen-setting.png");

@@ -7,63 +7,478 @@
           content="ZrLog,博客,java开源博客,博客程序,记录日志,博客系统,建站系统,blog,java建站系统,简洁博客"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.zrlog.com/favicon.ico"/>
-    <link href="https://www.zrlog.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="https://www.zrlog.com/assets/css/bootstrap-theme-v2.css?v=4" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" type="image/svg+xml" href="https://www.zrlog.com/favicon.svg"/>
+    <link href="https://www.zrlog.com/assets/fonts/remixicon.css" rel="stylesheet">
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
-    <script src="https://www.zrlog.com/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.zrlog.com/assets/js/tailwindcss-3.4.6.js"></script>
+    <script>tailwind.config = {
+            darkMode: 'class', // ✅ 启用暗黑模式（class 模式）
+            theme: {
+                extend: {
+                    colors: {primary: '#1677ff', secondary: '#f97316'},
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
-    <script src="https://www.zrlog.com/assets/js/store.js?v=1"></script>
-<body>
-    <span id="github" class="github-star d-none d-lg-block">
-        <a href="https://github.com/94fzb/zrlog" title="Star zrlog on GitHub">Star zrlog on GitHub</a>
-    </span>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom" id="header">
-        <div class="container">
-            <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <script src="https://www.zrlog.com/assets/js/store.js?v=2"></script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        :root {
+            --color-primary: #1677ff;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(31, 41, 55, 0.95), rgba(31, 41, 55, 0.8));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .theme-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2b2b2b;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--color-primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        .github-star a {
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px 40px;
+            font-size: 14px;
+            line-height: 2rem;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .github-star a:hover {
+            background: var(--color-primary);
+            color: #fff;
+        }
+
+        .github-star a::before, .github-star a::after {
+            content: "";
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            height: 1px;
+            background: #fff;
+        }
+
+        .github-star a::after {
+            bottom: 1px;
+            top: auto;
+        }
+
+        @media screen and (min-width: 800px) {
+            .github-star {
+                position: fixed;
+                display: block;
+                top: 0;
+                right: 0;
+                width: 150px;
+                overflow: hidden;
+                height: 150px;
+                z-index: 9999;
+            }
+
+            .github-star a {
+                width: 238px;
+                position: absolute;
+                top: 42px;
+                right: -60px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+            }
+        }
+
+
+        @media (prefers-color-scheme: dark) {
+            .icon {
+                fill: var(--color-primary);
+            }
+
+            .github-star a {
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: fade 1.5s;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .nav-active {
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .card-header {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 4px 16px;
+            font-size: 20px;
+            line-height: 2.25rem;
+        }
+
+        .card-body {
+            padding: 8px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .card-img-top {
+            text-align: center;
+        }
+
+        .storeInstallLink, .storeDetailLink {
+            display: inline-flex;
+            height: 56px;
+            min-width: 96px;
+            justify-content: center;
+            align-items: center;
+            padding-right: 12px;
+            padding-left: 12px;
+            border-radius: 4px;
+            margin-top: 12px;
+            color: white;
+        }
+
+        .auto-cards {
+            gap: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .auto-cards {
+                flex-flow: column;
+                padding-bottom: 20px;
+            }
+
+            .img-responsive {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+<body class="dark:bg-black dark:text-gray-200">
+<!-- 导航栏 -->
+<nav class="bg-gray-900 text-white py-4" id="header">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <div class="flex items-center">
+            <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
+            <ul class="hidden md:flex space-x-6">
+<li><a href="/"
+       class="hover:text-primary transition-colors ">主页</a>
+</li>
+<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="/template"
+       class="hover:text-primary transition-colors ">主题</a>
+</li>
+<li><a href="/plugin"
+       class="hover:text-primary transition-colors ">插件</a>
+</li>
+<li><a href="/download"
+       class="hover:text-primary transition-colors ">下载</a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
+<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="/code"
+       class="hover:text-primary transition-colors ">源码</a>
+</li>            </ul>
+        </div>
+        <div id="overlay"
+             class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+        <aside id="sidebar" class="fixed text-white top-0 bg-primary left-0 w-56 h-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6
+           -translate-x-full transition-transform duration-300 z-40 hidden"
+               style="background: rgb(17 24 39);">
+            <ul class="space-y-6" style="font-size: 18px;text-align: center;">
+<li><a href="/"
+       class="hover:text-primary transition-colors ">主页</a>
+</li>
+<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="/template"
+       class="hover:text-primary transition-colors ">主题</a>
+</li>
+<li><a href="/plugin"
+       class="hover:text-primary transition-colors ">插件</a>
+</li>
+<li><a href="/download"
+       class="hover:text-primary transition-colors ">下载</a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
+<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="/code"
+       class="hover:text-primary transition-colors ">源码</a>
+</li>            </ul>
+        </aside>
+        <div class="flex items-center space-x-4">
+            <a href="https://github.com/94fzb/zrlog" target="_blank"
+               class="flex items-center justify-center w-8 h-8">
+                <i class="ri-github-fill ri-lg"></i>
+            </a>
+            <label class="theme-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <button class="md:hidden flex items-center justify-center w-8 h-8" id="toggleSidebar">
+                <i class="ri-menu-line ri-lg"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item "><a class="nav-link"
-                                                                                 href="https://www.zrlog.com/">主页</a>
-                    </li>
-                    <li class="nav-item "><a class="nav-link"
-                                             href="https://blog.zrlog.com/">博客</a>
-                    </li>
-                    <li class="nav-item  "><a class="nav-link"
-                                                                                           href="https://www.zrlog.com/template/">主题</a>
-                    </li>
-                    <li class="nav-item  "><a class="nav-link"
-                                                                                         href="https://www.zrlog.com/plugin/">插件</a>
-                    </li>
-                    <li class="nav-item "><a class="nav-link"
-                                                                                         href="https://www.zrlog.com/download.html">下载</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="https://blog.zrlog.com/sort/doc.html">文档</a>
-                    </li>
-                    <li class="nav-item  "><a class="nav-link"
-                                                                                       href="https://blog.zrlog.com/about.html">关于</a>
-                    </li>
-                    <li class="nav-item "><a class="nav-link"
-                                                                                     href="https://www.zrlog.com/code.html">源码</a>
-                    </li>
-                </ul>
+        </div>
+    </div>
+</nav>
+<!-- 页面标题区 -->
+<section class="relative hero-gradient text-white py-20 overflow-hidden">
+    <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
+    <div class="container mx-auto px-4">
+        <div
+                class="flex flex-col md:flex-row justify-between items-center mb-6"
+        >
+            <div>
+                <h1 class="text-4xl font-bold mb-2">ZrLog 变更记录</h1>
+                <p class="text-lg text-gray-200">
+                    完整记录 ZrLog 博客系统的版本迭代与功能演进
+                </p>
             </div>
         </div>
-    </nav>
-<br/><div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <h5 class="card-header">
-                    变更记录
-                </h5>
-                <div class="card-body">
-                <h3>3.1.4 (2025-03-24)</h3>
+        <div class="bg-gray-50 p-6 rounded-lg dark:bg-black">
+            <div class="flex items-center">
+                <div
+                        class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4"
+                        style="min-width:48px"
+                >
+                    <i class="ri-history-line text-primary text-2xl"></i>
+                </div>
+                <div class="">
+                    <h2 class="text-xl text-gray-600 font-semibold dark:text-gray-200">项目简介</h2>
+                    <p class="text-gray-600 dark:text-gray-600">
+                        ZrLog 是一个使用 Java 开发的博客/CMS
+                        程序，具有简约、易用、组件化、内存占用低等特点，自 2015
+                        年以来，已经服务了上万个网站。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 bg-gray-50 dark:bg-black">
+    <style>
+        .card-body h3:before, .card-body h4:before {
+            content: "#";
+            padding-right: 2px;
+        }
+
+        h3 {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 48px;
+        }
+
+        h4 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 36px;
+        }
+
+        hr {
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+
+        .card-body ul li {
+            list-style: inside;
+        }
+
+        .card-body a {
+            color: var(--color-primary);
+        }
+    </style>
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="card bg-white dark:bg-gray-900">
+            <h4 class="card-header">
+                变更记录
+            </h4>
+            <div class="card-body" style="padding: 16px;overflow: hidden;white-space: wrap;word-break: break-all;">
+                <h3>3.2.0 (2025-09-19)</h3>
+<h4>新特性</h4>
+<ul>
+<li>【管理页】service worker 缓存页面和静态资源</li>
+<li>【管理页】cdn 托管管理后台页面，静态化更加彻底</li>
+<li>【部署】支持以 war 的方式运行在 Jakarta servlet 容器内运行
+<ul>
+<li>(需 tomcat 10+， jetty11 等)</li>
+<li><font color="red">2.x 版本需先完成容器升级后，才能完成升级</font></li>
+</ul>
+</li>
+<li>【部署】支持配置 contextPath，实现二级目录部署</li>
+<li>【部署】适配 Lambda 无服务运行环境</li>
+<li>【安装】引导页面显示新版本信息</li>
+<li>【安装】支持 Cloudflare 的 D1 数据库（通过 WebApi 方式）</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>【性能】优化全局拦截器缓存的处理</li>
+<li>【构建】统一打包时间，便于 reproduce</li>
+<li>【管理页】支持 cross 请求</li>
+<li>【管理页】升级编辑器各项依赖</li>
+<li>【管理页】管理页面首次加载（不白屏一下）</li>
+<li>【管理页】编辑器更简约，统一编辑器弹框，上传媒体文件更方便</li>
+<li>【管理页】上传视频文件支持解析 B站链接 内嵌播放</li>
+<li>【管理页】优化编辑器的本地缓存逻辑</li>
+<li>【管理页】编辑器内文本查找和替换更友好</li>
+<li>【管理页】优化在移动设备上写文章的体验</li>
+<li>【管理页】摘要文本更直观，修改更方便</li>
+<li>【管理页】预先缓存页面依赖的 api 接口，页面渲染更快</li>
+<li>【管理页】增强 https 下的 Cookie 的安全性</li>
+<li>【管理页】统一文件上传组件</li>
+<li>【管理页】优化控制台统计信息的展示</li>
+<li>【管理页】文章管理显示文章封面</li>
+<li>【管理页】主动提示缓存管理页面版本是否已经落后实际的运行的版本</li>
+<li>【管理页】可以强制同步到实际运行的版本</li>
+<li>【管理页】管理设置页面修改 【主颜色】，【暗黑模式】等，可实时预览</li>
+<li>【管理页】管理设置页面【主颜色】预设添加更多色彩</li>
+<li>【管理页】主题配置界面，可以快捷预览 html 内容</li>
+<li>【博客页】缓存大量的数据库记录，减少不必要的查询请求，以应对 FaaS 模式下的冷启动慢</li>
+<li>【博客页】并发渲染 <code>&lt;plugin&gt;</code> 标签</li>
+<li>【安装】在 <code>Docker</code> 和 无服务的安装流程更方便（引导完成 数据库 / 环境变量的配置）</li>
+<li>【开发】优化开发体验，页面和接口分离后，不再依赖 <code>nginx</code> 完成前后端绑定到同一域下</li>
+<li>【开发】优化 action-runner 的打包脚本</li>
+<li>【插件】优化插件服务的启动逻辑，保证访问插件服务时服务是已经正常的完成启动了</li>
+<li>【插件】优化 service 服务的执行逻辑</li>
+<li>【其他】功能优化</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>2.x 安装流程中数据库空密码无法安装【仅 war 包】</li>
+<li>修复原编辑器的历史遗留问题</li>
+</ul>
+<h4>依赖</h4>
+<ul>
+<li>⬆️ simplewebserver  [4.0.110]</li>
+<li>⬆️ mysql-connector-j  [9.3.0]</li>
+<li>⬆️ codemirror 6.x</li>
+<li>🔨 pretty.js -&gt; hljs（代码着色库）</li>
+<li>❌ commonmark.jar （服务端 markdown 转化）</li>
+<li>❌ JQuery 依赖</li>
+<li>❌ script 方式加载编辑器</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/c4165fd">c4165fd</a></p>
+<hr />
+<h3>3.1.6 (2025-04-30)</h3>
+<h4>新特性</h4>
+<ul>
+<li>安装引导添加《免责协议》</li>
+<li>管理后台控制面板添加快捷入口</li>
+<li>移动一些不重要的程序信息到 <code>/admin/system</code> 页面</li>
+<li>系统信息页面显示更多程序信息，如 内存/CPU/数据库链接信息等</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>编辑器的加载错误的提示</li>
+<li>优化已安装页面的显示</li>
+<li>完善部分页面的多语言</li>
+<li>升级 MySQL 的驱动程序</li>
+<li>调整 GraalVM Native 的打包环境，从 <code>ubuntu-2004</code> 到 <code>ubuntu-2204</code></li>
+<li>调整程序的的构建的时间信息，使用 git 提交时间，而非打包的时间</li>
+<li>优化 maven wrapper 的打包脚本</li>
+<li>插件内部页面可以通过参数内嵌方式调用</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>跳转到登录页后，移除缓存信息，避免登录成功后页面显示异常</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/6ffdb2b">6ffdb2b</a></p>
+<hr />
+<h3>3.1.5 (2025-03-24)</h3>
 <h4>优化</h4>
 <ul>
 <li>优化 PWA 全屏逻辑</li>
@@ -223,7 +638,7 @@
 <blockquote>
 <p>小米加步枪（SimpleWebServer）就能搞定的活，用不上航空母舰（Spring Boot）</p>
 </blockquote>
-<h3>新特性</h3>
+<h4>新特性</h4>
 <ul>
 <li>全新的后端技术方案（SimpleWebServer + Apache DbUtils），带来了更小的包体积</li>
 <li>将 Java 运行版本的最低版本调整为 Java 21，以支持 Java 的 Loom 特性，带来了更小的内存使用</li>
@@ -233,7 +648,7 @@
 <li>可定制管理后台的主颜色，看腻了默认（拂晓蓝）的，可以调整一个自己更喜欢的颜色</li>
 <li>默认主题的 <code>bootstrap</code> 升级到了支持暗黑模式的版本</li>
 </ul>
-<h3>优化</h3>
+<h4>优化</h4>
 <ul>
 <li>优化了对于静态化缓存的存储逻辑</li>
 <li>针对管理后台的 cra 到包生成静态资源文件进行了浏览器为期一年的缓存，使得页面打开更快</li>
@@ -250,7 +665,7 @@
 <li>调整了备份数据库插件的生成的文件名</li>
 <li>修复已知问题</li>
 </ul>
-<h3>其他</h3>
+<h4>其他</h4>
 <ul>
 <li>移除了对子目录的支持</li>
 <li>移除 /post/ 的重复二级路由</li>
@@ -339,7 +754,7 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
 <hr />
 <h3>2.0.8 (2018-12-04)</h3>
 <p><strong>更多细节内容优化</strong></p>
-<h3>修复</h3>
+<h4>修复</h4>
 <ul>
 <li>修复无法正常关闭文章封面</li>
 </ul>
@@ -651,54 +1066,170 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
 <hr />
 <h3>1.0.0 (2014-05-29)</h3>
 <blockquote>
-<p>完成的数库表结构的设计，程序使用JFinal框架进行开发</p>
+<p>完成的数库表结构的设计，程序使用 JFinal 框架进行开发</p>
 </blockquote>
 <p>commit: <a href="https://github.com/94fzb/zrlog/commit/2bcb336">2bcb336</a></p>
-<hr />
 
-                </div>
             </div>
         </div>
+    </div>
+</section>
+<!-- 返回顶部按钮 -->
+<button
+        id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+>
+    <i class="ri-arrow-up-line text-xl"></i>
+</button>
+<footer class="bg-gray-900 text-white py-12" id="footer">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+    <div>
+        <h3 class="text-lg font-semibold mb-4">关于 ZRLOG</h3>
+        <p class="text-gray-400">ZRLOG 是一款使用 Java
+            开发的开源博客系统，专注于为用户提供简单、高效的博客写作体验。</p>
+    </div>
+    <div>
+        <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+        <ul class="space-y-2">
+            <li><a href="/" class="text-gray-400 hover:text-white transition-colors">主页</a></li>
+            <li><a href="https://blog.zrlog.com"
+                   class="text-gray-400 hover:text-white transition-colors">博客</a></li>
+            <li><a href="/template" class="text-gray-400 hover:text-white transition-colors">主题</a></li>
+            <li><a href="/plugin" class="text-gray-400 hover:text-white transition-colors">插件</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3 class="text-lg font-semibold mb-4">资源</h3>
+        <ul class="space-y-2">
+            <li><a href="https://blog.zrlog.com/sort/doc"
+                   class="text-gray-400 hover:text-white transition-colors">文档</a></li>
+            <li><a href="https://blog.zrlog.com/faq-collect.html"
+                   class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="https://blog.zrlog.com/for-developer.html"
+                   class="text-gray-400 hover:text-white transition-colors">开发者</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+        <ul class="space-y-2">
+            <li class="flex items-center">
+                <i class="ri-mail-line mr-2"></i>
+                <a href="mailto:support@zrlog.com" class="text-gray-400 hover:text-white transition-colors">support@zrlog.com</a>
+            </li>
+            <li class="flex items-center">
+                <i class="ri-github-fill mr-2"></i>
+                <a href="https://github.com/94fzb/zrlog" target="_blank"
+                   class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+            </li>
+        </ul>
     </div>
 </div>
-<footer>
-    <div class="container">
-        <hr>
-        <div class="row">
-                    <div class="col-lg-12 footer-below" id="footerLink">
-<p>
-    <a href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
-    | <a href="https://blog.zrlog.com/for-developer.html">开发必看</a>
-    | <a href="https://xiaochun.zrlog.com" target="_blank">博客</a>
-    | <a href="https://gitee.com/94fzb" target="_blank">码云</a>
-    | <a href="https://github.com/94fzb" target="_blank">GitHub</a>
-    | <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
-    | <a href="https://qiniu.com" target="_blank">七牛云</a>
-</p>
-
-<style>
-    table {
-        width: 100%
-    }
-
-    section .content th {
-        text-align: left;
-    }
-</style>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-gray-400 mb-4 md:mb-0">
+                © 2025 ZrLog 博客程序 <a href="https://beian.miit.gov.cn/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
             </div>
-            <div class="col-lg-12 footer-below" id="copyInfo">
-                <span class="copyright">&copy; 2025 ZrLog博客程序
-               
-                </span>
-                <a href="https://beian.miit.gov.cn/" style="margin-left:8px">蜀ICP备16023991号-1
-                </a>
-            </div>
-            <div class="col-lg-12 footer-below" style="margin-top:8px">
-                <a href="https://www.zrlog.com">www.zrlog.com</a>
-            </div>
-        </div>
+<div style="display: flex;flex-wrap: wrap;gap: 16px;justify-content: center">
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
+    <a class="text-gray-400 hover:text-white transition-colors"
+       href="https://blog.zrlog.com/for-developer.html">开发必看</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://xiaochun.zrlog.com"
+       target="_blank">博客</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://gitee.com/94fzb" target="_blank">码云</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://github.com/94fzb"
+       target="_blank">GitHub</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+</div>        </div>
     </div>
 </footer>
+<script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+            backToTopButton.classList.remove("opacity-100", "visible");
+            backToTopButton.classList.add("opacity-0", "invisible");
+        }
+    });
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+
+
+    // 主题切换
+    const themeSwitch = document.querySelector(".theme-switch input");
+
+    // 页面加载时，根据 localStorage 设置初始主题
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+        themeSwitch.checked = true;
+    }
+
+    const userPreference = localStorage.getItem("theme");
+
+    function applyTheme() {
+        if (userPreference === "dark" || (!userPreference && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+            themeSwitch.checked = true;
+        } else {
+            document.documentElement.classList.remove("dark");
+            themeSwitch.checked = false;
+        }
+    }
+
+    // 初始化：加载页面时设置主题
+    applyTheme();
+
+    themeSwitch.addEventListener("change", function () {
+        if (this.checked) {
+            document.documentElement.classList.add('dark'); // ✅ 开启暗黑模式
+            localStorage.theme = "dark";
+        } else {
+            document.documentElement.classList.remove('dark'); // ✅ 关闭暗黑模式
+            localStorage.theme = "light";
+        }
+    });
+
+    const btn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById('overlay');
+
+    function closeSidebar() {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        setTimeout(() => {
+            sidebar.classList.add('hidden');
+        }, 300); // 等待动画结束再隐藏
+    }
+
+    overlay.addEventListener('click', closeSidebar);
+
+    btn.addEventListener("click", () => {
+        // 先取消隐藏
+        sidebar.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        // 然后触发滑出
+        setTimeout(() => {
+            sidebar.classList.remove('-translate-x-full');
+        }, 10);
+    });
+
+    // ESC 键也可关闭（可选）
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeSidebar();
+        }
+    });
+</script>
 <div style="display:none">
     <script>
         var _hmt = _hmt || [];

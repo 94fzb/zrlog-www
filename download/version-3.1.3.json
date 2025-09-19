@@ -5,6 +5,6 @@
   "changeLogs": [
     "- 管理后台 -> 控制台 添加服务运行时长\n- 管理后台 -> 控制台 添加最近一年的活动图\n- 文章管理界面支持按分类进行筛选\n- 文章撰写未保存的内容存储到本地\n- 文章未同步到服务保存时候的，离开页面的提示，避免写的内容丢失"
   ],
-  "downloadUrl": "https://gitee.com/94fzb/zrlog/releases/download/v3.1.3/zrlog-3.1.3-d5ebb85-release.zip",
+  "commitId": "d5ebb85",
   "changeLogIsMd": true
 }

@@ -7,59 +7,377 @@
           content="ZrLog,博客,java开源博客,博客程序,记录日志,博客系统,建站系统,blog,java建站系统,简洁博客"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="shortcut icon" type="image/x-icon" href="https://www.zrlog.com/favicon.ico"/>
-    <link href="https://www.zrlog.com/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="https://www.zrlog.com/assets/css/bootstrap-theme-v2.css?v=4" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" type="image/svg+xml" href="https://www.zrlog.com/favicon.svg"/>
+    <link href="https://www.zrlog.com/assets/fonts/remixicon.css" rel="stylesheet">
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
-    <script src="https://www.zrlog.com/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.zrlog.com/assets/js/tailwindcss-3.4.6.js"></script>
+    <script>tailwind.config = {
+            darkMode: 'class', // ✅ 启用暗黑模式（class 模式）
+            theme: {
+                extend: {
+                    colors: {primary: '#1677ff', secondary: '#f97316'},
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
     <script src="https://www.zrlog.com/assets/js/auto-theme.js"></script>
-    <script src="https://www.zrlog.com/assets/js/store.js?v=1"></script>
-<body>
-    <span id="github" class="github-star d-none d-lg-block">
-        <a href="https://github.com/94fzb/zrlog" title="Star zrlog on GitHub">Star zrlog on GitHub</a>
-    </span>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom" id="header">
-        <div class="container">
-            <a class="navbar-brand" href="/"><b>ZRLOG</b></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <script src="https://www.zrlog.com/assets/js/store.js?v=2"></script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        :root {
+            --color-primary: #1677ff;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(31, 41, 55, 0.95), rgba(31, 41, 55, 0.8));
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .theme-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2b2b2b;
+            transition: .4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--color-primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        .github-star a {
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            padding: 5px 40px;
+            font-size: 14px;
+            line-height: 2rem;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .github-star a:hover {
+            background: var(--color-primary);
+            color: #fff;
+        }
+
+        .github-star a::before, .github-star a::after {
+            content: "";
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 0;
+            height: 1px;
+            background: #fff;
+        }
+
+        .github-star a::after {
+            bottom: 1px;
+            top: auto;
+        }
+
+        @media screen and (min-width: 800px) {
+            .github-star {
+                position: fixed;
+                display: block;
+                top: 0;
+                right: 0;
+                width: 150px;
+                overflow: hidden;
+                height: 150px;
+                z-index: 9999;
+            }
+
+            .github-star a {
+                width: 238px;
+                position: absolute;
+                top: 42px;
+                right: -60px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+            }
+        }
+
+
+        @media (prefers-color-scheme: dark) {
+            .icon {
+                fill: var(--color-primary);
+            }
+
+            .github-star a {
+                box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+            animation: fade 1.5s;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .nav-active {
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+
+        .card-header {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 4px 16px;
+            font-size: 20px;
+            line-height: 2.25rem;
+        }
+
+        .card-body {
+            padding: 8px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .card-img-top {
+            text-align: center;
+        }
+
+        .storeInstallLink, .storeDetailLink {
+            display: inline-flex;
+            height: 56px;
+            min-width: 96px;
+            justify-content: center;
+            align-items: center;
+            padding-right: 12px;
+            padding-left: 12px;
+            border-radius: 4px;
+            margin-top: 12px;
+            color: white;
+        }
+
+        .auto-cards {
+            gap: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .auto-cards {
+                flex-flow: column;
+                padding-bottom: 20px;
+            }
+
+            .img-responsive {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+<body class="dark:bg-black dark:text-gray-200">
+<!-- 导航栏 -->
+<nav class="bg-gray-900 text-white py-4" id="header">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        <div class="flex items-center">
+            <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
+            <ul class="hidden md:flex space-x-6">
+<li><a href="/"
+       class="hover:text-primary transition-colors ">主页</a>
+</li>
+<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="/template"
+       class="hover:text-primary transition-colors ">主题</a>
+</li>
+<li><a href="/plugin"
+       class="hover:text-primary transition-colors ">插件</a>
+</li>
+<li><a href="/download"
+       class="hover:text-primary transition-colors ">下载</a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
+<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="/code"
+       class="hover:text-primary transition-colors nav-active">源码</a>
+</li>            </ul>
+        </div>
+        <div id="overlay"
+             class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
+        <aside id="sidebar" class="fixed text-white top-0 bg-primary left-0 w-56 h-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6
+           -translate-x-full transition-transform duration-300 z-40 hidden"
+               style="background: rgb(17 24 39);">
+            <ul class="space-y-6" style="font-size: 18px;text-align: center;">
+<li><a href="/"
+       class="hover:text-primary transition-colors ">主页</a>
+</li>
+<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="/template"
+       class="hover:text-primary transition-colors ">主题</a>
+</li>
+<li><a href="/plugin"
+       class="hover:text-primary transition-colors ">插件</a>
+</li>
+<li><a href="/download"
+       class="hover:text-primary transition-colors ">下载</a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
+<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="/code"
+       class="hover:text-primary transition-colors nav-active">源码</a>
+</li>            </ul>
+        </aside>
+        <div class="flex items-center space-x-4">
+            <a href="https://github.com/94fzb/zrlog" target="_blank"
+               class="flex items-center justify-center w-8 h-8">
+                <i class="ri-github-fill ri-lg"></i>
+            </a>
+            <label class="theme-switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <button class="md:hidden flex items-center justify-center w-8 h-8" id="toggleSidebar">
+                <i class="ri-menu-line ri-lg"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item "><a class="nav-link"
-                                                                                 href="https://www.zrlog.com/">主页</a>
-                    </li>
-                    <li class="nav-item "><a class="nav-link"
-                                             href="https://blog.zrlog.com/">博客</a>
-                    </li>
-                    <li class="nav-item  "><a class="nav-link"
-                                                                                           href="https://www.zrlog.com/template/">主题</a>
-                    </li>
-                    <li class="nav-item  "><a class="nav-link"
-                                                                                         href="https://www.zrlog.com/plugin/">插件</a>
-                    </li>
-                    <li class="nav-item "><a class="nav-link"
-                                                                                         href="https://www.zrlog.com/download.html">下载</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="https://blog.zrlog.com/sort/doc.html">文档</a>
-                    </li>
-                    <li class="nav-item  "><a class="nav-link"
-                                                                                       href="https://blog.zrlog.com/about.html">关于</a>
-                    </li>
-                    <li class="nav-item active"><a class="nav-link"
-                                                                                     href="https://www.zrlog.com/code.html">源码</a>
-                    </li>
-                </ul>
+        </div>
+    </div>
+</nav>
+<!-- 英雄区 -->
+<section class="relative hero-gradient text-white py-20 overflow-hidden">
+    <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
+    <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">ZrLog 源码</h1>
+            <p class="text-xl mb-8">ZrLog 是一个开源的 Java 博客系统，欢迎开发者参与贡献，共同打造更好的博客系统。</p>
+
+        </div>
+
+        <div class="flex flex-wrap gap-4 mb-6">
+            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
+                <span class="text-gray-700">无服务架构</span>
+            </div>
+            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
+                <span class="text-gray-700">GraalVM Native Image</span>
+            </div>
+            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
+                <i class="ri-code-box-line mr-2 text-gray-700"></i>
+                <span class="text-gray-700">Java</span>
+            </div>
+            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
+                <i class="ri-file-list-3-line mr-2 text-gray-700"></i>
+                <span class="text-gray-700">Apache 许可证</span>
             </div>
         </div>
-    </nav>
-<br/>
-<style>
+        <div class="flex flex-wrap gap-4">
+            <a
+                    href="https://github.com/94fzb/zrlog"
+                    target="_blank"
+                    class="bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
+            >
+                <i class="ri-github-fill mr-2"></i>
+                GitHub 仓库
+            </a>
+            <a
+                    href="https://github.com/94fzb/zrlog/archive/refs/heads/release.zip"
+                    class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
+            >
+                <i class="ri-download-line mr-2"></i>
+                下载源码
+            </a>
+            <a
+                    href="https://blog.zrlog.com/for-developer.html"
+                    class="bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
+            >
+                <i class="ri-book-2-line mr-2"></i>
+                开发文档
+            </a>
+            <a
+                    href="#donate"
+                    class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
+            >
+                <i class="ri-hand-heart-line mr-2"></i>
+                支持项目
+            </a>
+        </div>
+    </div>
+</section><style>
     #osc-gitee-widget-tag {
         padding: 0;
     }
+
     .pro_name a {
         color: #4183c4;
     }
@@ -74,11 +392,17 @@
     }
 
     .osc_git_box {
-        border-color: #E3E9ED;
+        border: none #E3E9ED!important;
     }
 
     .osc_git_info {
         color: #666;
+    }
+
+    .osc_git_box .osc_git_title {
+        border-radius: 0!important;
+        height: 38px!important;
+        line-height: 38px!important;
     }
 
     .osc_git_main a {
@@ -93,46 +417,66 @@
     .github-widget-repo {
         padding: 0;
     }
+
     img.card-img-top {
         border-radius: 0;
     }
+
+    .github-box {
+        border: none !important;
+    }
+
+    .github-box-title {
+        background: white !important;
+    }
+    .github-box-content {
+        background: white !important;
+    }
+    .osc_git_box .osc_git_title h3 {
+        color: #9B9B9B !important;
+        padding: 8px 1px 1px 1px !important;
+    }
+
+    .github-box .github-box-title {
+        border-radius: 0!important;
+    }
+
+    .github-box .github-box-download {
+        border-radius: 0!important;
+    }
+    .osc_git_footer {
+        display: none;
+    }
+    .github-box-download {
+        display: none;
+    }
 </style>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <p>秉承开源共享的精神，将源码托管在 Gitee/GitHub 上，欢迎各种 fork，star</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <h5 class="card-header">Gitee</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div id="osc-gitee-widget-tag"></div>
-                                <script src='https://gitee.com/94fzb/zrlog/widget_preview' async defer></script>
-                            </div>
-                        </div>
-                    </div>
+<section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
+    <div class="container mx-auto px-4 md:px-6">
+        <div style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
+            <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%">
+                <h5 class="card-header">Gitee</h5>
+                <div class="card-body dark:bg-gray-900" style="padding:0">
+                    <div id="osc-gitee-widget-tag"></div>
+                    <script src='https://gitee.com/94fzb/zrlog/widget_preview' async defer></script>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <h5 class="card-header">GitHub</h5>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="github-widget-repo" data-repo="94fzb/zrlog"></div>
-                                <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%;height: max-content">
+                <h5 class="card-header">GitHub</h5>
+                <div class="card-body" style="padding:0;min-height: 128px">
+                    <div class="github-widget-repo" data-repo="94fzb/zrlog"></div>
+                    <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
                 </div>
             </div>
         </div>
-        <div class="col-md-12" style="padding-top: 20px">
-            <p>如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持 ZrLog 的发展</p>
-            <div class="card">
-                <h5 class="card-header">支持</h5>
-                <div class="card-body">
-                    <div class="card-text">如果你刚好有 Github 或者 Gitee 的账号，可以通过下面的按钮赞一下 <b>ZrLog</b></div>
-                    <div style="display: flex;justify-content: start">
+        <p style="padding-bottom: 1rem; padding-top: 1rem">如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持 ZrLog 的发展</p>
+        <div class="card bg-white dark:bg-gray-900">
+            <h5 class="card-header">支持</h5>
+            <div class="card-body">
+                <div class="card-text">如果你刚好有 Github 或者 Gitee 的账号，可以通过下面的按钮赞一下
+                    <b>ZrLog</b>
+                </div>
+                <div style="display: flex;justify-content: start">
 <style>
     #star-info {
         padding-top: 20px;
@@ -156,223 +500,349 @@
         <a href='https://gitee.com/94fzb/zrlog/stargazers' title="Star 94fzb/zrlog on Gitee"><img src='https://gitee.com/94fzb/zrlog/badge/star.svg?theme=dark' alt='star'/></a>
     </div>
 </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-12" style="padding-top: 20px">
-            <div class="card">
+    </div>
+</section>
+<section class="bg-gray-50 dark:bg-black" style="padding-bottom: 48px" id="donate">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="dark:bg-gray-900 pt-4">
+            <div class="card bg-white dark:bg-gray-900">
                 <h5 class="card-header">请作者喝杯咖啡
                     <small>（可在备注里注名昵称）</small>
                 </h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="card text-center">
-                                        <h5 class="card-header">微信</h5>
-                                        <img class="card-img-top" width="273px"
-                                             src="https://www.zrlog.com/assets/img/donation/wechat.png"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-2"></div>
-                                <div class="col-md-5">
-                                    <div class="card text-center">
-                                        <h5 class="card-header">支付宝</h5>
-                                        <img class="card-img-top" width="273px"
-                                             src="https://www.zrlog.com/assets/img/donation/alipay.png"/>
-                                    </div>
-                                </div>
+                <div class="card-body donation-card">
+                    <div style="display: flex;flex-flow: wrap;justify-content: space-evenly;gap: 12px">
+                        <div class="card bg-white dark:bg-gray-900 text-center">
+                            <h5 class="card-header">微信</h5>
+                            <div class="card-body" style="display:flex">
+                                <img class="card-img-top" width="273px"
+                                     src="https://www.zrlog.com/assets/img/donation/wechat.png"/>
                             </div>
                         </div>
-                        <div class="col-md-2"></div>
+                        <div class="card bg-white dark:bg-gray-900 text-center">
+                            <h5 class="card-header">支付宝</h5>
+                            <div class="card-body" style="display:flex">
+                                <img class="card-img-top" width="273px"
+                                     src="https://www.zrlog.com/assets/img/donation/alipay.png"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12" style="padding-top: 20px">
-            <div class="card">
+            <div class="card bg-white dark:bg-gray-900 mt-4">
                 <h5 class="card-header">捐赠列表</h5>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                            <table class="table table-striped table-bordered table-hover table-responsive-xl">
-                                <thead>
-                                <tr>
-                                    <th>金额</th>
-                                    <th>捐赠者</th>
-                                    <th>捐赠时间</th>
-                                    <th>留言</th>
-                                </tr>
-                                </thead>
+                <div class="card-body" style="padding:0;overflow: hidden">
+                    <div style="overflow: auto;">
+                        <table class="auto-table divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 mb-1"
+                               style="width:100%;min-width: 680px">
+                            <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
+                            <tr>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">金额</th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">捐赠者</th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">捐赠时间</th>
+                                <th scope="col" class="px-2" style="height: 56px;text-align: start">留言</th>
+                            </tr>
+                            </thead>
 
-                                <tbody>
-                    <tr>
-                        <td>￥100</td>
-                        <td><a href="#" target="_blank">*执着*</a></td>
-                        <td>2024-04-19 18:20:00</td>
-                        <td>加个鸡腿</td>
-                    </tr>
-                    <tr>
-                        <td>￥18.8</td>
-                        <td><a href="#" target="_blank">星光之*</a></td>
-                        <td>2024-02-07 12:32:00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">苏*</a></td>
-                        <td>2023-12-22 17:22:00</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥88</td>
-                        <td><a href="#" target="_blank">星光之*</a></td>
-                        <td>2022-10-13 21:37:06</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥50</td>
-                        <td><a href="#" target="_blank">*先生你好</a></td>
-                        <td>2021-10-15 11:48:56</td>
-                        <td>太喜欢你的zrlog了</td>
-                    </tr>
-                    <tr>
-                        <td>￥1</td>
-                        <td><a href="https://gitee.com/ma_zhong_se" target="_blank">Esma</a></td>
-                        <td>2020-02-18 21:37:59</td>
-                        <td>感谢您的开源项目！</td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">*__</a></td>
-                        <td>2019-12-30 18:48:46</td>
-                        <td>1024个感谢</td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">*星星</a></td>
-                        <td>2018-12-03 18:00:10</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥20</td>
-                        <td><a href="#" target="_blank">*纸</a></td>
-                        <td>2018-11-14 19:59:16</td>
-                        <td>感谢分享</td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">随遇而安</a></td>
-                        <td>2018-06-27 21:56:06</td>
-                        <td>祝贺zrlog升级到2.0</td>
-                    </tr>
-                    <tr>
-                        <td>￥20</td>
-                        <td><a href="#" target="_blank">swvincent</a></td>
-                        <td>2018-03-22 10:42:06</td>
-                        <td>咖啡</td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">风兮</a></td>
-                        <td>2018-03-07 10:39:06</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">微信网友</a></td>
-                        <td>2018-01-11 17:21:00</td>
-                        <td>感谢zrlog大神！！！</td>
-                    </tr>
-                    <tr>
-                        <td>￥200</td>
-                        <td><a href="#" target="_blank">Dream Marker</a></td>
-                        <td>2018-01-09 14:22:06</td>
-                        <td>这个人很土豪，什么都没有说</td>
-                    </tr>
-                    <tr>
-                        <td>￥6.6</td>
-                        <td><a href="#" target="_blank">夕阳游子</a></td>
-                        <td>2017-12-14 23:41:18</td>
-                        <td>感谢repo主的开源精神</td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">微信网友</a></td>
-                        <td>2017-08-30 16:41:12</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">微信网友</a></td>
-                        <td>2017-07-06 16:24:58</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>￥10</td>
-                        <td><a href="#" target="_blank">asx</a></td>
-                        <td>2017-07-22 10:20:41</td>
-                        <td>感谢您的开源项目！</td>
-                    </tr>
-                    <tr>
-                        <td>￥5</td>
-                        <td><a href="http://git.oschina.net/diaodiaofly" target="_blank">初学者</a></td>
-                        <td>2017-01-07 15:32:39</td>
-                        <td>感谢您的开源项目！</td>
-                    </tr>
-                                </tbody>
-                            </table>
-                            </div>
-                        </div>
+                            <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥100</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">*执着*</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2024-04-19 18:20:00</td>
+                                    <td class="px-2 py-4">加个鸡腿</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥18.8</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">星光之*</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2024-02-07 12:32:00</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">苏*</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2023-12-22 17:22:00</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥88</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">星光之*</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2022-10-13 21:37:06</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥50</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">*先生你好</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2021-10-15 11:48:56</td>
+                                    <td class="px-2 py-4">太喜欢你的zrlog了</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥1</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="https://gitee.com/ma_zhong_se" target="_blank">Esma</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2020-02-18 21:37:59</td>
+                                    <td class="px-2 py-4">感谢您的开源项目！</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">*__</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2019-12-30 18:48:46</td>
+                                    <td class="px-2 py-4">1024个感谢</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">*星星</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-12-03 18:00:10</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥20</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">*纸</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-11-14 19:59:16</td>
+                                    <td class="px-2 py-4">感谢分享</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">随遇而安</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-06-27 21:56:06</td>
+                                    <td class="px-2 py-4">祝贺zrlog升级到2.0</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥20</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">swvincent</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-03-22 10:42:06</td>
+                                    <td class="px-2 py-4">咖啡</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">风兮</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-03-07 10:39:06</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">微信网友</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-01-11 17:21:00</td>
+                                    <td class="px-2 py-4">感谢zrlog大神！！！</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥200</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">Dream Marker</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2018-01-09 14:22:06</td>
+                                    <td class="px-2 py-4">这个人很土豪，什么都没有说</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥6.6</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">夕阳游子</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2017-12-14 23:41:18</td>
+                                    <td class="px-2 py-4">感谢repo主的开源精神</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">微信网友</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2017-08-30 16:41:12</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">微信网友</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2017-07-06 16:24:58</td>
+                                    <td class="px-2 py-4"></td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥10</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="#" target="_blank">asx</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2017-07-22 10:20:41</td>
+                                    <td class="px-2 py-4">感谢您的开源项目！</td>
+                                </tr>
+                                <tr style="height: 36px">
+                                    <td class="px-2 py-4">￥5</td>
+                                    <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
+                                                href="http://git.oschina.net/diaodiaofly" target="_blank">初学者</a></td>
+                                    <td class="px-2 py-4" style="white-space: nowrap">2017-01-07 15:32:39</td>
+                                    <td class="px-2 py-4">感谢您的开源项目！</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-
         </div>
+    </div>
+</section><!-- 返回顶部按钮 -->
+<button
+        id="back-to-top"
+        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+>
+    <i class="ri-arrow-up-line text-xl"></i>
+</button>
+<footer class="bg-gray-900 text-white py-12" id="footer">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+
+    <div>
+        <h3 class="text-lg font-semibold mb-4">关于 ZRLOG</h3>
+        <p class="text-gray-400">ZRLOG 是一款使用 Java
+            开发的开源博客系统，专注于为用户提供简单、高效的博客写作体验。</p>
+    </div>
+    <div>
+        <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+        <ul class="space-y-2">
+            <li><a href="/" class="text-gray-400 hover:text-white transition-colors">主页</a></li>
+            <li><a href="https://blog.zrlog.com"
+                   class="text-gray-400 hover:text-white transition-colors">博客</a></li>
+            <li><a href="/template" class="text-gray-400 hover:text-white transition-colors">主题</a></li>
+            <li><a href="/plugin" class="text-gray-400 hover:text-white transition-colors">插件</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3 class="text-lg font-semibold mb-4">资源</h3>
+        <ul class="space-y-2">
+            <li><a href="https://blog.zrlog.com/sort/doc"
+                   class="text-gray-400 hover:text-white transition-colors">文档</a></li>
+            <li><a href="https://blog.zrlog.com/faq-collect.html"
+                   class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="https://blog.zrlog.com/for-developer.html"
+                   class="text-gray-400 hover:text-white transition-colors">开发者</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
+        </ul>
+    </div>
+    <div>
+        <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+        <ul class="space-y-2">
+            <li class="flex items-center">
+                <i class="ri-mail-line mr-2"></i>
+                <a href="mailto:support@zrlog.com" class="text-gray-400 hover:text-white transition-colors">support@zrlog.com</a>
+            </li>
+            <li class="flex items-center">
+                <i class="ri-github-fill mr-2"></i>
+                <a href="https://github.com/94fzb/zrlog" target="_blank"
+                   class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+            </li>
+        </ul>
     </div>
 </div>
-<footer>
-    <div class="container">
-        <hr>
-        <div class="row">
-                    <div class="col-lg-12 footer-below" id="footerLink">
-<p>
-    <a href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
-    | <a href="https://blog.zrlog.com/for-developer.html">开发必看</a>
-    | <a href="https://xiaochun.zrlog.com" target="_blank">博客</a>
-    | <a href="https://gitee.com/94fzb" target="_blank">码云</a>
-    | <a href="https://github.com/94fzb" target="_blank">GitHub</a>
-    | <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
-    | <a href="https://qiniu.com" target="_blank">七牛云</a>
-</p>
-
-<style>
-    table {
-        width: 100%
-    }
-
-    section .content th {
-        text-align: left;
-    }
-</style>
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="text-gray-400 mb-4 md:mb-0">
+                © 2025 ZrLog 博客程序 <a href="https://beian.miit.gov.cn/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
             </div>
-            <div class="col-lg-12 footer-below" id="copyInfo">
-                <span class="copyright">&copy; 2025 ZrLog博客程序
-               
-                </span>
-                <a href="https://beian.miit.gov.cn/" style="margin-left:8px">蜀ICP备16023991号-1
-                </a>
-            </div>
-            <div class="col-lg-12 footer-below" style="margin-top:8px">
-                <a href="https://www.zrlog.com">www.zrlog.com</a>
-            </div>
-        </div>
+<div style="display: flex;flex-wrap: wrap;gap: 16px;justify-content: center">
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
+    <a class="text-gray-400 hover:text-white transition-colors"
+       href="https://blog.zrlog.com/for-developer.html">开发必看</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://xiaochun.zrlog.com"
+       target="_blank">博客</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://gitee.com/94fzb" target="_blank">码云</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://github.com/94fzb"
+       target="_blank">GitHub</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
+    <a class="text-gray-400 hover:text-white transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+</div>        </div>
     </div>
 </footer>
+<script>
+    // 返回顶部按钮
+    const backToTopButton = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+        } else {
+            backToTopButton.classList.remove("opacity-100", "visible");
+            backToTopButton.classList.add("opacity-0", "invisible");
+        }
+    });
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    });
+
+
+    // 主题切换
+    const themeSwitch = document.querySelector(".theme-switch input");
+
+    // 页面加载时，根据 localStorage 设置初始主题
+    if (localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+        themeSwitch.checked = true;
+    }
+
+    const userPreference = localStorage.getItem("theme");
+
+    function applyTheme() {
+        if (userPreference === "dark" || (!userPreference && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+            document.documentElement.classList.add("dark");
+            themeSwitch.checked = true;
+        } else {
+            document.documentElement.classList.remove("dark");
+            themeSwitch.checked = false;
+        }
+    }
+
+    // 初始化：加载页面时设置主题
+    applyTheme();
+
+    themeSwitch.addEventListener("change", function () {
+        if (this.checked) {
+            document.documentElement.classList.add('dark'); // ✅ 开启暗黑模式
+            localStorage.theme = "dark";
+        } else {
+            document.documentElement.classList.remove('dark'); // ✅ 关闭暗黑模式
+            localStorage.theme = "light";
+        }
+    });
+
+    const btn = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById('overlay');
+
+    function closeSidebar() {
+        sidebar.classList.add('-translate-x-full');
+        overlay.classList.add('hidden');
+        setTimeout(() => {
+            sidebar.classList.add('hidden');
+        }, 300); // 等待动画结束再隐藏
+    }
+
+    overlay.addEventListener('click', closeSidebar);
+
+    btn.addEventListener("click", () => {
+        // 先取消隐藏
+        sidebar.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+        // 然后触发滑出
+        setTimeout(() => {
+            sidebar.classList.remove('-translate-x-full');
+        }, 10);
+    });
+
+    // ESC 键也可关闭（可选）
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeSidebar();
+        }
+    });
+</script>
 <div style="display:none">
     <script>
         var _hmt = _hmt || [];

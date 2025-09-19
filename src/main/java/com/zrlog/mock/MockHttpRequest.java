@@ -1,11 +1,12 @@
 package com.zrlog.mock;
 
+import com.hibegin.common.io.handler.ReadWriteSelectorHandler;
 import com.hibegin.http.HttpMethod;
+import com.hibegin.http.HttpVersion;
 import com.hibegin.http.server.ApplicationContext;
 import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.config.RequestConfig;
 import com.hibegin.http.server.config.ServerConfig;
-import com.hibegin.http.server.handler.ReadWriteSelectorHandler;
 import com.hibegin.http.server.web.cookie.Cookie;
 import com.hibegin.http.server.web.session.HttpSession;
 
@@ -85,7 +86,7 @@ public class MockHttpRequest implements HttpRequest {
     }
 
     @Override
-    public boolean getParaToBool(String key) {
+    public Boolean getParaToBool(String key) {
         return false;
     }
 
@@ -95,7 +96,7 @@ public class MockHttpRequest implements HttpRequest {
     }
 
     @Override
-    public int getParaToInt(String key) {
+    public Integer getParaToInt(String key) {
         return 0;
     }
 
@@ -165,7 +166,7 @@ public class MockHttpRequest implements HttpRequest {
     }
 
     @Override
-    public String getHttpVersion() {
+    public HttpVersion getHttpVersion() {
         return null;
     }
 }

@@ -1,31 +1,27 @@
 <#assign subTitle="插件中心">
 <#include "../include/header.ftl"/>
-<!-- Page Content -->
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">插件中心</li>
-            <li class="breadcrumb-item active">所有</li>
-        </ol>
-    </nav>
-</div>
-<div class="container">
-    <div class="row previews">
-        <#list plugins as plugin>
-            <div class="col-lg-4 col-sm-6" style="padding-top: 10px">
-                <div class="card text-center">
-                    <img class="card-img-top" style="height:200px;width:100%;overflow:hidden;object-fit: cover"
-                         src="${plugin.image}?imageView2/2/w/650"
-                         alt="${plugin.name }">
+<section class="py-16 bg-gray-50 dark:bg-black">
+    <div class="container mx-auto px-4 md:px-6">
+        <nav aria-label="breadcrumb">
+            插件中心 > 所有
+        </nav>
+        <div style="display:flex;flex-flow: wrap;gap:16px;justify-content: left;align-items:start"
+             class="py-4">
+            <#list plugins as plugin>
+                <div class="card bg-white text-center dark:bg-gray-900">
                     <div class="card-body">
-                        <h5 class="card-title">${plugin.name }</h5>
+                        <img class="img-responsive"
+                             style="height:200px;min-width:300px;max-width: 300px;overflow:hidden;object-fit: cover"
+                             src="${plugin.image}?imageView2/2/w/650"
+                             alt="${plugin.name }">
+                        <h5 class="card-header">${plugin.name }</h5>
                         <hr/>
-                        <a href="${url}/plugin/${plugin.id}.html" class="storeDetailLink btn btn-primary">详情 &amp;
+                        <a href="${url}/plugin/${plugin.id}.html" class="storeDetailLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors">详情 &amp;
                             ${download}</a>
                     </div>
                 </div>
-            </div>
-        </#list>
+            </#list>
+        </div>
     </div>
-</div>
+</section>
 <#include "../include/footer.ftl"/>

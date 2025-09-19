@@ -5,6 +5,6 @@
   "changeLogs": [
     "- 优化 PWA 全屏逻辑\n- 添加 Linux arm64环境包\n- 添加 deb 包快捷安装"
   ],
-  "downloadUrl": "https://dl.zrlog.com/release/zrlog-3.1.5-f541f86-release.zip",
+  "commitId": "f541f86",
   "changeLogIsMd": true
 }
