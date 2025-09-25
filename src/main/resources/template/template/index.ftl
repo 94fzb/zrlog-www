@@ -1,4 +1,3 @@
-<#assign subTitle="主题中心">
 <#include "../include/header.ftl"/>
 <section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
