@@ -1,4 +1,3 @@
-<#assign subTitle="${plugin.name} - 插件中心">
 <#include "../include/header.ftl"/>
 
 <section class="py-16 bg-gray-50 dark:bg-black">

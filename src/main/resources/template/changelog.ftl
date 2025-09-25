@@ -1,4 +1,3 @@
-<#assign subTitle="变更记录">
 <#include "include/header.ftl"/>
 <!-- 页面标题区 -->
 <section class="relative hero-gradient text-white py-20 overflow-hidden">

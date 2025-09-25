@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <title><#if subTitle??>${subTitle} - </#if>ZrLog 博客程序</title>
-    <meta name="description" content="ZrLog 使用 Java 构建的个人博客程序 - 可能是最好用的开源Java博客系统"/>
-    <meta name="keywords"
-          content="ZrLog,博客,java开源博客,博客程序,记录日志,博客系统,建站系统,blog,java建站系统,简洁博客"/>
+    <title><#if pageInfo.entryTitle??>${pageInfo.entryTitle} - </#if>${pageInfo.title!''}</title>
+    <meta name="description" content="${pageInfo.description!''}"/>
+    <meta name="keywords" content="${pageInfo.keywords!''}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" type="image/svg+xml" href="${url }/favicon.svg"/>

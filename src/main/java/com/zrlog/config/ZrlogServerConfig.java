@@ -7,6 +7,7 @@ import com.hibegin.http.server.config.ServerConfig;
 import com.hibegin.http.server.util.FreeMarkerUtil;
 import com.hibegin.http.server.web.MethodInterceptor;
 import com.zrlog.controller.*;
+import com.zrlog.interceptor.RequestInfoInterceptor;
 import com.zrlog.interceptor.RestPathInterceptor;
 
 import java.util.Objects;
@@ -25,6 +26,7 @@ public class ZrlogServerConfig extends AbstractServerConfig {
         ServerConfig serverConfig = new ServerConfig();
         serverConfig.setApplicationName("zrlog-www");
         serverConfig.setDisablePrintWebServerInfo(true);
+        serverConfig.addInterceptor(RequestInfoInterceptor.class);
         serverConfig.addInterceptor(RestPathInterceptor.class);
         serverConfig.addInterceptor(MethodInterceptor.class);
         serverConfig.getRouter().addMapper("", IndexController.class);

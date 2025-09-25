@@ -5,6 +5,8 @@ import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.api.HttpResponse;
 import com.zrlog.dao.TemplateDAO;
 import com.zrlog.entry.Template;
+import com.zrlog.util.PageInfoUtils;
+import com.zrlog.vo.PageInfo;
 
 public class TemplateController extends StoreBaseController {
 
@@ -32,6 +34,8 @@ public class TemplateController extends StoreBaseController {
                 }
                 template.setSourceUrl("https://github.com/zrlog-extensions/zrlog-templates/tree/master/" + template.getFileName().replace(".zip", ""));
                 getRequest().getAttr().put("template", template);
+                PageInfo pageInfo = PageInfoUtils.getPageInfo(request);
+                pageInfo.setEntryTitle(template.getName());
                 getResponse().renderFreeMarker("/template/detail");
             } else {
                 getResponse().renderCode(404);

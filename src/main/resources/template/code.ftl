@@ -1,4 +1,3 @@
-<#assign subTitle="源码下载">
 <#include "include/header.ftl"/>
 <#include "_code/header.ftl"/>
 <style>

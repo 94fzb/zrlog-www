@@ -5,6 +5,8 @@ import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.api.HttpResponse;
 import com.zrlog.dao.PluginDAO;
 import com.zrlog.entry.Plugin;
+import com.zrlog.util.PageInfoUtils;
+import com.zrlog.vo.PageInfo;
 
 public class PluginController extends StoreBaseController {
 
@@ -44,6 +46,8 @@ public class PluginController extends StoreBaseController {
                             "&pluginName=" + plugin.getFileName());
                 }
                 getRequest().getAttr().put("plugin", plugin);
+                PageInfo pageInfo = PageInfoUtils.getPageInfo(request);
+                pageInfo.setEntryTitle(plugin.getName());
                 getResponse().renderFreeMarker("/plugin/detail");
             } else {
                 getResponse().renderCode(404);

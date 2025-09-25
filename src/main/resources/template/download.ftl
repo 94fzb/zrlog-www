@@ -1,4 +1,3 @@
-<#assign subTitle="安装包下载">
 <#include "include/header.ftl"/>
 <style>
     .btn-cta {
