@@ -1,0 +1,10 @@
+{
+  "fileSize": "10M",
+  "desc": "评论框的渲染，支持 `gavatar` 头像",
+  "releaseDate": "2025-10-25",
+  "changeLogs": [
+    "- 【评论】评论框的渲染，支持 `gavatar` 头像\n- 【管理页】编辑器暗黑模式下的样式\n- 【管理页】优化部分样式问题"
+  ],
+  "commitId": "e1ce1f4",
+  "changeLogIsMd": true
+}
