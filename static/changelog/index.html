@@ -387,7 +387,32 @@
                 变更记录
             </h4>
             <div class="card-body" style="padding: 16px;overflow: hidden;white-space: wrap;word-break: break-all;">
-                <h3>3.2.1 (2025-10-25)</h3>
+                <h3>3.2.2 (2025-12-12)</h3>
+<h4>新特</h4>
+<ul>
+<li>【管理页】AI 写作，已接入多种大模型，写文章更畅快</li>
+<li>【构建】升级到 GraalVM 25 打包，对象头压缩，占用内存更低（仅限 GraalVM Native Image 包）</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>【管理页】静态资源同步完后，刷新页面时，强制忽略 cdn 的缓存</li>
+<li>【管理页】多语言优化</li>
+<li>【管理页】保存状态移动到编辑器的右下角</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>【管理页】更新成功后跳转的提示使用配置的语言</li>
+<li>【安装页】Antd 多语言优先使用浏览器的语言</li>
+<li>【管理页】文章保存成功后，点击侧边栏的文章撰写没有情况空数据，可能导致无意义的重复发布 （v3.2 以上版本）</li>
+</ul>
+<h4>依赖</h4>
+<ul>
+<li>⬆️ Antd [6.0.1]</li>
+<li>⬆️ SimpleWebServer  [4.0.115]</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/29f0396">29f0396</a></p>
+<hr />
+<h3>3.2.1 (2025-10-25)</h3>
 <h4>优化</h4>
 <ul>
 <li>【评论】评论框的渲染，支持 <code>gavatar</code> 头像</li>
