@@ -1,12 +1,6 @@
-<div style="display: flex;flex-wrap: wrap;gap: 16px;justify-content: center">
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
-    <a class="text-gray-400 hover:text-white transition-colors"
-       href="https://blog.zrlog.com/for-developer.html">开发必看</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://xiaochun.zrlog.com"
-       target="_blank">博客</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://gitee.com/94fzb" target="_blank">码云</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://github.com/94fzb"
-       target="_blank">GitHub</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+<div class="flex flex-wrap gap-x-8 gap-y-4 justify-center md:justify-end text-sm font-medium">
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+    <span class="text-gray-300 dark:text-gray-800 hidden md:inline">|</span>
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://demo.zrlog.com">在线演示</a>
 </div>

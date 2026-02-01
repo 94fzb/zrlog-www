@@ -6,6 +6,22 @@
     <meta name="keywords" content="${pageInfo.keywords!''}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="${url}${request.uri}"/>
+    <meta property="og:title" content="<#if pageInfo.entryTitle??>${pageInfo.entryTitle} - </#if>${pageInfo.title!'ZrLog - 专业的 Java 开源博客系统'}"/>
+    <meta property="og:description" content="${pageInfo.description!'ZrLog 是使用 Java 开发的博客程序，具有简约、易用、组件化、内存占用低等特点。支持 Markdown 编辑器，让更多的精力放在写作上。'}"/>
+    <meta property="og:image" content="${url}/assets/screenprint/post-detail.png"/>
+    <meta property="og:site_name" content="ZrLog"/>
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="${url}${request.uri}"/>
+    <meta name="twitter:title" content="<#if pageInfo.entryTitle??>${pageInfo.entryTitle} - </#if>${pageInfo.title!'ZrLog - 专业的 Java 开源博客系统'}"/>
+    <meta name="twitter:description" content="${pageInfo.description!'ZrLog 是使用 Java 开发的博客程序，具有简约、易用、组件化、内存占用低等特点'}"/>
+    <meta name="twitter:image" content="${url}/assets/screenprint/post-detail.png"/>
+    
     <link rel="shortcut icon" type="image/svg+xml" href="${url }/favicon.svg"/>
     <link href="${url}/assets/fonts/remixicon.css" rel="stylesheet">
     <script src="${url}/assets/js/jquery-1.10.2.min.js"></script>
@@ -103,6 +119,73 @@
 
         input:checked + .slider:before {
             transform: translateX(30px);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes blob {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-25%) translateX(-50%); }
+            50% { transform: translateY(0) translateX(-50%); }
+        }
+
+        @keyframes scroll-inner {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(12px); opacity: 0; }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+
+        .animate-scroll-inner {
+            animation: scroll-inner 1.5s infinite;
+        }
+
+        @keyframes scroll-line-progress {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .animate-scroll-line-progress {
+            animation: scroll-line-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass-panel {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .github-star a {
@@ -218,19 +301,6 @@
             text-align: center;
         }
 
-        .storeInstallLink, .storeDetailLink {
-            display: inline-flex;
-            height: 56px;
-            min-width: 96px;
-            justify-content: center;
-            align-items: center;
-            padding-right: 12px;
-            padding-left: 12px;
-            border-radius: 4px;
-            margin-top: 12px;
-            color: white;
-        }
-
         .auto-cards {
             gap: 12px;
         }
@@ -250,36 +320,74 @@
 <body class="dark:bg-black dark:text-gray-200">
 <#if !request.attr.from??>
 <!-- 导航栏 -->
-<nav class="bg-gray-900 text-white py-4" id="header">
+<!-- 导航栏 -->
+<nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/80 border-b border-gray-200/50 dark:border-white/10 py-4 transition-all duration-300 shadow-sm" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div class="flex items-center">
-            <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
-            <ul class="hidden md:flex space-x-6">
+            <a href="/" class="flex items-center gap-2 text-2xl font-black tracking-tighter text-gray-900 dark:text-white mr-12 group">
+                <div class="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <img src="${url}/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+                </div>
+                <span>ZRLOG</span>
+            </a>
+            <ul class="hidden lg:flex items-center space-x-1">
                 <#include "header-nav.ftl"/>
             </ul>
         </div>
-        <div id="overlay"
-             class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
-        <aside id="sidebar" class="fixed text-white top-0 bg-primary left-0 w-56 h-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6
-           -translate-x-full transition-transform duration-300 z-40 hidden"
-               style="background: rgb(17 24 39);">
-            <ul class="space-y-6" style="font-size: 18px;text-align: center;">
-                <#include "header-nav.ftl"/>
-            </ul>
-        </aside>
-        <div class="flex items-center space-x-4">
-            <a href="https://github.com/94fzb/zrlog" target="_blank"
-               class="flex items-center justify-center w-8 h-8">
-                <i class="ri-github-fill ri-lg"></i>
+        
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center space-x-4 border-r border-gray-200 dark:border-white/10 pr-6">
+                <!-- Github & Theme Toggle -->
+                <a href="https://github.com/94fzb/zrlog" target="_blank"
+                   class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+                    <i class="ri-github-fill ri-xl"></i>
+                </a>
+                <div class="flex items-center gap-2 bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full border border-gray-200 dark:border-white/5">
+                    <i class="ri-sun-line text-[10px] text-gray-500 dark:text-gray-400"></i>
+                    <label class="theme-switch relative inline-block w-8 h-4 cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div class="absolute inset-0 bg-gray-300 dark:bg-gray-700 rounded-full transition-colors peer-checked:bg-blue-600"></div>
+                        <div class="absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition-transform peer-checked:translate-x-4"></div>
+                    </label>
+                    <i class="ri-moon-line text-[10px] text-gray-500 dark:text-gray-400"></i>
+                </div>
+            </div>
+            
+            <a href="/download" 
+               class="hidden sm:inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-blue-600/25 active:scale-95">
+                立即开始
             </a>
-            <label class="theme-switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <button class="md:hidden flex items-center justify-center w-8 h-8" id="toggleSidebar">
-                <i class="ri-menu-line ri-lg"></i>
+            
+            <button class="lg:hidden flex items-center justify-center w-10 h-10 text-gray-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10" id="toggleSidebar">
+                <i class="ri-menu-4-line ri-lg"></i>
             </button>
         </div>
     </div>
 </nav>
+
+<div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden"></div>
+<aside id="sidebar" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-white/10 p-8 shadow-2xl -translate-x-full transition-transform duration-500 ease-out z-[70] hidden">
+    <div class="flex flex-col h-full">
+        <div class="mb-12 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="${url}/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+                </div>
+                <span>ZRLOG</span>
+            </div>
+            <button id="closeSidebar" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <i class="ri-close-line ri-xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-4">
+            <#include "header-nav.ftl"/>
+        </ul>
+        <div class="mt-auto pt-8 border-t border-gray-200 dark:border-white/10">
+            <a href="https://github.com/94fzb/zrlog" target="_blank" class="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 transition-colors">
+                <i class="ri-github-fill"></i>
+                <span>在 GitHub 获取源码</span>
+            </a>
+        </div>
+    </div>
+</aside>
 </#if>

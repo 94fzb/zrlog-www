@@ -1,50 +1,54 @@
 <!-- 浏览器兼容性 -->
-<section class="py-4 bg-gray-50 dark:bg-black">
-    <div class="container mx-auto px-4 dark:bg-black">
-        <div class="mt-12 max-w-5xl mx-auto bg-white  dark:bg-gray-900 rounded-lg shadow-md p-6">
-            <h3 class="text-xl font-bold mb-4">浏览器兼容性</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-2">
-                        <i class="ri-chrome-line text-2xl text-gray-700"></i>
-                    </div>
-                    <h4 class="font-medium">Chrome</h4>
-                    <p class="text-gray-600 text-sm">最新版本</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-2">
-                        <i class="ri-firefox-line text-2xl text-gray-700"></i>
-                    </div>
-                    <h4 class="font-medium">Firefox</h4>
-                    <p class="text-gray-600 text-sm">最新版本</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-2">
-                        <i class="ri-safari-line text-2xl text-gray-700"></i>
-                    </div>
-                    <h4 class="font-medium">Safari</h4>
-                    <p class="text-gray-600 text-sm">最新版本</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-2">
-                        <i class="ri-edge-line text-2xl text-gray-700"></i>
-                    </div>
-                    <h4 class="font-medium">Edge</h4>
-                    <p class="text-gray-600 text-sm">最新版本</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-2">
-                        <i class="ri-opera-line text-2xl text-gray-700"></i>
-                    </div>
-                    <h4 class="font-medium">Opera</h4>
-                    <p class="text-gray-600 text-sm">最新版本</p>
-                </div>
+<section class="py-16 bg-white dark:bg-black">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <!-- 标题 -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">浏览器支持</h2>
+                <p class="text-gray-600 dark:text-gray-400">支持所有现代浏览器最新版本</p>
             </div>
-            <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
-                <p class="text-yellow-700 text-sm flex items-start mb-0">
-                    <i class="ri-information-line mr-2 mt-0.5"></i>
-                    <span>为获得最佳体验，建议使用最新版本的现代浏览器。IE 浏览器不再受支持。</span>
-                </p>
+
+            <!-- 浏览器图标 -->
+            <div class="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
+                <!-- Chrome -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center mb-3 border border-gray-200 dark:border-gray-700 group-hover:border-blue-400 dark:group-hover:border-blue-600 group-hover:shadow-lg transition-all">
+                        <i class="ri-chrome-line text-3xl md:text-4xl text-gray-600 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"></i>
+                    </div>
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Chrome</p>
+                </div>
+
+                <!-- Firefox -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center mb-3 border border-gray-200 dark:border-gray-700 group-hover:border-orange-400 dark:group-hover:border-orange-600 group-hover:shadow-lg transition-all">
+                        <i class="ri-firefox-line text-3xl md:text-4xl text-gray-600 dark:text-gray-300 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors"></i>
+                    </div>
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Firefox</p>
+                </div>
+
+                <!-- Safari -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center mb-3 border border-gray-200 dark:border-gray-700 group-hover:border-cyan-400 dark:group-hover:border-cyan-600 group-hover:shadow-lg transition-all">
+                        <i class="ri-safari-line text-3xl md:text-4xl text-gray-600 dark:text-gray-300 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors"></i>
+                    </div>
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Safari</p>
+                </div>
+
+                <!-- Edge -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center mb-3 border border-gray-200 dark:border-gray-700 group-hover:border-green-400 dark:group-hover:border-green-600 group-hover:shadow-lg transition-all">
+                        <i class="ri-edge-line text-3xl md:text-4xl text-gray-600 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors"></i>
+                    </div>
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Edge</p>
+                </div>
+
+                <!-- Opera -->
+                <div class="group text-center">
+                    <div class="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-2xl flex items-center justify-center mb-3 border border-gray-200 dark:border-gray-700 group-hover:border-red-400 dark:group-hover:border-red-600 group-hover:shadow-lg transition-all">
+                        <i class="ri-opera-line text-3xl md:text-4xl text-gray-600 dark:text-gray-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors"></i>
+                    </div>
+                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300">Opera</p>
+                </div>
             </div>
         </div>
     </div>

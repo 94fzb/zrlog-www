@@ -4,38 +4,56 @@
     "name": "精简主题",
     "downloadUrl": "https://dl.zrlog.com/attachment/template/template-simple.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-simple.jpg",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "template-simple.zip",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "精简主题，复古风格"
+    "desc": "ZrLog 官方出品的简约风格主题，主打轻量化与极致性能。采用传统的两栏布局，适合专注于文字创作的博主。",
+    "tags": [
+      "简约",
+      "两栏",
+      "响应式",
+      "官方"
+    ]
   },
   {
     "id": 4,
     "name": "hexo-next",
     "downloadUrl": "https://dl.zrlog.com/attachment/template/template-hexo-theme-next.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-hexo-theme-next.jpg",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "template-hexo-theme-next.zip",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "hexo-next"
+    "desc": "将 Hexo 社区著名的 NexT 主题完美移植到了 ZrLog 平台。保留了极致简约、深色模式等深受开发者喜爱的特性，配置简单易用。",
+    "tags": [
+      "极简",
+      "黑白",
+      "NexT 移植",
+      "开发者"
+    ]
   },
   {
     "id": 5,
     "name": "ZrLog 博客主题",
     "downloadUrl": "https://dl.zrlog.com/attachment/template/template-sheshui.zip",
     "image": "https://www.zrlog.com/attached/template/preview/template-sheshui.jpg",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "template-sheshui.zip",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "涉水轻舟博客"
+    "desc": "经典而优雅的博客主题，采用全宽布局设计，不仅视觉体验大方，而且对移动端有着极佳的响应式支持。",
+    "tags": [
+      "清爽",
+      "蓝色",
+      "全宽布局",
+      "经典"
+    ]
   }
 ]

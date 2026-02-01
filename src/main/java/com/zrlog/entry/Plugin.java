@@ -15,6 +15,7 @@ public class Plugin {
     private String createdDate;
     private String downloadUrl;
     private String fileName;
+    private String[] tags;
 
     public Long getId() {
         return id;
@@ -102,5 +103,13 @@ public class Plugin {
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+    }
+
+    public String[] getTags() {
+        return tags;
+    }
+
+    public void setTags(String[] tags) {
+        this.tags = tags;
     }
 }

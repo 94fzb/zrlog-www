@@ -6,6 +6,22 @@
     <meta name="keywords" content="ZrLog, ZrLog 源码, ZrLog 开源, Java 博客系统, 开源博客系统, 下载源码, GitHub 下载, Gitee 下载, 博客系统源码, 博客程序源码, ZrLog 源码下载, ZrLog 开源项目, ZrLog GitHub 仓库, ZrLog Java 博客源码, ZrLog 轻量博客源码"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.zrlog.com/code"/>
+    <meta property="og:title" content="ZrLog 源码 - Java 开源博客系统，获取最新版本"/>
+    <meta property="og:description" content="ZrLog 源码页提供完整开源代码下载，支持 Java 博客系统、一键部署和插件扩展。访问 GitHub 或 Gitee 仓库获取最新版本源码，轻量高效，适合开发者和个人建站用户查看、修改和部署博客程序。"/>
+    <meta property="og:image" content="https://www.zrlog.com/assets/screenprint/post-detail.png"/>
+    <meta property="og:site_name" content="ZrLog"/>
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="https://www.zrlog.com/code"/>
+    <meta name="twitter:title" content="ZrLog 源码 - Java 开源博客系统，获取最新版本"/>
+    <meta name="twitter:description" content="ZrLog 源码页提供完整开源代码下载，支持 Java 博客系统、一键部署和插件扩展。访问 GitHub 或 Gitee 仓库获取最新版本源码，轻量高效，适合开发者和个人建站用户查看、修改和部署博客程序。"/>
+    <meta name="twitter:image" content="https://www.zrlog.com/assets/screenprint/post-detail.png"/>
+    
     <link rel="shortcut icon" type="image/svg+xml" href="https://www.zrlog.com/favicon.svg"/>
     <link href="https://www.zrlog.com/assets/fonts/remixicon.css" rel="stylesheet">
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
@@ -103,6 +119,73 @@
 
         input:checked + .slider:before {
             transform: translateX(30px);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes blob {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-25%) translateX(-50%); }
+            50% { transform: translateY(0) translateX(-50%); }
+        }
+
+        @keyframes scroll-inner {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(12px); opacity: 0; }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+
+        .animate-scroll-inner {
+            animation: scroll-inner 1.5s infinite;
+        }
+
+        @keyframes scroll-line-progress {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .animate-scroll-line-progress {
+            animation: scroll-line-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass-panel {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .github-star a {
@@ -218,19 +301,6 @@
             text-align: center;
         }
 
-        .storeInstallLink, .storeDetailLink {
-            display: inline-flex;
-            height: 56px;
-            min-width: 96px;
-            justify-content: center;
-            align-items: center;
-            padding-right: 12px;
-            padding-left: 12px;
-            border-radius: 4px;
-            margin-top: 12px;
-            color: white;
-        }
-
         .auto-cards {
             gap: 12px;
         }
@@ -249,509 +319,1317 @@
     </style>
 <body class="dark:bg-black dark:text-gray-200">
 <!-- 导航栏 -->
-<nav class="bg-gray-900 text-white py-4" id="header">
+<!-- 导航栏 -->
+<nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/80 border-b border-gray-200/50 dark:border-white/10 py-4 transition-all duration-300 shadow-sm" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div class="flex items-center">
-            <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
-            <ul class="hidden md:flex space-x-6">
+            <a href="/" class="flex items-center gap-2 text-2xl font-black tracking-tighter text-gray-900 dark:text-white mr-12 group">
+                <div class="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <img src="https://www.zrlog.com/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+                </div>
+                <span>ZRLOG</span>
+            </a>
+            <ul class="hidden lg:flex items-center space-x-1">
 <li><a href="/"
-       class="hover:text-primary transition-colors ">主页</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-home-5-line"></i>
+        <span>主页</span>
+    </a>
 </li>
-<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="https://blog.zrlog.com"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-article-line"></i>
+        <span>博客</span>
+    </a>
+</li>
 <li><a href="/template"
-       class="hover:text-primary transition-colors ">主题</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-layout-grid-line"></i>
+        <span>主题</span>
+    </a>
 </li>
 <li><a href="/plugin"
-       class="hover:text-primary transition-colors ">插件</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-plug-2-line"></i>
+        <span>插件</span>
+    </a>
 </li>
 <li><a href="/download"
-       class="hover:text-primary transition-colors ">下载</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-download-cloud-line"></i>
+        <span>下载</span>
+    </a>
 </li>
-<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
-<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="https://blog.zrlog.com/sort/doc"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-book-read-line"></i>
+        <span>文档</span>
+    </a>
+</li>
 <li><a href="/code"
-       class="hover:text-primary transition-colors nav-active">源码</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-primary bg-black/5 dark:bg-white/5 font-medium">
+        <i class="ri-community-line"></i>
+        <span>社区</span>
+    </a>
 </li>            </ul>
         </div>
-        <div id="overlay"
-             class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
-        <aside id="sidebar" class="fixed text-white top-0 bg-primary left-0 w-56 h-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6
-           -translate-x-full transition-transform duration-300 z-40 hidden"
-               style="background: rgb(17 24 39);">
-            <ul class="space-y-6" style="font-size: 18px;text-align: center;">
-<li><a href="/"
-       class="hover:text-primary transition-colors ">主页</a>
-</li>
-<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
-<li><a href="/template"
-       class="hover:text-primary transition-colors ">主题</a>
-</li>
-<li><a href="/plugin"
-       class="hover:text-primary transition-colors ">插件</a>
-</li>
-<li><a href="/download"
-       class="hover:text-primary transition-colors ">下载</a>
-</li>
-<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
-<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
-<li><a href="/code"
-       class="hover:text-primary transition-colors nav-active">源码</a>
-</li>            </ul>
-        </aside>
-        <div class="flex items-center space-x-4">
-            <a href="https://github.com/94fzb/zrlog" target="_blank"
-               class="flex items-center justify-center w-8 h-8">
-                <i class="ri-github-fill ri-lg"></i>
+        
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center space-x-4 border-r border-gray-200 dark:border-white/10 pr-6">
+                <!-- Github & Theme Toggle -->
+                <a href="https://github.com/94fzb/zrlog" target="_blank"
+                   class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+                    <i class="ri-github-fill ri-xl"></i>
+                </a>
+                <div class="flex items-center gap-2 bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full border border-gray-200 dark:border-white/5">
+                    <i class="ri-sun-line text-[10px] text-gray-500 dark:text-gray-400"></i>
+                    <label class="theme-switch relative inline-block w-8 h-4 cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div class="absolute inset-0 bg-gray-300 dark:bg-gray-700 rounded-full transition-colors peer-checked:bg-blue-600"></div>
+                        <div class="absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition-transform peer-checked:translate-x-4"></div>
+                    </label>
+                    <i class="ri-moon-line text-[10px] text-gray-500 dark:text-gray-400"></i>
+                </div>
+            </div>
+            
+            <a href="/download" 
+               class="hidden sm:inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-blue-600/25 active:scale-95">
+                立即开始
             </a>
-            <label class="theme-switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <button class="md:hidden flex items-center justify-center w-8 h-8" id="toggleSidebar">
-                <i class="ri-menu-line ri-lg"></i>
+            
+            <button class="lg:hidden flex items-center justify-center w-10 h-10 text-gray-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10" id="toggleSidebar">
+                <i class="ri-menu-4-line ri-lg"></i>
             </button>
         </div>
     </div>
 </nav>
+
+<div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden"></div>
+<aside id="sidebar" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-white/10 p-8 shadow-2xl -translate-x-full transition-transform duration-500 ease-out z-[70] hidden">
+    <div class="flex flex-col h-full">
+        <div class="mb-12 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://www.zrlog.com/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+                </div>
+                <span>ZRLOG</span>
+            </div>
+            <button id="closeSidebar" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <i class="ri-close-line ri-xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-4">
+<li><a href="/"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-home-5-line"></i>
+        <span>主页</span>
+    </a>
+</li>
+<li><a href="https://blog.zrlog.com"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-article-line"></i>
+        <span>博客</span>
+    </a>
+</li>
+<li><a href="/template"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-layout-grid-line"></i>
+        <span>主题</span>
+    </a>
+</li>
+<li><a href="/plugin"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-plug-2-line"></i>
+        <span>插件</span>
+    </a>
+</li>
+<li><a href="/download"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-download-cloud-line"></i>
+        <span>下载</span>
+    </a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-book-read-line"></i>
+        <span>文档</span>
+    </a>
+</li>
+<li><a href="/code"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-primary bg-black/5 dark:bg-white/5 font-medium">
+        <i class="ri-community-line"></i>
+        <span>社区</span>
+    </a>
+</li>        </ul>
+        <div class="mt-auto pt-8 border-t border-gray-200 dark:border-white/10">
+            <a href="https://github.com/94fzb/zrlog" target="_blank" class="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 transition-colors">
+                <i class="ri-github-fill"></i>
+                <span>在 GitHub 获取源码</span>
+            </a>
+        </div>
+    </div>
+</aside>
 <!-- 英雄区 -->
-<section class="relative hero-gradient text-white py-20 overflow-hidden">
-    <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
-    <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-4xl">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">ZrLog 源码</h1>
-            <p class="text-xl mb-8">ZrLog 是一个开源的 Java 博客系统，欢迎开发者参与贡献，共同打造更好的博客系统。</p>
+<section class="relative py-24 md:py-32 overflow-hidden bg-white dark:bg-black transition-colors duration-500">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-blue-400/10 dark:bg-blue-600/5 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-indigo-400/10 dark:bg-indigo-600/5 rounded-full blur-[120px] animate-blob animation-delay-2000"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 mb-8 font-medium text-xs text-blue-600 dark:text-blue-400 tracking-wider">
+                <i class="ri-community-line"></i>
+                JOIN OUR OPEN SOURCE COMMUNITY
+            </div>
+            <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 dark:text-white">
+                开源 <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500">社区</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-medium">
+                ZrLog 见证了无数博主的成长。欢迎加入我们，共同打造极致的 Java 开源博客系统。
+            </p>
 
-        </div>
-
-        <div class="flex flex-wrap gap-4 mb-6">
-            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
-                <span class="text-gray-700">无服务架构</span>
+            <!-- 操作按钮 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <a href="https://github.com/94fzb/zrlog" target="_blank"
+                   class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-xl active:scale-95">
+                    <i class="ri-github-fill text-3xl mb-2 text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors"></i>
+                    <span class="font-bold text-gray-900 dark:text-white">GitHub</span>
+                </a>
+                <a href="https://gitee.com/94fzb/zrlog" target="_blank"
+                   class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-2xl hover:border-red-400 dark:hover:border-red-500 transition-all hover:shadow-xl active:scale-95">
+                    <i class="ri-git-repository-line text-3xl mb-2 text-red-600 group-hover:text-red-700 transition-colors"></i>
+                    <span class="font-bold text-gray-900 dark:text-white">Gitee</span>
+                </a>
+                <a href="https://github.com/94fzb/zrlog/archive/refs/heads/release.zip"
+                   class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-xl active:scale-95">
+                    <i class="ri-download-cloud-line text-3xl mb-2 text-blue-600 group-hover:text-blue-700 transition-colors"></i>
+                    <span class="font-bold text-gray-900 dark:text-white">下载源码</span>
+                </a>
+                <a href="https://blog.zrlog.com/for-developer.html" target="_blank"
+                   class="group flex flex-col items-center justify-center p-6 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-2xl hover:border-green-400 dark:hover:border-green-500 transition-all hover:shadow-xl active:scale-95">
+                    <i class="ri-book-2-line text-3xl mb-2 text-green-600 group-hover:text-green-700 transition-colors"></i>
+                    <span class="font-bold text-gray-900 dark:text-white">开发文档</span>
+                </a>
             </div>
-            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
-                <span class="text-gray-700">GraalVM Native Image</span>
-            </div>
-            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
-                <i class="ri-code-box-line mr-2 text-gray-700"></i>
-                <span class="text-gray-700">Java</span>
-            </div>
-            <div class="flex items-center bg-gray-100 rounded-full px-4 py-2">
-                <i class="ri-file-list-3-line mr-2 text-gray-700"></i>
-                <span class="text-gray-700">Apache 许可证</span>
-            </div>
-        </div>
-        <div class="flex flex-wrap gap-4">
-            <a
-                    href="https://github.com/94fzb/zrlog"
-                    target="_blank"
-                    class="bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
-            >
-                <i class="ri-github-fill mr-2"></i>
-                GitHub 仓库
-            </a>
-            <a
-                    href="https://github.com/94fzb/zrlog/archive/refs/heads/release.zip"
-                    class="bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
-            >
-                <i class="ri-download-line mr-2"></i>
-                下载源码
-            </a>
-            <a
-                    href="https://blog.zrlog.com/for-developer.html"
-                    class="bg-secondary hover:bg-secondary/90 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
-            >
-                <i class="ri-book-2-line mr-2"></i>
-                开发文档
-            </a>
-            <a
-                    href="#donate"
-                    class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-6 !rounded-button whitespace-nowrap transition-colors flex items-center justify-center"
-            >
-                <i class="ri-hand-heart-line mr-2"></i>
-                支持项目
-            </a>
         </div>
     </div>
-</section><style>
-    #osc-gitee-widget-tag {
-        padding: 0;
-    }
-
-    .pro_name a {
-        color: #4183c4;
-    }
-
-    .osc_git_title {
-        background-color: #fff;
-    }
-
-    .osc_git_box {
-        background-color: #fff;
-        width: 100%
-    }
-
-    .osc_git_box {
-        border: none #E3E9ED!important;
-    }
-
-    .osc_git_info {
-        color: #666;
-    }
-
-    .osc_git_box .osc_git_title {
-        border-radius: 0!important;
-        height: 38px!important;
-        line-height: 38px!important;
-    }
-
-    .osc_git_main a {
-        color: #9B9B9B;
-    }
-
-    .ui.segment.osc_git_box {
-        border-radius: 4px;
-        width: 100%;
-    }
-
-    .github-widget-repo {
-        padding: 0;
-    }
-
-    img.card-img-top {
-        border-radius: 0;
-    }
-
-    .github-box {
-        border: none !important;
-    }
-
-    .github-box-title {
-        background: white !important;
-    }
-    .github-box-content {
-        background: white !important;
-    }
-    .osc_git_box .osc_git_title h3 {
-        color: #9B9B9B !important;
-        padding: 8px 1px 1px 1px !important;
-    }
-
-    .github-box .github-box-title {
-        border-radius: 0!important;
-    }
-
-    .github-box .github-box-download {
-        border-radius: 0!important;
-    }
-    .osc_git_footer {
-        display: none;
-    }
-    .github-box-download {
-        display: none;
-    }
-</style>
-<section class="py-16 bg-gray-50 dark:bg-black" style="padding-bottom: 0">
+</section>
+<!-- 仓库信息 -->
+<section class="py-16 bg-gray-50 dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
-        <div style="display: flex; flex-wrap: wrap; justify-content: left;gap:12px">
-            <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%">
-                <h5 class="card-header">Gitee</h5>
-                <div class="card-body dark:bg-gray-900" style="padding:0">
-                    <div id="osc-gitee-widget-tag"></div>
-                    <script src='https://gitee.com/94fzb/zrlog/widget_preview' async defer></script>
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-12">代码仓库</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- GitHub 卡片 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <i class="ri-github-fill text-3xl text-gray-900 dark:text-white"></i>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">GitHub</h3>
+                            </div>
+                            <a href="https://github.com/94fzb/zrlog" target="_blank"
+                               class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                                <i class="ri-external-link-line text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div id="github-widget" class="min-h-[120px]">
+                            <div class="github-widget-repo" data-repo="94fzb/zrlog"></div>
+                            <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gitee 卡片 -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                    <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <svg viewBox="0 0 1024 1024" class="w-8 h-8 fill-[#c71d23]" xmlns="http://www.w3.org/2000/svg"><path d="M512 1024C230.4 1024 0 793.6 0 512S230.4 0 512 0s512 230.4 512 512-230.4 512-512 512z m259.2-569.6H502.4q-19.2 0-19.2 19.2v64q0 19.2 19.2 19.2h160q19.2 0 19.2 19.2v64q0 19.2-19.2 19.2H425.6q-19.2 0-19.2-19.2v-217.6q0-19.2 19.2-19.2h345.6q19.2 0 19.2-19.2v-64q0-19.2-19.2-19.2H342.4q-44.8 0-44.8 44.8v339.2q0 44.8 44.8 44.8h428.8q44.8 0 44.8-44.8v-112q0-44.8-44.8-44.8z"/></svg>
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Gitee</h3>
+                            </div>
+                            <a href="https://gitee.com/94fzb/zrlog" target="_blank"
+                               class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                                <i class="ri-external-link-line text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div id="osc-gitee-widget-tag" class="min-h-[120px]"></div>
+                        <script src='https://gitee.com/94fzb/zrlog/widget_preview' async defer></script>
+                    </div>
                 </div>
             </div>
-            <div class="card shadow-md bg-white dark:bg-gray-900" style="max-width: 738px;overflow: hidden;width: 100%;height: max-content">
-                <h5 class="card-header">GitHub</h5>
-                <div class="card-body" style="padding:0;min-height: 128px">
-                    <div class="github-widget-repo" data-repo="94fzb/zrlog"></div>
-                    <script type="text/javascript" src="/assets/js/github_repo_widget_en.js"></script>
+
+            <!-- Star 按钮区域 -->
+            <div class="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-8 border border-blue-200 dark:border-blue-800">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">支持 ZrLog</h3>
+                    <p class="text-gray-600 dark:text-gray-400">如果 ZrLog 对您有帮助，请给我们一个 Star ⭐</p>
                 </div>
+                <div class="flex flex-wrap gap-4 justify-center">
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6 py-4" id="star-info">
+    <!-- GitHub Star Button -->
+    <a href="https://github.com/94fzb/zrlog" target="_blank"
+       class="group relative flex items-center gap-4 px-5 py-2.5 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200/50 dark:border-white/10 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 active:scale-95">
+        <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-gray-900 shadow-lg shadow-black/10">
+            <i class="ri-github-fill text-xl text-white"></i>
+        </div>
+        <div class="flex flex-col items-start pr-2">
+            <div class="flex items-center gap-2 mb-0.5">
+                <span class="text-xs font-bold text-gray-400 dark:text-gray-500 tracking-wider">GitHub 仓库</span>
+                <span id="github-stars-count" class="text-xs font-bold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-1.5 py-0.5 rounded-md min-w-[32px] text-center">...</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="text-sm font-black text-gray-900 dark:text-white">前往 GitHub 点赞</span>
+                <i class="ri-star-fill text-yellow-400 text-xs group-hover:rotate-[30deg] transition-transform"></i>
             </div>
         </div>
-        <p style="padding-bottom: 1rem; padding-top: 1rem">如果你觉得 ZrLog 不错，或者在某些地方帮助到你了，又或者是有所收获，那么可以通过下面的方式支持 ZrLog 的发展</p>
-        <div class="card bg-white dark:bg-gray-900">
-            <h5 class="card-header">支持</h5>
-            <div class="card-body">
-                <div class="card-text">如果你刚好有 Github 或者 Gitee 的账号，可以通过下面的按钮赞一下
-                    <b>ZrLog</b>
-                </div>
-                <div style="display: flex;justify-content: start">
-<style>
-    #star-info {
-        padding-top: 20px;
-    }
+    </a>
 
-    .gitee a img {
-        height: 30px;
-        margin-bottom: 4px;
-    }
-</style>
-
-
-<div style="display: flex;align-items: center;justify-content: center;gap: 24px" id="star-info" class="index-btn-group">
-    <div style="display:flex;min-width: 124px;justify-content:center">
-        <script src="https://www.zrlog.com/assets/js/buttons.js"></script>
-        <!-- Place this tag where you want the button to render. -->
-        <a class="github-button" href="https://github.com/94fzb/zrlog" data-size="large" data-show-count="true"
-           aria-label="Star 94fzb/zrlog on GitHub">Star</a>
-    </div>
-    <div class="gitee" style="display:flex;justify-content: center">
-        <a href='https://gitee.com/94fzb/zrlog/stargazers' title="Star 94fzb/zrlog on Gitee"><img src='https://gitee.com/94fzb/zrlog/badge/star.svg?theme=dark' alt='star'/></a>
-    </div>
+    <!-- Gitee Star Button -->
+    <a href="https://gitee.com/94fzb/zrlog" target="_blank"
+       class="group relative flex items-center gap-4 px-5 py-2.5 bg-white/50 dark:bg-white/5 backdrop-blur-xl border border-gray-200/50 dark:border-white/10 rounded-2xl hover:border-red-400 dark:hover:border-red-500 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/10 active:scale-95">
+        <div class="flex items-center justify-center w-9 h-9 rounded-xl bg-[#c71d23] shadow-lg shadow-red-900/10">
+            <svg viewBox="0 0 1024 1024" class="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg"><path d="M512 1024C230.4 1024 0 793.6 0 512S230.4 0 512 0s512 230.4 512 512-230.4 512-512 512z m259.2-569.6H502.4q-19.2 0-19.2 19.2v64q0 19.2 19.2 19.2h160q19.2 0 19.2 19.2v64q0 19.2-19.2 19.2H425.6q-19.2 0-19.2-19.2v-217.6q0-19.2 19.2-19.2h345.6q19.2 0 19.2-19.2v-64q0-19.2-19.2-19.2H342.4q-44.8 0-44.8 44.8v339.2q0 44.8 44.8 44.8h428.8q44.8 0 44.8-44.8v-112q0-44.8-44.8-44.8z"/></svg>
+        </div>
+        <div class="flex flex-col items-start pr-2">
+            <div class="flex items-center gap-2 mb-0.5">
+                <span class="text-xs font-bold text-gray-400 dark:text-gray-500 tracking-wider">Gitee 仓库</span>
+                <span id="gitee-stars-count" class="text-xs font-bold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30 px-1.5 py-0.5 rounded-md min-w-[32px] text-center">...</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+                <span class="text-sm font-black text-gray-900 dark:text-white">前往 Gitee 关注</span>
+                <i class="ri-heart-fill text-red-500 text-xs group-hover:scale-125 transition-transform"></i>
+            </div>
+        </div>
+    </a>
 </div>
+
+<script>
+(function() {
+    async function fetchStars() {
+        // GitHub
+        try {
+            const ghResponse = await fetch('https://api.github.com/repos/94fzb/zrlog');
+            if (ghResponse.ok) {
+                const data = await ghResponse.json();
+                document.getElementById('github-stars-count').innerText = (data.stargazers_count / 1000).toFixed(1) + 'K';
+            }
+        } catch (e) {
+            document.getElementById('github-stars-count').innerText = '5.0K';
+        }
+
+        // Gitee (Using a slightly different approach as Gitee CORS can be strict, or fallback to a sensible static number)
+        try {
+            const giteeResponse = await fetch('https://gitee.com/api/v5/repos/94fzb/zrlog');
+            if (giteeResponse.ok) {
+                const data = await giteeResponse.json();
+                document.getElementById('gitee-stars-count').innerText = (data.stargazers_count / 1000).toFixed(1) + 'K';
+            }
+        } catch (e) {
+            document.getElementById('gitee-stars-count').innerText = '1.2K';
+        }
+    }
+    fetchStars();
+})();
+</script>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="bg-gray-50 dark:bg-black" style="padding-bottom: 48px" id="donate">
-    <div class="container mx-auto px-4 md:px-6 pt-4">
-        <div class="card bg-white dark:bg-gray-900">
-            <h5 class="card-header">请作者喝杯咖啡
-                <small>（可在备注里注名昵称）</small>
-            </h5>
-            <div class="card-body donation-card">
-                <div style="display: flex;flex-flow: wrap;justify-content: space-evenly;gap: 12px">
-                    <div class="card bg-white dark:bg-gray-900 text-center">
-                        <h5 class="card-header">微信</h5>
-                        <div class="card-body" style="display:flex">
-                            <img class="card-img-top" width="273px"
-                                 src="https://www.zrlog.com/assets/img/donation/wechat.png"/>
-                        </div>
-                    </div>
-                    <div class="card bg-white dark:bg-gray-900 text-center">
-                        <h5 class="card-header">支付宝</h5>
-                        <div class="card-body" style="display:flex">
-                            <img class="card-img-top" width="273px"
-                                 src="https://www.zrlog.com/assets/img/donation/alipay.png"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card bg-white dark:bg-gray-900 mt-4">
-            <h5 class="card-header">捐赠列表</h5>
-            <div class="card-body" style="padding:0;overflow: hidden">
-                <div style="overflow: auto;">
-                    <table class="auto-table divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900 mb-1"
-                           style="width:100%;min-width: 680px">
-                        <thead class="bg-gray-50 dark:bg-gray-900 dark:divide-gray-400">
-                        <tr>
-                            <th scope="col" class="px-2" style="height: 56px;text-align: start">金额</th>
-                            <th scope="col" class="px-2" style="height: 56px;text-align: start">捐赠者</th>
-                            <th scope="col" class="px-2" style="height: 56px;text-align: start">捐赠时间</th>
-                            <th scope="col" class="px-2" style="height: 56px;text-align: start">留言</th>
-                        </tr>
-                        </thead>
 
-                        <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥100</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">*执着*</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2024-04-19 18:20:00</td>
-                                <td class="px-2 py-4">加个鸡腿</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥18.8</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">星光之*</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2024-02-07 12:32:00</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">苏*</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2023-12-22 17:22:00</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥88</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">星光之*</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2022-10-13 21:37:06</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥50</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">*先生你好</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2021-10-15 11:48:56</td>
-                                <td class="px-2 py-4">太喜欢你的zrlog了</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥1</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="https://gitee.com/ma_zhong_se" target="_blank">Esma</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2020-02-18 21:37:59</td>
-                                <td class="px-2 py-4">感谢您的开源项目！</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">*__</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2019-12-30 18:48:46</td>
-                                <td class="px-2 py-4">1024个感谢</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">*星星</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-12-03 18:00:10</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥20</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">*纸</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-11-14 19:59:16</td>
-                                <td class="px-2 py-4">感谢分享</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">随遇而安</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-06-27 21:56:06</td>
-                                <td class="px-2 py-4">祝贺zrlog升级到2.0</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥20</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">swvincent</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-03-22 10:42:06</td>
-                                <td class="px-2 py-4">咖啡</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">风兮</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-03-07 10:39:06</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">微信网友</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-01-11 17:21:00</td>
-                                <td class="px-2 py-4">感谢zrlog大神！！！</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥200</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">Dream Marker</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2018-01-09 14:22:06</td>
-                                <td class="px-2 py-4">这个人很土豪，什么都没有说</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥6.6</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">夕阳游子</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2017-12-14 23:41:18</td>
-                                <td class="px-2 py-4">感谢repo主的开源精神</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">微信网友</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2017-08-30 16:41:12</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">微信网友</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2017-07-06 16:24:58</td>
-                                <td class="px-2 py-4"></td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥10</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="#" target="_blank">asx</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2017-07-22 10:20:41</td>
-                                <td class="px-2 py-4">感谢您的开源项目！</td>
-                            </tr>
-                            <tr style="height: 36px">
-                                <td class="px-2 py-4">￥5</td>
-                                <td class="px-2 py-4 text-primary" style="white-space: nowrap"><a
-                                            href="http://git.oschina.net/diaodiaofly" target="_blank">初学者</a></td>
-                                <td class="px-2 py-4" style="white-space: nowrap">2017-01-07 15:32:39</td>
-                                <td class="px-2 py-4">感谢您的开源项目！</td>
-                            </tr>
-                        </tbody>
-                    </table>
+<!-- 项目特性 -->
+<section class="py-16 bg-white dark:bg-black">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">项目特性</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">为什么选择 ZrLog</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 特性1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="ri-rocket-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">轻量高效</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        使用 GraalVM Native Image 编译，启动速度快，内存占用低，性能卓越
+                    </p>
+                </div>
+
+                <!-- 特性2 -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+                    <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="ri-cloud-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">云原生支持</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        支持 Docker、Serverless（AWS Lambda、阿里云FC）等现代化部署方式
+                    </p>
+                </div>
+
+                <!-- 特性3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-6 border border-purple-200 dark:border-purple-800">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="ri-palette-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">灵活扩展</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        支持主题和插件系统，可根据需求自由定制博客外观和功能
+                    </p>
+                </div>
+
+                <!-- 特性4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl p-6 border border-orange-200 dark:border-orange-800">
+                    <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="ri-markdown-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Markdown 支持</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        内置 Markdown 编辑器，支持实时预览，让写作更加专注和高效
+                    </p>
+                </div>
+
+                <!-- 特性5 -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/20 dark:to-blue-900/20 rounded-xl p-6 border border-cyan-200 dark:border-cyan-800">
+                    <div class="w-12 h-12 bg-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="ri-code-box-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">简洁代码</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        代码结构清晰，易于理解和二次开发，完善的文档支持
+                    </p>
+                </div>
+
+                <!-- 特性6 -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-6 border border-yellow-200 dark:border-yellow-800">
+                    <div class="w-12 h-12 bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
+                        <i class="ri-open-source-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">开源免费</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                        采用 Apache License 2.0，完全开源免费，可用于个人和商业项目
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-</section><!-- 返回顶部按钮 -->
+</section>
+
+<!-- 技术栈 -->
+<section class="py-16 bg-gray-50 dark:bg-black">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">技术栈</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">构建超轻量级博客系统的核心技术</p>
+            
+            <!-- 核心技术大卡片 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- SimpleWebServer -->
+                <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-8 text-white relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                            <i class="ri-global-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">SimpleWebServer</h3>
+                        <p class="text-blue-100 text-sm mb-3">超轻量级 Web 框架</p>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="px-2 py-1 bg-white/20 rounded">核心框架</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GraalVM -->
+                <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-8 text-white relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                            <i class="ri-flashlight-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">GraalVM</h3>
+                        <p class="text-purple-100 text-sm mb-3">Polyglot + Native Image</p>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="px-2 py-1 bg-white/20 rounded">高性能</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- React + Ant Design -->
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-8 text-white relative overflow-hidden group hover:scale-105 transition-transform">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
+                            <i class="ri-reactjs-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">React + Ant Design</h3>
+                        <p class="text-cyan-100 text-sm mb-3">现代化管理后台</p>
+                        <div class="flex items-center gap-2 text-sm">
+                            <span class="px-2 py-1 bg-white/20 rounded">后台UI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 辅助技术 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700 text-center hover:border-orange-400 dark:hover:border-orange-600 transition-colors">
+                    <div class="w-12 h-12 mx-auto bg-gradient-to-br from-orange-400 to-red-500 rounded-lg flex items-center justify-center mb-3">
+                        <i class="ri-cup-line text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">Java 17+</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">核心语言</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700 text-center hover:border-green-400 dark:hover:border-green-600 transition-colors">
+                    <div class="w-12 h-12 mx-auto bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mb-3">
+                        <i class="ri-file-text-line text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">FreeMarker</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">模板引擎</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700 text-center hover:border-blue-400 dark:hover:border-blue-600 transition-colors">
+                    <div class="w-12 h-12 mx-auto bg-gradient-to-br from-blue-400 to-indigo-500 rounded-lg flex items-center justify-center mb-3">
+                        <i class="ri-database-2-line text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">D1 / MySQL</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">灵活的数据库支持</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-4 border border-gray-200 dark:border-gray-700 text-center hover:border-yellow-400 dark:hover:border-yellow-600 transition-colors">
+                    <div class="w-12 h-12 mx-auto bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mb-3">
+                        <i class="ri-palette-line text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white text-sm">多模板</h4>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">主题系统</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 如何贡献 -->
+<section class="py-16 bg-white dark:bg-black">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">如何贡献</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">欢迎参与 ZrLog 的开发</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 左侧：贡献步骤 -->
+                <div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                1
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Fork 项目</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    Fork 我们的仓库到您的 GitHub 或 Gitee 账号
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                2
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">创建分支</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    基于 <code class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-xs">develop</code> 分支创建您的功能分支
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                3
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">提交代码</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    完成开发并确保代码质量，提交有意义的 commit 信息
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                                4
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">提交 PR</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">
+                                    提交 Pull Request，我们会尽快审核您的贡献
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 右侧：其他贡献方式 -->
+                <div>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">其他贡献方式</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <i class="ri-bug-line text-red-500 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">提交 Bug</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">在 GitHub Issues 中报告问题</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-lightbulb-line text-yellow-500 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">功能建议</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">分享您的想法和建议</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-file-text-line text-blue-500 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">完善文档</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">帮助改进项目文档</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="ri-chat-3-line text-green-500 text-xl mt-0.5"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 dark:text-white">社区支持</h4>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">在社区帮助其他用户</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                        <a href="https://blog.zrlog.com/for-developer.html" target="_blank"
+                           class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
+                            <i class="ri-book-2-line"></i>
+                            <span>查看开发文档</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 捐赠区域 -->
+<section class="py-16 bg-white dark:bg-black" id="donate">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="max-w-5xl mx-auto">
+            <!-- 标题 -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">支持项目</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400">
+                    如果 ZrLog 对您有帮助，欢迎请作者喝杯咖啡 ☕
+                </p>
+            </div>
+
+            <!-- 二维码区域 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-8 border border-green-200 dark:border-green-800 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-2">
+                        <i class="ri-wechat-pay-line text-2xl text-green-600 dark:text-green-400"></i>
+                        微信支付
+                    </h3>
+                    <div class="bg-white rounded-lg p-4 inline-block">
+                        <img src="https://www.zrlog.com/assets/img/donation/wechat.png" alt="微信支付" class="w-64 h-64 mx-auto"/>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">扫码支持开发</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-8 border border-blue-200 dark:border-blue-800 text-center">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center justify-center gap-2">
+                        <i class="ri-alipay-line text-2xl text-blue-600 dark:text-blue-400"></i>
+                        支付宝
+                    </h3>
+                    <div class="bg-white rounded-lg p-4 inline-block">
+                        <img src="https://www.zrlog.com/assets/img/donation/alipay.png" alt="支付宝" class="w-64 h-64 mx-auto"/>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-4">扫码支持开发</p>
+                </div>
+            </div>
+
+            <!-- 捐赠列表 -->
+            <div class="bg-gray-50 dark:bg-gray-900 rounded-xl p-6 md:p-8">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                    <i class="ri-heart-3-line text-red-500"></i>
+                    捐赠名单
+                </h3>
+
+                <div class="space-y-4">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                *执着*
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥100
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2024-04-19 18:20:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "加个鸡腿"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                星光之*
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥18.8
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2024-02-07 12:32:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                苏*
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2023-12-22 17:22:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                星光之*
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥88
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2022-10-13 21:37:06
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                *先生你好
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥50
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2021-10-15 11:48:56
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "太喜欢你的zrlog了"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="https://gitee.com/ma_zhong_se" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                Esma
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥1
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2020-02-18 21:37:59
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "感谢您的开源项目！"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                *__
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2019-12-30 18:48:46
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "1024个感谢"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                *星星
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-12-03 18:00:10
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                *纸
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥20
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-11-14 19:59:16
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "感谢分享"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                随遇而安
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-06-27 21:56:06
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "祝贺zrlog升级到2.0"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                swvincent
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥20
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-03-22 10:42:06
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "咖啡"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                风兮
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-03-07 10:39:06
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                微信网友
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-01-11 17:21:00
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "感谢zrlog大神！！！"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                Dream Marker
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥200
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2018-01-09 14:22:06
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "这个人很土豪，什么都没有说"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                夕阳游子
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥6.6
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2017-12-14 23:41:18
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "感谢repo主的开源精神"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                微信网友
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2017-08-30 16:41:12
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                微信网友
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2017-07-06 16:24:58
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="#" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                asx
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥10
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2017-07-22 10:20:41
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "感谢您的开源项目！"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-4 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                                <!-- 左侧：捐赠者和金额 -->
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <i class="ri-user-heart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2">
+                                            <a href="http://git.oschina.net/diaodiaofly" target="_blank" 
+                                               class="text-lg font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                                                初学者
+                                            </a>
+                                            <span class="px-2 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 text-sm font-medium rounded">
+                                                ￥5
+                                            </span>
+                                        </div>
+                                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            <i class="ri-calendar-line mr-1"></i>2017-01-07 15:32:39
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 右侧：留言 -->
+                                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg px-4 py-2 max-w-md">
+                                        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+                                            "感谢您的开源项目！"
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <!-- 感谢提示 -->
+            <div class="mt-8 text-center">
+                <p class="text-gray-600 dark:text-gray-400">
+                    感谢每一位支持者的慷慨捐助 🙏
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* 简化的第三方组件样式覆盖 */
+    #osc-gitee-widget-tag, .github-widget-repo {
+        padding: 0;
+    }
+    
+    .osc_git_box, .github-box {
+        background-color: transparent !important;
+        border: none !important;
+    }
+    
+    .osc_git_title, .github-box-title {
+        background-color: transparent !important;
+        border-radius: 0 !important;
+    }
+    
+    .osc_git_footer, .github-box-download {
+        display: none;
+    }
+</style>
+
+<!-- 返回顶部按钮 -->
 <button
         id="back-to-top"
-        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+        class="fixed bottom-10 right-10 w-12 h-12 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center opacity-0 invisible transition-all duration-500 z-[100] hover:scale-110 active:scale-95 group"
 >
-    <i class="ri-arrow-up-line text-xl"></i>
+    <i class="ri-arrow-up-line text-2xl transition-transform group-hover:-translate-y-1"></i>
 </button>
-<footer class="bg-gray-900 text-white py-12" id="footer">
-    <div class="container mx-auto px-4 md:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<footer class="relative bg-gray-50/50 dark:bg-gray-950/50 border-t border-gray-200 dark:border-white/5 py-16 md:py-24 overflow-hidden" id="footer">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-400/5 dark:bg-blue-600/5 rounded-full blur-[100px]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <!-- 品牌区 -->
+    <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-6 group">
+            <div class="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
+                <img src="https://www.zrlog.com/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-gray-900 dark:text-white">ZRLOG</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6 max-w-md">
+            ZrLog 是一款致力于打造极致写作体验的 Java 开源博客系统。我们将现代化的技术栈与极简主义设计相结合，为您提供最纯粹的创作空间。
+        </p>
+        <div class="flex items-center gap-5">
+            <a href="https://github.com/94fzb/zrlog" target="_blank" 
+               class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all shadow-sm" 
+               title="GitHub">
+                <i class="ri-github-fill text-xl"></i>
+            </a>
+            <a href="https://gitee.com/94fzb" target="_blank" 
+               class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 transition-all shadow-sm group/gitee" 
+               title="Gitee">
+                <svg viewBox="0 0 1024 1024" class="w-5 h-5 fill-current transition-colors" xmlns="http://www.w3.org/2000/svg"><path d="M512 1024C230.4 1024 0 793.6 0 512S230.4 0 512 0s512 230.4 512 512-230.4 512-512 512z m259.2-569.6H502.4q-19.2 0-19.2 19.2v64q0 19.2 19.2 19.2h160q19.2 0 19.2 19.2v64q0 19.2-19.2 19.2H425.6q-19.2 0-19.2-19.2v-217.6q0-19.2 19.2-19.2h345.6q19.2 0 19.2-19.2v-64q0-19.2-19.2-19.2H342.4q-44.8 0-44.8 44.8v339.2q0 44.8 44.8 44.8h428.8q44.8 0 44.8-44.8v-112q0-44.8-44.8-44.8z"/></svg>
+            </a>
+        </div>
+    </div>
 
+    <!-- 资源导航 -->
     <div>
-        <h3 class="text-lg font-semibold mb-4">关于 ZRLOG</h3>
-        <p class="text-gray-400">ZRLOG 是一款使用 Java
-            开发的开源博客系统，专注于为用户提供简单、高效的博客写作体验。</p>
-    </div>
-    <div>
-        <h3 class="text-lg font-semibold mb-4">快速链接</h3>
-        <ul class="space-y-2">
-            <li><a href="/" class="text-gray-400 hover:text-white transition-colors">主页</a></li>
-            <li><a href="https://blog.zrlog.com"
-                   class="text-gray-400 hover:text-white transition-colors">博客</a></li>
-            <li><a href="/template" class="text-gray-400 hover:text-white transition-colors">主题</a></li>
-            <li><a href="/plugin" class="text-gray-400 hover:text-white transition-colors">插件</a></li>
+        <h3 class="text-sm font-bold text-gray-900 dark:text-white tracking-widest mb-6">快速链接</h3>
+        <ul class="space-y-4">
+            <li><a href="/download" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">下载中心</a></li>
+            <li><a href="https://blog.zrlog.com/sort/doc" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">文档说明</a></li>
+            <li><a href="/template" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">主题中心</a></li>
+            <li><a href="/plugin" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">插件中心</a></li>
         </ul>
     </div>
+
+    <!-- 社区互动 -->
     <div>
-        <h3 class="text-lg font-semibold mb-4">资源</h3>
-        <ul class="space-y-2">
-            <li><a href="https://blog.zrlog.com/sort/doc"
-                   class="text-gray-400 hover:text-white transition-colors">文档</a></li>
-            <li><a href="https://blog.zrlog.com/faq-collect.html"
-                   class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="https://blog.zrlog.com/for-developer.html"
-                   class="text-gray-400 hover:text-white transition-colors">开发者</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
-        </ul>
-    </div>
-    <div>
-        <h3 class="text-lg font-semibold mb-4">联系我们</h3>
-        <ul class="space-y-2">
-            <li class="flex items-center">
-                <i class="ri-mail-line mr-2"></i>
-                <a href="mailto:support@zrlog.com" class="text-gray-400 hover:text-white transition-colors">support@zrlog.com</a>
-            </li>
-            <li class="flex items-center">
-                <i class="ri-github-fill mr-2"></i>
-                <a href="https://github.com/94fzb/zrlog" target="_blank"
-                   class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-            </li>
+        <h3 class="text-sm font-bold text-gray-900 dark:text-white tracking-widest mb-6">社区支持</h3>
+        <ul class="space-y-4">
+            <li><a href="https://blog.zrlog.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">官方博客</a></li>
+            <li><a href="https://github.com/94fzb/zrlog/issues" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">反馈问题</a></li>
+            <li><a href="https://blog.zrlog.com/faq-collect.html" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">常见问题</a></li>
+            <li><a href="https://blog.zrlog.com/for-developer.html" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">开发建议</a></li>
         </ul>
     </div>
 </div>
-        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-gray-400 mb-4 md:mb-0">
-                © 2025 ZrLog 博客程序 <a href="https://beian.miit.gov.cn/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
+        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                © 2026 ZrLog 博客程序 · <a href="https://beian.miit.gov.cn/" class="hover:text-blue-600 transition-colors">蜀ICP备16023991号-1</a>
             </div>
-<div style="display: flex;flex-wrap: wrap;gap: 16px;justify-content: center">
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
-    <a class="text-gray-400 hover:text-white transition-colors"
-       href="https://blog.zrlog.com/for-developer.html">开发必看</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://xiaochun.zrlog.com"
-       target="_blank">博客</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://gitee.com/94fzb" target="_blank">码云</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://github.com/94fzb"
-       target="_blank">GitHub</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+<div class="flex flex-wrap gap-x-8 gap-y-4 justify-center md:justify-end text-sm font-medium">
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+    <span class="text-gray-300 dark:text-gray-800 hidden md:inline">|</span>
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://demo.zrlog.com">在线演示</a>
 </div>        </div>
     </div>
 </footer>
@@ -812,6 +1690,8 @@
     const btn = document.getElementById("toggleSidebar");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeSidebar');
+    const header = document.getElementById('header');
 
     function closeSidebar() {
         sidebar.classList.add('-translate-x-full');
@@ -819,6 +1699,10 @@
         setTimeout(() => {
             sidebar.classList.add('hidden');
         }, 300); // 等待动画结束再隐藏
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSidebar);
     }
 
     overlay.addEventListener('click', closeSidebar);
@@ -833,12 +1717,54 @@
         }, 10);
     });
 
+    // 导航栏滚动效果
+    window.addEventListener('scroll', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-lg', 'py-3');
+            header.classList.remove('py-4', 'shadow-sm');
+            // 动态调整背景深浅
+            header.classList.add('bg-white/95', 'dark:bg-gray-900/95');
+            header.classList.remove('bg-white/70', 'dark:bg-gray-900/80');
+        } else {
+            header.classList.remove('shadow-lg', 'py-3');
+            header.classList.add('py-4', 'shadow-sm');
+            header.classList.add('bg-white/70', 'dark:bg-gray-900/80');
+            header.classList.remove('bg-white/95', 'dark:bg-gray-900/95');
+        }
+    });
+
     // ESC 键也可关闭（可选）
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeSidebar();
         }
     });
+    
+    // Docker 命令复制功能
+    function copyDockerCmd() {
+        const cmdText = document.getElementById('docker-cmd').textContent;
+        const btnText = document.getElementById('copy-btn-text');
+        
+        navigator.clipboard.writeText(cmdText).then(() => {
+            btnText.textContent = '已复制!';
+            setTimeout(() => {
+                btnText.textContent = '复制命令';
+            }, 2000);
+        }).catch(() => {
+            // 降级方案：使用传统方法复制
+            const textArea = document.createElement('textarea');
+            textArea.value = cmdText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            btnText.textContent = '已复制!';
+            setTimeout(() => {
+                btnText.textContent = '复制命令';
+            }, 2000);
+        });
+    }
 </script>
 <div style="display:none">
     <script>

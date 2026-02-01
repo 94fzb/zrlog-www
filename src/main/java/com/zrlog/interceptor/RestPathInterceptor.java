@@ -9,6 +9,7 @@ import com.hibegin.http.server.util.PathUtil;
 import com.zrlog.controller.PluginController;
 import com.zrlog.controller.TemplateController;
 import com.zrlog.util.ParseTools;
+import com.zrlog.util.VersionUtils;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
@@ -16,7 +17,10 @@ import org.commonmark.renderer.html.HtmlRenderer;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.StringJoiner;
 
 public class RestPathInterceptor implements Interceptor {
 
@@ -25,11 +29,9 @@ public class RestPathInterceptor implements Interceptor {
         String uri = httpRequest.getUri();
         if (uri.equalsIgnoreCase("/changelog/index.html") || uri.equalsIgnoreCase("/changelog/") || uri.equalsIgnoreCase("/changelog")) {
             httpRequest.getAttr().put("url", ParseTools.getScheme(httpRequest) + "://" + httpRequest.getHeader("Host"));
-            httpRequest.getAttr().put("htmlStr", renderMd(getMdStr(httpRequest)));
+            httpRequest.getAttr().put("htmlStr", renderMd(getFullChangeLogMdStr()));
             httpResponse.renderFreeMarker("/changelog");
             return false;
-        } else if (uri.equalsIgnoreCase("/changelog/index.md")) {
-            httpResponse.renderText("## 变更记录\n<br/>\n\n" + getMdStr(httpRequest));
         } else {
             if (uri.startsWith("/changelog") && uri.endsWith(".html")) {
                 File mdFile = new File(PathUtil.getStaticPath() + httpRequest.getUri().replace(".html", ".md"));
@@ -62,24 +64,8 @@ public class RestPathInterceptor implements Interceptor {
         return true;
     }
 
-    public static String getMdStr(HttpRequest httpRequest) {
-        String basePath;
-        if (httpRequest.getUri().indexOf("/") == httpRequest.getUri().lastIndexOf("/")) {
-            basePath = PathUtil.getStaticPath() + httpRequest.getUri() + "/";
-        } else {
-            basePath = PathUtil.getStaticPath() + httpRequest.getUri().substring(0, httpRequest.getUri().lastIndexOf("/"));
-
-        }
-        Map<String, File> fileMap = new LinkedHashMap<>();
-        File[] changelogFiles = new File(basePath).listFiles();
-        if (changelogFiles != null) {
-            for (File file : changelogFiles) {
-                if (!file.getName().contains("SNAPSHOT") && file.getName().endsWith(".md")) {
-                    fileMap.put(file.getName().substring(0, file.getName().indexOf("-")), file);
-                }
-            }
-        }
-        List<Map.Entry<String, File>> stream = new ArrayList<>(fileMap.entrySet());
+    public static String getFullChangeLogMdStr() {
+        List<Map.Entry<String, File>> stream = new ArrayList<>(VersionUtils.getFileMap().entrySet());
         stream.sort((o1, o2) -> new VersionComparator().compare(o2.getKey(), o1.getKey()));
         StringJoiner sj = new StringJoiner("\n\n---\n\n");
         stream.forEach(e -> {

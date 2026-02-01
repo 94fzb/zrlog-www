@@ -8,8 +8,8 @@ import com.hibegin.http.server.util.PathUtil;
 import com.hibegin.http.server.web.Controller;
 import com.zrlog.dao.DonationDAO;
 import com.zrlog.entry.ReleaseInfo;
-import com.zrlog.interceptor.RestPathInterceptor;
 import com.zrlog.util.ParseTools;
+import com.zrlog.util.VersionUtils;
 import org.commonmark.node.Node;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
@@ -19,9 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class IndexController extends Controller {
@@ -65,8 +63,17 @@ public class IndexController extends Controller {
             String fileName = file.getName();
             String str = IOUtil.getStringInputStream(new FileInputStream(file));
             ReleaseInfo releaseInfo = new Gson().fromJson(str, ReleaseInfo.class);
+
             String[] arr = fileName.substring(0, fileName.lastIndexOf(".")).split("-");
-            releaseInfo.setVersion(arr[1]);
+            String version = arr[1];
+            releaseInfo.setVersion(version);
+            Map<String, File> fileMap = VersionUtils.getFileMap();
+            releaseInfo.setCommitId(fileMap.keySet().stream().filter(e -> {
+                return Objects.equals(e, version);
+            }).map(e -> {
+                String filename = fileMap.get(e).getName().replace(".md","");
+                return filename.substring(version.length()).split("-")[1];
+            }).findFirst().orElse("-"));
             String desc = releaseInfo.getDesc();
             if (desc.length() > 60) {
                 desc = desc.substring(0, 60) + "...";

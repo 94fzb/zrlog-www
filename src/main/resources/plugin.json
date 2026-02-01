@@ -4,104 +4,145 @@
     "name": "七牛云存储",
     "downloadUrl": "https://dl.zrlog.com/plugin/qiniu.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/qiniu.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "qiniu.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "七牛云存储为企业提供图片云存储、音频云存储、视频云存储等"
+    "desc": "集成七牛云对象存储服务（Kodo），实现博客图片、附件的云端加速与高效管理，有效减轻服务器带宽压力。",
+    "tags": [
+      "云存储",
+      "图床",
+      "Qiniu"
+    ]
   },
   {
     "id": 3,
     "name": "备份数据库",
     "downloadUrl": "https://dl.zrlog.com/plugin/backup-sql-file.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/backup-sql-file.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "backup-sql-file.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "备份数据库"
+    "desc": "一键备份博客数据库文件并下载，保障数据安全。支持手动导出 SQL 脚本，是您博客运维的必备工具。",
+    "tags": [
+      "数据库",
+      "备份",
+      "安全",
+      "SQL"
+    ]
   },
   {
     "id": 4,
     "name": "邮件服务",
     "downloadUrl": "https://dl.zrlog.com/plugin/mail.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/mail-service.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "mail.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "邮件服务"
+    "desc": "基于 SMTP 协议的邮件发送系统。支持评论通知、系统报警等邮件提醒功能，让您随时掌握博客动态。",
+    "tags": [
+      "SMTP",
+      "邮件通知",
+      "系统邮件"
+    ]
   },
   {
     "id": 5,
     "name": "畅言评论框",
     "downloadUrl": "https://dl.zrlog.com/plugin/changyan.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/changyan.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "changyan.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "畅言是一个简单而强大的社会化评论及聚合平台"
+    "desc": "快速接入搜狐畅言社会化评论系统，支持图片上传、表情包、热评排行等社交化功能，提升博客互动感。",
+    "tags": [
+      "社会化评论",
+      "第三方评论",
+      "畅言"
+    ]
   },
   {
     "id": 6,
     "name": "腾讯云存储",
     "downloadUrl": "https://dl.zrlog.com/plugin/cos.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/cos.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "cos.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "腾讯云存储"
+    "desc": "对接腾讯云对象存储（COS），提供稳定、安全的原生云端存储能力，支持附件自动同步与图片增值处理。",
+    "tags": [
+      "对象存储",
+      "COS",
+      "腾讯云"
+    ]
   },
   {
     "id": 7,
     "name": "博客迁移",
     "downloadUrl": "https://dl.zrlog.com/plugin/importer.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/importer.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "importer.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2016-01-04 13:00:00",
     "lastUpdateDate": "2016-01-04 13:00:00",
-    "desc": "轻松的将其他博客的数据迁移到 ZrLog"
+    "desc": "专业的博客数据迁移工具。支持从 WordPress、Hexo、Emlog 等平台快速导入文章及分类，助您无忧入驻 ZrLog。",
+    "tags": [
+      "数据迁移",
+      "WordPress",
+      "导入导出"
+    ]
   },
   {
     "id": 8,
     "name": "阿里云存储",
     "downloadUrl": "https://dl.zrlog.com/plugin/oss.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/oss.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "oss.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2023-12-16 13:00:00",
     "lastUpdateDate": "2023-12-16 13:00:00",
-    "desc": "阿里云存储为企业提供图片云存储、音频云存储、视频云存储等"
+    "desc": "阿里云对象存储（OSS）官方插件。提供海量、安全、低成本、高可靠的云存储能力，完美支持万兆带宽加速。",
+    "tags": [
+      "对象存储",
+      "OSS",
+      "阿里云"
+    ]
   },
   {
     "id": 9,
     "name": "rss订阅源",
     "downloadUrl": "https://dl.zrlog.com/plugin/rss.jar",
     "image": "https://www.zrlog.com/attached/plugin/preview/rss.png",
-    "version": "",
+    "version": "1.0.0",
     "downloadCnt": 0,
     "fileName": "rss.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2024-06-09 21:00:00",
     "lastUpdateDate": "2024-06-09 21:00:00",
-    "desc": "简单且实用的RSS源生成插件"
+    "desc": "自动生成符合标准的 RSS 2.0 订阅源。方便读者通过阅读器订阅您的博客更新，提升回访率与 SEO 效果。",
+    "tags": [
+      "RSS Feed",
+      "订阅",
+      "FeedBurner"
+    ]
   },
   {
     "id": 10,
@@ -111,10 +152,15 @@
     "version": "0.0.1",
     "downloadCnt": 0,
     "fileName": "article-arranger.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2024-06-09 21:00:00",
     "lastUpdateDate": "2024-06-09 21:00:00",
-    "desc": "插件用于，在不改变 zrlog 大的结构的基础上，实现对一系列的文章进行合并展示（类似 gitbook），比如文档或者系列的文章\n\n"
+    "desc": "专门为文档或系列教程设计的排版插件。支持将多篇文章合并展示（类似 GitBook 目录），非常适合构建个人知识库或 API 文档。",
+    "tags": [
+      "Markdown",
+      "Gitbook 风格",
+      "长文排版"
+    ]
   },
   {
     "id": 11,
@@ -124,9 +170,14 @@
     "version": "0.0.1",
     "downloadCnt": 0,
     "fileName": "static-plus.jar",
-    "author": "xiaochun",
+    "author": "ZrLog 团队",
     "createdDate": "2024-07-11 21:00:00",
     "lastUpdateDate": "2024-07-11 21:00:00",
-    "desc": "增强 zrlog 静态化的能力，用于自动将 zrlog 生成静态 html 或者上传的静态资源（图片/视频/文件）同步到第三方存储（不含公有化存储方案）"
+    "desc": "大幅提升 ZrLog 博客的访问性能。支持全站自动生成静态 HTML 页面并同步至 OSS/COS/七牛云，实现真正的零延迟访问体验。",
+    "tags": [
+      "全站静态化",
+      "性能优化",
+      "CDN 加速"
+    ]
   }
 ]

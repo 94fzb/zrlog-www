@@ -33,6 +33,9 @@ $(function () {
     $.each($(".storeInstallLink"), function (i, e) {
         const href = $(e).attr("href");
         $(e).attr("href", qMap['from'] + "/download?downloadUrl=" + href)
+    })
+
+    $.each($(".storeInstallText"), function (i, e) {
         $(e).text("安装")
     })
 })

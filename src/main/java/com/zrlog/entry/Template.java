@@ -16,6 +16,7 @@ public class Template {
     private String downloadUrl;
     private String fileName;
     private String sourceUrl;
+    private String[] tags;
 
     public Long getId() {
         return id;
@@ -111,5 +112,13 @@ public class Template {
 
     public void setSourceUrl(String sourceUrl) {
         this.sourceUrl = sourceUrl;
+    }
+
+    public String[] getTags() {
+        return tags;
+    }
+
+    public void setTags(String[] tags) {
+        this.tags = tags;
     }
 }

@@ -1,0 +1,9 @@
+{
+  "fileSize": "12M",
+  "desc": "多语言模板支持，预置 zrlog 程序主页主题",
+  "releaseDate": "2026-02-01",
+  "changeLogs": [
+    "- 【博客页】多语言模板支持（beta），适配广受欢迎的 fluid 主题（仅支持 Native 包方式运行）\n- 【博客页】预置 zrlog 程序主页主题（template-www）\n- 【管理页】可设置链接（友情链接）和导航的图标"
+  ],
+  "changeLogIsMd": true
+}

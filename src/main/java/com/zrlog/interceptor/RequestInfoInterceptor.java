@@ -8,7 +8,9 @@ import com.zrlog.util.PageInfoUtils;
 public class RequestInfoInterceptor implements Interceptor {
     @Override
     public boolean doInterceptor(HttpRequest request, HttpResponse response) throws Exception {
-        PageInfoUtils.fillMetaInfo(request);
+        if (request.getUri().endsWith(".html") || !request.getUri().contains(".")) {
+            PageInfoUtils.fillMetaInfo(request);
+        }
         return true;
     }
 }

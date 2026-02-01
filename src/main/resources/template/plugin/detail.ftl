@@ -1,29 +1,106 @@
 <#include "../include/header.ftl"/>
 
-<section class="py-16 bg-gray-50 dark:bg-black">
+<section class="py-16 bg-gray-50 dark:bg-black min-h-screen">
     <div class="container mx-auto px-4 md:px-6">
-        <nav aria-label="breadcrumb">
-            <nav aria-label="breadcrumb">
-                <nav aria-label="breadcrumb">
-                    <a href="/plugin" class="text-primary">插件中心</a> > ${plugin.name}
-                </nav>
+        <!-- 导航与标题 -->
+        <div class="mb-12">
+            <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <a href="/" class="storeDetailLink hover:text-blue-600 transition-colors">首页</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <a href="/plugin" class="storeDetailLink hover:text-blue-600 transition-colors">插件中心</a>
+                <i class="ri-arrow-right-s-line"></i>
+                <span class="text-gray-900 dark:text-white font-medium">${plugin.name}</span>
             </nav>
-        </nav>
-        <div style="display: flex;" class="auto-cards py-4" >
-            <div class="card bg-white dark:bg-gray-900" style="overflow: hidden">
-                <a target="_blank" title="${plugin.name}"
-                   class="thumbnail">
-                    <img src="${plugin.image}"
-                         class="img-responsive" alt="${plugin.name}" style="max-height: 360px;max-width: 540px;width: 100%">
-                </a>
-            </div>
-            <div class="card bg-white dark:bg-gray-900" style="width: 100%">
-                <div class="card-header">描述</div>
-                <div class="card-body">${plugin.desc}</div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">${plugin.name}</h1>
+                    <div class="flex items-center gap-4 mt-2">
+                        <#if plugin.tags??>
+                            <#list plugin.tags as tag>
+                                <span class="text-green-600 dark:text-green-400 flex items-center gap-1 text-sm font-medium">
+                                    <#if tag?index == 0><i class="ri-price-tag-3-line"></i></#if>
+                                    ${tag}
+                                </span>
+                            </#list>
+                        <#else>
+                            <span class="text-green-600 dark:text-green-400 flex items-center gap-1 text-sm font-medium">
+                                <i class="ri-checkbox-circle-line"></i>
+                                精选插件
+                            </span>
+                        </#if>
+                        <span class="text-gray-300 dark:text-gray-700">|</span>
+                        <span class="text-gray-500 dark:text-gray-400 flex items-center gap-1 text-sm">
+                            <i class="ri-calendar-line"></i>
+                            上传于 ${plugin.createdDate!'2016-01-04'}
+                        </span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="${plugin.downloadUrl}" 
+                       class="storeInstallLink inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 py-3 px-8 rounded-lg font-medium transition-all shadow-lg shadow-blue-600/20 active:scale-95">
+                        <i class="ri-download-line mr-2"></i>
+                        <span class="storeInstallText">${download}</span>
+                    </a>
+                </div>
             </div>
         </div>
-            <a href="${plugin.downloadUrl}" class="storeInstallLink bg-primary hover:bg-primary/90 text-white py-3 px-8 !rounded-button whitespace-nowrap transition-colors"  style="margin-top: 20px">
-                    <i class="ri-download-line mr-2"></i> ${download}</a>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 左侧：图片预览与描述 -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-800">
+                    <img src="${plugin.image}" 
+                         alt="${plugin.name}" 
+                         class="w-full h-auto object-cover max-h-[500px]">
+                </div>
+                
+                <!-- 详细说明 -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                        <i class="ri-article-line text-blue-600"></i>
+                        功能描述
+                    </h2>
+                    <div class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p>${plugin.desc!'暂无详细介绍'}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧：详情信息 -->
+            <div class="space-y-8">
+                <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-2">
+                        <i class="ri-information-line text-blue-600"></i>
+                        详情信息
+                    </h3>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">版本号</span>
+                            <span class="text-gray-900 dark:text-white font-medium px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-xs">v${plugin.version!'1.0.0'}</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">作者</span>
+                            <span class="text-gray-900 dark:text-white font-medium">${plugin.author!'官方'}</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="text-gray-500 dark:text-gray-400 text-sm">开源协议</span>
+                            <span class="text-gray-900 dark:text-white font-medium">Apache-2.0</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 提示卡片 -->
+                <div class="bg-gradient-to-br from-indigo-600 to-blue-700 rounded-3xl p-8 text-white shadow-xl shadow-blue-900/20">
+                    <h4 class="text-lg font-bold mb-2">如何使用？</h4>
+                    <p class="text-blue-100 text-sm mb-6">下载插件后，在 ZrLog 管理后台的“插件管理”页面上传并启用即可生效。</p>
+                    <a href="https://blog.zrlog.com/for-developer.html" target="_blank" class="inline-flex items-center text-sm font-semibold hover:underline">
+                        查看插件开发文档
+                        <i class="ri-arrow-right-line ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <#include "../include/footer.ftl"/>

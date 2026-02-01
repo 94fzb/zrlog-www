@@ -5,6 +5,5 @@
   "changeLogs": [
     "- 【管理页】AI 写作，已接入多种大模型，写文章更畅快\n- 【构建】升级到 GraalVM 25 打包，对象头压缩，占用内存更低\n- 多语言优化"
   ],
-  "commitId": "29f0396",
   "changeLogIsMd": true
 }

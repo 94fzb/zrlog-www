@@ -6,6 +6,22 @@
     <meta name="keywords" content="ZrLog, 变更记录, 更新日志, Java 博客系统, 开源博客系统, 博客程序更新, 功能改进, 版本历史, 轻量博客, 安全博客"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.zrlog.com/changelog"/>
+    <meta property="og:title" content="ZrLog 变更记录 - Java 开源博客系统，轻量快速"/>
+    <meta property="og:description" content="ZrLog 变更记录页记录所有版本更新和功能改进，适合开发者和个人用户查看版本历史和功能演进。ZrLog 支持 Markdown 编辑、插件扩展、主题自定义、一键部署，轻量高效、安全稳定。"/>
+    <meta property="og:image" content="https://www.zrlog.com/assets/screenprint/post-detail.png"/>
+    <meta property="og:site_name" content="ZrLog"/>
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="https://www.zrlog.com/changelog"/>
+    <meta name="twitter:title" content="ZrLog 变更记录 - Java 开源博客系统，轻量快速"/>
+    <meta name="twitter:description" content="ZrLog 变更记录页记录所有版本更新和功能改进，适合开发者和个人用户查看版本历史和功能演进。ZrLog 支持 Markdown 编辑、插件扩展、主题自定义、一键部署，轻量高效、安全稳定。"/>
+    <meta name="twitter:image" content="https://www.zrlog.com/assets/screenprint/post-detail.png"/>
+    
     <link rel="shortcut icon" type="image/svg+xml" href="https://www.zrlog.com/favicon.svg"/>
     <link href="https://www.zrlog.com/assets/fonts/remixicon.css" rel="stylesheet">
     <script src="https://www.zrlog.com/assets/js/jquery-1.10.2.min.js"></script>
@@ -103,6 +119,73 @@
 
         input:checked + .slider:before {
             transform: translateX(30px);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes blob {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(-25%) translateX(-50%); }
+            50% { transform: translateY(0) translateX(-50%); }
+        }
+
+        @keyframes scroll-inner {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(12px); opacity: 0; }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce-slow 2s infinite;
+        }
+
+        .animate-scroll-inner {
+            animation: scroll-inner 1.5s infinite;
+        }
+
+        @keyframes scroll-line-progress {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        .animate-scroll-line-progress {
+            animation: scroll-line-progress 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dark .glass-panel {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .github-star a {
@@ -218,19 +301,6 @@
             text-align: center;
         }
 
-        .storeInstallLink, .storeDetailLink {
-            display: inline-flex;
-            height: 56px;
-            min-width: 96px;
-            justify-content: center;
-            align-items: center;
-            padding-right: 12px;
-            padding-left: 12px;
-            border-radius: 4px;
-            margin-top: 12px;
-            color: white;
-        }
-
         .auto-cards {
             gap: 12px;
         }
@@ -249,145 +319,346 @@
     </style>
 <body class="dark:bg-black dark:text-gray-200">
 <!-- 导航栏 -->
-<nav class="bg-gray-900 text-white py-4" id="header">
+<!-- 导航栏 -->
+<nav class="sticky top-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-gray-900/80 border-b border-gray-200/50 dark:border-white/10 py-4 transition-all duration-300 shadow-sm" id="header">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <div class="flex items-center">
-            <a href="/" class="text-xl font-bold mr-10">ZRLOG</a>
-            <ul class="hidden md:flex space-x-6">
+            <a href="/" class="flex items-center gap-2 text-2xl font-black tracking-tighter text-gray-900 dark:text-white mr-12 group">
+                <div class="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
+                    <img src="https://www.zrlog.com/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+                </div>
+                <span>ZRLOG</span>
+            </a>
+            <ul class="hidden lg:flex items-center space-x-1">
 <li><a href="/"
-       class="hover:text-primary transition-colors ">主页</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-home-5-line"></i>
+        <span>主页</span>
+    </a>
 </li>
-<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
+<li><a href="https://blog.zrlog.com"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-article-line"></i>
+        <span>博客</span>
+    </a>
+</li>
 <li><a href="/template"
-       class="hover:text-primary transition-colors ">主题</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-layout-grid-line"></i>
+        <span>主题</span>
+    </a>
 </li>
 <li><a href="/plugin"
-       class="hover:text-primary transition-colors ">插件</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-plug-2-line"></i>
+        <span>插件</span>
+    </a>
 </li>
 <li><a href="/download"
-       class="hover:text-primary transition-colors ">下载</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-download-cloud-line"></i>
+        <span>下载</span>
+    </a>
 </li>
-<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
-<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
+<li><a href="https://blog.zrlog.com/sort/doc"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-book-read-line"></i>
+        <span>文档</span>
+    </a>
+</li>
 <li><a href="/code"
-       class="hover:text-primary transition-colors ">源码</a>
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-community-line"></i>
+        <span>社区</span>
+    </a>
 </li>            </ul>
         </div>
-        <div id="overlay"
-             class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden"></div>
-        <aside id="sidebar" class="fixed text-white top-0 bg-primary left-0 w-56 h-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-6
-           -translate-x-full transition-transform duration-300 z-40 hidden"
-               style="background: rgb(17 24 39);">
-            <ul class="space-y-6" style="font-size: 18px;text-align: center;">
-<li><a href="/"
-       class="hover:text-primary transition-colors ">主页</a>
-</li>
-<li><a href="https://blog.zrlog.com" class="hover:text-primary transition-colors">博客</a></li>
-<li><a href="/template"
-       class="hover:text-primary transition-colors ">主题</a>
-</li>
-<li><a href="/plugin"
-       class="hover:text-primary transition-colors ">插件</a>
-</li>
-<li><a href="/download"
-       class="hover:text-primary transition-colors ">下载</a>
-</li>
-<li><a href="https://blog.zrlog.com/sort/doc" class="hover:text-primary transition-colors">文档</a></li>
-<li><a href="https://blog.zrlog.com/about" class="hover:text-primary transition-colors">关于</a></li>
-<li><a href="/code"
-       class="hover:text-primary transition-colors ">源码</a>
-</li>            </ul>
-        </aside>
-        <div class="flex items-center space-x-4">
-            <a href="https://github.com/94fzb/zrlog" target="_blank"
-               class="flex items-center justify-center w-8 h-8">
-                <i class="ri-github-fill ri-lg"></i>
+        
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex items-center space-x-4 border-r border-gray-200 dark:border-white/10 pr-6">
+                <!-- Github & Theme Toggle -->
+                <a href="https://github.com/94fzb/zrlog" target="_blank"
+                   class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+                    <i class="ri-github-fill ri-xl"></i>
+                </a>
+                <div class="flex items-center gap-2 bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full border border-gray-200 dark:border-white/5">
+                    <i class="ri-sun-line text-[10px] text-gray-500 dark:text-gray-400"></i>
+                    <label class="theme-switch relative inline-block w-8 h-4 cursor-pointer">
+                        <input type="checkbox" class="sr-only peer">
+                        <div class="absolute inset-0 bg-gray-300 dark:bg-gray-700 rounded-full transition-colors peer-checked:bg-blue-600"></div>
+                        <div class="absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition-transform peer-checked:translate-x-4"></div>
+                    </label>
+                    <i class="ri-moon-line text-[10px] text-gray-500 dark:text-gray-400"></i>
+                </div>
+            </div>
+            
+            <a href="/download" 
+               class="hidden sm:inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 px-6 py-2.5 rounded-full font-semibold text-sm transition-all shadow-lg shadow-blue-600/25 active:scale-95">
+                立即开始
             </a>
-            <label class="theme-switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-            <button class="md:hidden flex items-center justify-center w-8 h-8" id="toggleSidebar">
-                <i class="ri-menu-line ri-lg"></i>
+            
+            <button class="lg:hidden flex items-center justify-center w-10 h-10 text-gray-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10" id="toggleSidebar">
+                <i class="ri-menu-4-line ri-lg"></i>
             </button>
         </div>
     </div>
 </nav>
-<!-- 页面标题区 -->
-<section class="relative hero-gradient text-white py-20 overflow-hidden">
-    <div class="absolute top-0 right-0 w-40 h-40 transform rotate-45 translate-x-20 -translate-y-20 bg-primary opacity-10"></div>
-    <div class="absolute bottom-0 left-0 w-40 h-40 transform rotate-45 -translate-x-20 translate-y-20 bg-primary opacity-10"></div>
-    <div class="container mx-auto px-4">
-        <div
-                class="flex flex-col md:flex-row justify-between items-center mb-6"
-        >
-            <div>
-                <h1 class="text-4xl font-bold mb-2">ZrLog 变更记录</h1>
-                <p class="text-lg text-gray-200">
-                    完整记录 ZrLog 博客系统的版本迭代与功能演进
-                </p>
-            </div>
-        </div>
-        <div class="bg-gray-50 p-6 rounded-lg dark:bg-black">
-            <div class="flex items-center">
-                <div
-                        class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4"
-                        style="min-width:48px"
-                >
-                    <i class="ri-history-line text-primary text-2xl"></i>
+
+<div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] hidden"></div>
+<aside id="sidebar" class="fixed top-0 left-0 w-72 h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-white/10 p-8 shadow-2xl -translate-x-full transition-transform duration-500 ease-out z-[70] hidden">
+    <div class="flex flex-col h-full">
+        <div class="mb-12 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-white">
+                <div class="w-8 h-8 flex items-center justify-center">
+                    <img src="https://www.zrlog.com/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
                 </div>
-                <div class="">
-                    <h2 class="text-xl text-gray-600 font-semibold dark:text-gray-200">项目简介</h2>
-                    <p class="text-gray-600 dark:text-gray-600">
-                        ZrLog 是一个使用 Java 开发的博客/CMS
-                        程序，具有简约、易用、组件化、内存占用低等特点，自 2015
-                        年以来，已经服务了上万个网站。
-                    </p>
+                <span>ZRLOG</span>
+            </div>
+            <button id="closeSidebar" class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+                <i class="ri-close-line ri-xl"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col gap-4">
+<li><a href="/"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-home-5-line"></i>
+        <span>主页</span>
+    </a>
+</li>
+<li><a href="https://blog.zrlog.com"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-article-line"></i>
+        <span>博客</span>
+    </a>
+</li>
+<li><a href="/template"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-layout-grid-line"></i>
+        <span>主题</span>
+    </a>
+</li>
+<li><a href="/plugin"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-plug-2-line"></i>
+        <span>插件</span>
+    </a>
+</li>
+<li><a href="/download"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-download-cloud-line"></i>
+        <span>下载</span>
+    </a>
+</li>
+<li><a href="https://blog.zrlog.com/sort/doc"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-book-read-line"></i>
+        <span>文档</span>
+    </a>
+</li>
+<li><a href="/code"
+       class="flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-white/10 text-gray-700 dark:text-white hover:bg-black/5 dark:hover:bg-white/10">
+        <i class="ri-community-line"></i>
+        <span>社区</span>
+    </a>
+</li>        </ul>
+        <div class="mt-auto pt-8 border-t border-gray-200 dark:border-white/10">
+            <a href="https://github.com/94fzb/zrlog" target="_blank" class="flex items-center gap-3 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white px-3 py-2 transition-colors">
+                <i class="ri-github-fill"></i>
+                <span>在 GitHub 获取源码</span>
+            </a>
+        </div>
+    </div>
+</aside>
+
+<!-- 页面标题区 -->
+<section class="relative bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black py-16 overflow-hidden">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-blue-50 dark:bg-blue-900/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-30"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-50 dark:bg-indigo-900/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 opacity-30"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">变更记录</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                完整记录 ZrLog 博客系统的版本迭代与功能演进
+            </p>
+            
+            <!-- 项目简介卡片 -->
+            <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 text-left shadow-sm">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="ri-information-line text-2xl text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">关于 ZrLog</h2>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            ZrLog 是一个使用 Java 开发的博客/CMS 程序，具有简约、易用、组件化、内存占用低等特点。
+                            自 2015 年以来，已经服务了上万个网站。
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- 变更记录内容 -->
 <section class="py-16 bg-gray-50 dark:bg-black">
     <style>
-        .card-body h3:before, .card-body h4:before {
+        /* 标题样式 */
+        .changelog-content h3 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e5e7eb;
+            position: relative;
+        }
+        
+        .dark .changelog-content h3 {
+            color: #f3f4f6;
+            border-bottom-color: #374151;
+        }
+        
+        .changelog-content h3:before {
             content: "#";
-            padding-right: 2px;
+            color: #3b82f6;
+            margin-right: 0.5rem;
+            font-weight: 600;
         }
-
-        h3 {
+        
+        .changelog-content h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .dark .changelog-content h4 {
+            color: #d1d5db;
+        }
+        
+        .changelog-content h4:before {
+            content: "##";
+            color: #6366f1;
+            margin-right: 0.5rem;
             font-weight: 500;
-            font-size: 24px;
-            line-height: 48px;
         }
-
-        h4 {
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 36px;
+        
+        /* 段落样式 */
+        .changelog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            color: #4b5563;
         }
-
-        hr {
-            margin-bottom: 16px;
-            margin-top: 16px;
+        
+        .dark .changelog-content p {
+            color: #9ca3af;
         }
-
-        .card-body ul li {
-            list-style: inside;
+        
+        /* 列表样式 */
+        .changelog-content ul {
+            margin: 1.5rem 0;
+            padding-left: 0;
         }
-
-        .card-body a {
-            color: var(--color-primary);
+        
+        .changelog-content ul li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.75;
+            color: #4b5563;
+        }
+        
+        .dark .changelog-content ul li {
+            color: #9ca3af;
+        }
+        
+        .changelog-content ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        /* 分隔线 */
+        .changelog-content hr {
+            margin: 3rem 0;
+            border: 0;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .dark .changelog-content hr {
+            border-top-color: #374151;
+        }
+        
+        /* 链接样式 */
+        .changelog-content a {
+            color: #3b82f6;
+            text-decoration: underline;
+            text-decoration-color: #3b82f6;
+            text-underline-offset: 2px;
+            transition: all 0.2s;
+        }
+        
+        .changelog-content a:hover {
+            color: #2563eb;
+            text-decoration-color: #2563eb;
+        }
+        
+        /* 代码样式 */
+        .changelog-content code {
+            background: #f3f4f6;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-size: 0.875em;
+            color: #e11d48;
+        }
+        
+        .dark .changelog-content code {
+            background: #374151;
+            color: #fda4af;
         }
     </style>
+    
     <div class="container mx-auto px-4 md:px-6">
-        <div class="card bg-white dark:bg-gray-900">
-            <h4 class="card-header">
-                变更记录
-            </h4>
-            <div class="card-body" style="padding: 16px;overflow: hidden;white-space: wrap;word-break: break-all;">
-                <h3>3.2.2 (2025-12-12)</h3>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <div class="changelog-content p-8 md:p-12">
+                    <h3>3.3.0 (2026-02-01)</h3>
+<h4>新特</h4>
+<ul>
+<li>【博客页】多语言模板支持（beta），适配广受欢迎的 fluid 主题（仅支持 Native 包方式运行）</li>
+<li>【博客页】预置 zrlog 程序主页主题（template-www）</li>
+<li>【管理页】可设置链接（友情链接）和导航的图标</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>【管理页】登录页更直观便捷</li>
+<li>【管理页】使用更大的圆角，在亮色模式下，顶部区域和侧边栏也使用主题色</li>
+<li>【管理页】缓存更新更及时</li>
+<li>【管理页】显示主题的更多信息</li>
+<li>【插件】优化生成静态资源的逻辑</li>
+<li>【构建】对 <code>Native Image</code> 包的架构统一定义，优化 native 包的启动速度</li>
+<li>【开发】全局开发错误页的编码</li>
+</ul>
+<h4>修复</h4>
+<ul>
+<li>【构建】 v3.2.2 windows 版本的 Native 包的 aot 映射不足的问题</li>
+</ul>
+<h4>依赖</h4>
+<ul>
+<li>⬆️ Markdown Editor [2.0.52]</li>
+<li>⬆️ SimpleWebServer  [4.0.121]</li>
+<li>⬆️ GraalVM [25.0.2] （仅构建）</li>
+</ul>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/1811fd7">1811fd7</a></p>
+<hr />
+<h3>3.2.2 (2025-12-12)</h3>
 <h4>新特</h4>
 <ul>
 <li>【管理页】AI 写作，已接入多种大模型，写文章更畅快</li>
@@ -410,7 +681,7 @@
 <li>⬆️ Antd [6.0.1]</li>
 <li>⬆️ SimpleWebServer  [4.0.115]</li>
 </ul>
-<p>commit: <a href="https://github.com/94fzb/zrlog/commit/29f0396">29f0396</a></p>
+<p>commit: <a href="https://github.com/94fzb/zrlog/commit/cfb4536">cfb4536</a></p>
 <hr />
 <h3>3.2.1 (2025-10-25)</h3>
 <h4>优化</h4>
@@ -1107,78 +1378,83 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
 </blockquote>
 <p>commit: <a href="https://github.com/94fzb/zrlog/commit/2bcb336">2bcb336</a></p>
 
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 <!-- 返回顶部按钮 -->
 <button
         id="back-to-top"
-        class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300"
+        class="fixed bottom-10 right-10 w-12 h-12 bg-blue-600 text-white rounded-full shadow-2xl flex items-center justify-center opacity-0 invisible transition-all duration-500 z-[100] hover:scale-110 active:scale-95 group"
 >
-    <i class="ri-arrow-up-line text-xl"></i>
+    <i class="ri-arrow-up-line text-2xl transition-transform group-hover:-translate-y-1"></i>
 </button>
-<footer class="bg-gray-900 text-white py-12" id="footer">
-    <div class="container mx-auto px-4 md:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<footer class="relative bg-gray-50/50 dark:bg-gray-950/50 border-t border-gray-200 dark:border-white/5 py-16 md:py-24 overflow-hidden" id="footer">
+    <!-- 背景装饰 -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-400/5 dark:bg-blue-600/5 rounded-full blur-[100px]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <!-- 品牌区 -->
+    <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-6 group">
+            <div class="w-10 h-10 flex items-center justify-center transition-transform group-hover:scale-110">
+                <img src="https://www.zrlog.com/favicon.svg" alt="ZrLog Logo" class="w-full h-full">
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-gray-900 dark:text-white">ZRLOG</span>
+        </div>
+        <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-6 max-w-md">
+            ZrLog 是一款致力于打造极致写作体验的 Java 开源博客系统。我们将现代化的技术栈与极简主义设计相结合，为您提供最纯粹的创作空间。
+        </p>
+        <div class="flex items-center gap-5">
+            <a href="https://github.com/94fzb/zrlog" target="_blank" 
+               class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all shadow-sm" 
+               title="GitHub">
+                <i class="ri-github-fill text-xl"></i>
+            </a>
+            <a href="https://gitee.com/94fzb" target="_blank" 
+               class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 transition-all shadow-sm group/gitee" 
+               title="Gitee">
+                <svg viewBox="0 0 1024 1024" class="w-5 h-5 fill-current transition-colors" xmlns="http://www.w3.org/2000/svg"><path d="M512 1024C230.4 1024 0 793.6 0 512S230.4 0 512 0s512 230.4 512 512-230.4 512-512 512z m259.2-569.6H502.4q-19.2 0-19.2 19.2v64q0 19.2 19.2 19.2h160q19.2 0 19.2 19.2v64q0 19.2-19.2 19.2H425.6q-19.2 0-19.2-19.2v-217.6q0-19.2 19.2-19.2h345.6q19.2 0 19.2-19.2v-64q0-19.2-19.2-19.2H342.4q-44.8 0-44.8 44.8v339.2q0 44.8 44.8 44.8h428.8q44.8 0 44.8-44.8v-112q0-44.8-44.8-44.8z"/></svg>
+            </a>
+        </div>
+    </div>
 
+    <!-- 资源导航 -->
     <div>
-        <h3 class="text-lg font-semibold mb-4">关于 ZRLOG</h3>
-        <p class="text-gray-400">ZRLOG 是一款使用 Java
-            开发的开源博客系统，专注于为用户提供简单、高效的博客写作体验。</p>
-    </div>
-    <div>
-        <h3 class="text-lg font-semibold mb-4">快速链接</h3>
-        <ul class="space-y-2">
-            <li><a href="/" class="text-gray-400 hover:text-white transition-colors">主页</a></li>
-            <li><a href="https://blog.zrlog.com"
-                   class="text-gray-400 hover:text-white transition-colors">博客</a></li>
-            <li><a href="/template" class="text-gray-400 hover:text-white transition-colors">主题</a></li>
-            <li><a href="/plugin" class="text-gray-400 hover:text-white transition-colors">插件</a></li>
+        <h3 class="text-sm font-bold text-gray-900 dark:text-white tracking-widest mb-6">快速链接</h3>
+        <ul class="space-y-4">
+            <li><a href="/download" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">下载中心</a></li>
+            <li><a href="https://blog.zrlog.com/sort/doc" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">文档说明</a></li>
+            <li><a href="/template" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">主题中心</a></li>
+            <li><a href="/plugin" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">插件中心</a></li>
         </ul>
     </div>
+
+    <!-- 社区互动 -->
     <div>
-        <h3 class="text-lg font-semibold mb-4">资源</h3>
-        <ul class="space-y-2">
-            <li><a href="https://blog.zrlog.com/sort/doc"
-                   class="text-gray-400 hover:text-white transition-colors">文档</a></li>
-            <li><a href="https://blog.zrlog.com/faq-collect.html"
-                   class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
-            <li><a href="https://blog.zrlog.com/for-developer.html"
-                   class="text-gray-400 hover:text-white transition-colors">开发者</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
-        </ul>
-    </div>
-    <div>
-        <h3 class="text-lg font-semibold mb-4">联系我们</h3>
-        <ul class="space-y-2">
-            <li class="flex items-center">
-                <i class="ri-mail-line mr-2"></i>
-                <a href="mailto:support@zrlog.com" class="text-gray-400 hover:text-white transition-colors">support@zrlog.com</a>
-            </li>
-            <li class="flex items-center">
-                <i class="ri-github-fill mr-2"></i>
-                <a href="https://github.com/94fzb/zrlog" target="_blank"
-                   class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-            </li>
+        <h3 class="text-sm font-bold text-gray-900 dark:text-white tracking-widest mb-6">社区支持</h3>
+        <ul class="space-y-4">
+            <li><a href="https://blog.zrlog.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">官方博客</a></li>
+            <li><a href="https://github.com/94fzb/zrlog/issues" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">反馈问题</a></li>
+            <li><a href="https://blog.zrlog.com/faq-collect.html" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">常见问题</a></li>
+            <li><a href="https://blog.zrlog.com/for-developer.html" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">开发建议</a></li>
         </ul>
     </div>
 </div>
-        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-gray-400 mb-4 md:mb-0">
-                © 2025 ZrLog 博客程序 <a href="https://beian.miit.gov.cn/" class="text-gray-400 hover:text-white">蜀ICP备16023991号-1</a>
+        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                © 2026 ZrLog 博客程序 · <a href="https://beian.miit.gov.cn/" class="hover:text-blue-600 transition-colors">蜀ICP备16023991号-1</a>
             </div>
-<div style="display: flex;flex-wrap: wrap;gap: 16px;justify-content: center">
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://blog.zrlog.com/faq-collect.html">FAQ</a>
-    <a class="text-gray-400 hover:text-white transition-colors"
-       href="https://blog.zrlog.com/for-developer.html">开发必看</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://xiaochun.zrlog.com"
-       target="_blank">博客</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://gitee.com/94fzb" target="_blank">码云</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://github.com/94fzb"
-       target="_blank">GitHub</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
-    <a class="text-gray-400 hover:text-white transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+<div class="flex flex-wrap gap-x-8 gap-y-4 justify-center md:justify-end text-sm font-medium">
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://qiniu.com" target="_blank">七牛云</a>
+    <span class="text-gray-300 dark:text-gray-800 hidden md:inline">|</span>
+    <a class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" href="https://demo.zrlog.com">在线演示</a>
 </div>        </div>
     </div>
 </footer>
@@ -1239,6 +1515,8 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
     const btn = document.getElementById("toggleSidebar");
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('closeSidebar');
+    const header = document.getElementById('header');
 
     function closeSidebar() {
         sidebar.classList.add('-translate-x-full');
@@ -1246,6 +1524,10 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
         setTimeout(() => {
             sidebar.classList.add('hidden');
         }, 300); // 等待动画结束再隐藏
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSidebar);
     }
 
     overlay.addEventListener('click', closeSidebar);
@@ -1260,12 +1542,54 @@ ALTER DATABASE database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_c
         }, 10);
     });
 
+    // 导航栏滚动效果
+    window.addEventListener('scroll', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (window.scrollY > 20) {
+            header.classList.add('shadow-lg', 'py-3');
+            header.classList.remove('py-4', 'shadow-sm');
+            // 动态调整背景深浅
+            header.classList.add('bg-white/95', 'dark:bg-gray-900/95');
+            header.classList.remove('bg-white/70', 'dark:bg-gray-900/80');
+        } else {
+            header.classList.remove('shadow-lg', 'py-3');
+            header.classList.add('py-4', 'shadow-sm');
+            header.classList.add('bg-white/70', 'dark:bg-gray-900/80');
+            header.classList.remove('bg-white/95', 'dark:bg-gray-900/95');
+        }
+    });
+
     // ESC 键也可关闭（可选）
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeSidebar();
         }
     });
+    
+    // Docker 命令复制功能
+    function copyDockerCmd() {
+        const cmdText = document.getElementById('docker-cmd').textContent;
+        const btnText = document.getElementById('copy-btn-text');
+        
+        navigator.clipboard.writeText(cmdText).then(() => {
+            btnText.textContent = '已复制!';
+            setTimeout(() => {
+                btnText.textContent = '复制命令';
+            }, 2000);
+        }).catch(() => {
+            // 降级方案：使用传统方法复制
+            const textArea = document.createElement('textarea');
+            textArea.value = cmdText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            btnText.textContent = '已复制!';
+            setTimeout(() => {
+                btnText.textContent = '复制命令';
+            }, 2000);
+        });
+    }
 </script>
 <div style="display:none">
     <script>
