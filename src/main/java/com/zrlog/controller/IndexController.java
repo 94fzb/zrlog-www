@@ -119,7 +119,7 @@ public class IndexController extends Controller {
         downloadInfoList.remove(0);
         request.getAttr().put("downloads", downloadInfoList.stream().limit(10).collect(Collectors.toList()));
         String url = ParseTools.getScheme(request) + "://" + request.getHeader("Host");
-        List<String> image = Arrays.asList("post-detail.png", "article-edit-dark.png",
+        List<String> image = Arrays.asList("post-detail.png","article-edit-light.png", "article-edit-dark.png",
                 "article-edit-light-pwa-full-screen.png", "article-edit-light-pwa-full-screen-setting.png");
         request.getAttr().put("indexImgList", image.stream().map(e -> url + "/assets/screenprint/" + e + "?v=2").collect(Collectors.toList()));
 
