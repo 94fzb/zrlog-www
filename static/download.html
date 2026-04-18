@@ -519,7 +519,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 mb-6 font-medium text-xs text-blue-600 dark:text-blue-400 tracking-wider">
                 <i class="ri-rocket-2-line"></i>
-                最新版本: 3.3.0
+                最新版本: 3.3.1
             </div>
             <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 dark:text-white">
                 下载 <span class="text-blue-600">ZrLog</span>
@@ -552,11 +552,11 @@
                             <span class="text-sm text-gray-600 dark:text-gray-400">最新版本</span>
                         </div>
                         <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                            v3.3.0
+                            v3.3.1
                         </h3>
                         <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                             <i class="ri-calendar-line"></i>
-                            <span>2026-02-01</span>
+                            <span>2026-04-18</span>
                         </div>
                     </div>
 
@@ -568,9 +568,8 @@
                         <div class="space-y-3">
                                 <div class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
 <ul>
-<li>【博客页】多语言模板支持（beta），适配广受欢迎的 fluid 主题（仅支持 Native 包方式运行）</li>
-<li>【博客页】预置 zrlog 程序主页主题（template-www）</li>
-<li>【管理页】可设置链接（友情链接）和导航的图标</li>
+<li>【博客页】新增对 Nunjucks (<code>njk</code>) 模板引擎的支持</li>
+<li>【管理页】增加多套管理界面的风格选择</li>
 </ul>
 
                                 </div>
@@ -591,7 +590,7 @@
                             一条命令，即刻开始
                         </p>
                         <div class="relative">
-                            <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code id="docker-cmd">docker run -d -p 8080:8080 -v $(pwd)/conf:/opt/zrlog/conf --name zrlog zrlog/zrlog:3.3.0</code></pre>
+                            <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code id="docker-cmd">docker run -d -p 8080:8080 -v $(pwd)/conf:/opt/zrlog/conf --name zrlog zrlog/zrlog:3.3.1</code></pre>
                             <button onclick="copyDockerCmd()" class="absolute top-2 right-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded text-sm transition-colors flex items-center gap-2">
                                 <i class="ri-file-copy-line"></i>
                                 <span id="copy-btn-text">复制</span>
@@ -613,7 +612,7 @@
             Serverless / FaaS
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Linux-amd64-faas.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Linux-amd64-faas.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-cpu-line text-2xl text-gray-400 group-hover:text-purple-500"></i>
@@ -625,7 +624,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-purple-500"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Linux-arm64-faas.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Linux-arm64-faas.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-cpu-line text-2xl text-gray-400 group-hover:text-purple-500"></i>
@@ -646,7 +645,7 @@
             Linux
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Linux-amd64.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Linux-amd64.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-server-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -658,7 +657,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-blue-500"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Linux-arm64.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Linux-arm64.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-server-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -670,7 +669,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-blue-500"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Linux-amd64.deb?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Linux-amd64.deb?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-ubuntu-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -682,7 +681,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-blue-500"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Linux-arm64.deb?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Linux-arm64.deb?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-ubuntu-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -703,7 +702,7 @@
             桌面系统
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Windows-x86_64.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Windows-x86_64.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-windows-line text-2xl text-gray-400 group-hover:text-green-500"></i>
@@ -715,7 +714,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-green-500"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Darwin-x86_64.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Darwin-x86_64.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-apple-line text-2xl text-gray-400 group-hover:text-green-500"></i>
@@ -727,7 +726,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-green-500"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release-Darwin-arm64.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release-Darwin-arm64.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-apple-line text-2xl text-gray-400 group-hover:text-green-500"></i>
@@ -748,7 +747,7 @@
             通用
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release.zip?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release.zip?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-file-zip-line text-2xl text-gray-400 group-hover:text-gray-600"></i>
@@ -760,7 +759,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-gray-600"></i>
             </a>
             
-            <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release.war?ref=download" 
+            <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release.war?ref=download" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-file-zip-line text-2xl text-gray-400 group-hover:text-gray-600"></i>
@@ -939,6 +938,39 @@
                             <div class="flex-1">
                                 <div class="flex items-center gap-3 mb-2">
                                     <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                        v3.3.0
+                                    </h3>
+                                    <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
+                                        12M
+                                    </span>
+                                </div>
+                                <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-calendar-line"></i>
+                                        2026-02-01
+                                    </span>
+                                </div>
+                                <p class="text-sm text-gray-700 dark:text-gray-300">
+                                    多语言模板支持，预置 zrlog 程序主页主题
+                                </p>
+                            </div>
+
+                            <!-- 右侧：下载按钮 -->
+                            <div class="flex-shrink-0">
+                                <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release.zip?ref=download" 
+                                   class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
+                                    <i class="ri-download-2-line"></i>
+                                    <span>下载</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <!-- 左侧：版本信息 -->
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                                         v3.2.2
                                     </h3>
                                     <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
@@ -959,72 +991,6 @@
                             <!-- 右侧：下载按钮 -->
                             <div class="flex-shrink-0">
                                 <a href="https://dl.zrlog.com/release/zrlog-3.2.2-cfb4536-release.zip?ref=download" 
-                                   class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
-                                    <i class="ri-download-2-line"></i>
-                                    <span>下载</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                            <!-- 左侧：版本信息 -->
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                                        v3.2.1
-                                    </h3>
-                                    <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
-                                        10M
-                                    </span>
-                                </div>
-                                <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                                    <span class="flex items-center gap-1">
-                                        <i class="ri-calendar-line"></i>
-                                        2025-10-25
-                                    </span>
-                                </div>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">
-                                    评论框的渲染，支持 `gavatar` 头像
-                                </p>
-                            </div>
-
-                            <!-- 右侧：下载按钮 -->
-                            <div class="flex-shrink-0">
-                                <a href="https://dl.zrlog.com/release/zrlog-3.2.1-e1ce1f4-release.zip?ref=download" 
-                                   class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
-                                    <i class="ri-download-2-line"></i>
-                                    <span>下载</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                            <!-- 左侧：版本信息 -->
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                                        v3.2.0
-                                    </h3>
-                                    <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
-                                        9M
-                                    </span>
-                                </div>
-                                <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                                    <span class="flex items-center gap-1">
-                                        <i class="ri-calendar-line"></i>
-                                        2025-09-19
-                                    </span>
-                                </div>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">
-                                    支持 Jakarta Web 容器，支持管理页面支持独立部署
-                                </p>
-                            </div>
-
-                            <!-- 右侧：下载按钮 -->
-                            <div class="flex-shrink-0">
-                                <a href="https://dl.zrlog.com/release/zrlog-3.2.0-c4165fd-release.zip?ref=download" 
                                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                                     <i class="ri-download-2-line"></i>
                                     <span>下载</span>
