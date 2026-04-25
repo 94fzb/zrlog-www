@@ -1,0 +1,21 @@
+<h3>3.3.2 (2026-04-25)</h3>
+<h4>新特</h4>
+<ul>
+<li>【底层】Web 模块加载机制升级为 SPI 模式，统一支持按模块发现和装配 <code>admin</code>、<code>install</code>、<code>blog</code></li>
+<li>【管理页】AI 助手新增 Google Gemini provider，并支持流式返回内容</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>【底层】新增 <code>WebSetupContext</code>、<code>WebSetupProvider</code> 抽象，支持模块排序、禁用和重复 provider 保护</li>
+<li>【管理页】补齐后台模块 SPI provider，统一管理端接入方式</li>
+<li>【博客页】补齐博客模块 SPI provider，统一博客端接入方式</li>
+<li>【编辑器】升级后台 Markdown Editor 到 <code>2.1.0</code></li>
+<li>【管理页】修复文章编辑页 AI 对话消息缓存的状态同步问题</li>
+</ul>
+<h4>依赖</h4>
+<ul>
+<li>⬆️ ZrLog Base [3.3.10]</li>
+<li>⬆️ ZrLog Admin Web [3.3.10]</li>
+<li>⬆️ ZrLog Blog Web [3.3.10]</li>
+<li>⬆️ SimpleWebServer [4.1.5]</li>
+</ul>
