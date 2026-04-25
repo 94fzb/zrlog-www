@@ -12,6 +12,12 @@
     "keywords": "ZrLog 下载, ZrLog 安装, Java 博客系统下载, 开源博客系统下载, Docker 博客部署, Serverless 博客部署, ZrLog 安装包, Linux 博客程序, macOS 博客程序, Windows 博客程序, ZrLog 部署教程"
   },
   {
+    "uri": "^/downloading(/.*)?$",
+    "title": "ZrLog 下载 - Java 开源博客系统安装包、Docker 与 Serverless 部署",
+    "description": "下载最新版本 ZrLog，获取 Docker、Serverless、Linux、macOS、Windows 等安装包和部署方式，快速完成 Java 开源博客系统安装与上线。",
+    "keywords": "ZrLog 下载, ZrLog 安装, Java 博客系统下载, 开源博客系统下载, Docker 博客部署, Serverless 博客部署, ZrLog 安装包, Linux 博客程序, macOS 博客程序, Windows 博客程序, ZrLog 部署教程"
+  },
+  {
     "uri": "^/changelog(/.*)?$",
     "title": "ZrLog 变更记录 - 更新日志、版本历史与功能演进",
     "description": "查看 ZrLog 所有版本的更新日志、功能改进和依赖升级记录，了解这个 Java 开源博客系统的版本历史与功能演进。",

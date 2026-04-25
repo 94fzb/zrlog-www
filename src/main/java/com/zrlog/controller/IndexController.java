@@ -59,6 +59,45 @@ public class IndexController extends Controller {
         getResponse().renderFreeMarker("/download");
     }
 
+    public void downloading() throws FileNotFoundException {
+        String platformId = getRequest().getParaToStr("platformId");
+        if (platformId == null) {
+            platformId = "zip";
+        }
+        downloading(platformId);
+    }
+
+    public void downloading(String platformId) throws FileNotFoundException {
+        List<File> files = VersionUtils.getSortedChangeLogFiles();
+        if (files.isEmpty()) {
+            return;
+        }
+        ReleaseInfo releaseInfo = buildReleaseInfo("download", files.get(0));
+
+        String url = "";
+        String platform = "";
+        switch (platformId) {
+            case "linux-amd64-faas": url = releaseInfo.getLinuxAmd64FaaSDownloadUrl(); platform = "Linux AMD64 FaaS"; break;
+            case "linux-arm64-faas": url = releaseInfo.getLinuxArm64FaaSDownloadUrl(); platform = "Linux ARM64 FaaS"; break;
+            case "linux-amd64": url = releaseInfo.getLinuxDownloadUrl(); platform = "Linux AMD64"; break;
+            case "linux-arm64": url = releaseInfo.getLinuxArm64DownloadUrl(); platform = "Linux ARM64"; break;
+            case "debian-amd64": url = releaseInfo.getLinuxDebDownloadUrl(); platform = "Debian/Ubuntu AMD64"; break;
+            case "debian-arm64": url = releaseInfo.getLinuxDebArm64DownloadUrl(); platform = "Debian/Ubuntu ARM64"; break;
+            case "windows-x86_64": url = releaseInfo.getWindowsDownloadUrl(); platform = "Windows x86_64"; break;
+            case "macos-intel": url = releaseInfo.getMacDownloadUrl(); platform = "macOS Intel"; break;
+            case "macos-arm": url = releaseInfo.getMacArmDownloadUrl(); platform = "macOS Apple Silicon"; break;
+            case "zip": url = releaseInfo.getDownloadUrl(); platform = "平台通用 ZIP"; break;
+            case "war": url = releaseInfo.getWarDownloadUrl(); platform = "平台通用 WAR"; break;
+            default: url = releaseInfo.getDownloadUrl(); platform = "平台通用 ZIP"; break;
+        }
+
+        getRequest().getAttr().put("downloadUrl", url);
+        getRequest().getAttr().put("platform", platform);
+        // Log the download for statistics
+        System.out.println("User downloaded " + platform + ", url: " + url);
+        getResponse().renderFreeMarker("/downloading");
+    }
+
     public static void fillVersionInfo(String ref, HttpRequest request) throws FileNotFoundException {
         List<File> files = VersionUtils.getSortedChangeLogFiles();
         if (files.isEmpty()) {

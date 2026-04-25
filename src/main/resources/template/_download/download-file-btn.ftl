@@ -8,7 +8,7 @@
             Serverless / FaaS
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="${last.linuxAmd64FaaSDownloadUrl}" 
+            <a href="/downloading/linux-amd64-faas/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-cpu-line text-2xl text-gray-400 group-hover:text-purple-500"></i>
@@ -20,7 +20,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-purple-500"></i>
             </a>
             
-            <a href="${last.linuxArm64FaaSDownloadUrl}" 
+            <a href="/downloading/linux-arm64-faas/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-cpu-line text-2xl text-gray-400 group-hover:text-purple-500"></i>
@@ -41,7 +41,7 @@
             Linux
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="${last.linuxDownloadUrl}" 
+            <a href="/downloading/linux-amd64/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-server-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -53,7 +53,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-blue-500"></i>
             </a>
             
-            <a href="${last.linuxArm64DownloadUrl}" 
+            <a href="/downloading/linux-arm64/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-server-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -65,7 +65,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-blue-500"></i>
             </a>
             
-            <a href="${last.linuxDebDownloadUrl}" 
+            <a href="/downloading/debian-amd64/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-ubuntu-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -77,7 +77,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-blue-500"></i>
             </a>
             
-            <a href="${last.linuxDebArm64DownloadUrl}" 
+            <a href="/downloading/debian-arm64/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-ubuntu-line text-2xl text-gray-400 group-hover:text-blue-500"></i>
@@ -98,7 +98,7 @@
             桌面系统
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="${last.windowsDownloadUrl}" 
+            <a href="/downloading/windows-x86_64/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-windows-line text-2xl text-gray-400 group-hover:text-green-500"></i>
@@ -110,7 +110,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-green-500"></i>
             </a>
             
-            <a href="${last.macDownloadUrl}" 
+            <a href="/downloading/macos-intel/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-apple-line text-2xl text-gray-400 group-hover:text-green-500"></i>
@@ -122,7 +122,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-green-500"></i>
             </a>
             
-            <a href="${last.macArmDownloadUrl}" 
+            <a href="/downloading/macos-arm/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-apple-line text-2xl text-gray-400 group-hover:text-green-500"></i>
@@ -143,7 +143,7 @@
             通用
         </h5>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <a href="${last.downloadUrl}" 
+            <a href="/downloading/zip/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-file-zip-line text-2xl text-gray-400 group-hover:text-gray-600"></i>
@@ -155,7 +155,7 @@
                 <i class="ri-download-2-line text-gray-400 group-hover:text-gray-600"></i>
             </a>
             
-            <a href="${last.warDownloadUrl}" 
+            <a href="/downloading/war/index.html" 
                class="flex items-center justify-between p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all group">
                 <div class="flex items-center gap-3">
                     <i class="ri-file-zip-line text-2xl text-gray-400 group-hover:text-gray-600"></i>

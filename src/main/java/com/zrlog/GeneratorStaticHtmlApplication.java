@@ -22,6 +22,14 @@ public class GeneratorStaticHtmlApplication {
                 server.getApplicationContext(), Application.zrlogServerConfig).run();
         new GeneratorHtml("/download", PathUtil.getStaticPath() + "/download.html", server.getApplicationContext(),
                 Application.zrlogServerConfig).run();
+        String[] platforms = {"linux-amd64-faas", "linux-arm64-faas", "linux-amd64", "linux-arm64", 
+                              "debian-amd64", "debian-arm64", "windows-x86_64", "macos-intel", 
+                              "macos-arm", "zip", "war"};
+        for (String platform : platforms) {
+            new GeneratorHtml("/downloading/" + platform + "/index.html", 
+                PathUtil.getStaticPath() + "/downloading/" + platform + "/index.html", 
+                server.getApplicationContext(), Application.zrlogServerConfig).run();
+        }
         new GeneratorHtml("/plugin", PathUtil.getStaticPath() + "/plugin/index.html", server.getApplicationContext(),
                 Application.zrlogServerConfig).run();
         new PluginDAO().findAll().forEach(e -> {

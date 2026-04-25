@@ -59,6 +59,10 @@ public class RestPathInterceptor implements Interceptor {
                 new PluginController(httpRequest, httpResponse).detailById(Integer.parseInt(uri.replaceAll("/plugin/", "").replaceAll(".html", "")));
 
                 return false;
+            } else if (uri.startsWith("/downloading/") && uri.endsWith("/index.html")) {
+                String platformId = uri.substring("/downloading/".length(), uri.length() - "/index.html".length());
+                new com.zrlog.controller.IndexController(httpRequest, httpResponse).downloading(platformId);
+                return false;
             }
         }
         return true;
