@@ -12,15 +12,11 @@
                 <#list downloads as download>
                     <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
                         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                            <!-- 左侧：版本信息 -->
                             <div class="flex-1">
                                 <div class="flex items-center gap-3 mb-2">
                                     <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                                         v${download.version}
                                     </h3>
-                                    <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs rounded">
-                                        ${download.fileSize}
-                                    </span>
                                 </div>
                                 <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
                                     <span class="flex items-center gap-1">
@@ -33,9 +29,13 @@
                                 </p>
                             </div>
 
-                            <!-- 右侧：下载按钮 -->
-                            <div class="flex-shrink-0">
-                                <a href="${download.downloadUrl}" 
+                            <div class="flex flex-wrap gap-3 flex-shrink-0">
+                                <a href="${url}/changelog/${download.version}-${download.commitId}.html?ref=downloadUrl"
+                                   class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 font-medium rounded-lg transition-colors">
+                                    <i class="ri-file-text-line"></i>
+                                    <span>变更日志</span>
+                                </a>
+                                <a href="${download.downloadUrl}"
                                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                                     <i class="ri-download-2-line"></i>
                                     <span>下载</span>

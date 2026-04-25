@@ -21,15 +21,14 @@
                     <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
                         <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
                             <i class="ri-file-list-3-line mr-2"></i>
-                            变更日志
+                            版本简介
                         </h4>
-                        <div class="space-y-3">
-                            <#list last.changeLogs as changeLog>
-                                <div class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-${changeLog}
-                                </div>
-                            </#list>
-                        </div>
+                        <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">${last.desc}</p>
+                        <a href="${url}/changelog/${last.version}-${last.commitId}.html?ref=downloadUrl"
+                           class="inline-flex items-center gap-2 mt-4 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors">
+                            <span>查看完整变更日志</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
                     </div>
                 </div>
 

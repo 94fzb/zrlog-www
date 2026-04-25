@@ -1,10 +1,8 @@
 package com.zrlog.controller;
 
-import com.google.gson.Gson;
 import com.hibegin.common.util.IOUtil;
 import com.hibegin.http.server.api.HttpRequest;
 import com.hibegin.http.server.api.HttpResponse;
-import com.hibegin.http.server.util.PathUtil;
 import com.hibegin.http.server.web.Controller;
 import com.zrlog.dao.DonationDAO;
 import com.zrlog.entry.ReleaseInfo;
@@ -17,12 +15,21 @@ import org.commonmark.renderer.html.HtmlRenderer;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class IndexController extends Controller {
+
+    private static final Pattern CHANGELOG_TITLE_PATTERN = Pattern.compile("^###\\s+([0-9.]+)\\s+\\((\\d{4}-\\d{2}-\\d{2})\\)$", Pattern.MULTILINE);
+    private static final Pattern FIRST_LIST_ITEM_PATTERN = Pattern.compile("^-\\s+(.+)$", Pattern.MULTILINE);
+    private static final Parser MARKDOWN_PARSER = Parser.builder().build();
+    private static final HtmlRenderer HTML_RENDERER = HtmlRenderer.builder().build();
 
     public IndexController() {
     }
@@ -47,81 +54,84 @@ public class IndexController extends Controller {
         getResponse().renderFreeMarker("/code");
     }
 
-
     public void download() throws FileNotFoundException {
         fillVersionInfo("download", getRequest());
         getResponse().renderFreeMarker("/download");
     }
 
     public static void fillVersionInfo(String ref, HttpRequest request) throws FileNotFoundException {
-        File[] files = new File(PathUtil.getRootPath() + "/download").listFiles();
-        List<ReleaseInfo> downloadInfoList = new ArrayList<>();
-        if (files == null) {
+        List<File> files = VersionUtils.getSortedChangeLogFiles();
+        if (files.isEmpty()) {
             return;
         }
-        for (File file : files) {
-            String fileName = file.getName();
-            String str = IOUtil.getStringInputStream(new FileInputStream(file));
-            ReleaseInfo releaseInfo = new Gson().fromJson(str, ReleaseInfo.class);
 
-            String[] arr = fileName.substring(0, fileName.lastIndexOf(".")).split("-");
-            String version = arr[1];
-            releaseInfo.setVersion(version);
-            Map<String, File> fileMap = VersionUtils.getFileMap();
-            releaseInfo.setCommitId(fileMap.keySet().stream().filter(e -> {
-                return Objects.equals(e, version);
-            }).map(e -> {
-                String filename = fileMap.get(e).getName().replace(".md","");
-                return filename.substring(version.length()).split("-")[1];
-            }).findFirst().orElse("-"));
-            String desc = releaseInfo.getDesc();
-            if (desc.length() > 60) {
-                desc = desc.substring(0, 60) + "...";
-                releaseInfo.setDesc(desc);
-            }
-            downloadInfoList.add(releaseInfo);
-            if (releaseInfo.isChangeLogIsMd()) {
-                List<String> changeLogs = new ArrayList<>();
-                for (String changeLog : releaseInfo.getChangeLogs()) {
-                    Parser parser = Parser.builder().build();
-                    Node document = parser.parse(changeLog);
-                    HtmlRenderer renderer = HtmlRenderer.builder().build();
-                    changeLogs.add(renderer.render(document));
-                }
-                releaseInfo.setChangeLogs(changeLogs);
-            }
-            //zrlog-3.1.6-6ffdb2b-release.zip
-            String baseUrl = "https://dl.zrlog.com/release/zrlog-" + releaseInfo.getVersion() + "-" + releaseInfo.getCommitId() + "-release.zip";
-            releaseInfo.setDownloadUrl(baseUrl + "?ref=" + ref);
-            releaseInfo.setWarDownloadUrl(baseUrl.replaceAll(".zip", ".war") + "?ref=" + ref);
-            releaseInfo.setLinuxDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64.zip") + "?ref=" + ref);
-            releaseInfo.setLinuxAmd64FaaSDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64-faas.zip") + "?ref=" + ref);
-            releaseInfo.setLinuxArm64FaaSDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64-faas.zip") + "?ref=" + ref);
-            releaseInfo.setLinuxDebDownloadUrl(baseUrl.replaceAll(".zip", "-Linux-amd64.deb") + "?ref=" + ref);
-            //
-            releaseInfo.setLinuxArm64DownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64.zip") + "?ref=" + ref);
-            releaseInfo.setLinuxDebArm64DownloadUrl(baseUrl.replaceAll(".zip", "-Linux-arm64.deb") + "?ref=" + ref);
-            //
-            releaseInfo.setWindowsDownloadUrl(baseUrl.replaceAll(".zip", "-Windows-x86_64.zip") + "?ref=" + ref);
-            releaseInfo.setMacDownloadUrl(baseUrl.replaceAll(".zip", "-Darwin-x86_64.zip") + "?ref=" + ref);
-            releaseInfo.setMacArmDownloadUrl(baseUrl.replaceAll(".zip", "-Darwin-arm64.zip") + "?ref=" + ref);
+        List<ReleaseInfo> downloadInfoList = new ArrayList<>();
+        for (File file : files) {
+            downloadInfoList.add(buildReleaseInfo(ref, file));
         }
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        downloadInfoList.sort((ReleaseInfo m1, ReleaseInfo m2) -> {
-            try {
-                return (sdf.parse(m2.getReleaseDate()).compareTo(sdf.parse(m1.getReleaseDate())));
-            } catch (ParseException e) {
-                e.printStackTrace();
-                return -1;
-            }
-        });
+
         request.getAttr().put("last", downloadInfoList.get(0));
-        downloadInfoList.remove(0);
-        request.getAttr().put("downloads", downloadInfoList.stream().limit(10).collect(Collectors.toList()));
+        request.getAttr().put("downloads", downloadInfoList.stream().skip(1).limit(2).collect(Collectors.toList()));
+
         String url = ParseTools.getScheme(request) + "://" + request.getHeader("Host");
-        List<String> image = Arrays.asList("post-detail.png","article-edit-light.png", "article-edit-dark.png",
+        List<String> image = Arrays.asList("post-detail.png", "article-edit-light.png", "article-edit-dark.png",
                 "article-edit-light-pwa-full-screen.png", "article-edit-light-pwa-full-screen-setting.png");
         request.getAttr().put("indexImgList", image.stream().map(e -> url + "/assets/screenprint/" + e + "?v=2").collect(Collectors.toList()));
+    }
 
+    private static ReleaseInfo buildReleaseInfo(String ref, File file) throws FileNotFoundException {
+        String md = IOUtil.getStringInputStream(new FileInputStream(file));
+        ReleaseInfo releaseInfo = new ReleaseInfo();
+        releaseInfo.setVersion(VersionUtils.getVersion(file));
+        releaseInfo.setCommitId(VersionUtils.getCommitId(file));
+        releaseInfo.setReleaseDate(parseReleaseDate(md, releaseInfo.getVersion()));
+        releaseInfo.setDesc(parseDesc(md));
+        releaseInfo.setChangeLogs(Collections.singletonList(renderMd(md)));
+        releaseInfo.setChangeLogIsMd(false);
+        fillDownloadUrls(ref, releaseInfo);
+        return releaseInfo;
+    }
+
+    private static String parseReleaseDate(String md, String version) {
+        Matcher matcher = CHANGELOG_TITLE_PATTERN.matcher(md);
+        while (matcher.find()) {
+            if (Objects.equals(matcher.group(1), version)) {
+                return matcher.group(2);
+            }
+        }
+        return "-";
+    }
+
+    private static String parseDesc(String md) {
+        Matcher matcher = FIRST_LIST_ITEM_PATTERN.matcher(md);
+        if (!matcher.find()) {
+            return "查看该版本变更日志";
+        }
+
+        String desc = matcher.group(1).trim();
+        if (desc.length() > 60) {
+            return desc.substring(0, 60) + "...";
+        }
+        return desc;
+    }
+
+    private static String renderMd(String md) {
+        Node document = MARKDOWN_PARSER.parse(md);
+        return HTML_RENDERER.render(document);
+    }
+
+    private static void fillDownloadUrls(String ref, ReleaseInfo releaseInfo) {
+        String baseUrl = "https://dl.zrlog.com/release/zrlog-" + releaseInfo.getVersion() + "-" + releaseInfo.getCommitId() + "-release.zip";
+        releaseInfo.setDownloadUrl(baseUrl + "?ref=" + ref);
+        releaseInfo.setWarDownloadUrl(baseUrl.replace(".zip", ".war") + "?ref=" + ref);
+        releaseInfo.setLinuxDownloadUrl(baseUrl.replace(".zip", "-Linux-amd64.zip") + "?ref=" + ref);
+        releaseInfo.setLinuxAmd64FaaSDownloadUrl(baseUrl.replace(".zip", "-Linux-amd64-faas.zip") + "?ref=" + ref);
+        releaseInfo.setLinuxArm64FaaSDownloadUrl(baseUrl.replace(".zip", "-Linux-arm64-faas.zip") + "?ref=" + ref);
+        releaseInfo.setLinuxDebDownloadUrl(baseUrl.replace(".zip", "-Linux-amd64.deb") + "?ref=" + ref);
+        releaseInfo.setLinuxArm64DownloadUrl(baseUrl.replace(".zip", "-Linux-arm64.zip") + "?ref=" + ref);
+        releaseInfo.setLinuxDebArm64DownloadUrl(baseUrl.replace(".zip", "-Linux-arm64.deb") + "?ref=" + ref);
+        releaseInfo.setWindowsDownloadUrl(baseUrl.replace(".zip", "-Windows-x86_64.zip") + "?ref=" + ref);
+        releaseInfo.setMacDownloadUrl(baseUrl.replace(".zip", "-Darwin-x86_64.zip") + "?ref=" + ref);
+        releaseInfo.setMacArmDownloadUrl(baseUrl.replace(".zip", "-Darwin-arm64.zip") + "?ref=" + ref);
     }
 }

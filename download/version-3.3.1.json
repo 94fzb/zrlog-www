@@ -1,9 +1,0 @@
-{
-  "fileSize": "12M",
-  "desc": "新增对 Nunjucks (`njk`) 模板引擎的支持，管理界面的风格选择",
-  "releaseDate": "2026-04-18",
-  "changeLogs": [
-    "- 【博客页】新增对 Nunjucks (`njk`) 模板引擎的支持\n- 【管理页】增加多套管理界面的风格选择"
-  ],
-  "changeLogIsMd": true
-}
