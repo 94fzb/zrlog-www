@@ -1,38 +1,38 @@
 [
   {
     "uri": "/",
-    "title": "ZrLog 博客程序 - Java 开源博客系统，轻量快速，支持 Markdown 与插件扩展",
-    "description": "ZrLog 是一款由 Java 开发的专业开源博客系统和个人博客程序，支持 Markdown 编辑、插件扩展、主题自定义、一键部署。轻量高效、安全稳定，适合开发者和个人建站用户。无论是搭建个人博客还是内容创作平台，ZrLog 都能快速搭建并灵活管理博客内容。",
-    "keywords": "ZrLog, java开源博客, 博客程序, 博客系统, 个人博客, Markdown 编辑器, 插件扩展, 主题自定义, 轻量博客, 安全博客, 开发者博客, 内容创作平台, 快速搭建博客, 博客模板, 博客搭建教程, 个人博客搭建, Java 博客系统"
+    "title": "ZrLog 博客程序 - Java 开源博客系统，支持 Markdown、Docker、Serverless 与插件扩展",
+    "description": "ZrLog 是一款 Java 开源博客系统，支持 Markdown 写作、主题定制、插件扩展、Docker 和 Serverless 部署，并提供 PWA 离线写作与 AI 助手能力，适合个人博客、技术博客和开发者建站。",
+    "keywords": "ZrLog, Java 博客系统, Java 开源博客系统, 博客程序, 开源博客程序, Markdown 博客系统, Docker 博客部署, Serverless 博客, 个人博客系统, 技术博客程序, 插件扩展, 主题定制"
   },
   {
     "uri": "^/download(/.*)?$",
-    "title": "ZrLog 下载 - Java 开源博客系统，一键部署，轻量快速",
-    "description": "ZrLog 下载页提供最新安装包和一键部署方案，支持 Java 开源博客系统、轻量博客、Markdown 编辑器、插件扩展和主题自定义。快速搭建个人博客或内容创作平台，安全稳定，易于管理。",
-    "keywords": "ZrLog, ZrLog 下载, ZrLog 安装, 一键部署, 安装包下载, Java 博客系统, 开源博客系统, 快速搭建博客, 轻量博客, ZrLog 插件下载, ZrLog 主题下载, ZrLog 安装教程, ZrLog 部署方法, ZrLog 最新版本"
+    "title": "ZrLog 下载 - Java 开源博客系统安装包、Docker 与 Serverless 部署",
+    "description": "下载最新版本 ZrLog，获取 Docker、Serverless、Linux、macOS、Windows 等安装包和部署方式，快速完成 Java 开源博客系统安装与上线。",
+    "keywords": "ZrLog 下载, ZrLog 安装, Java 博客系统下载, 开源博客系统下载, Docker 博客部署, Serverless 博客部署, ZrLog 安装包, Linux 博客程序, macOS 博客程序, Windows 博客程序, ZrLog 部署教程"
   },
   {
     "uri": "^/changelog(/.*)?$",
-    "title": "ZrLog 变更记录 - Java 开源博客系统，轻量快速",
-    "description": "ZrLog 变更记录页记录所有版本更新和功能改进，适合开发者和个人用户查看版本历史和功能演进。ZrLog 支持 Markdown 编辑、插件扩展、主题自定义、一键部署，轻量高效、安全稳定。",
-    "keywords": "ZrLog, 变更记录, 更新日志, Java 博客系统, 开源博客系统, 博客程序更新, 功能改进, 版本历史, 轻量博客, 安全博客"
+    "title": "ZrLog 变更记录 - 更新日志、版本历史与功能演进",
+    "description": "查看 ZrLog 所有版本的更新日志、功能改进和依赖升级记录，了解这个 Java 开源博客系统的版本历史与功能演进。",
+    "keywords": "ZrLog 更新日志, ZrLog 变更记录, ZrLog 版本历史, Java 博客系统更新, 开源博客系统更新, changelog, 发布记录"
   },
   {
     "uri": "^/code(/.*)?$",
-    "title": "ZrLog 源码 - Java 开源博客系统，获取最新版本",
-    "description": "ZrLog 源码页提供完整开源代码下载，支持 Java 博客系统、一键部署和插件扩展。访问 GitHub 或 Gitee 仓库获取最新版本源码，轻量高效，适合开发者和个人建站用户查看、修改和部署博客程序。",
-    "keywords": "ZrLog, ZrLog 源码, ZrLog 开源, Java 博客系统, 开源博客系统, 下载源码, GitHub 下载, Gitee 下载, 博客系统源码, 博客程序源码, ZrLog 源码下载, ZrLog 开源项目, ZrLog GitHub 仓库, ZrLog Java 博客源码, ZrLog 轻量博客源码"
+    "title": "ZrLog 源码 - GitHub 仓库、Gitee 镜像与开源贡献",
+    "description": "获取 ZrLog 源码，访问 GitHub 仓库和 Gitee 镜像，提交 Issue、参与贡献并进行二次开发。适合需要扩展和部署 Java 开源博客系统的开发者。",
+    "keywords": "ZrLog 源码, ZrLog GitHub, ZrLog Gitee, Java 博客系统源码, 开源博客系统源码, 博客程序源码, 开源贡献, Issue, Pull Request, 二次开发"
   },
   {
     "uri": "^/template(/.*)?$",
-    "title": "ZrLog 主题 - 博客模板下载与安装，Java 开源博客系统",
-    "description": "ZrLog 模板页提供丰富博客模板和主题下载，支持安装和定制。适用于 Java 开源博客系统和轻量博客，方便开发者和个人用户快速美化博客外观，支持 Markdown 编辑、插件扩展和主题自定义。",
-    "keywords": "ZrLog, ZrLog 模板, ZrLog 主题, 博客模板下载, 博客主题下载, 模板安装, 主题安装, Java 博客系统, 开源博客系统, 轻量博客, ZrLog 模板下载, ZrLog 主题下载, ZrLog 博客模板, ZrLog 博客主题, ZrLog 主题定制, ZrLog 模板安装教程"
+    "title": "ZrLog 主题 - 博客模板下载、安装与主题定制",
+    "description": "浏览和下载 ZrLog 主题模板，快速完成博客外观安装与定制。适合需要为 Java 开源博客系统更换主题和优化展示效果的用户。",
+    "keywords": "ZrLog 主题, ZrLog 模板, 博客模板下载, 博客主题下载, Java 博客主题, 开源博客系统主题, 主题安装, 主题定制, ZrLog 模板安装"
   },
   {
     "uri": "^/plugin(/.*)?$",
-    "title": "ZrLog 插件 - 功能扩展与下载，Java 开源博客系统",
-    "description": "ZrLog 插件页提供丰富插件和功能扩展下载，支持安装和管理，帮助开发者和个人用户扩展博客功能。适用于 Java 开源博客系统和轻量博客，轻松实现 Markdown 编辑增强、主题定制和多用户管理。",
-    "keywords": "ZrLog, ZrLog 插件, ZrLog 扩展, 插件下载, 插件安装, 功能扩展, Java 博客系统, 开源博客系统, 轻量博客, ZrLog 插件下载, ZrLog 插件安装, ZrLog 功能扩展, ZrLog 博客插件, ZrLog 插件教程"
+    "title": "ZrLog 插件 - 博客功能扩展、插件下载与安装",
+    "description": "浏览和下载 ZrLog 插件，扩展评论、存储、AI、集成等博客能力。适合需要增强 Java 开源博客系统功能的个人用户和开发者。",
+    "keywords": "ZrLog 插件, 博客插件下载, Java 博客插件, 开源博客系统插件, 功能扩展, 插件安装, AI 插件, 存储插件, 评论插件"
   }
 ]

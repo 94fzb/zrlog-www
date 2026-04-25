@@ -1,5 +1,5 @@
 <div class="mt-8">
-    <h4 class="text-lg font-semibold mb-6 text-gray-900 dark:text-white">选择适合您的平台</h4>
+    <h4 class="text-lg font-semibold mb-6 text-gray-900 dark:text-white">选择适合你的部署方式</h4>
     
     <!-- Serverless / FaaS -->
     <div class="mb-8">

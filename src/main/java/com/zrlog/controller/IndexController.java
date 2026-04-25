@@ -86,7 +86,7 @@ public class IndexController extends Controller {
         releaseInfo.setCommitId(VersionUtils.getCommitId(file));
         releaseInfo.setReleaseDate(parseReleaseDate(md, releaseInfo.getVersion()));
         releaseInfo.setDesc(parseDesc(md));
-        releaseInfo.setChangeLogs(Collections.singletonList(renderMd(md)));
+        releaseInfo.setChangeLogs(Collections.singletonList(renderMd(stripTitle(md))));
         releaseInfo.setChangeLogIsMd(false);
         fillDownloadUrls(ref, releaseInfo);
         return releaseInfo;
@@ -108,11 +108,11 @@ public class IndexController extends Controller {
             return "查看该版本变更日志";
         }
 
-        String desc = matcher.group(1).trim();
-        if (desc.length() > 60) {
-            return desc.substring(0, 60) + "...";
-        }
-        return desc;
+        return matcher.group(1).trim();
+    }
+
+    private static String stripTitle(String md) {
+        return CHANGELOG_TITLE_PATTERN.matcher(md).replaceFirst("").replaceFirst("^\\s+", "");
     }
 
     private static String renderMd(String md) {

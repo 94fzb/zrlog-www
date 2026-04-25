@@ -24,17 +24,12 @@
                                         ${download.releaseDate}
                                     </span>
                                 </div>
-                                <p class="text-sm text-gray-700 dark:text-gray-300">
-                                    ${download.desc}
-                                </p>
+                                <div class="changelog-content text-sm text-gray-700 dark:text-gray-300">
+                                    ${download.changeLogs[0]}
+                                </div>
                             </div>
 
                             <div class="flex flex-wrap gap-3 flex-shrink-0">
-                                <a href="${url}/changelog/${download.version}-${download.commitId}.html?ref=downloadUrl"
-                                   class="inline-flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-500 font-medium rounded-lg transition-colors">
-                                    <i class="ri-file-text-line"></i>
-                                    <span>变更日志</span>
-                                </a>
                                 <a href="${download.downloadUrl}"
                                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                                     <i class="ri-download-2-line"></i>

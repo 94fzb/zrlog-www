@@ -23,12 +23,9 @@
                             <i class="ri-file-list-3-line mr-2"></i>
                             版本简介
                         </h4>
-                        <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">${last.desc}</p>
-                        <a href="${url}/changelog/${last.version}-${last.commitId}.html?ref=downloadUrl"
-                           class="inline-flex items-center gap-2 mt-4 text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors">
-                            <span>查看完整变更日志</span>
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
+                        <div class="changelog-content text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                            ${last.changeLogs[0]}
+                        </div>
                     </div>
                 </div>
 
@@ -42,7 +39,7 @@
                             <span class="ml-2 text-xs bg-blue-500 text-white px-2 py-1 rounded">推荐</span>
                         </h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">
-                            一条命令，即刻开始
+                            推荐首次体验使用，复制命令即可启动
                         </p>
                         <div class="relative">
                             <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code id="docker-cmd">docker run -d -p 8080:8080 -v $(pwd)/conf:/opt/zrlog/conf --name zrlog zrlog/zrlog:${last.version}</code></pre>

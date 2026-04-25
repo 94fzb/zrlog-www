@@ -69,8 +69,8 @@
 <section class="py-16 bg-white dark:bg-black">
     <div class="container mx-auto px-4 md:px-6">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">项目特性</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">为什么选择 ZrLog</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">项目特点</h2>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">为什么适合继续使用、部署和参与贡献</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- 特性1 -->
@@ -148,7 +148,7 @@
     <div class="container mx-auto px-4 md:px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">技术栈</h2>
-            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">构建超轻量级博客系统的核心技术</p>
+            <p class="text-center text-gray-600 dark:text-gray-400 mb-12">理解 ZrLog 的实现方式和技术取向</p>
             
             <!-- 核心技术大卡片 -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">

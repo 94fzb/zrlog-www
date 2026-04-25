@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+    <#assign canonicalUrl = url + request.uri />
     <title><#if pageInfo.entryTitle??>${pageInfo.entryTitle} - </#if>${pageInfo.title!''}</title>
     <meta name="description" content="${pageInfo.description!''}"/>
     <meta name="keywords" content="${pageInfo.keywords!''}"/>
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"/>
+    <meta name="author" content="ZrLog"/>
+    <link rel="canonical" href="${canonicalUrl}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website"/>
-    <meta property="og:url" content="${url}${request.uri}"/>
+    <meta property="og:url" content="${canonicalUrl}"/>
     <meta property="og:title" content="<#if pageInfo.entryTitle??>${pageInfo.entryTitle} - </#if>${pageInfo.title!'ZrLog - 专业的 Java 开源博客系统'}"/>
     <meta property="og:description" content="${pageInfo.description!'ZrLog 是使用 Java 开发的博客程序，具有简约、易用、组件化、内存占用低等特点。支持 Markdown 编辑器，让更多的精力放在写作上。'}"/>
     <meta property="og:image" content="${url}/assets/screenprint/post-detail.png"/>
+    <meta property="og:image:alt" content="ZrLog 博客系统界面预览"/>
     <meta property="og:site_name" content="ZrLog"/>
+    <meta property="og:locale" content="zh_CN"/>
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:url" content="${url}${request.uri}"/>
+    <meta name="twitter:url" content="${canonicalUrl}"/>
     <meta name="twitter:title" content="<#if pageInfo.entryTitle??>${pageInfo.entryTitle} - </#if>${pageInfo.title!'ZrLog - 专业的 Java 开源博客系统'}"/>
     <meta name="twitter:description" content="${pageInfo.description!'ZrLog 是使用 Java 开发的博客程序，具有简约、易用、组件化、内存占用低等特点'}"/>
     <meta name="twitter:image" content="${url}/assets/screenprint/post-detail.png"/>
+    
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "ZrLog",
+          "applicationCategory": "BloggingApplication",
+          "operatingSystem": "Linux, Windows, macOS, Docker, Serverless",
+          "url": "${canonicalUrl}",
+          "downloadUrl": "${url}/download",
+          "codeRepository": "https://github.com/94fzb/zrlog",
+          "license": "https://github.com/94fzb/zrlog/blob/release/LICENSE",
+          "image": "${url}/assets/screenprint/post-detail.png",
+          "description": "${pageInfo.description!''}",
+          "author": {
+            "@type": "Organization",
+            "name": "ZrLog"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Markdown 写作与实时预览",
+            "主题定制与插件扩展",
+            "Docker 与 Serverless 部署",
+            "PWA 离线写作",
+            "AI 助手能力"
+          ],
+          "softwareHelp": {
+            "@type": "CreativeWork",
+            "url": "https://blog.zrlog.com/sort/doc"
+          }
+        }
+    </script>
     
     <link rel="shortcut icon" type="image/svg+xml" href="${url }/favicon.svg"/>
     <link href="${url}/assets/fonts/remixicon.css" rel="stylesheet">

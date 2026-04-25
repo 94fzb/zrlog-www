@@ -24,11 +24,12 @@
             </div>
             
             <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter text-gray-900 dark:text-white leading-tight">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">ZrLog</span> 极致简约
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600">ZrLog</span> 博客程序
             </h1>
             
             <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
-                专为创作而生，由于其轻量、高性能和开箱即用的特性，让您可以全身心投入到内容创作中。
+                面向个人博客与开发者写作场景，支持 Markdown、主题、插件、Docker、
+                Serverless、PWA 离线写作和 AI 助手能力。
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20">
@@ -92,10 +93,10 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    为什么选择 ZrLog
+                    不只是轻量
                 </h2>
                 <p class="text-lg text-gray-600 dark:text-gray-400">
-                    专为写作而生，摒弃繁琐配置，专注内容创作
+                    在保持轻量和易用的同时，已经具备完整的写作、部署、扩展与性能能力
                 </p>
             </div>
             
@@ -108,9 +109,9 @@
                         <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                             <i class="ri-rocket-line text-4xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-2">快速部署</h3>
+                        <h3 class="text-2xl font-bold mb-2">多种部署方式</h3>
                         <p class="text-blue-100 text-sm mb-4">
-                            一条 Docker 命令即可完成部署，无需复杂的环境配置，支持 Serverless
+                            支持 Docker、本地部署与 Serverless 场景，从本地到云端都能快速启动
                         </p>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="px-2 py-1 bg-white/20 rounded">Docker</span>
@@ -126,9 +127,9 @@
                         <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                             <i class="ri-palette-line text-4xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-2">简洁设计</h3>
+                        <h3 class="text-2xl font-bold mb-2">现代后台体验</h3>
                         <p class="text-purple-100 text-sm mb-4">
-                            精心设计的管理界面，简洁直观，基于 React + Ant Design 构建
+                            基于 React + Ant Design 构建后台，兼顾内容管理效率和长期维护体验
                         </p>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="px-2 py-1 bg-white/20 rounded">React</span>
@@ -144,13 +145,13 @@
                         <div class="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4">
                             <i class="ri-open-source-line text-4xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-2">开源免费</h3>
+                        <h3 class="text-2xl font-bold mb-2">性能与扩展兼顾</h3>
                         <p class="text-cyan-100 text-sm mb-4">
-                            采用 Apache License 2.0，完全开源免费，活跃的社区支持
+                            页面静态化、插件机制、主题系统与开源代码并存，适合直接使用也适合深度定制
                         </p>
                         <div class="flex items-center gap-2 text-sm">
-                            <span class="px-2 py-1 bg-white/20 rounded">Apache 2.0</span>
-                            <span class="px-2 py-1 bg-white/20 rounded">社区支持</span>
+                            <span class="px-2 py-1 bg-white/20 rounded">静态化</span>
+                            <span class="px-2 py-1 bg-white/20 rounded">可扩展</span>
                         </div>
                     </div>
                 </div>
@@ -228,10 +229,10 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    功能特性
+                    核心能力
                 </h2>
                 <p class="text-gray-600 dark:text-gray-400">
-                    简洁而强大的功能，满足您的博客需求
+                    不只是能写文章，也覆盖性能优化、部署方式和持续扩展这些真实需求
                 </p>
             </div>
 
@@ -246,7 +247,7 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Markdown 编辑</h3>
                         <p class="text-orange-100 text-sm mb-3">
-                            所见即所得的 Markdown 编辑器，实时预览，专注创作
+                            支持 Markdown 写作、实时预览与长文编辑，保持创作过程连续顺手
                         </p>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="px-2 py-1 bg-white/20 rounded">实时预览</span>
@@ -263,7 +264,7 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-2">主题系统</h3>
                         <p class="text-green-100 text-sm mb-3">
-                            强大的主题系统，自由定制博客外观，灵活扩展
+                            支持主题切换和定制开发，让博客外观、布局和展示方式更可控
                         </p>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="px-2 py-1 bg-white/20 rounded">自由定制</span>
@@ -280,7 +281,7 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-2">插件扩展</h3>
                         <p class="text-indigo-100 text-sm mb-3">
-                            强大的插件系统，即插即用，轻松扩展博客功能
+                            可通过插件扩展评论、存储、AI、第三方集成等能力，减少对核心代码的侵入
                         </p>
                         <div class="flex items-center gap-2 text-sm">
                             <span class="px-2 py-1 bg-white/20 rounded">即插即用</span>
@@ -542,11 +543,11 @@
     document.addEventListener('DOMContentLoaded', () => {
         const text = document.getElementById('typewriter');
         const phrases = [
-            '专业的 Java 开源博客系统',
-            '高性能，轻量级，低内存',
-            '支持 Docker 一键部署',
-            '极致简约，专注内容创作',
-            'Serverless 部署优化'
+            '轻量高性能的 Java 博客系统',
+            '支持 Docker 与 Serverless 部署',
+            'Markdown、主题与插件扩展',
+            'PWA 离线写作与 AI 助手',
+            '适合直接使用，也适合长期维护'
         ];
         
         let i = 0;
@@ -625,5 +626,53 @@
             });
         });
     });
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ZrLog 适合哪些用户？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ZrLog 适合个人博主、技术写作者、小团队以及任何需要轻量级博客系统的用户。如果你追求简洁高效的写作体验，又希望拥有完整的博客功能，ZrLog 是理想的选择。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何快速安装 ZrLog？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "推荐使用 Docker 方式快速安装 ZrLog，也支持传统部署和 Serverless 部署方式。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "支持哪些数据库？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ZrLog 支持 MySQL 和 Cloudflare D1，可以根据部署环境灵活选择。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "是否支持主题和插件？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ZrLog 支持主题系统和插件系统，可以安装现有扩展，也可以根据需求自行开发。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "性能如何？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ZrLog 采用轻量级架构和页面静态化技术，适合个人博客和内容站点的长期运行，并可配合 CDN、缓存和 Serverless 方案进一步扩展。"
+          }
+        }
+      ]
+    }
 </script>
 <#include "include/footer.ftl"/>

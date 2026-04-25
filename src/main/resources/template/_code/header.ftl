@@ -13,10 +13,10 @@
                 JOIN OUR OPEN SOURCE COMMUNITY
             </div>
             <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 dark:text-white">
-                开源 <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500">社区</span>
+                获取 <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-500">源码</span>
             </h1>
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-medium">
-                ZrLog 见证了无数博主的成长。欢迎加入我们，共同打造极致的 Java 开源博客系统。
+                在 GitHub 或 Gitee 查看仓库、下载源码、提交问题，或直接参与 ZrLog 的开发与改进。
             </p>
 
             <!-- 操作按钮 -->

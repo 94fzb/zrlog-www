@@ -17,7 +17,7 @@
                 下载 <span class="text-blue-600">ZrLog</span>
             </h1>
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto font-medium">
-                开始您的专业博客之旅，享受飞一般的创作体验
+                选择适合你的安装方式，几分钟内启动一个可用的 ZrLog 站点
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#version" class="inline-flex items-center justify-center bg-blue-600 text-white hover:bg-blue-700 py-3.5 px-10 rounded-2xl font-bold transition-all shadow-xl shadow-blue-600/25 active:scale-95">
