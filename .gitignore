@@ -22,3 +22,5 @@ static/download
 **/._*
 .DS_Store
 .codex
+docs/admin
+docs/blog

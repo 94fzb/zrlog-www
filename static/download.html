@@ -673,7 +673,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-100 dark:border-blue-800 mb-6 font-medium text-xs text-blue-600 dark:text-blue-400 tracking-wider">
                 <i class="ri-rocket-2-line"></i>
-                最新版本: 3.3.2
+                最新版本: 3.4.0
             </div>
             <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter text-gray-900 dark:text-white">
                 下载 <span class="text-blue-600">ZrLog</span>
@@ -707,11 +707,11 @@
                             <span class="text-sm text-gray-600 dark:text-gray-400">最新版本</span>
                         </div>
                         <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                            v3.3.2
+                            v3.4.0
                         </h3>
                         <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
                             <i class="ri-calendar-line"></i>
-                            <span>2026-04-25</span>
+                            <span>2026-05-10</span>
                         </div>
                     </div>
 
@@ -723,23 +723,19 @@
                         <div class="changelog-content text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                             <h4>新特</h4>
 <ul>
-<li>【底层】Web 模块加载机制升级为 SPI 模式，统一支持按模块发现和装配 <code>admin</code>、<code>install</code>、<code>blog</code></li>
-<li>【管理页】AI 助手新增 Google Gemini provider，并支持流式返回内容</li>
+<li>【管理页】消息中心统一承载后台任务、系统消息、新版本通知和未读评论提醒，桌面端支持 <code>Popover</code> 快速查看，移动端支持底部 <code>Drawer</code>。</li>
+<li>【管理页】新增账户安全与多重验证能力，支持密码平滑升级、二维码绑定、OTP 启用或关闭，以及登录二次校验。</li>
+<li>【管理页】新增文章版本历史与一组编辑器快捷键，覆盖版本查看、对比、回滚，以及保存、预览、设置等高频操作。</li>
+<li>【管理页】系统页新增健康体检与优化能力，覆盖资源死链、SEO 缺失、数据库维护状态以及 <code>cache/static</code> 目录写入检查。</li>
 </ul>
 <h4>优化</h4>
 <ul>
-<li>【底层】新增 <code>WebSetupContext</code>、<code>WebSetupProvider</code> 抽象，支持模块排序、禁用和重复 provider 保护</li>
-<li>【管理页】补齐后台模块 SPI provider，统一管理端接入方式</li>
-<li>【博客页】补齐博客模块 SPI provider，统一博客端接入方式</li>
-<li>【编辑器】升级后台 Markdown Editor 到 <code>2.1.0</code></li>
-<li>【管理页】修复文章编辑页 AI 对话消息缓存的状态同步问题</li>
-</ul>
-<h4>依赖</h4>
-<ul>
-<li>⬆️ ZrLog Base [3.3.10]</li>
-<li>⬆️ ZrLog Admin Web [3.3.10]</li>
-<li>⬆️ ZrLog Blog Web [3.3.10]</li>
-<li>⬆️ SimpleWebServer [4.1.5]</li>
+<li>【管理页】版本更新提示改为消息中心与升级弹窗双通路，版本类型统一收口为“预览版本 / 正式版本”，并支持分布式场景下的持久化与读取时清理。</li>
+<li>【管理页】后台导航、首页欢迎区、系统信息与账户安全页布局进一步收口，交互更贴近 Ant Design 默认行为，减少重复标题和样式噪声。</li>
+<li>【管理页】静态同步、缓存刷新和透明发布等长任务统一接入 SSE 能力与消息中心承接，前端按 <code>supportSse</code> 自动选择流式或普通请求。</li>
+<li>【管理页】前后端 i18n、主题 token、native image 注册与前端构建缓存继续收口，降低后续扩展和构建成本。</li>
+<li>【博客页】清理 <code>eu.bitwalker:UserAgentUtils</code> 依赖，文章统计继续排除静态插件内部请求与爬虫请求，统计结果更接近真实访问。</li>
+<li>【构建】调整 Maven Central 发布工作流与预览通知链路，修正 <code>build_id</code> 前缀并在发布完成后自动触发预览刷新。</li>
 </ul>
 
                         </div>
@@ -759,7 +755,7 @@
                             推荐首次体验使用，复制命令即可启动
                         </p>
                         <div class="relative">
-                            <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code id="docker-cmd">docker run -d -p 8080:8080 -v $(pwd)/conf:/opt/zrlog/conf --name zrlog zrlog/zrlog:3.3.2</code></pre>
+                            <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code id="docker-cmd">docker run -d -p 8080:8080 -v $(pwd)/conf:/opt/zrlog/conf --name zrlog zrlog/zrlog:3.4.0</code></pre>
                             <button onclick="copyDockerCmd()" class="absolute top-2 right-2 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded text-sm transition-colors flex items-center gap-2">
                                 <i class="ri-file-copy-line"></i>
                                 <span id="copy-btn-text">复制</span>
@@ -1108,6 +1104,54 @@
                             <div class="flex-1">
                                 <div class="flex items-center gap-3 mb-2">
                                     <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                        v3.3.2
+                                    </h3>
+                                </div>
+                                <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-calendar-line"></i>
+                                        2026-04-25
+                                    </span>
+                                </div>
+                                <div class="changelog-content text-sm text-gray-700 dark:text-gray-300">
+                                    <h4>新特</h4>
+<ul>
+<li>【底层】Web 模块加载机制升级为 SPI 模式，统一支持按模块发现和装配 <code>admin</code>、<code>install</code>、<code>blog</code></li>
+<li>【管理页】AI 助手新增 Google Gemini provider，并支持流式返回内容</li>
+</ul>
+<h4>优化</h4>
+<ul>
+<li>【底层】新增 <code>WebSetupContext</code>、<code>WebSetupProvider</code> 抽象，支持模块排序、禁用和重复 provider 保护</li>
+<li>【管理页】补齐后台模块 SPI provider，统一管理端接入方式</li>
+<li>【博客页】补齐博客模块 SPI provider，统一博客端接入方式</li>
+<li>【编辑器】升级后台 Markdown Editor 到 <code>2.1.0</code></li>
+<li>【管理页】修复文章编辑页 AI 对话消息缓存的状态同步问题</li>
+</ul>
+<h4>依赖</h4>
+<ul>
+<li>⬆️ ZrLog Base [3.3.10]</li>
+<li>⬆️ ZrLog Admin Web [3.3.10]</li>
+<li>⬆️ ZrLog Blog Web [3.3.10]</li>
+<li>⬆️ SimpleWebServer [4.1.5]</li>
+</ul>
+
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap gap-3 flex-shrink-0">
+                                <a href="https://dl.zrlog.com/release/zrlog-3.3.2-6ae177d-release.zip?ref=download"
+                                   class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
+                                    <i class="ri-download-2-line"></i>
+                                    <span>下载</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
                                         v3.3.1
                                     </h3>
                                 </div>
@@ -1142,60 +1186,6 @@
 
                             <div class="flex flex-wrap gap-3 flex-shrink-0">
                                 <a href="https://dl.zrlog.com/release/zrlog-3.3.1-1afbf4b-release.zip?ref=download"
-                                   class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
-                                    <i class="ri-download-2-line"></i>
-                                    <span>下载</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 border border-gray-200 dark:border-gray-700 hover:border-blue-400 dark:hover:border-blue-600 transition-all">
-                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                                        v3.3.0
-                                    </h3>
-                                </div>
-                                <div class="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
-                                    <span class="flex items-center gap-1">
-                                        <i class="ri-calendar-line"></i>
-                                        2026-02-01
-                                    </span>
-                                </div>
-                                <div class="changelog-content text-sm text-gray-700 dark:text-gray-300">
-                                    <h4>新特</h4>
-<ul>
-<li>【博客页】多语言模板支持（beta），适配广受欢迎的 fluid 主题（仅支持 Native 包方式运行）</li>
-<li>【博客页】预置 zrlog 程序主页主题（template-www）</li>
-<li>【管理页】可设置链接（友情链接）和导航的图标</li>
-</ul>
-<h4>优化</h4>
-<ul>
-<li>【管理页】登录页更直观便捷</li>
-<li>【管理页】使用更大的圆角，在亮色模式下，顶部区域和侧边栏也使用主题色</li>
-<li>【管理页】缓存更新更及时</li>
-<li>【管理页】显示主题的更多信息</li>
-<li>【插件】优化生成静态资源的逻辑</li>
-<li>【构建】对 <code>Native Image</code> 包的架构统一定义，优化 native 包的启动速度</li>
-<li>【开发】全局开发错误页的编码</li>
-</ul>
-<h4>修复</h4>
-<ul>
-<li>【构建】 v3.2.2 windows 版本的 Native 包的 aot 映射不足的问题</li>
-</ul>
-<h4>依赖</h4>
-<ul>
-<li>⬆️ Markdown Editor [2.0.52]</li>
-<li>⬆️ SimpleWebServer  [4.0.121]</li>
-<li>⬆️ GraalVM [25.0.2] （仅构建）</li>
-</ul>
-
-                                </div>
-                            </div>
-
-                            <div class="flex flex-wrap gap-3 flex-shrink-0">
-                                <a href="https://dl.zrlog.com/release/zrlog-3.3.0-1811fd7-release.zip?ref=download"
                                    class="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
                                     <i class="ri-download-2-line"></i>
                                     <span>下载</span>
